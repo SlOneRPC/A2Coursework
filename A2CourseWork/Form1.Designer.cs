@@ -1,4 +1,4 @@
-﻿namespace A2Coursework
+﻿namespace A2CourseWork
 {
     partial class Form1
     {

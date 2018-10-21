@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace A2Coursework.Properties
+namespace A2CourseWork.Properties
 {
 
 

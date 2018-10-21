@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace A2Coursework
+namespace A2CourseWork
 {
     static class Program
     {
