@@ -15,6 +15,7 @@ namespace A2CourseWork.Gui
         public Menu()
         {
             InitializeComponent();
+            this.panel3.AutoScroll = true;
         }
 
         private void btnexit_Click(object sender, EventArgs e)
