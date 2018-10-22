@@ -30,5 +30,22 @@ namespace A2CourseWork.Gui
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        //Dragable panel
+        System.Drawing.Point lastclick;
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastclick.X;
+                this.Top += e.Y - lastclick.Y;
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastclick = e.Location;
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace A2CourseWork.Gui
         {
             InitializeComponent();
             this.panel3.AutoScroll = true;
+            btncreche.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -30,6 +31,24 @@ namespace A2CourseWork.Gui
         private void minbtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+
+        //Dragable panel
+        System.Drawing.Point lastclick;
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastclick.X;
+                this.Top += e.Y - lastclick.Y;
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastclick = e.Location;
         }
     }
 }
