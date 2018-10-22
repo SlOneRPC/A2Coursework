@@ -46,5 +46,10 @@ namespace A2CourseWork.Gui
         {
             lastclick = e.Location;
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
