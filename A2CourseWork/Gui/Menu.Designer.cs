@@ -30,21 +30,21 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.Homelbl = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.titlelbl = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btncreche = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.minbtn = new System.Windows.Forms.PictureBox();
             this.btnexit = new System.Windows.Forms.PictureBox();
+            this.titlelbl = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btncreche = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,6 +68,17 @@
             this.Homelbl.TabIndex = 1;
             this.Homelbl.Text = "Home";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::A2CourseWork.Properties.Resources.homebtn;
+            this.pictureBox2.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(76, 72);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
@@ -80,57 +91,6 @@
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // titlelbl
-            // 
-            this.titlelbl.AutoSize = true;
-            this.titlelbl.BackColor = System.Drawing.Color.Transparent;
-            this.titlelbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titlelbl.Location = new System.Drawing.Point(7, 9);
-            this.titlelbl.Name = "titlelbl";
-            this.titlelbl.Size = new System.Drawing.Size(291, 25);
-            this.titlelbl.TabIndex = 1;
-            this.titlelbl.Text = "Woodside Community - Home";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.btncreche);
-            this.panel3.Location = new System.Drawing.Point(326, 359);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(473, 398);
-            this.panel3.TabIndex = 5;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::A2CourseWork.Properties.Resources.back2;
-            this.pictureBox1.Location = new System.Drawing.Point(179, 47);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(736, 306);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btncreche
-            // 
-            this.btncreche.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncreche.Image = global::A2CourseWork.Properties.Resources.creche1;
-            this.btncreche.Location = new System.Drawing.Point(12, 13);
-            this.btncreche.Name = "btncreche";
-            this.btncreche.Size = new System.Drawing.Size(446, 123);
-            this.btncreche.TabIndex = 0;
-            this.btncreche.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(76, 72);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // minbtn
             // 
@@ -154,6 +114,47 @@
             this.btnexit.TabStop = false;
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
+            // titlelbl
+            // 
+            this.titlelbl.AutoSize = true;
+            this.titlelbl.BackColor = System.Drawing.Color.Transparent;
+            this.titlelbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titlelbl.Location = new System.Drawing.Point(7, 9);
+            this.titlelbl.Name = "titlelbl";
+            this.titlelbl.Size = new System.Drawing.Size(291, 25);
+            this.titlelbl.TabIndex = 1;
+            this.titlelbl.Text = "Woodside Community - Home";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.btncreche);
+            this.panel3.Location = new System.Drawing.Point(326, 359);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(473, 398);
+            this.panel3.TabIndex = 5;
+            // 
+            // btncreche
+            // 
+            this.btncreche.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncreche.Image = global::A2CourseWork.Properties.Resources.creche1;
+            this.btncreche.Location = new System.Drawing.Point(12, 13);
+            this.btncreche.Name = "btncreche";
+            this.btncreche.Size = new System.Drawing.Size(446, 123);
+            this.btncreche.TabIndex = 0;
+            this.btncreche.UseVisualStyleBackColor = true;
+            this.btncreche.Click += new System.EventHandler(this.btncreche_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::A2CourseWork.Properties.Resources.back2;
+            this.pictureBox1.Location = new System.Drawing.Point(179, 47);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(736, 306);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,13 +171,13 @@
             this.Text = "Menu";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

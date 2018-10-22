@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace A2CourseWork.Gui
 {
-    public partial class Default : Form
+    public partial class Booking : Form
     {
-        public Default()
+        public Booking()
         {
             InitializeComponent();
         }
@@ -31,7 +31,6 @@ namespace A2CourseWork.Gui
             this.WindowState = FormWindowState.Minimized;
         }
 
-        //Dragable panel
         System.Drawing.Point lastclick;
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)

@@ -50,5 +50,10 @@ namespace A2CourseWork.Gui
         {
             lastclick = e.Location;
         }
+
+        private void btncreche_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
