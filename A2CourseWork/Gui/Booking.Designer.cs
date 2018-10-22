@@ -32,7 +32,7 @@
             this.Homelbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.titlelbl = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.homepbx = new System.Windows.Forms.PictureBox();
             this.minbtn = new System.Windows.Forms.PictureBox();
             this.btnexit = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,7 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             this.panel3.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.Homelbl);
-            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.homepbx);
             this.panel2.Location = new System.Drawing.Point(-3, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(90, 569);
@@ -101,15 +101,16 @@
             this.titlelbl.TabIndex = 1;
             this.titlelbl.Text = "Woodside Community - Booking";
             // 
-            // pictureBox2
+            // homepbx
             // 
-            this.pictureBox2.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(76, 72);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
+            this.homepbx.Location = new System.Drawing.Point(7, 3);
+            this.homepbx.Name = "homepbx";
+            this.homepbx.Size = new System.Drawing.Size(76, 72);
+            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.homepbx.TabIndex = 0;
+            this.homepbx.TabStop = false;
+            this.homepbx.Click += new System.EventHandler(this.homepbx_Click);
             // 
             // minbtn
             // 
@@ -150,7 +151,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(270, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(554, 479);
+            this.panel3.Size = new System.Drawing.Size(554, 606);
             this.panel3.TabIndex = 5;
             // 
             // label1
@@ -274,7 +275,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(51, 414);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(468, 28);
+            this.comboBox1.Size = new System.Drawing.Size(469, 28);
             this.comboBox1.TabIndex = 11;
             // 
             // label7
@@ -284,9 +285,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(51, 388);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 23);
+            this.label7.Size = new System.Drawing.Size(131, 23);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Address";
+            this.label7.Text = "Home Address";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Booking
@@ -305,7 +306,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -320,7 +321,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Homelbl;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox homepbx;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox minbtn;
         private System.Windows.Forms.PictureBox btnexit;

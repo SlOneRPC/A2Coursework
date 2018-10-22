@@ -51,5 +51,12 @@ namespace A2CourseWork.Gui
         {
 
         }
+
+        private void homepbx_Click(object sender, EventArgs e)
+        {
+            Menu home = new Menu();
+            this.Hide();
+            home.Show();
+        }
     }
 }
