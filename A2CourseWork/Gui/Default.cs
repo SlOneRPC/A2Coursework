@@ -25,7 +25,7 @@ namespace A2CourseWork.Gui
                 Application.Exit();
             }
         }
-
+        //minimize button
         private void minbtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
