@@ -33,20 +33,6 @@ namespace A2CourseWork.Gui
 
         System.Drawing.Point lastclick;
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastclick.X;
-                this.Top += e.Y - lastclick.Y;
-            }
-        }
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastclick = e.Location;
-        }
-
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -57,6 +43,20 @@ namespace A2CourseWork.Gui
             Menu home = new Menu();
             this.Hide();
             home.Show();
+        }
+
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            lastclick = e.Location;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastclick.X;
+                this.Top += e.Y - lastclick.Y;
+            }
         }
     }
 }

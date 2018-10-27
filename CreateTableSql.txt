@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[Customer]
+(
+    [CustId] INT NOT NULL PRIMARY KEY, 
+    [ForeName] NVARCHAR(50) NULL, 
+    [Surname] NVARCHAR(50) NULL, 
+    [TeleNo] NCHAR(10) NULL, 
+    [Address] NVARCHAR(50) NULL, 
+    [Postcode] NCHAR(10) NULL
+)
+
+CREATE TABLE [dbo].[GroupRota](
+	[StaffID] INT NOT NULL,
+	CONSTRAINT [Rota_ToStaff] FOREIGN KEY ([StaffID]) REFERENCES [dbo].[Staff]([StaffId]),
+	);
+
+CREATE TABLE [dbo].[Staff]
+(
+    [StaffId] INT NOT NULL PRIMARY KEY, 
+    [Forename] VARCHAR(50) NULL, 
+    [Surname] VARCHAR(50) NULL, 
+    [TeleNo] NCHAR(10) NULL, 
+    [Address] NCHAR(10) NULL, 
+    [Postcode] NCHAR(10) NULL
+)

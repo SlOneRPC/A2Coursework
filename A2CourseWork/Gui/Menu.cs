@@ -55,5 +55,55 @@ namespace A2CourseWork.Gui
         {
 
         }
+
+        private void crechepbx_MouseHover(object sender, EventArgs e)
+        {
+            crechelbl.Visible = true;
+        }
+
+        private void transportpbx_MouseHover(object sender, EventArgs e)
+        {
+            transportlbl.Visible = true;
+        }
+
+        private void advicepbx_MouseHover(object sender, EventArgs e)
+        {
+            advicelbl.Visible = true;
+        }
+
+        private void grouppbx_MouseHover(object sender, EventArgs e)
+        {
+            grouplbl.Visible = true;
+        }
+
+        private void classespbx_MouseHover(object sender, EventArgs e)
+        {
+            classeslbl.Visible = true;
+        }
+
+        private void crechepbx_MouseLeave(object sender, EventArgs e)
+        {
+            crechelbl.Visible = false;
+        }
+
+        private void transportpbx_MouseLeave(object sender, EventArgs e)
+        {
+            transportlbl.Visible = false;
+        }
+
+        private void advicepbx_MouseLeave(object sender, EventArgs e)
+        {
+            advicelbl.Visible = false;
+        }
+
+        private void grouppbx_MouseLeave(object sender, EventArgs e)
+        {
+            grouplbl.Visible = false;
+        }
+
+        private void classespbx_MouseLeave(object sender, EventArgs e)
+        {
+            classeslbl.Visible = false;
+        }
     }
 }
