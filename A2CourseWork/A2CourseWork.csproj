@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BookingDB.cs" />
+    <Compile Include="Classes\Database.cs" />
     <Compile Include="Gui\Booking.cs">
       <SubType>Form</SubType>
     </Compile>

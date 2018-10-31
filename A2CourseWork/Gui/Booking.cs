@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using A2CourseWork.Classes;
 namespace A2CourseWork.Gui
 {
     public partial class Booking : Form
     {
+        Database db;
         public Booking()
         {
+            db = new Database();
             InitializeComponent();
         }
 
@@ -57,6 +59,12 @@ namespace A2CourseWork.Gui
                 this.Left += e.X - lastclick.X;
                 this.Top += e.Y - lastclick.Y;
             }
+        }
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            BookingDB book = new BookingDB(db);
+            db.connect();
+            book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text);
         }
     }
 }

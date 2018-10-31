@@ -47,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Fnametxt = new System.Windows.Forms.TextBox();
+            this.btnsave = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -138,6 +139,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnsave);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.posttxt);
             this.panel3.Controls.Add(this.label5);
@@ -268,6 +270,19 @@
             this.Fnametxt.Size = new System.Drawing.Size(232, 31);
             this.Fnametxt.TabIndex = 2;
             // 
+            // btnsave
+            // 
+            this.btnsave.BackColor = System.Drawing.Color.Gray;
+            this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.Location = new System.Drawing.Point(78, 376);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(115, 33);
+            this.btnsave.TabIndex = 13;
+            this.btnsave.Text = "Add";
+            this.btnsave.UseVisualStyleBackColor = false;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,5 +331,6 @@
         private System.Windows.Forms.TextBox teleNotxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Snametxt;
+        private System.Windows.Forms.Button btnsave;
     }
 }
