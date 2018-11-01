@@ -131,5 +131,17 @@ namespace A2CourseWork.Gui
                 next.Show();
             }
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Timelbl.Text = DateTime.Now.ToLongTimeString();
+            Timer.Start();
+        }
+
+        private void Booking_Load(object sender, EventArgs e)
+        {
+            Timer.Start();
+            Timelbl.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

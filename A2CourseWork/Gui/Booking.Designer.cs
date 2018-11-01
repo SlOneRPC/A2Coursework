@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Homelbl = new System.Windows.Forms.Label();
             this.homepbx = new System.Windows.Forms.PictureBox();
@@ -63,6 +64,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.ChildFnametxt = new System.Windows.Forms.TextBox();
             this.book3pnl = new System.Windows.Forms.Panel();
+            this.btncancel = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.KidsBookedlbl = new System.Windows.Forms.Label();
             this.btncheckout = new System.Windows.Forms.Button();
@@ -70,7 +72,9 @@
             this.Kidslist = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.btncancel = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Timelbl = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -159,9 +163,9 @@
             this.titlelbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titlelbl.Location = new System.Drawing.Point(7, 9);
             this.titlelbl.Name = "titlelbl";
-            this.titlelbl.Size = new System.Drawing.Size(311, 25);
+            this.titlelbl.Size = new System.Drawing.Size(405, 25);
             this.titlelbl.TabIndex = 1;
-            this.titlelbl.Text = "Woodside Community - Booking";
+            this.titlelbl.Text = "Woodside Community -  Creche - Booking";
             // 
             // book1pnl
             // 
@@ -493,6 +497,20 @@
             this.book3pnl.TabIndex = 19;
             this.book3pnl.Visible = false;
             // 
+            // btncancel
+            // 
+            this.btncancel.BackColor = System.Drawing.Color.Gray;
+            this.btncancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.Color.White;
+            this.btncancel.Location = new System.Drawing.Point(10, 356);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(130, 54);
+            this.btncancel.TabIndex = 8;
+            this.btncancel.Text = "Cancel";
+            this.btncancel.UseVisualStyleBackColor = false;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -574,19 +592,33 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Checkout";
             // 
-            // btncancel
+            // label11
             // 
-            this.btncancel.BackColor = System.Drawing.Color.Gray;
-            this.btncancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.ForeColor = System.Drawing.Color.White;
-            this.btncancel.Location = new System.Drawing.Point(10, 356);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(130, 54);
-            this.btncancel.TabIndex = 8;
-            this.btncancel.Text = "Cancel";
-            this.btncancel.UseVisualStyleBackColor = false;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(757, 540);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(109, 19);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Current Time:";
+            // 
+            // Timelbl
+            // 
+            this.Timelbl.AutoSize = true;
+            this.Timelbl.BackColor = System.Drawing.Color.Transparent;
+            this.Timelbl.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timelbl.ForeColor = System.Drawing.Color.White;
+            this.Timelbl.Location = new System.Drawing.Point(861, 540);
+            this.Timelbl.Name = "Timelbl";
+            this.Timelbl.Size = new System.Drawing.Size(46, 19);
+            this.Timelbl.TabIndex = 20;
+            this.Timelbl.Text = "Time";
+            // 
+            // Timer
+            // 
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Booking
             // 
@@ -594,6 +626,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.Timelbl);
             this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.book1pnl);
@@ -602,6 +636,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.Text = "Booking";
+            this.Load += new System.EventHandler(this.Booking_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
@@ -623,6 +658,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -671,5 +707,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label Timelbl;
+        private System.Windows.Forms.Timer Timer;
     }
 }
