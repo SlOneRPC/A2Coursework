@@ -40,7 +40,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.KidsNo = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addresstxt = new System.Windows.Forms.TextBox();
             this.btnsave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.posttxt = new System.Windows.Forms.TextBox();
@@ -75,6 +75,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.Timelbl = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.Error1txt = new System.Windows.Forms.Label();
+            this.error2txt = new System.Windows.Forms.Label();
+            this.error3txt = new System.Windows.Forms.Label();
+            this.error4txt = new System.Windows.Forms.Label();
+            this.error5txt = new System.Windows.Forms.Label();
+            this.errorlabellbl = new System.Windows.Forms.Label();
+            this.error6txt = new System.Windows.Forms.Label();
+            this.Cerror1 = new System.Windows.Forms.Label();
+            this.Cerror2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -171,10 +180,17 @@
             // 
             this.book1pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.book1pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.book1pnl.Controls.Add(this.error6txt);
+            this.book1pnl.Controls.Add(this.errorlabellbl);
+            this.book1pnl.Controls.Add(this.error5txt);
+            this.book1pnl.Controls.Add(this.error4txt);
+            this.book1pnl.Controls.Add(this.error3txt);
+            this.book1pnl.Controls.Add(this.error2txt);
+            this.book1pnl.Controls.Add(this.Error1txt);
             this.book1pnl.Controls.Add(this.label8);
             this.book1pnl.Controls.Add(this.KidsNo);
             this.book1pnl.Controls.Add(this.label7);
-            this.book1pnl.Controls.Add(this.textBox1);
+            this.book1pnl.Controls.Add(this.addresstxt);
             this.book1pnl.Controls.Add(this.btnsave);
             this.book1pnl.Controls.Add(this.label6);
             this.book1pnl.Controls.Add(this.posttxt);
@@ -221,16 +237,16 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Address";
             // 
-            // textBox1
+            // addresstxt
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(330, 122);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 31);
-            this.textBox1.TabIndex = 14;
+            this.addresstxt.BackColor = System.Drawing.Color.Gray;
+            this.addresstxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addresstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addresstxt.Location = new System.Drawing.Point(330, 122);
+            this.addresstxt.Multiline = true;
+            this.addresstxt.Name = "addresstxt";
+            this.addresstxt.Size = new System.Drawing.Size(232, 31);
+            this.addresstxt.TabIndex = 14;
             // 
             // btnsave
             // 
@@ -239,7 +255,7 @@
             this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.ForeColor = System.Drawing.Color.White;
-            this.btnsave.Location = new System.Drawing.Point(372, 304);
+            this.btnsave.Location = new System.Drawing.Point(363, 314);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(171, 51);
             this.btnsave.TabIndex = 13;
@@ -370,6 +386,8 @@
             // 
             this.book2pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.book2pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.book2pnl.Controls.Add(this.Cerror2);
+            this.book2pnl.Controls.Add(this.Cerror1);
             this.book2pnl.Controls.Add(this.DOBpicker);
             this.book2pnl.Controls.Add(this.btnnext);
             this.book2pnl.Controls.Add(this.panel6);
@@ -386,10 +404,16 @@
             // 
             // DOBpicker
             // 
+            this.DOBpicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOBpicker.CalendarForeColor = System.Drawing.Color.Black;
+            this.DOBpicker.CalendarMonthBackground = System.Drawing.Color.Gray;
+            this.DOBpicker.CalendarTitleBackColor = System.Drawing.Color.Gray;
+            this.DOBpicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DOBpicker.Location = new System.Drawing.Point(25, 237);
             this.DOBpicker.Name = "DOBpicker";
             this.DOBpicker.Size = new System.Drawing.Size(167, 20);
             this.DOBpicker.TabIndex = 14;
+            this.DOBpicker.Value = new System.DateTime(2018, 11, 1, 0, 0, 0, 0);
             // 
             // btnnext
             // 
@@ -620,6 +644,114 @@
             // 
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // Error1txt
+            // 
+            this.Error1txt.AutoSize = true;
+            this.Error1txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Error1txt.ForeColor = System.Drawing.Color.Red;
+            this.Error1txt.Location = new System.Drawing.Point(116, 97);
+            this.Error1txt.Name = "Error1txt";
+            this.Error1txt.Size = new System.Drawing.Size(17, 24);
+            this.Error1txt.TabIndex = 18;
+            this.Error1txt.Text = "*";
+            this.Error1txt.Visible = false;
+            // 
+            // error2txt
+            // 
+            this.error2txt.AutoSize = true;
+            this.error2txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error2txt.ForeColor = System.Drawing.Color.Red;
+            this.error2txt.Location = new System.Drawing.Point(113, 163);
+            this.error2txt.Name = "error2txt";
+            this.error2txt.Size = new System.Drawing.Size(17, 24);
+            this.error2txt.TabIndex = 19;
+            this.error2txt.Text = "*";
+            this.error2txt.Visible = false;
+            // 
+            // error3txt
+            // 
+            this.error3txt.AutoSize = true;
+            this.error3txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error3txt.ForeColor = System.Drawing.Color.Red;
+            this.error3txt.Location = new System.Drawing.Point(199, 233);
+            this.error3txt.Name = "error3txt";
+            this.error3txt.Size = new System.Drawing.Size(17, 24);
+            this.error3txt.TabIndex = 20;
+            this.error3txt.Text = "*";
+            this.error3txt.Visible = false;
+            // 
+            // error4txt
+            // 
+            this.error4txt.AutoSize = true;
+            this.error4txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error4txt.ForeColor = System.Drawing.Color.Red;
+            this.error4txt.Location = new System.Drawing.Point(104, 304);
+            this.error4txt.Name = "error4txt";
+            this.error4txt.Size = new System.Drawing.Size(17, 24);
+            this.error4txt.TabIndex = 21;
+            this.error4txt.Text = "*";
+            this.error4txt.Visible = false;
+            // 
+            // error5txt
+            // 
+            this.error5txt.AutoSize = true;
+            this.error5txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error5txt.ForeColor = System.Drawing.Color.Red;
+            this.error5txt.Location = new System.Drawing.Point(398, 96);
+            this.error5txt.Name = "error5txt";
+            this.error5txt.Size = new System.Drawing.Size(17, 24);
+            this.error5txt.TabIndex = 22;
+            this.error5txt.Text = "*";
+            this.error5txt.Visible = false;
+            // 
+            // errorlabellbl
+            // 
+            this.errorlabellbl.AutoSize = true;
+            this.errorlabellbl.Font = new System.Drawing.Font("Raleway", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorlabellbl.ForeColor = System.Drawing.Color.Red;
+            this.errorlabellbl.Location = new System.Drawing.Point(315, 279);
+            this.errorlabellbl.Name = "errorlabellbl";
+            this.errorlabellbl.Size = new System.Drawing.Size(299, 22);
+            this.errorlabellbl.TabIndex = 23;
+            this.errorlabellbl.Text = "Please check fields marked with *";
+            this.errorlabellbl.Visible = false;
+            // 
+            // error6txt
+            // 
+            this.error6txt.AutoSize = true;
+            this.error6txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error6txt.ForeColor = System.Drawing.Color.Red;
+            this.error6txt.Location = new System.Drawing.Point(608, 193);
+            this.error6txt.Name = "error6txt";
+            this.error6txt.Size = new System.Drawing.Size(17, 24);
+            this.error6txt.TabIndex = 24;
+            this.error6txt.Text = "*";
+            this.error6txt.Visible = false;
+            // 
+            // Cerror1
+            // 
+            this.Cerror1.AutoSize = true;
+            this.Cerror1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cerror1.ForeColor = System.Drawing.Color.Red;
+            this.Cerror1.Location = new System.Drawing.Point(123, 97);
+            this.Cerror1.Name = "Cerror1";
+            this.Cerror1.Size = new System.Drawing.Size(17, 24);
+            this.Cerror1.TabIndex = 19;
+            this.Cerror1.Text = "*";
+            this.Cerror1.Visible = false;
+            // 
+            // Cerror2
+            // 
+            this.Cerror2.AutoSize = true;
+            this.Cerror2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cerror2.ForeColor = System.Drawing.Color.Red;
+            this.Cerror2.Location = new System.Drawing.Point(104, 163);
+            this.Cerror2.Name = "Cerror2";
+            this.Cerror2.Size = new System.Drawing.Size(17, 24);
+            this.Cerror2.TabIndex = 20;
+            this.Cerror2.Text = "*";
+            this.Cerror2.Visible = false;
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,9 +762,9 @@
             this.Controls.Add(this.Timelbl);
             this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.book2pnl);
-            this.Controls.Add(this.book1pnl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.book1pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.Text = "Booking";
@@ -687,7 +819,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown KidsNo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox addresstxt;
         private System.Windows.Forms.Panel book2pnl;
         private System.Windows.Forms.Button btnnext;
         private System.Windows.Forms.Panel panel6;
@@ -710,5 +842,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label Timelbl;
         private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Label errorlabellbl;
+        private System.Windows.Forms.Label error5txt;
+        private System.Windows.Forms.Label error4txt;
+        private System.Windows.Forms.Label error3txt;
+        private System.Windows.Forms.Label error2txt;
+        private System.Windows.Forms.Label Error1txt;
+        private System.Windows.Forms.Label error6txt;
+        private System.Windows.Forms.Label Cerror2;
+        private System.Windows.Forms.Label Cerror1;
     }
 }

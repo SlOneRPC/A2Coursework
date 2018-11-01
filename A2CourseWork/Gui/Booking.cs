@@ -67,18 +67,26 @@ namespace A2CourseWork.Gui
         }
         private void btnsave_Click(object sender, EventArgs e)
         {
-            BookingDB book = new BookingDB(db);
-            book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text);
-            parentForeName = Fnametxt.Text;
-            book1pnl.Visible = false;
-            book2pnl.Visible = true;
-            book3pnl.Visible = true;
-            Nokids = KidsNo.Value;
-            if (booked == Nokids - 1)
+            if (CustomerRequirements())
             {
-                btnnext.Text = "Add";
+                BookingDB book = new BookingDB(db);
+                book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text);
+                parentForeName = Fnametxt.Text;
+                book1pnl.Visible = false;
+                book2pnl.Visible = true;
+                book3pnl.Visible = true;
+                Nokids = KidsNo.Value;
+                if (booked == Nokids - 1)
+                {
+                    btnnext.Text = "Add";
+                }
+                btncheckout.Enabled = false;
+                DOBpicker.MaxDate = DateTime.Now.Date;
             }
-            btncheckout.Enabled = false;
+            else
+            {
+                errorlabellbl.Visible = true;
+            }
         }
 
         private void OnNewkid()
@@ -89,16 +97,72 @@ namespace A2CourseWork.Gui
             KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
         }
 
+        private bool CustomerRequirements()
+        {
+            bool error = false;
+            if(Fnametxt.Text == "")
+            {
+                Error1txt.Visible = true;
+                error = true;
+            }
+            if(Snametxt.Text == "")
+            {
+                error2txt.Visible = true;
+                error = true;
+            }
+            if (teleNotxt.TextLength != 11)
+            {
+                error3txt.Visible = true;
+                error = true;
+            }
+            else
+            {
+                foreach (char c in teleNotxt.Text)
+                {
+                    if (!char.IsDigit(c))
+                    {
+                        error3txt.Visible = true;
+                        error = true;
+                        MessageBox.Show("Telephone number must only contain numbers!");
+                        break;
+                    }
+                }
+            }
+            string postcode = posttxt.Text.Replace(" ", String.Empty);
+            if(postcode.Length != 7)
+            {
+                error4txt.Visible = true;
+                MessageBox.Show("Postcode does not meet UK requirements");
+                error = true;
+            }
+            if(addresstxt.Text == "")
+            {
+                error5txt.Visible = true;
+                error = true;
+            }
+            if(KidsNo.Value < 1 || (KidsNo.Value % 1) != 0)
+            {
+                error6txt.Visible = true;
+                error = true;
+            }
+            if (error)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
         private void btnnext_Click(object sender, EventArgs e)
         {
-            if(booked == 1)
-            {
-                btncheckout.Enabled = true;
-            }
             BookingDB book = new BookingDB(db);
-            book.Addkid(ChildFnametxt.Text,childSnametxt.Text,DOBpicker.Value.Date.ToString(),parentForeName);
+            book.Addkid(ChildFnametxt.Text,childSnametxt.Text,DOBpicker.Value.ToShortDateString(),parentForeName);
             booked += 1;
             Kidslist.Items.Add(ChildFnametxt.Text);
+            btncheckout.Enabled = true;
             if(booked == Nokids)
             {
                 book2pnl.Visible = false;
