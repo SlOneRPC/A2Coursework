@@ -1,16 +1,16 @@
 CREATE TABLE [dbo].[Customer]
 (
-    [CustId] INT NOT NULL PRIMARY KEY, 
+    [CustId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
     [ForeName] NVARCHAR(50) NULL, 
     [Surname] NVARCHAR(50) NULL, 
-    [TeleNo] NCHAR(10) NULL, 
+    [TeleNo] NCHAR(11) NULL, 
     [Address] NVARCHAR(50) NULL, 
     [Postcode] NCHAR(10) NULL
 )
 
 CREATE TABLE [dbo].[Staff]
 (
-    [StaffId] INT NOT NULL PRIMARY KEY, 
+    [StaffId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
     [Forename] VARCHAR(50) NULL, 
     [Surname] VARCHAR(50) NULL, 
     [TeleNo] NCHAR(10) NULL, 
@@ -32,7 +32,7 @@ CREATE TABLE [dbo].[GroupRota](
 
 CREATE TABLE [dbo].[Kids]
 (
-        [ChildId] INT NOT NULL PRIMARY KEY,
+        [ChildId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	[ParentId] INT FOREIGN KEY REFERENCES [dbo].[Customer]([CustId]),
 	[ForeName] varchar(50) NULL,
 	[Surname] varchar(50) NULL,
@@ -41,7 +41,7 @@ CREATE TABLE [dbo].[Kids]
 
 CREATE TABLE [dbo].[Booking]
 (
-        [BookingID] INT NOT NULL PRIMARY KEY,
+        [BookingID] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	[ChildId] INT FOREIGN KEY REFERENCES [dbo].[Kids]([ChildId]),
         [GroupId] INT FOREIGN KEY REFERENCES [dbo].[Groups]([GroupId]),
 	[StartDate] varchar(50) NULL,

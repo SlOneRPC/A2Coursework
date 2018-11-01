@@ -13,10 +13,15 @@ namespace A2CourseWork.Gui
     public partial class Booking : Form
     {
         Database db;
+        decimal Nokids;
+        string parentForeName;
+        int booked=0;
+
         public Booking()
         {
             db = new Database();
             InitializeComponent();
+            db.connect();
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -63,8 +68,68 @@ namespace A2CourseWork.Gui
         private void btnsave_Click(object sender, EventArgs e)
         {
             BookingDB book = new BookingDB(db);
-            db.connect();
             book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text);
+            parentForeName = Fnametxt.Text;
+            book1pnl.Visible = false;
+            book2pnl.Visible = true;
+            book3pnl.Visible = true;
+            Nokids = KidsNo.Value;
+            if (booked == Nokids - 1)
+            {
+                btnnext.Text = "Add";
+            }
+            btncheckout.Enabled = false;
+        }
+
+        private void OnNewkid()
+        {
+            ChildFnametxt.Text = "";
+            childSnametxt.Text = "";
+            DOBpicker.ResetText();
+            KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
+        }
+
+        private void btnnext_Click(object sender, EventArgs e)
+        {
+            if(booked == 1)
+            {
+                btncheckout.Enabled = true;
+            }
+            BookingDB book = new BookingDB(db);
+            book.Addkid(ChildFnametxt.Text,childSnametxt.Text,DOBpicker.Value.Date.ToString(),parentForeName);
+            booked += 1;
+            Kidslist.Items.Add(ChildFnametxt.Text);
+            if(booked == Nokids)
+            {
+                book2pnl.Visible = false;
+                book3pnl.Location = new Point(408, 65);
+            }
+            if(booked != Nokids)
+            {
+                OnNewkid();
+            }
+        }
+
+        private void btncheckout_Click(object sender, EventArgs e)
+        {
+            if(booked != Nokids)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to checkout without booking all kids?", "Booking", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show("Booking completed");
+                    Menu next = new Gui.Menu();
+                    this.Hide();
+                    next.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Booking completed");
+                Menu next = new Gui.Menu();
+                this.Hide();
+                next.Show();
+            }
         }
     }
 }

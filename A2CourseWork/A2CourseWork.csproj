@@ -69,6 +69,12 @@
     <Compile Include="Gui\Booking.Designer.cs">
       <DependentUpon>Booking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\CrecheMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\CrecheMenu.Designer.cs">
+      <DependentUpon>CrecheMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Default.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,10 +87,15 @@
     <Compile Include="Gui\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\Customer.cs" />
+    <Compile Include="Objects\Kid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Gui\Booking.resx">
       <DependentUpon>Booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\CrecheMenu.resx">
+      <DependentUpon>CrecheMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Default.resx">
       <DependentUpon>Default.cs</DependentUpon>
