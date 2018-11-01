@@ -29,39 +29,40 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.minbtn = new System.Windows.Forms.PictureBox();
+            this.btnexit = new System.Windows.Forms.PictureBox();
             this.titlelbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.classeslbl = new System.Windows.Forms.Label();
-            this.grouplbl = new System.Windows.Forms.Label();
-            this.advicelbl = new System.Windows.Forms.Label();
-            this.transportlbl = new System.Windows.Forms.Label();
-            this.crechelbl = new System.Windows.Forms.Label();
-            this.Homelbl = new System.Windows.Forms.Label();
-            this.classespbx = new System.Windows.Forms.PictureBox();
-            this.grouppbx = new System.Windows.Forms.PictureBox();
-            this.advicepbx = new System.Windows.Forms.PictureBox();
-            this.transportpbx = new System.Windows.Forms.PictureBox();
-            this.crechepbx = new System.Windows.Forms.PictureBox();
-            this.homepbx = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btntransport = new System.Windows.Forms.Button();
             this.btncreche = new System.Windows.Forms.Button();
-            this.minbtn = new System.Windows.Forms.PictureBox();
-            this.btnexit = new System.Windows.Forms.PictureBox();
+            this.sidepnl = new System.Windows.Forms.Panel();
+            this.classeslbl = new System.Windows.Forms.Label();
+            this.classespbx = new System.Windows.Forms.PictureBox();
+            this.grouplbl = new System.Windows.Forms.Label();
+            this.grouppbx = new System.Windows.Forms.PictureBox();
+            this.advicelbl = new System.Windows.Forms.Label();
+            this.advicepbx = new System.Windows.Forms.PictureBox();
+            this.transportlbl = new System.Windows.Forms.Label();
+            this.transportpbx = new System.Windows.Forms.PictureBox();
+            this.crechelbl = new System.Windows.Forms.Label();
+            this.crechepbx = new System.Windows.Forms.PictureBox();
+            this.Homelbl = new System.Windows.Forms.Label();
+            this.homepbx = new System.Windows.Forms.PictureBox();
+            this.MainImage = new System.Windows.Forms.PictureBox();
+            this.Mainpnl = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.sidepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classespbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grouppbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advicepbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transportpbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crechepbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +77,28 @@
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // minbtn
+            // 
+            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
+            this.minbtn.Location = new System.Drawing.Point(805, 0);
+            this.minbtn.Name = "minbtn";
+            this.minbtn.Size = new System.Drawing.Size(41, 38);
+            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minbtn.TabIndex = 3;
+            this.minbtn.TabStop = false;
+            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
+            // 
+            // btnexit
+            // 
+            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
+            this.btnexit.Location = new System.Drawing.Point(852, 0);
+            this.btnexit.Name = "btnexit";
+            this.btnexit.Size = new System.Drawing.Size(41, 38);
+            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnexit.TabIndex = 2;
+            this.btnexit.TabStop = false;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // titlelbl
             // 
@@ -98,179 +121,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(492, 182);
             this.panel3.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.classeslbl);
-            this.panel2.Controls.Add(this.classespbx);
-            this.panel2.Controls.Add(this.grouplbl);
-            this.panel2.Controls.Add(this.grouppbx);
-            this.panel2.Controls.Add(this.advicelbl);
-            this.panel2.Controls.Add(this.advicepbx);
-            this.panel2.Controls.Add(this.transportlbl);
-            this.panel2.Controls.Add(this.transportpbx);
-            this.panel2.Controls.Add(this.crechelbl);
-            this.panel2.Controls.Add(this.crechepbx);
-            this.panel2.Controls.Add(this.Homelbl);
-            this.panel2.Controls.Add(this.homepbx);
-            this.panel2.Location = new System.Drawing.Point(-3, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(91, 569);
-            this.panel2.TabIndex = 7;
-            // 
-            // classeslbl
-            // 
-            this.classeslbl.AutoSize = true;
-            this.classeslbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classeslbl.ForeColor = System.Drawing.Color.White;
-            this.classeslbl.Location = new System.Drawing.Point(17, 546);
-            this.classeslbl.Name = "classeslbl";
-            this.classeslbl.Size = new System.Drawing.Size(60, 19);
-            this.classeslbl.TabIndex = 11;
-            this.classeslbl.Text = "Classes";
-            this.classeslbl.Visible = false;
-            // 
-            // grouplbl
-            // 
-            this.grouplbl.AutoSize = true;
-            this.grouplbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grouplbl.ForeColor = System.Drawing.Color.White;
-            this.grouplbl.Location = new System.Drawing.Point(17, 452);
-            this.grouplbl.Name = "grouplbl";
-            this.grouplbl.Size = new System.Drawing.Size(53, 19);
-            this.grouplbl.TabIndex = 9;
-            this.grouplbl.Text = "Group";
-            this.grouplbl.Visible = false;
-            // 
-            // advicelbl
-            // 
-            this.advicelbl.AutoSize = true;
-            this.advicelbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.advicelbl.ForeColor = System.Drawing.Color.White;
-            this.advicelbl.Location = new System.Drawing.Point(14, 358);
-            this.advicelbl.Name = "advicelbl";
-            this.advicelbl.Size = new System.Drawing.Size(56, 19);
-            this.advicelbl.TabIndex = 7;
-            this.advicelbl.Text = "Advice";
-            this.advicelbl.Visible = false;
-            // 
-            // transportlbl
-            // 
-            this.transportlbl.AutoSize = true;
-            this.transportlbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transportlbl.ForeColor = System.Drawing.Color.White;
-            this.transportlbl.Location = new System.Drawing.Point(5, 264);
-            this.transportlbl.Name = "transportlbl";
-            this.transportlbl.Size = new System.Drawing.Size(78, 19);
-            this.transportlbl.TabIndex = 5;
-            this.transportlbl.Text = "Transport";
-            this.transportlbl.Visible = false;
-            // 
-            // crechelbl
-            // 
-            this.crechelbl.AutoSize = true;
-            this.crechelbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crechelbl.ForeColor = System.Drawing.Color.White;
-            this.crechelbl.Location = new System.Drawing.Point(19, 170);
-            this.crechelbl.Name = "crechelbl";
-            this.crechelbl.Size = new System.Drawing.Size(57, 19);
-            this.crechelbl.TabIndex = 3;
-            this.crechelbl.Text = "Creche";
-            this.crechelbl.Visible = false;
-            // 
-            // Homelbl
-            // 
-            this.Homelbl.AutoSize = true;
-            this.Homelbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Homelbl.ForeColor = System.Drawing.Color.White;
-            this.Homelbl.Location = new System.Drawing.Point(19, 76);
-            this.Homelbl.Name = "Homelbl";
-            this.Homelbl.Size = new System.Drawing.Size(51, 19);
-            this.Homelbl.TabIndex = 1;
-            this.Homelbl.Text = "Home";
-            // 
-            // classespbx
-            // 
-            this.classespbx.Image = global::A2CourseWork.Properties.Resources.classes1;
-            this.classespbx.Location = new System.Drawing.Point(7, 478);
-            this.classespbx.Name = "classespbx";
-            this.classespbx.Size = new System.Drawing.Size(76, 72);
-            this.classespbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.classespbx.TabIndex = 10;
-            this.classespbx.TabStop = false;
-            this.classespbx.MouseLeave += new System.EventHandler(this.classespbx_MouseLeave);
-            this.classespbx.MouseHover += new System.EventHandler(this.classespbx_MouseHover);
-            // 
-            // grouppbx
-            // 
-            this.grouppbx.Image = global::A2CourseWork.Properties.Resources.Group;
-            this.grouppbx.Location = new System.Drawing.Point(7, 387);
-            this.grouppbx.Name = "grouppbx";
-            this.grouppbx.Size = new System.Drawing.Size(76, 72);
-            this.grouppbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.grouppbx.TabIndex = 8;
-            this.grouppbx.TabStop = false;
-            this.grouppbx.MouseLeave += new System.EventHandler(this.grouppbx_MouseLeave);
-            this.grouppbx.MouseHover += new System.EventHandler(this.grouppbx_MouseHover);
-            // 
-            // advicepbx
-            // 
-            this.advicepbx.Image = global::A2CourseWork.Properties.Resources.advice;
-            this.advicepbx.Location = new System.Drawing.Point(7, 291);
-            this.advicepbx.Name = "advicepbx";
-            this.advicepbx.Size = new System.Drawing.Size(76, 72);
-            this.advicepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.advicepbx.TabIndex = 6;
-            this.advicepbx.TabStop = false;
-            this.advicepbx.MouseLeave += new System.EventHandler(this.advicepbx_MouseLeave);
-            this.advicepbx.MouseHover += new System.EventHandler(this.advicepbx_MouseHover);
-            // 
-            // transportpbx
-            // 
-            this.transportpbx.Image = global::A2CourseWork.Properties.Resources.bus;
-            this.transportpbx.Location = new System.Drawing.Point(7, 195);
-            this.transportpbx.Name = "transportpbx";
-            this.transportpbx.Size = new System.Drawing.Size(76, 72);
-            this.transportpbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.transportpbx.TabIndex = 4;
-            this.transportpbx.TabStop = false;
-            this.transportpbx.MouseLeave += new System.EventHandler(this.transportpbx_MouseLeave);
-            this.transportpbx.MouseHover += new System.EventHandler(this.transportpbx_MouseHover);
-            // 
-            // crechepbx
-            // 
-            this.crechepbx.Image = global::A2CourseWork.Properties.Resources.baby1;
-            this.crechepbx.Location = new System.Drawing.Point(7, 99);
-            this.crechepbx.Name = "crechepbx";
-            this.crechepbx.Size = new System.Drawing.Size(76, 72);
-            this.crechepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.crechepbx.TabIndex = 2;
-            this.crechepbx.TabStop = false;
-            this.crechepbx.MouseLeave += new System.EventHandler(this.crechepbx_MouseLeave);
-            this.crechepbx.MouseHover += new System.EventHandler(this.crechepbx_MouseHover);
-            // 
-            // homepbx
-            // 
-            this.homepbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.homepbx.Location = new System.Drawing.Point(7, 3);
-            this.homepbx.Name = "homepbx";
-            this.homepbx.Size = new System.Drawing.Size(76, 72);
-            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.homepbx.TabIndex = 0;
-            this.homepbx.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::A2CourseWork.Properties.Resources.back2;
-            this.pictureBox1.Location = new System.Drawing.Point(179, 47);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(736, 306);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
@@ -303,27 +153,186 @@
             this.btncreche.UseVisualStyleBackColor = true;
             this.btncreche.Click += new System.EventHandler(this.btncreche_Click);
             // 
-            // minbtn
+            // sidepnl
             // 
-            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
-            this.minbtn.Location = new System.Drawing.Point(805, 0);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(41, 38);
-            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minbtn.TabIndex = 3;
-            this.minbtn.TabStop = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
+            this.sidepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.sidepnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sidepnl.Controls.Add(this.classeslbl);
+            this.sidepnl.Controls.Add(this.classespbx);
+            this.sidepnl.Controls.Add(this.grouplbl);
+            this.sidepnl.Controls.Add(this.grouppbx);
+            this.sidepnl.Controls.Add(this.advicelbl);
+            this.sidepnl.Controls.Add(this.advicepbx);
+            this.sidepnl.Controls.Add(this.transportlbl);
+            this.sidepnl.Controls.Add(this.transportpbx);
+            this.sidepnl.Controls.Add(this.crechelbl);
+            this.sidepnl.Controls.Add(this.crechepbx);
+            this.sidepnl.Controls.Add(this.Homelbl);
+            this.sidepnl.Controls.Add(this.homepbx);
+            this.sidepnl.Location = new System.Drawing.Point(-3, 0);
+            this.sidepnl.Name = "sidepnl";
+            this.sidepnl.Size = new System.Drawing.Size(91, 569);
+            this.sidepnl.TabIndex = 7;
+            this.sidepnl.MouseEnter += new System.EventHandler(this.panel2_MouseEnter);
             // 
-            // btnexit
+            // classeslbl
             // 
-            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
-            this.btnexit.Location = new System.Drawing.Point(852, 0);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(41, 38);
-            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnexit.TabIndex = 2;
-            this.btnexit.TabStop = false;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
+            this.classeslbl.AutoSize = true;
+            this.classeslbl.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classeslbl.ForeColor = System.Drawing.Color.White;
+            this.classeslbl.Location = new System.Drawing.Point(89, 508);
+            this.classeslbl.Name = "classeslbl";
+            this.classeslbl.Size = new System.Drawing.Size(84, 27);
+            this.classeslbl.TabIndex = 11;
+            this.classeslbl.Text = "Classes";
+            // 
+            // classespbx
+            // 
+            this.classespbx.Image = global::A2CourseWork.Properties.Resources.classes1;
+            this.classespbx.Location = new System.Drawing.Point(7, 478);
+            this.classespbx.Name = "classespbx";
+            this.classespbx.Size = new System.Drawing.Size(76, 72);
+            this.classespbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.classespbx.TabIndex = 10;
+            this.classespbx.TabStop = false;
+            this.classespbx.MouseLeave += new System.EventHandler(this.classespbx_MouseLeave);
+            this.classespbx.MouseHover += new System.EventHandler(this.classespbx_MouseHover);
+            // 
+            // grouplbl
+            // 
+            this.grouplbl.AutoSize = true;
+            this.grouplbl.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grouplbl.ForeColor = System.Drawing.Color.White;
+            this.grouplbl.Location = new System.Drawing.Point(89, 410);
+            this.grouplbl.Name = "grouplbl";
+            this.grouplbl.Size = new System.Drawing.Size(71, 27);
+            this.grouplbl.TabIndex = 9;
+            this.grouplbl.Text = "Group";
+            // 
+            // grouppbx
+            // 
+            this.grouppbx.Image = global::A2CourseWork.Properties.Resources.Group;
+            this.grouppbx.Location = new System.Drawing.Point(7, 387);
+            this.grouppbx.Name = "grouppbx";
+            this.grouppbx.Size = new System.Drawing.Size(76, 72);
+            this.grouppbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.grouppbx.TabIndex = 8;
+            this.grouppbx.TabStop = false;
+            this.grouppbx.MouseLeave += new System.EventHandler(this.grouppbx_MouseLeave);
+            this.grouppbx.MouseHover += new System.EventHandler(this.grouppbx_MouseHover);
+            // 
+            // advicelbl
+            // 
+            this.advicelbl.AutoSize = true;
+            this.advicelbl.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advicelbl.ForeColor = System.Drawing.Color.White;
+            this.advicelbl.Location = new System.Drawing.Point(89, 317);
+            this.advicelbl.Name = "advicelbl";
+            this.advicelbl.Size = new System.Drawing.Size(75, 27);
+            this.advicelbl.TabIndex = 7;
+            this.advicelbl.Text = "Advice";
+            // 
+            // advicepbx
+            // 
+            this.advicepbx.Image = global::A2CourseWork.Properties.Resources.advice;
+            this.advicepbx.Location = new System.Drawing.Point(7, 291);
+            this.advicepbx.Name = "advicepbx";
+            this.advicepbx.Size = new System.Drawing.Size(76, 72);
+            this.advicepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.advicepbx.TabIndex = 6;
+            this.advicepbx.TabStop = false;
+            this.advicepbx.MouseLeave += new System.EventHandler(this.advicepbx_MouseLeave);
+            this.advicepbx.MouseHover += new System.EventHandler(this.advicepbx_MouseHover);
+            // 
+            // transportlbl
+            // 
+            this.transportlbl.AutoSize = true;
+            this.transportlbl.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transportlbl.ForeColor = System.Drawing.Color.White;
+            this.transportlbl.Location = new System.Drawing.Point(89, 221);
+            this.transportlbl.Name = "transportlbl";
+            this.transportlbl.Size = new System.Drawing.Size(106, 27);
+            this.transportlbl.TabIndex = 5;
+            this.transportlbl.Text = "Transport";
+            // 
+            // transportpbx
+            // 
+            this.transportpbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.transportpbx.Image = global::A2CourseWork.Properties.Resources.bus;
+            this.transportpbx.Location = new System.Drawing.Point(7, 195);
+            this.transportpbx.Name = "transportpbx";
+            this.transportpbx.Size = new System.Drawing.Size(76, 72);
+            this.transportpbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.transportpbx.TabIndex = 4;
+            this.transportpbx.TabStop = false;
+            this.transportpbx.MouseLeave += new System.EventHandler(this.transportpbx_MouseLeave);
+            this.transportpbx.MouseHover += new System.EventHandler(this.transportpbx_MouseHover);
+            // 
+            // crechelbl
+            // 
+            this.crechelbl.AutoSize = true;
+            this.crechelbl.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crechelbl.ForeColor = System.Drawing.Color.White;
+            this.crechelbl.Location = new System.Drawing.Point(89, 127);
+            this.crechelbl.Name = "crechelbl";
+            this.crechelbl.Size = new System.Drawing.Size(79, 27);
+            this.crechelbl.TabIndex = 3;
+            this.crechelbl.Text = "Creche";
+            // 
+            // crechepbx
+            // 
+            this.crechepbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.crechepbx.Image = global::A2CourseWork.Properties.Resources.baby1;
+            this.crechepbx.Location = new System.Drawing.Point(7, 99);
+            this.crechepbx.Name = "crechepbx";
+            this.crechepbx.Size = new System.Drawing.Size(76, 72);
+            this.crechepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.crechepbx.TabIndex = 2;
+            this.crechepbx.TabStop = false;
+            this.crechepbx.Click += new System.EventHandler(this.crechepbx_Click_1);
+            this.crechepbx.MouseLeave += new System.EventHandler(this.crechepbx_MouseLeave);
+            this.crechepbx.MouseHover += new System.EventHandler(this.crechepbx_MouseHover);
+            // 
+            // Homelbl
+            // 
+            this.Homelbl.AutoSize = true;
+            this.Homelbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Homelbl.ForeColor = System.Drawing.Color.White;
+            this.Homelbl.Location = new System.Drawing.Point(19, 76);
+            this.Homelbl.Name = "Homelbl";
+            this.Homelbl.Size = new System.Drawing.Size(51, 19);
+            this.Homelbl.TabIndex = 1;
+            this.Homelbl.Text = "Home";
+            // 
+            // homepbx
+            // 
+            this.homepbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
+            this.homepbx.Location = new System.Drawing.Point(7, 3);
+            this.homepbx.Name = "homepbx";
+            this.homepbx.Size = new System.Drawing.Size(76, 72);
+            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.homepbx.TabIndex = 0;
+            this.homepbx.TabStop = false;
+            // 
+            // MainImage
+            // 
+            this.MainImage.Image = global::A2CourseWork.Properties.Resources.back2;
+            this.MainImage.Location = new System.Drawing.Point(179, 47);
+            this.MainImage.Name = "MainImage";
+            this.MainImage.Size = new System.Drawing.Size(736, 306);
+            this.MainImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MainImage.TabIndex = 6;
+            this.MainImage.TabStop = false;
+            this.MainImage.MouseEnter += new System.EventHandler(this.MainImage_MouseEnter);
+            // 
+            // Mainpnl
+            // 
+            this.Mainpnl.Location = new System.Drawing.Point(199, 44);
+            this.Mainpnl.Name = "Mainpnl";
+            this.Mainpnl.Size = new System.Drawing.Size(769, 512);
+            this.Mainpnl.TabIndex = 4;
+            this.Mainpnl.MouseEnter += new System.EventHandler(this.Mainpnl_MouseEnter);
             // 
             // Menu
             // 
@@ -331,28 +340,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.sidepnl);
+            this.Controls.Add(this.MainImage);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Mainpnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.sidepnl.ResumeLayout(false);
+            this.sidepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classespbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grouppbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advicepbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transportpbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crechepbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,9 +373,9 @@
         private System.Windows.Forms.PictureBox btnexit;
         private System.Windows.Forms.Label titlelbl;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox MainImage;
         private System.Windows.Forms.Button btncreche;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel sidepnl;
         private System.Windows.Forms.Label classeslbl;
         private System.Windows.Forms.PictureBox classespbx;
         private System.Windows.Forms.Label grouplbl;
@@ -380,5 +390,6 @@
         private System.Windows.Forms.PictureBox homepbx;
         private System.Windows.Forms.Button btntransport;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel Mainpnl;
     }
 }

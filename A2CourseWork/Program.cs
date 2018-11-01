@@ -16,7 +16,7 @@ namespace A2CourseWork
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Gui.Booking());
+            Application.Run(new Gui.Menu());
         }
     }
 }

@@ -53,57 +53,88 @@ namespace A2CourseWork.Gui
 
         private void btncreche_Click(object sender, EventArgs e)
         {
+            CrecheMenu main = new CrecheMenu();
+            this.Hide();
+            main.Show();
+        }
 
+        private void crechepbx_Click(object sender, EventArgs e)
+        {
+            CrecheMenu main = new CrecheMenu();
+            this.Hide();
+            main.Show();
+        }
+
+        private void panel2_MouseEnter(object sender, EventArgs e)
+        {
+            sidepnl.Size = new Size(199, 569);
+        }
+
+        private void Mainpnl_MouseEnter(object sender, EventArgs e)
+        {
+            sidepnl.Size = new Size(91, 569);
+        }
+
+        private void MainImage_MouseEnter(object sender, EventArgs e)
+        {
+            sidepnl.Size = new Size(91, 569);
         }
 
         private void crechepbx_MouseHover(object sender, EventArgs e)
         {
-            crechelbl.Visible = true;
+            crechepbx.BackColor = Color.Gray;
         }
 
         private void transportpbx_MouseHover(object sender, EventArgs e)
         {
-            transportlbl.Visible = true;
+            transportpbx.BackColor = Color.Gray;
         }
 
         private void advicepbx_MouseHover(object sender, EventArgs e)
         {
-            advicelbl.Visible = true;
+            advicepbx.BackColor = Color.Gray;
         }
 
         private void grouppbx_MouseHover(object sender, EventArgs e)
         {
-            grouplbl.Visible = true;
+            grouppbx.BackColor = Color.Gray;
         }
 
         private void classespbx_MouseHover(object sender, EventArgs e)
         {
-            classeslbl.Visible = true;
+            classespbx.BackColor = Color.Gray;
         }
 
         private void crechepbx_MouseLeave(object sender, EventArgs e)
         {
-            crechelbl.Visible = false;
+            crechepbx.BackColor = Color.FromArgb(64, 64, 64);
         }
 
         private void transportpbx_MouseLeave(object sender, EventArgs e)
         {
-            transportlbl.Visible = false;
+            transportpbx.BackColor = Color.FromArgb(64, 64, 64);
         }
 
         private void advicepbx_MouseLeave(object sender, EventArgs e)
         {
-            advicelbl.Visible = false;
+            advicepbx.BackColor = Color.FromArgb(64, 64, 64);
         }
 
         private void grouppbx_MouseLeave(object sender, EventArgs e)
         {
-            grouplbl.Visible = false;
+            grouppbx.BackColor = Color.FromArgb(64, 64, 64);
         }
 
         private void classespbx_MouseLeave(object sender, EventArgs e)
         {
-            classeslbl.Visible = false;
+            classespbx.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void crechepbx_Click_1(object sender, EventArgs e)
+        {
+            CrecheMenu main = new CrecheMenu();
+            this.Hide();
+            main.Show();
         }
     }
 }
