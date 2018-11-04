@@ -8,14 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using A2CourseWork.Classes;
+using A2CourseWork.Objects;
 namespace A2CourseWork.Gui
 {
     public partial class Booking : Form
     {
         Database db;
         decimal Nokids;
-        string parentForeName;
         int booked=0;
+        Customer cust = new Customer();
+        List<Kid> kids = new List<Kid>();
 
         public Booking()
         {
@@ -76,12 +78,23 @@ namespace A2CourseWork.Gui
         {
             if (CustomerRequirements())
             {
-                BookingDB book = new BookingDB(db);
-                book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text.Replace(" ", String.Empty));
-                parentForeName = Fnametxt.Text;
+                //old method
+                //BookingDB book = new BookingDB(db);
+                //book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text.Replace(" ", String.Empty));
+
+                //create customer object
+                cust.Forename = Fnametxt.Text;
+                cust.Surname = Snametxt.Text;
+                cust.TeleNo = teleNotxt.Text;
+                cust.Postcode = posttxt.Text;
+                cust.Address = addresstxt.Text;
+
+
+                //hide customer show kid
                 book1pnl.Visible = false;
                 book2pnl.Visible = true;
                 book3pnl.Visible = true;
+
                 Nokids = KidsNo.Value;
                 if (booked == Nokids - 1)
                 {
@@ -167,13 +180,23 @@ namespace A2CourseWork.Gui
         {
             if (childrequirements())
             {
-                BookingDB book = new BookingDB(db);
-                book.Addkid(ChildFnametxt.Text, childSnametxt.Text, DOBpicker.Value.ToShortDateString(), parentForeName);
+                //(old method)
+                //BookingDB book = new BookingDB(db);
+                //book.Addkid(ChildFnametxt.Text, childSnametxt.Text, DOBpicker.Value.ToShortDateString(), parentForeName);
+
+                //create a kid object (New method)
+                Kid child = new Kid();
+                child.Forename = ChildFnametxt.Text;
+                child.Surname = childSnametxt.Text;
+                child.DOB = DOBpicker.Value.ToShortDateString();
+                kids.Add(child);
+
                 booked += 1;
-                Kidslist.Items.Add(ChildFnametxt.Text);
+                Kidslist.Items.Add(ChildFnametxt.Text + " " + childSnametxt.Text);
                 btncheckout.Enabled = true;
                 if (booked == Nokids)
                 {
+                    KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
                     book2pnl.Visible = false;
                     book3pnl.Location = new Point(408, 65);
                 }
@@ -214,19 +237,31 @@ namespace A2CourseWork.Gui
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to checkout without booking all kids?", "Booking", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Booking completed");
-                    Menu next = new Gui.Menu();
-                    this.Hide();
-                    next.Show();
+                    savetodb();
                 }
             }
             else
             {
-                MessageBox.Show("Booking completed");
-                CrecheMenu next = new Gui.CrecheMenu();
-                this.Hide();
-                next.Show();
+                savetodb();
             }
+        }
+
+        private void savetodb()
+        {
+            //add customer to Database
+            BookingDB book = new BookingDB(db);
+            book.Addcustomer(cust.Forename, cust.Surname, cust.TeleNo, cust.Postcode, cust.Address);
+
+            //add all the kids to db
+            foreach (Kid child in kids)
+            {
+                book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename);
+            }
+
+            MessageBox.Show("Booking completed");
+            Menu next = new Gui.Menu();
+            this.Hide();
+            next.Show();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -256,7 +291,24 @@ namespace A2CourseWork.Gui
 
         private void btncancel_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CrecheMenu form = new CrecheMenu();
+                form.Show();
+                this.Hide();
+            }
+        }
 
+        private void btncancel1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CrecheMenu form = new CrecheMenu();
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }

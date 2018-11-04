@@ -77,6 +77,7 @@ namespace A2CourseWork.Gui
             {
                 btnadd.Visible = false;
                 mode = "add";
+                enableTextboxes();
             }
             else
             {

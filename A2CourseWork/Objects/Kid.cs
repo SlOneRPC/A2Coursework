@@ -12,8 +12,9 @@ namespace A2CourseWork.Objects
         private int parentID;
         private string forename;
         private string surname;
+        private string dob;
 
-        public Kid(int ParentID,string Forename,string Surname)
+        public Kid(int ParentID,string Forename,string Surname,string DOB)
         {
             parentID = ParentID;
             forename = Forename;
@@ -36,6 +37,12 @@ namespace A2CourseWork.Objects
         {
             get { return surname; }
             set { surname = value; }
+        }
+
+        public string DOB
+        {
+            get { return dob; }
+            set { dob = value; }
         }
     }
 }

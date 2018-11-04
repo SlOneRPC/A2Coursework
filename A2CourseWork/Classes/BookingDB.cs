@@ -15,10 +15,10 @@ namespace A2CourseWork.Classes
 
         }
 
-        public void Addcustomer(string ForeName,string Surname, string TeleNo, string postcode)
+        public void Addcustomer(string ForeName,string Surname, string TeleNo, string postcode,string address)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "INSERT INTO Customer(Forename,Surname,TeleNo,Postcode) VALUES( '" + ForeName + "','" + Surname + "','" + TeleNo + "','" + postcode + "')";
+            db.Cmd.CommandText = "INSERT INTO Customer(Forename,Surname,TeleNo,Postcode,Address) VALUES( '" + ForeName + "','" + Surname + "','" + TeleNo + "','" + postcode + "','" + address + "')";
             doquery();
         }
 

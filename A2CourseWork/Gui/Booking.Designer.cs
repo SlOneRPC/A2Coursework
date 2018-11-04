@@ -37,6 +37,7 @@
             this.btnexit = new System.Windows.Forms.PictureBox();
             this.titlelbl = new System.Windows.Forms.Label();
             this.book1pnl = new System.Windows.Forms.Panel();
+            this.btncancel1 = new System.Windows.Forms.Button();
             this.error6txt = new System.Windows.Forms.Label();
             this.errorlabellbl = new System.Windows.Forms.Label();
             this.error5txt = new System.Windows.Forms.Label();
@@ -182,6 +183,7 @@
             // 
             this.book1pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.book1pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.book1pnl.Controls.Add(this.btncancel1);
             this.book1pnl.Controls.Add(this.error6txt);
             this.book1pnl.Controls.Add(this.errorlabellbl);
             this.book1pnl.Controls.Add(this.error5txt);
@@ -208,6 +210,21 @@
             this.book1pnl.Name = "book1pnl";
             this.book1pnl.Size = new System.Drawing.Size(626, 436);
             this.book1pnl.TabIndex = 5;
+            // 
+            // btncancel1
+            // 
+            this.btncancel1.BackColor = System.Drawing.Color.Gray;
+            this.btncancel1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btncancel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel1.ForeColor = System.Drawing.Color.White;
+            this.btncancel1.Location = new System.Drawing.Point(288, 311);
+            this.btncancel1.Name = "btncancel1";
+            this.btncancel1.Size = new System.Drawing.Size(155, 54);
+            this.btncancel1.TabIndex = 25;
+            this.btncancel1.Text = "Cancel";
+            this.btncancel1.UseVisualStyleBackColor = false;
+            this.btncancel1.Click += new System.EventHandler(this.btncancel1_Click);
             // 
             // error6txt
             // 
@@ -341,9 +358,9 @@
             this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.ForeColor = System.Drawing.Color.White;
-            this.btnsave.Location = new System.Drawing.Point(363, 314);
+            this.btnsave.Location = new System.Drawing.Point(449, 311);
             this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(171, 51);
+            this.btnsave.Size = new System.Drawing.Size(161, 54);
             this.btnsave.TabIndex = 13;
             this.btnsave.Text = "Confirm";
             this.btnsave.UseVisualStyleBackColor = false;
@@ -869,5 +886,6 @@
         private System.Windows.Forms.Label Cerror2;
         private System.Windows.Forms.Label Cerror1;
         private System.Windows.Forms.PictureBox btnback;
+        private System.Windows.Forms.Button btncancel1;
     }
 }
