@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using A2CourseWork.Classes;
 namespace A2CourseWork.Gui
 {
     public partial class Menu : Form
@@ -135,6 +135,12 @@ namespace A2CourseWork.Gui
             CrecheMenu main = new CrecheMenu();
             this.Hide();
             main.Show();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            MiscFunctions misc = new MiscFunctions();
+            misc.buttonhover(this);
         }
     }
 }

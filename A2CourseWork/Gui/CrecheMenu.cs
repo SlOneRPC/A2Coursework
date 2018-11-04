@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using A2CourseWork.Classes;
 namespace A2CourseWork.Gui
 {
     public partial class CrecheMenu : Form
@@ -59,6 +59,8 @@ namespace A2CourseWork.Gui
         {
             Timer.Start();
             Timelbl.Text = DateTime.Now.ToLongTimeString();
+            MiscFunctions misc = new MiscFunctions();
+            misc.buttonhover(this);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -70,6 +72,13 @@ namespace A2CourseWork.Gui
         private void btnbooking_Click(object sender, EventArgs e)
         {
             Booking form = new Booking();
+            this.Hide();
+            form.Show();
+        }
+
+        private void btnstaff_Click(object sender, EventArgs e)
+        {
+            AddEditStaff form = new AddEditStaff();
             this.Hide();
             form.Show();
         }

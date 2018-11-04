@@ -13,9 +13,9 @@ CREATE TABLE [dbo].[Staff]
     [StaffId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
     [Forename] VARCHAR(50) NULL, 
     [Surname] VARCHAR(50) NULL, 
-    [TeleNo] NCHAR(10) NULL, 
-    [Address] NCHAR(10) NULL, 
-    [Postcode] NCHAR(10) NULL
+    [TeleNo] NCHAR(11) NULL, 
+    [Address] VARCHAR(50) NULL, 
+    [Postcode] VARCHAR(7) NULL
 )
 
 CREATE TABLE [dbo].[Groups]

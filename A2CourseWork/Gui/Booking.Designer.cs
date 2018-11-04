@@ -37,6 +37,13 @@
             this.btnexit = new System.Windows.Forms.PictureBox();
             this.titlelbl = new System.Windows.Forms.Label();
             this.book1pnl = new System.Windows.Forms.Panel();
+            this.error6txt = new System.Windows.Forms.Label();
+            this.errorlabellbl = new System.Windows.Forms.Label();
+            this.error5txt = new System.Windows.Forms.Label();
+            this.error4txt = new System.Windows.Forms.Label();
+            this.error3txt = new System.Windows.Forms.Label();
+            this.error2txt = new System.Windows.Forms.Label();
+            this.Error1txt = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.KidsNo = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,6 +61,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Fnametxt = new System.Windows.Forms.TextBox();
             this.book2pnl = new System.Windows.Forms.Panel();
+            this.Cerror2 = new System.Windows.Forms.Label();
+            this.Cerror1 = new System.Windows.Forms.Label();
             this.DOBpicker = new System.Windows.Forms.DateTimePicker();
             this.btnnext = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -75,15 +84,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.Timelbl = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.Error1txt = new System.Windows.Forms.Label();
-            this.error2txt = new System.Windows.Forms.Label();
-            this.error3txt = new System.Windows.Forms.Label();
-            this.error4txt = new System.Windows.Forms.Label();
-            this.error5txt = new System.Windows.Forms.Label();
-            this.errorlabellbl = new System.Windows.Forms.Label();
-            this.error6txt = new System.Windows.Forms.Label();
-            this.Cerror1 = new System.Windows.Forms.Label();
-            this.Cerror2 = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -96,6 +97,7 @@
             this.panel6.SuspendLayout();
             this.book3pnl.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -206,6 +208,90 @@
             this.book1pnl.Name = "book1pnl";
             this.book1pnl.Size = new System.Drawing.Size(626, 436);
             this.book1pnl.TabIndex = 5;
+            // 
+            // error6txt
+            // 
+            this.error6txt.AutoSize = true;
+            this.error6txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error6txt.ForeColor = System.Drawing.Color.Red;
+            this.error6txt.Location = new System.Drawing.Point(608, 193);
+            this.error6txt.Name = "error6txt";
+            this.error6txt.Size = new System.Drawing.Size(17, 24);
+            this.error6txt.TabIndex = 24;
+            this.error6txt.Text = "*";
+            this.error6txt.Visible = false;
+            // 
+            // errorlabellbl
+            // 
+            this.errorlabellbl.AutoSize = true;
+            this.errorlabellbl.Font = new System.Drawing.Font("Raleway", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorlabellbl.ForeColor = System.Drawing.Color.Red;
+            this.errorlabellbl.Location = new System.Drawing.Point(315, 279);
+            this.errorlabellbl.Name = "errorlabellbl";
+            this.errorlabellbl.Size = new System.Drawing.Size(299, 22);
+            this.errorlabellbl.TabIndex = 23;
+            this.errorlabellbl.Text = "Please check fields marked with *";
+            this.errorlabellbl.Visible = false;
+            // 
+            // error5txt
+            // 
+            this.error5txt.AutoSize = true;
+            this.error5txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error5txt.ForeColor = System.Drawing.Color.Red;
+            this.error5txt.Location = new System.Drawing.Point(398, 96);
+            this.error5txt.Name = "error5txt";
+            this.error5txt.Size = new System.Drawing.Size(17, 24);
+            this.error5txt.TabIndex = 22;
+            this.error5txt.Text = "*";
+            this.error5txt.Visible = false;
+            // 
+            // error4txt
+            // 
+            this.error4txt.AutoSize = true;
+            this.error4txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error4txt.ForeColor = System.Drawing.Color.Red;
+            this.error4txt.Location = new System.Drawing.Point(104, 304);
+            this.error4txt.Name = "error4txt";
+            this.error4txt.Size = new System.Drawing.Size(17, 24);
+            this.error4txt.TabIndex = 21;
+            this.error4txt.Text = "*";
+            this.error4txt.Visible = false;
+            // 
+            // error3txt
+            // 
+            this.error3txt.AutoSize = true;
+            this.error3txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error3txt.ForeColor = System.Drawing.Color.Red;
+            this.error3txt.Location = new System.Drawing.Point(199, 233);
+            this.error3txt.Name = "error3txt";
+            this.error3txt.Size = new System.Drawing.Size(17, 24);
+            this.error3txt.TabIndex = 20;
+            this.error3txt.Text = "*";
+            this.error3txt.Visible = false;
+            // 
+            // error2txt
+            // 
+            this.error2txt.AutoSize = true;
+            this.error2txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error2txt.ForeColor = System.Drawing.Color.Red;
+            this.error2txt.Location = new System.Drawing.Point(113, 163);
+            this.error2txt.Name = "error2txt";
+            this.error2txt.Size = new System.Drawing.Size(17, 24);
+            this.error2txt.TabIndex = 19;
+            this.error2txt.Text = "*";
+            this.error2txt.Visible = false;
+            // 
+            // Error1txt
+            // 
+            this.Error1txt.AutoSize = true;
+            this.Error1txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Error1txt.ForeColor = System.Drawing.Color.Red;
+            this.Error1txt.Location = new System.Drawing.Point(116, 97);
+            this.Error1txt.Name = "Error1txt";
+            this.Error1txt.Size = new System.Drawing.Size(17, 24);
+            this.Error1txt.TabIndex = 18;
+            this.Error1txt.Text = "*";
+            this.Error1txt.Visible = false;
             // 
             // label8
             // 
@@ -402,6 +488,30 @@
             this.book2pnl.TabIndex = 18;
             this.book2pnl.Visible = false;
             // 
+            // Cerror2
+            // 
+            this.Cerror2.AutoSize = true;
+            this.Cerror2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cerror2.ForeColor = System.Drawing.Color.Red;
+            this.Cerror2.Location = new System.Drawing.Point(104, 163);
+            this.Cerror2.Name = "Cerror2";
+            this.Cerror2.Size = new System.Drawing.Size(17, 24);
+            this.Cerror2.TabIndex = 20;
+            this.Cerror2.Text = "*";
+            this.Cerror2.Visible = false;
+            // 
+            // Cerror1
+            // 
+            this.Cerror1.AutoSize = true;
+            this.Cerror1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cerror1.ForeColor = System.Drawing.Color.Red;
+            this.Cerror1.Location = new System.Drawing.Point(123, 97);
+            this.Cerror1.Name = "Cerror1";
+            this.Cerror1.Size = new System.Drawing.Size(17, 24);
+            this.Cerror1.TabIndex = 19;
+            this.Cerror1.Text = "*";
+            this.Cerror1.Visible = false;
+            // 
             // DOBpicker
             // 
             this.DOBpicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -444,7 +554,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(107, 9);
+            this.label13.Location = new System.Drawing.Point(90, 13);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(86, 25);
             this.label13.TabIndex = 0;
@@ -534,6 +644,7 @@
             this.btncancel.TabIndex = 8;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // label12
             // 
@@ -644,113 +755,16 @@
             // 
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
-            // Error1txt
+            // btnback
             // 
-            this.Error1txt.AutoSize = true;
-            this.Error1txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Error1txt.ForeColor = System.Drawing.Color.Red;
-            this.Error1txt.Location = new System.Drawing.Point(116, 97);
-            this.Error1txt.Name = "Error1txt";
-            this.Error1txt.Size = new System.Drawing.Size(17, 24);
-            this.Error1txt.TabIndex = 18;
-            this.Error1txt.Text = "*";
-            this.Error1txt.Visible = false;
-            // 
-            // error2txt
-            // 
-            this.error2txt.AutoSize = true;
-            this.error2txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error2txt.ForeColor = System.Drawing.Color.Red;
-            this.error2txt.Location = new System.Drawing.Point(113, 163);
-            this.error2txt.Name = "error2txt";
-            this.error2txt.Size = new System.Drawing.Size(17, 24);
-            this.error2txt.TabIndex = 19;
-            this.error2txt.Text = "*";
-            this.error2txt.Visible = false;
-            // 
-            // error3txt
-            // 
-            this.error3txt.AutoSize = true;
-            this.error3txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error3txt.ForeColor = System.Drawing.Color.Red;
-            this.error3txt.Location = new System.Drawing.Point(199, 233);
-            this.error3txt.Name = "error3txt";
-            this.error3txt.Size = new System.Drawing.Size(17, 24);
-            this.error3txt.TabIndex = 20;
-            this.error3txt.Text = "*";
-            this.error3txt.Visible = false;
-            // 
-            // error4txt
-            // 
-            this.error4txt.AutoSize = true;
-            this.error4txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error4txt.ForeColor = System.Drawing.Color.Red;
-            this.error4txt.Location = new System.Drawing.Point(104, 304);
-            this.error4txt.Name = "error4txt";
-            this.error4txt.Size = new System.Drawing.Size(17, 24);
-            this.error4txt.TabIndex = 21;
-            this.error4txt.Text = "*";
-            this.error4txt.Visible = false;
-            // 
-            // error5txt
-            // 
-            this.error5txt.AutoSize = true;
-            this.error5txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error5txt.ForeColor = System.Drawing.Color.Red;
-            this.error5txt.Location = new System.Drawing.Point(398, 96);
-            this.error5txt.Name = "error5txt";
-            this.error5txt.Size = new System.Drawing.Size(17, 24);
-            this.error5txt.TabIndex = 22;
-            this.error5txt.Text = "*";
-            this.error5txt.Visible = false;
-            // 
-            // errorlabellbl
-            // 
-            this.errorlabellbl.AutoSize = true;
-            this.errorlabellbl.Font = new System.Drawing.Font("Raleway", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorlabellbl.ForeColor = System.Drawing.Color.Red;
-            this.errorlabellbl.Location = new System.Drawing.Point(315, 279);
-            this.errorlabellbl.Name = "errorlabellbl";
-            this.errorlabellbl.Size = new System.Drawing.Size(299, 22);
-            this.errorlabellbl.TabIndex = 23;
-            this.errorlabellbl.Text = "Please check fields marked with *";
-            this.errorlabellbl.Visible = false;
-            // 
-            // error6txt
-            // 
-            this.error6txt.AutoSize = true;
-            this.error6txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error6txt.ForeColor = System.Drawing.Color.Red;
-            this.error6txt.Location = new System.Drawing.Point(608, 193);
-            this.error6txt.Name = "error6txt";
-            this.error6txt.Size = new System.Drawing.Size(17, 24);
-            this.error6txt.TabIndex = 24;
-            this.error6txt.Text = "*";
-            this.error6txt.Visible = false;
-            // 
-            // Cerror1
-            // 
-            this.Cerror1.AutoSize = true;
-            this.Cerror1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cerror1.ForeColor = System.Drawing.Color.Red;
-            this.Cerror1.Location = new System.Drawing.Point(123, 97);
-            this.Cerror1.Name = "Cerror1";
-            this.Cerror1.Size = new System.Drawing.Size(17, 24);
-            this.Cerror1.TabIndex = 19;
-            this.Cerror1.Text = "*";
-            this.Cerror1.Visible = false;
-            // 
-            // Cerror2
-            // 
-            this.Cerror2.AutoSize = true;
-            this.Cerror2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cerror2.ForeColor = System.Drawing.Color.Red;
-            this.Cerror2.Location = new System.Drawing.Point(104, 163);
-            this.Cerror2.Name = "Cerror2";
-            this.Cerror2.Size = new System.Drawing.Size(17, 24);
-            this.Cerror2.TabIndex = 20;
-            this.Cerror2.Text = "*";
-            this.Cerror2.Visible = false;
+            this.btnback.Image = global::A2CourseWork.Properties.Resources.circled_left_2;
+            this.btnback.Location = new System.Drawing.Point(99, 505);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(51, 51);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 2;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // Booking
             // 
@@ -758,6 +772,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Timelbl);
             this.Controls.Add(this.book3pnl);
@@ -767,6 +782,7 @@
             this.Controls.Add(this.book1pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";
             this.Load += new System.EventHandler(this.Booking_Load);
             this.panel2.ResumeLayout(false);
@@ -789,6 +805,7 @@
             this.book3pnl.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -851,5 +868,6 @@
         private System.Windows.Forms.Label error6txt;
         private System.Windows.Forms.Label Cerror2;
         private System.Windows.Forms.Label Cerror1;
+        private System.Windows.Forms.PictureBox btnback;
     }
 }

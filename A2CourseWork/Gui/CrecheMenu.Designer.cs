@@ -36,9 +36,9 @@
             this.minbtn = new System.Windows.Forms.PictureBox();
             this.btnexit = new System.Windows.Forms.PictureBox();
             this.titlelbl = new System.Windows.Forms.Label();
-            this.Timemainlbl = new System.Windows.Forms.PictureBox();
+            this.titlepxb = new System.Windows.Forms.PictureBox();
             this.btnbooking = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnstaff = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Timemainlbl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -131,16 +131,16 @@
             this.titlelbl.TabIndex = 1;
             this.titlelbl.Text = "Woodside Community - Creche";
             // 
-            // Timemainlbl
+            // titlepxb
             // 
-            this.Timemainlbl.BackColor = System.Drawing.Color.Red;
-            this.Timemainlbl.Image = global::A2CourseWork.Properties.Resources.creche1;
-            this.Timemainlbl.Location = new System.Drawing.Point(93, 44);
-            this.Timemainlbl.Name = "Timemainlbl";
-            this.Timemainlbl.Size = new System.Drawing.Size(875, 110);
-            this.Timemainlbl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Timemainlbl.TabIndex = 2;
-            this.Timemainlbl.TabStop = false;
+            this.titlepxb.BackColor = System.Drawing.Color.Red;
+            this.titlepxb.Image = global::A2CourseWork.Properties.Resources.creche1;
+            this.titlepxb.Location = new System.Drawing.Point(93, 44);
+            this.titlepxb.Name = "titlepxb";
+            this.titlepxb.Size = new System.Drawing.Size(875, 110);
+            this.titlepxb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.titlepxb.TabIndex = 2;
+            this.titlepxb.TabStop = false;
             // 
             // btnbooking
             // 
@@ -149,17 +149,20 @@
             this.btnbooking.Name = "btnbooking";
             this.btnbooking.Size = new System.Drawing.Size(166, 162);
             this.btnbooking.TabIndex = 12;
+            this.btnbooking.Text = "Booking Placeholder";
             this.btnbooking.UseVisualStyleBackColor = true;
             this.btnbooking.Click += new System.EventHandler(this.btnbooking_Click);
             // 
-            // button2
+            // btnstaff
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(497, 182);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 162);
-            this.button2.TabIndex = 13;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnstaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnstaff.Location = new System.Drawing.Point(497, 182);
+            this.btnstaff.Name = "btnstaff";
+            this.btnstaff.Size = new System.Drawing.Size(166, 162);
+            this.btnstaff.TabIndex = 13;
+            this.btnstaff.Text = "Staff Placeholder";
+            this.btnstaff.UseVisualStyleBackColor = true;
+            this.btnstaff.Click += new System.EventHandler(this.btnstaff_Click);
             // 
             // button3
             // 
@@ -227,13 +230,14 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnstaff);
             this.Controls.Add(this.btnbooking);
-            this.Controls.Add(this.Timemainlbl);
+            this.Controls.Add(this.titlepxb);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrecheMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrecheMenu";
             this.Load += new System.EventHandler(this.CrecheMenu_Load);
             this.panel2.ResumeLayout(false);
@@ -243,7 +247,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Timemainlbl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,9 +262,9 @@
         private System.Windows.Forms.PictureBox minbtn;
         private System.Windows.Forms.PictureBox btnexit;
         private System.Windows.Forms.Label titlelbl;
-        private System.Windows.Forms.PictureBox Timemainlbl;
+        private System.Windows.Forms.PictureBox titlepxb;
         private System.Windows.Forms.Button btnbooking;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnstaff;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

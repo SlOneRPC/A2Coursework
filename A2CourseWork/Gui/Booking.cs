@@ -47,9 +47,16 @@ namespace A2CourseWork.Gui
 
         private void homepbx_Click(object sender, EventArgs e)
         {
-            Menu home = new Menu();
-            this.Hide();
-            home.Show();
+            if (!book3pnl.Visible)
+            {
+                Menu home = new Menu();
+                this.Hide();
+                home.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please complete booking before returning to home");
+            }
         }
 
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
@@ -70,7 +77,7 @@ namespace A2CourseWork.Gui
             if (CustomerRequirements())
             {
                 BookingDB book = new BookingDB(db);
-                book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text);
+                book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text.Replace(" ", String.Empty));
                 parentForeName = Fnametxt.Text;
                 book1pnl.Visible = false;
                 book2pnl.Visible = true;
@@ -158,19 +165,45 @@ namespace A2CourseWork.Gui
 
         private void btnnext_Click(object sender, EventArgs e)
         {
-            BookingDB book = new BookingDB(db);
-            book.Addkid(ChildFnametxt.Text,childSnametxt.Text,DOBpicker.Value.ToShortDateString(),parentForeName);
-            booked += 1;
-            Kidslist.Items.Add(ChildFnametxt.Text);
-            btncheckout.Enabled = true;
-            if(booked == Nokids)
+            if (childrequirements())
             {
-                book2pnl.Visible = false;
-                book3pnl.Location = new Point(408, 65);
+                BookingDB book = new BookingDB(db);
+                book.Addkid(ChildFnametxt.Text, childSnametxt.Text, DOBpicker.Value.ToShortDateString(), parentForeName);
+                booked += 1;
+                Kidslist.Items.Add(ChildFnametxt.Text);
+                btncheckout.Enabled = true;
+                if (booked == Nokids)
+                {
+                    book2pnl.Visible = false;
+                    book3pnl.Location = new Point(408, 65);
+                }
+                if (booked != Nokids)
+                {
+                    OnNewkid();
+                }
             }
-            if(booked != Nokids)
+        }
+
+        private bool childrequirements()
+        {
+            bool error = false;
+            if(ChildFnametxt.Text == "")
             {
-                OnNewkid();
+                Cerror1.Visible = true;
+                error = true;
+            }
+            if(childSnametxt.Text == "")
+            {
+                Cerror2.Visible = true;
+                error = true;
+            }
+            if (error)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
@@ -190,7 +223,7 @@ namespace A2CourseWork.Gui
             else
             {
                 MessageBox.Show("Booking completed");
-                Menu next = new Gui.Menu();
+                CrecheMenu next = new Gui.CrecheMenu();
                 this.Hide();
                 next.Show();
             }
@@ -206,6 +239,24 @@ namespace A2CourseWork.Gui
         {
             Timer.Start();
             Timelbl.Text = DateTime.Now.ToLongTimeString();
+            MiscFunctions misc = new MiscFunctions();
+            misc.buttonhover(this);
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CrecheMenu form = new CrecheMenu();
+                form.Show();
+                this.Hide();
+            }
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
