@@ -9,16 +9,24 @@ namespace A2CourseWork.Objects
     class Kid
     {
         public Kid() { }
+        private int kidid;
         private int parentID;
         private string forename;
         private string surname;
         private string dob;
 
-        public Kid(int ParentID,string Forename,string Surname,string DOB)
+        public Kid(int Kidid,int ParentID,string Forename,string Surname,string DOB)
         {
+            kidid = Kidid;
             parentID = ParentID;
             forename = Forename;
             surname = Surname;
+        }
+
+        public int Kidid
+        {
+            get { return kidid; }
+            set { kidid = value; }
         }
 
         public int ParentID

@@ -40,7 +40,7 @@
             this.btnbooking = new System.Windows.Forms.Button();
             this.btnstaff = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnbookingsview = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.Timelbl = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
@@ -173,14 +173,16 @@
             this.button3.TabIndex = 14;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnbookingsview
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(385, 359);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(166, 162);
-            this.button5.TabIndex = 15;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnbookingsview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbookingsview.Location = new System.Drawing.Point(385, 359);
+            this.btnbookingsview.Name = "btnbookingsview";
+            this.btnbookingsview.Size = new System.Drawing.Size(166, 162);
+            this.btnbookingsview.TabIndex = 15;
+            this.btnbookingsview.Text = "View Bookings Placeholder";
+            this.btnbookingsview.UseVisualStyleBackColor = true;
+            this.btnbookingsview.Click += new System.EventHandler(this.btnbookingsview_Click);
             // 
             // button6
             // 
@@ -195,11 +197,11 @@
             // 
             this.Timelbl.AutoSize = true;
             this.Timelbl.BackColor = System.Drawing.Color.Transparent;
-            this.Timelbl.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Timelbl.ForeColor = System.Drawing.Color.White;
             this.Timelbl.Location = new System.Drawing.Point(861, 540);
             this.Timelbl.Name = "Timelbl";
-            this.Timelbl.Size = new System.Drawing.Size(46, 19);
+            this.Timelbl.Size = new System.Drawing.Size(43, 20);
             this.Timelbl.TabIndex = 17;
             this.Timelbl.Text = "Time";
             // 
@@ -211,11 +213,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(757, 540);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 19);
+            this.label1.Size = new System.Drawing.Size(104, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Current Time:";
             // 
@@ -228,7 +230,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Timelbl);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnbookingsview);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnstaff);
             this.Controls.Add(this.btnbooking);
@@ -266,7 +268,7 @@
         private System.Windows.Forms.Button btnbooking;
         private System.Windows.Forms.Button btnstaff;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnbookingsview;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label Timelbl;
         private System.Windows.Forms.Timer Timer;

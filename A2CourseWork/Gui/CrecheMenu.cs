@@ -82,5 +82,12 @@ namespace A2CourseWork.Gui
             this.Hide();
             form.Show();
         }
+
+        private void btnbookingsview_Click(object sender, EventArgs e)
+        {
+            ViewBooking form = new ViewBooking();
+            this.Hide();
+            form.Show();
+        }
     }
 }
