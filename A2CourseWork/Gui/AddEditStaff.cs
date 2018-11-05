@@ -141,6 +141,7 @@ namespace A2CourseWork.Gui
 
         private void doadd()
         {
+            reseterrors();
             if (performchecks())
             {
                 StaffDB staffdb = new StaffDB(db);
@@ -165,6 +166,7 @@ namespace A2CourseWork.Gui
 
         private void doedit()
         {
+            reseterrors();
             if (performchecks())
             {
                 StaffDB staffdb = new StaffDB(db);
@@ -195,6 +197,15 @@ namespace A2CourseWork.Gui
                 Addresstxt.Enabled = true;
                 Postcodetxt.Enabled = true;
             }
+        }
+
+        private void reseterrors()
+        {
+            error1.Visible = false;
+            error2.Visible = false;
+            error3.Visible = false;
+            error4.Visible = false;
+            error5.Visible = false;
         }
 
         private void resetTextboxes()
