@@ -8,13 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using A2CourseWork.Classes;
+using A2CourseWork.Objects;
 namespace A2CourseWork.Gui
 {
-    public partial class CrecheMenu : Form
+    public partial class ViewBookings : Form
     {
-        public CrecheMenu()
+        Database db;
+        List<Kid> kids = new List<Kid>();
+
+        public ViewBookings()
         {
+            db = new Database();
             InitializeComponent();
+            db.connect();
+        }
+
+        private void ViewBookings_Load(object sender, EventArgs e)
+        {
+            initlistbox();
         }
         //exit button
         private void btnexit_Click(object sender, EventArgs e)
@@ -48,46 +59,30 @@ namespace A2CourseWork.Gui
             lastclick = e.Location;
         }
 
-        private void homepbx_Click(object sender, EventArgs e)
+        private void btnback_Click(object sender, EventArgs e)
         {
-            Menu main = new Gui.Menu();
+            CrecheMenu menu = new CrecheMenu();
             this.Hide();
-            main.Show();
+            menu.Show();
         }
 
-        private void CrecheMenu_Load(object sender, EventArgs e)
+        private void initlistbox()
         {
-            Timer.Start();
-            Timelbl.Text = DateTime.Now.ToLongTimeString();
-            MiscFunctions misc = new MiscFunctions();
-            misc.buttonhover(this);
+            KidsDB kidsdbaccess = new KidsDB(db);
+            kids = kidsdbaccess.getallkids();
+            foreach(Kid child in kids)
+            {
+                kidslistbox.Items.Add(child.Forename + " " + child.Surname);
+            }
+            if(kids.Count > 0)
+            {
+                kidslistbox.SelectedIndex = 0;
+            }
+            else
+            {
+                btncheck.Enabled = false;
+            }
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            Timelbl.Text = DateTime.Now.ToLongTimeString();
-            Timer.Start();
-        }
-
-        private void btnbooking_Click(object sender, EventArgs e)
-        {
-            Booking form = new Booking();
-            this.Hide();
-            form.Show();
-        }
-
-        private void btnstaff_Click(object sender, EventArgs e)
-        {
-            AddEditStaff form = new AddEditStaff();
-            this.Hide();
-            form.Show();
-        }
-
-        private void btnbookingsview_Click(object sender, EventArgs e)
-        {
-            ViewBookings form = new ViewBookings();
-            this.Hide();
-            form.Show();
-        }
     }
 }

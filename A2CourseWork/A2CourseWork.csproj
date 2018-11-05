@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Classes\BookingDB.cs" />
     <Compile Include="Classes\Database.cs" />
+    <Compile Include="Classes\KidsDB.cs" />
     <Compile Include="Classes\MiscFunctions.cs" />
     <Compile Include="Classes\StaffDB.cs" />
     <Compile Include="Gui\AddEditStaff.cs">
@@ -95,6 +96,12 @@
     <Compile Include="Gui\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\ViewBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\ViewBookings.Designer.cs">
+      <DependentUpon>ViewBookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objects\Customer.cs" />
     <Compile Include="Objects\Kid.cs" />
     <Compile Include="Objects\StaffMember.cs" />
@@ -114,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\ViewBookings.resx">
+      <DependentUpon>ViewBookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
