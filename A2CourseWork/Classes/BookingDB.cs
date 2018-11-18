@@ -37,6 +37,45 @@ namespace A2CourseWork.Classes
             }
         }
 
+        public void AddDates(string startdate,string endate,string childname,string groupname,int Mon,int Tues,int Wed,int Thur,int Friday)
+        {
+            int childId = getchildID(childname);
+            int groupId = getgroupID(groupname);
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "INSERT INTO Booking(ChildId,GroupId,StartDate,EndDate) VALUES( '" + childId + "','" + groupId + "','" + startdate + "','" + endate + "')";
+            doquery();
+        }
+
+        private int getchildID(string childname)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "SELECT * FROM Kids WHERE ForeName = '" + childname + "'";
+            db.Rdr = db.Cmd.ExecuteReader();
+            if (db.Rdr.Read())
+            {
+                int id = db.Rdr.GetInt32(0);
+                db.Rdr.Close();
+                return id;
+            }
+            db.Rdr.Close();
+            return -1;
+        }
+
+        private int getgroupID(string groupname)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "SELECT * FROM Groups WHERE GroupName = '" + groupname + "'";
+            db.Rdr = db.Cmd.ExecuteReader();
+            if (db.Rdr.Read())
+            {
+                int id = db.Rdr.GetInt32(0);
+                db.Rdr.Close();
+                return id;
+            }
+            db.Rdr.Close();
+            return -1;
+        }
+
         private int getcutID(string parentName)
         {
             db.Cmd = db.Conn.CreateCommand();
@@ -51,6 +90,7 @@ namespace A2CourseWork.Classes
             db.Rdr.Close();
             return -1;
         }
+
 
         private void doquery()
         {

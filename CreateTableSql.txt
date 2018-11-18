@@ -20,9 +20,9 @@ CREATE TABLE [dbo].[Staff]
 
 CREATE TABLE [dbo].[Groups]
 (
-        [GroupId] INT NOT NULL PRIMARY KEY,
+    [GroupId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	[GroupName] varchar(20) NULL,
-	[AgeRange] varchar(20) NULL,
+
 )
 
 CREATE TABLE [dbo].[GroupRota](
@@ -47,3 +47,7 @@ CREATE TABLE [dbo].[Booking]
 	[StartDate] varchar(50) NULL,
 	[EndDate] varchar(50) NULL,
 )
+
+INSERT Groups(GroupName) VALUES('Baby')
+INSERT Groups(GroupName) VALUES('Toddler')
+INSERT Groups(GroupName) VALUES('Child')

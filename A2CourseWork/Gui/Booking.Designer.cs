@@ -86,6 +86,14 @@
             this.Timelbl = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.btnback = new System.Windows.Forms.PictureBox();
+            this.book4pnl = new System.Windows.Forms.Panel();
+            this.dayslbl = new System.Windows.Forms.Label();
+            this.dayslistbx = new System.Windows.Forms.CheckedListBox();
+            this.btnsavedate = new System.Windows.Forms.Button();
+            this.datelbl = new System.Windows.Forms.Label();
+            this.book4titlepnl = new System.Windows.Forms.Panel();
+            this.datestitlelbl = new System.Windows.Forms.Label();
+            this.BookingCalendar = new System.Windows.Forms.MonthCalendar();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,6 +107,8 @@
             this.book3pnl.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            this.book4pnl.SuspendLayout();
+            this.book4titlepnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -241,11 +251,11 @@
             // errorlabellbl
             // 
             this.errorlabellbl.AutoSize = true;
-            this.errorlabellbl.Font = new System.Drawing.Font("Raleway", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorlabellbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorlabellbl.ForeColor = System.Drawing.Color.Red;
             this.errorlabellbl.Location = new System.Drawing.Point(315, 279);
             this.errorlabellbl.Name = "errorlabellbl";
-            this.errorlabellbl.Size = new System.Drawing.Size(299, 22);
+            this.errorlabellbl.Size = new System.Drawing.Size(289, 24);
             this.errorlabellbl.TabIndex = 23;
             this.errorlabellbl.Text = "Please check fields marked with *";
             this.errorlabellbl.Visible = false;
@@ -666,22 +676,22 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(9, 332);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 22);
+            this.label12.Size = new System.Drawing.Size(48, 20);
             this.label12.TabIndex = 7;
             this.label12.Text = "Price:";
             // 
             // KidsBookedlbl
             // 
             this.KidsBookedlbl.AutoSize = true;
-            this.KidsBookedlbl.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KidsBookedlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KidsBookedlbl.ForeColor = System.Drawing.Color.White;
             this.KidsBookedlbl.Location = new System.Drawing.Point(9, 310);
             this.KidsBookedlbl.Name = "KidsBookedlbl";
-            this.KidsBookedlbl.Size = new System.Drawing.Size(206, 22);
+            this.KidsBookedlbl.Size = new System.Drawing.Size(193, 20);
             this.KidsBookedlbl.TabIndex = 6;
             this.KidsBookedlbl.Text = "Number of Kids Booked: 0";
             // 
@@ -703,11 +713,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(9, 57);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 22);
+            this.label10.Size = new System.Drawing.Size(43, 20);
             this.label10.TabIndex = 4;
             this.label10.Text = "Kids:";
             // 
@@ -748,11 +758,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(757, 540);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 19);
+            this.label11.Size = new System.Drawing.Size(104, 20);
             this.label11.TabIndex = 21;
             this.label11.Text = "Current Time:";
             // 
@@ -760,11 +770,11 @@
             // 
             this.Timelbl.AutoSize = true;
             this.Timelbl.BackColor = System.Drawing.Color.Transparent;
-            this.Timelbl.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Timelbl.ForeColor = System.Drawing.Color.White;
             this.Timelbl.Location = new System.Drawing.Point(861, 540);
             this.Timelbl.Name = "Timelbl";
-            this.Timelbl.Size = new System.Drawing.Size(46, 19);
+            this.Timelbl.Size = new System.Drawing.Size(43, 20);
             this.Timelbl.TabIndex = 20;
             this.Timelbl.Text = "Time";
             // 
@@ -783,17 +793,112 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
+            // book4pnl
+            // 
+            this.book4pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.book4pnl.Controls.Add(this.dayslbl);
+            this.book4pnl.Controls.Add(this.dayslistbx);
+            this.book4pnl.Controls.Add(this.btnsavedate);
+            this.book4pnl.Controls.Add(this.datelbl);
+            this.book4pnl.Controls.Add(this.book4titlepnl);
+            this.book4pnl.Controls.Add(this.BookingCalendar);
+            this.book4pnl.Location = new System.Drawing.Point(261, 41);
+            this.book4pnl.Name = "book4pnl";
+            this.book4pnl.Size = new System.Drawing.Size(268, 325);
+            this.book4pnl.TabIndex = 22;
+            this.book4pnl.Visible = false;
+            // 
+            // dayslbl
+            // 
+            this.dayslbl.AutoSize = true;
+            this.dayslbl.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dayslbl.ForeColor = System.Drawing.Color.White;
+            this.dayslbl.Location = new System.Drawing.Point(285, 54);
+            this.dayslbl.Name = "dayslbl";
+            this.dayslbl.Size = new System.Drawing.Size(245, 23);
+            this.dayslbl.TabIndex = 23;
+            this.dayslbl.Text = "What days will be attended:";
+            // 
+            // dayslistbx
+            // 
+            this.dayslistbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dayslistbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dayslistbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dayslistbx.ForeColor = System.Drawing.Color.White;
+            this.dayslistbx.FormattingEnabled = true;
+            this.dayslistbx.Location = new System.Drawing.Point(284, 80);
+            this.dayslistbx.Name = "dayslistbx";
+            this.dayslistbx.Size = new System.Drawing.Size(246, 182);
+            this.dayslistbx.TabIndex = 22;
+            // 
+            // btnsavedate
+            // 
+            this.btnsavedate.BackColor = System.Drawing.Color.Gray;
+            this.btnsavedate.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnsavedate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsavedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsavedate.ForeColor = System.Drawing.Color.White;
+            this.btnsavedate.Location = new System.Drawing.Point(26, 259);
+            this.btnsavedate.Name = "btnsavedate";
+            this.btnsavedate.Size = new System.Drawing.Size(233, 51);
+            this.btnsavedate.TabIndex = 21;
+            this.btnsavedate.Text = "Save";
+            this.btnsavedate.UseVisualStyleBackColor = false;
+            this.btnsavedate.Click += new System.EventHandler(this.btnsavedate_Click);
+            // 
+            // datelbl
+            // 
+            this.datelbl.AutoSize = true;
+            this.datelbl.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datelbl.ForeColor = System.Drawing.Color.White;
+            this.datelbl.Location = new System.Drawing.Point(35, 65);
+            this.datelbl.Name = "datelbl";
+            this.datelbl.Size = new System.Drawing.Size(213, 23);
+            this.datelbl.TabIndex = 21;
+            this.datelbl.Text = "Please select Start Date:";
+            // 
+            // book4titlepnl
+            // 
+            this.book4titlepnl.BackColor = System.Drawing.Color.Black;
+            this.book4titlepnl.Controls.Add(this.datestitlelbl);
+            this.book4titlepnl.Location = new System.Drawing.Point(0, 0);
+            this.book4titlepnl.Name = "book4titlepnl";
+            this.book4titlepnl.Size = new System.Drawing.Size(558, 51);
+            this.book4titlepnl.TabIndex = 3;
+            // 
+            // datestitlelbl
+            // 
+            this.datestitlelbl.AutoSize = true;
+            this.datestitlelbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datestitlelbl.ForeColor = System.Drawing.Color.White;
+            this.datestitlelbl.Location = new System.Drawing.Point(106, 5);
+            this.datestitlelbl.Name = "datestitlelbl";
+            this.datestitlelbl.Size = new System.Drawing.Size(64, 25);
+            this.datestitlelbl.TabIndex = 0;
+            this.datestitlelbl.Text = "Dates";
+            // 
+            // BookingCalendar
+            // 
+            this.BookingCalendar.Location = new System.Drawing.Point(40, 91);
+            this.BookingCalendar.MaxSelectionCount = 1;
+            this.BookingCalendar.MinDate = new System.DateTime(2018, 11, 8, 0, 0, 0, 0);
+            this.BookingCalendar.Name = "BookingCalendar";
+            this.BookingCalendar.ShowToday = false;
+            this.BookingCalendar.TabIndex = 0;
+            this.BookingCalendar.TitleBackColor = System.Drawing.Color.Gray;
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.book4pnl);
+            this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Timelbl);
             this.Controls.Add(this.book3pnl);
-            this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.book1pnl);
@@ -823,6 +928,10 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            this.book4pnl.ResumeLayout(false);
+            this.book4pnl.PerformLayout();
+            this.book4titlepnl.ResumeLayout(false);
+            this.book4titlepnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -887,5 +996,13 @@
         private System.Windows.Forms.Label Cerror1;
         private System.Windows.Forms.PictureBox btnback;
         private System.Windows.Forms.Button btncancel1;
+        private System.Windows.Forms.Panel book4pnl;
+        private System.Windows.Forms.Button btnsavedate;
+        private System.Windows.Forms.Label datelbl;
+        private System.Windows.Forms.Panel book4titlepnl;
+        private System.Windows.Forms.Label datestitlelbl;
+        private System.Windows.Forms.MonthCalendar BookingCalendar;
+        private System.Windows.Forms.CheckedListBox dayslistbx;
+        private System.Windows.Forms.Label dayslbl;
     }
 }

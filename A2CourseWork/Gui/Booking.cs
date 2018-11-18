@@ -18,6 +18,12 @@ namespace A2CourseWork.Gui
         int booked=0;
         Customer cust = new Customer();
         List<Kid> kids = new List<Kid>();
+        List<List<string>> dates = new List<List<string>>();
+
+        //dates
+        string startdate = null;
+        string enddate = null;
+
 
         public Booking()
         {
@@ -28,11 +34,8 @@ namespace A2CourseWork.Gui
 
         private void btnexit_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you Sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            MiscFunctions misc = new MiscFunctions();
+            misc.exit();
         }
 
         private void minbtn_Click(object sender, EventArgs e)
@@ -78,10 +81,6 @@ namespace A2CourseWork.Gui
         {
             if (CustomerRequirements())
             {
-                //old method
-                //BookingDB book = new BookingDB(db);
-                //book.Addcustomer(Fnametxt.Text, Snametxt.Text, teleNotxt.Text, posttxt.Text.Replace(" ", String.Empty));
-
                 //create customer object
                 cust.Forename = Fnametxt.Text;
                 cust.Surname = Snametxt.Text;
@@ -95,13 +94,18 @@ namespace A2CourseWork.Gui
                 book2pnl.Visible = true;
                 book3pnl.Visible = true;
 
+                //setup dates for DOB
+                DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
+                DOBpicker.MaxDate = DateTime.Now.AddMonths(-6);
+                //DOBpicker.MinDate = 
+
                 Nokids = KidsNo.Value;
                 if (booked == Nokids - 1)
                 {
                     btnnext.Text = "Add";
                 }
                 btncheckout.Enabled = false;
-                DOBpicker.MaxDate = DateTime.Now.Date;
+                
             }
             else
             {
@@ -149,7 +153,7 @@ namespace A2CourseWork.Gui
                 }
             }
             string postcode = posttxt.Text.Replace(" ", String.Empty);
-            if(postcode.Length != 7)
+            if(postcode.Length > 8 || postcode.Length < 7)
             {
                 error4txt.Visible = true;
                 MessageBox.Show("Postcode does not meet UK requirements");
@@ -180,10 +184,6 @@ namespace A2CourseWork.Gui
         {
             if (childrequirements())
             {
-                //(old method)
-                //BookingDB book = new BookingDB(db);
-                //book.Addkid(ChildFnametxt.Text, childSnametxt.Text, DOBpicker.Value.ToShortDateString(), parentForeName);
-
                 //create a kid object (New method)
                 Kid child = new Kid();
                 child.Forename = ChildFnametxt.Text;
@@ -194,16 +194,14 @@ namespace A2CourseWork.Gui
                 booked += 1;
                 Kidslist.Items.Add(ChildFnametxt.Text + " " + childSnametxt.Text);
                 btncheckout.Enabled = true;
-                if (booked == Nokids)
-                {
-                    KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
-                    book2pnl.Visible = false;
-                    book3pnl.Location = new Point(408, 65);
-                }
+
                 if (booked != Nokids)
                 {
                     OnNewkid();
                 }
+                book3pnl.Visible = false;
+                book2pnl.Visible = false;
+                book4pnl.Visible = true;
             }
         }
 
@@ -253,9 +251,13 @@ namespace A2CourseWork.Gui
             book.Addcustomer(cust.Forename, cust.Surname, cust.TeleNo, cust.Postcode, cust.Address);
 
             //add all the kids to db
+            int i = 0;
             foreach (Kid child in kids)
             {
                 book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename);
+                List<string> date = dates[i];
+                book.AddDates(date[0], date[1], child.Forename, date[2],Convert.ToInt32(date[3]), Convert.ToInt32(date[4]), Convert.ToInt32(date[5]), Convert.ToInt32(date[6]), Convert.ToInt32(date[7]));
+                i++;
             }
 
             MessageBox.Show("Booking completed");
@@ -280,17 +282,21 @@ namespace A2CourseWork.Gui
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                CrecheMenu form = new CrecheMenu();
-                form.Show();
-                this.Hide();
-            }
+            leave();
         }
 
         private void btncancel_Click(object sender, EventArgs e)
         {
+            leave();
+        }
+
+        private void btncancel1_Click(object sender, EventArgs e)
+        {
+            leave();
+        }
+
+        private void leave()
+        {
             DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -300,14 +306,115 @@ namespace A2CourseWork.Gui
             }
         }
 
-        private void btncancel1_Click(object sender, EventArgs e)
+        int count = 0;
+        private void btnsavedate_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (count < 1)
             {
-                CrecheMenu form = new CrecheMenu();
-                form.Show();
-                this.Hide();
+                startdate = BookingCalendar.SelectionRange.Start.ToShortDateString();
+                BookingCalendar.MinDate = BookingCalendar.SelectionRange.Start;
+                BookingCalendar.ResetText();
+                datelbl.Text = "Please select the End Date";
+
+                //days
+                book4pnl.Size = new Size(538, 325);
+                datestitlelbl.Location = new Point(224, 10);
+
+                btnsavedate.Size = new Size(483, 51);
+                btnsavedate.Location = new Point(40, 265);
+                populatedayslist();
+            }
+            else
+            {
+                enddate = BookingCalendar.SelectionRange.Start.ToShortDateString();
+
+                //calculate age
+                int months = DateTime.Now.Month - Convert.ToDateTime(kids[kids.Count - 1].DOB).Month;
+                int years = DateTime.Now.Year - Convert.ToDateTime(kids[kids.Count - 1].DOB).Year;
+                if (months < 0)
+                {
+                    years--;
+                    months += 12;
+                }
+
+                if(years > 0)
+                {
+                    months += (years * 12);
+                }
+
+                string groupName = "";
+                //calculate group
+                if (months > 5 && months < 19)
+                {
+                    groupName = "Baby";
+                }
+                else if(months >= 18 && months <= 30)
+                {
+                    groupName = "Toddlers";
+                }
+                else if(months >=30 && months <= 48)
+                {
+                    groupName = "Children";
+                }
+                else
+                {
+                    MessageBox.Show("Error - Invalid group name");
+                    return;
+                }
+                //add dates to list
+                List<string> date = new List<string>();
+                date.Add(startdate);
+                date.Add(enddate);
+                date.Add(groupName);
+                for(int i = 0; i < dayslistbx.Items.Count; i++)
+                {
+                    if (dayslistbx.GetItemChecked(i))
+                    {
+                        date.Add("1");
+                    }
+                    else
+                    {
+                        date.Add("0");
+                    }
+                }
+                dates.Add(date);
+
+                //reset for new kid
+                count = -1;
+                datelbl.Text = "Please select the Start Date";
+                book4pnl.Size = new Size(273, 325);
+                datestitlelbl.Location = new Point(106, 5);
+                btnsavedate.Size = new Size(233, 51);
+                btnsavedate.Location = new Point(26, 259);
+
+
+                if (booked == Nokids)
+                {
+                    KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
+                    book4pnl.Visible = false;
+                    book3pnl.Location = new Point(408, 65);
+                    book3pnl.Visible = true;
+                }
+                else
+                {
+                    book4pnl.Visible = false;
+                    book2pnl.Visible = true;
+                    book3pnl.Visible = true;
+                }
+            }
+            count++;
+        }
+
+        private void populatedayslist()
+        {
+            dayslistbx.Items.Add("Monday");
+            dayslistbx.Items.Add("Tuesday");
+            dayslistbx.Items.Add("Wednesday");
+            dayslistbx.Items.Add("Thursday");
+            dayslistbx.Items.Add("Friday");
+            for (int i = 0; i < dayslistbx.Items.Count; i++)
+            {
+                dayslistbx.SetItemChecked(i,true);
             }
         }
     }

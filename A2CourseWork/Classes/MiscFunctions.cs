@@ -16,5 +16,14 @@ namespace A2CourseWork.Classes
                 b.MouseLeave += (s, g) => b.Cursor = Cursors.Arrow;
             }
         }
+
+        public void exit()
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you Sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

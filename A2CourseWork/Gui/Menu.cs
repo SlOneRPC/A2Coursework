@@ -21,11 +21,8 @@ namespace A2CourseWork.Gui
 
         private void btnexit_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you Sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            MiscFunctions misc = new MiscFunctions();
+            misc.exit();
         }
 
         private void minbtn_Click(object sender, EventArgs e)
