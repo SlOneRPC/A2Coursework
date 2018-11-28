@@ -30,49 +30,51 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.Homelbl = new System.Windows.Forms.Label();
-            this.homepbx = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.minbtn = new System.Windows.Forms.PictureBox();
-            this.btnexit = new System.Windows.Forms.PictureBox();
             this.titlelbl = new System.Windows.Forms.Label();
             this.bookingpnl1 = new System.Windows.Forms.Panel();
             this.btncheck = new System.Windows.Forms.Button();
             this.kidslistbox = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnback = new System.Windows.Forms.PictureBox();
             this.bookingpnl2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.agelbl = new System.Windows.Forms.Label();
+            this.doblbl = new System.Windows.Forms.Label();
+            this.snamelbl = new System.Windows.Forms.Label();
+            this.fnamelbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.agegrouplbl = new System.Windows.Forms.Label();
+            this.daysmissedlbl = new System.Windows.Forms.Label();
+            this.totalpricelbl = new System.Windows.Forms.Label();
+            this.daysbookedlbl = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.PictureBox();
+            this.homepbx = new System.Windows.Forms.PictureBox();
+            this.minbtn = new System.Windows.Forms.PictureBox();
+            this.btnexit = new System.Windows.Forms.PictureBox();
+            this.btnadd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             this.bookingpnl1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.bookingpnl2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -96,16 +98,6 @@
             this.Homelbl.TabIndex = 1;
             this.Homelbl.Text = "Home";
             // 
-            // homepbx
-            // 
-            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.homepbx.Location = new System.Drawing.Point(7, 3);
-            this.homepbx.Name = "homepbx";
-            this.homepbx.Size = new System.Drawing.Size(76, 72);
-            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.homepbx.TabIndex = 0;
-            this.homepbx.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
@@ -118,28 +110,6 @@
             this.panel1.TabIndex = 10;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // minbtn
-            // 
-            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
-            this.minbtn.Location = new System.Drawing.Point(805, 0);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(41, 38);
-            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minbtn.TabIndex = 3;
-            this.minbtn.TabStop = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
-            // 
-            // btnexit
-            // 
-            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
-            this.btnexit.Location = new System.Drawing.Point(852, 0);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(41, 38);
-            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnexit.TabIndex = 2;
-            this.btnexit.TabStop = false;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // titlelbl
             // 
@@ -174,6 +144,7 @@
             this.btncheck.TabIndex = 2;
             this.btncheck.Text = "View Booking";
             this.btncheck.UseVisualStyleBackColor = false;
+            this.btncheck.Click += new System.EventHandler(this.btncheck_Click);
             // 
             // kidslistbox
             // 
@@ -207,17 +178,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bookings";
             // 
-            // btnback
-            // 
-            this.btnback.Image = global::A2CourseWork.Properties.Resources.circled_left_2;
-            this.btnback.Location = new System.Drawing.Point(110, 505);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(51, 51);
-            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnback.TabIndex = 4;
-            this.btnback.TabStop = false;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
             // bookingpnl2
             // 
             this.bookingpnl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -233,6 +193,8 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.btnadd);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.listBox1);
             this.panel7.Location = new System.Drawing.Point(308, 60);
@@ -261,7 +223,7 @@
             this.listBox1.ItemHeight = 23;
             this.listBox1.Location = new System.Drawing.Point(19, 49);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(240, 347);
+            this.listBox1.Size = new System.Drawing.Size(240, 278);
             this.listBox1.TabIndex = 0;
             // 
             // panel6
@@ -277,48 +239,59 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.label12);
-            this.panel9.Controls.Add(this.label8);
-            this.panel9.Controls.Add(this.label5);
-            this.panel9.Controls.Add(this.label4);
+            this.panel9.Controls.Add(this.agelbl);
+            this.panel9.Controls.Add(this.doblbl);
+            this.panel9.Controls.Add(this.snamelbl);
+            this.panel9.Controls.Add(this.fnamelbl);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Location = new System.Drawing.Point(11, 3);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(283, 168);
             this.panel9.TabIndex = 6;
             // 
-            // label8
+            // agelbl
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 96);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 20);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "DOB:";
+            this.agelbl.AutoSize = true;
+            this.agelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agelbl.ForeColor = System.Drawing.Color.White;
+            this.agelbl.Location = new System.Drawing.Point(3, 129);
+            this.agelbl.Name = "agelbl";
+            this.agelbl.Size = new System.Drawing.Size(42, 20);
+            this.agelbl.TabIndex = 4;
+            this.agelbl.Text = "Age:";
             // 
-            // label5
+            // doblbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(2, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Surname:";
+            this.doblbl.AutoSize = true;
+            this.doblbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doblbl.ForeColor = System.Drawing.Color.White;
+            this.doblbl.Location = new System.Drawing.Point(3, 96);
+            this.doblbl.Name = "doblbl";
+            this.doblbl.Size = new System.Drawing.Size(48, 20);
+            this.doblbl.TabIndex = 3;
+            this.doblbl.Text = "DOB:";
             // 
-            // label4
+            // snamelbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(2, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Forename:";
+            this.snamelbl.AutoSize = true;
+            this.snamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snamelbl.ForeColor = System.Drawing.Color.White;
+            this.snamelbl.Location = new System.Drawing.Point(2, 67);
+            this.snamelbl.Name = "snamelbl";
+            this.snamelbl.Size = new System.Drawing.Size(78, 20);
+            this.snamelbl.TabIndex = 2;
+            this.snamelbl.Text = "Surname:";
+            // 
+            // fnamelbl
+            // 
+            this.fnamelbl.AutoSize = true;
+            this.fnamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fnamelbl.ForeColor = System.Drawing.Color.White;
+            this.fnamelbl.Location = new System.Drawing.Point(2, 40);
+            this.fnamelbl.Name = "fnamelbl";
+            this.fnamelbl.Size = new System.Drawing.Size(86, 20);
+            this.fnamelbl.TabIndex = 1;
+            this.fnamelbl.Text = "Forename:";
             // 
             // label3
             // 
@@ -334,58 +307,58 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.label11);
-            this.panel8.Controls.Add(this.label10);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.label6);
+            this.panel8.Controls.Add(this.agegrouplbl);
+            this.panel8.Controls.Add(this.daysmissedlbl);
+            this.panel8.Controls.Add(this.totalpricelbl);
+            this.panel8.Controls.Add(this.daysbookedlbl);
             this.panel8.Location = new System.Drawing.Point(11, 176);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(283, 216);
             this.panel8.TabIndex = 5;
             // 
-            // label11
+            // agegrouplbl
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(3, 81);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 20);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Age Group:";
+            this.agegrouplbl.AutoSize = true;
+            this.agegrouplbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agegrouplbl.ForeColor = System.Drawing.Color.White;
+            this.agegrouplbl.Location = new System.Drawing.Point(3, 81);
+            this.agegrouplbl.Name = "agegrouplbl";
+            this.agegrouplbl.Size = new System.Drawing.Size(91, 20);
+            this.agegrouplbl.TabIndex = 6;
+            this.agegrouplbl.Text = "Age Group:";
             // 
-            // label10
+            // daysmissedlbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(3, 114);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 20);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Days Missed:";
+            this.daysmissedlbl.AutoSize = true;
+            this.daysmissedlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daysmissedlbl.ForeColor = System.Drawing.Color.White;
+            this.daysmissedlbl.Location = new System.Drawing.Point(3, 114);
+            this.daysmissedlbl.Name = "daysmissedlbl";
+            this.daysmissedlbl.Size = new System.Drawing.Size(103, 20);
+            this.daysmissedlbl.TabIndex = 5;
+            this.daysmissedlbl.Text = "Days Missed:";
             // 
-            // label7
+            // totalpricelbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1, 178);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 20);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Total Price:";
+            this.totalpricelbl.AutoSize = true;
+            this.totalpricelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalpricelbl.ForeColor = System.Drawing.Color.White;
+            this.totalpricelbl.Location = new System.Drawing.Point(1, 178);
+            this.totalpricelbl.Name = "totalpricelbl";
+            this.totalpricelbl.Size = new System.Drawing.Size(87, 20);
+            this.totalpricelbl.TabIndex = 4;
+            this.totalpricelbl.Text = "Total Price:";
             // 
-            // label6
+            // daysbookedlbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(2, 147);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Days Booked:";
+            this.daysbookedlbl.AutoSize = true;
+            this.daysbookedlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daysbookedlbl.ForeColor = System.Drawing.Color.White;
+            this.daysbookedlbl.Location = new System.Drawing.Point(2, 147);
+            this.daysbookedlbl.Name = "daysbookedlbl";
+            this.daysbookedlbl.Size = new System.Drawing.Size(108, 20);
+            this.daysbookedlbl.TabIndex = 3;
+            this.daysbookedlbl.Text = "Days Booked:";
             // 
             // panel5
             // 
@@ -408,16 +381,72 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "View Bookings";
             // 
-            // label12
+            // btnback
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 129);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 20);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Age:";
+            this.btnback.Image = global::A2CourseWork.Properties.Resources.circled_left_2;
+            this.btnback.Location = new System.Drawing.Point(110, 505);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(51, 51);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 4;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
+            // homepbx
+            // 
+            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
+            this.homepbx.Location = new System.Drawing.Point(7, 3);
+            this.homepbx.Name = "homepbx";
+            this.homepbx.Size = new System.Drawing.Size(76, 72);
+            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.homepbx.TabIndex = 0;
+            this.homepbx.TabStop = false;
+            // 
+            // minbtn
+            // 
+            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
+            this.minbtn.Location = new System.Drawing.Point(805, 0);
+            this.minbtn.Name = "minbtn";
+            this.minbtn.Size = new System.Drawing.Size(41, 38);
+            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minbtn.TabIndex = 3;
+            this.minbtn.TabStop = false;
+            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
+            // 
+            // btnexit
+            // 
+            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
+            this.btnexit.Location = new System.Drawing.Point(852, 0);
+            this.btnexit.Name = "btnexit";
+            this.btnexit.Size = new System.Drawing.Size(41, 38);
+            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnexit.TabIndex = 2;
+            this.btnexit.TabStop = false;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
+            // 
+            // btnadd
+            // 
+            this.btnadd.BackColor = System.Drawing.Color.Gray;
+            this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadd.Location = new System.Drawing.Point(19, 344);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(113, 31);
+            this.btnadd.TabIndex = 15;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(146, 344);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 31);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // ViewBookings
             // 
@@ -436,15 +465,11 @@
             this.Load += new System.EventHandler(this.ViewBookings_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
             this.bookingpnl1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.bookingpnl2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -455,6 +480,10 @@
             this.panel8.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -480,17 +509,19 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label totalpricelbl;
+        private System.Windows.Forms.Label daysbookedlbl;
+        private System.Windows.Forms.Label snamelbl;
+        private System.Windows.Forms.Label fnamelbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label doblbl;
+        private System.Windows.Forms.Label agegrouplbl;
+        private System.Windows.Forms.Label daysmissedlbl;
+        private System.Windows.Forms.Label agelbl;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnadd;
     }
 }

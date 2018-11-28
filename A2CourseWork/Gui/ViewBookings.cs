@@ -30,8 +30,7 @@ namespace A2CourseWork.Gui
         //exit button
         private void btnexit_Click(object sender, EventArgs e)
         {
-            MiscFunctions misc = new MiscFunctions();
-            misc.exit();
+            MiscFunctions.exit();
         }
         //minimize button
         private void minbtn_Click(object sender, EventArgs e)
@@ -81,5 +80,13 @@ namespace A2CourseWork.Gui
             }
         }
 
+        private void btncheck_Click(object sender, EventArgs e)
+        {
+            bookingpnl1.Visible = false;
+            bookingpnl2.Visible = true;
+            fnamelbl.Text = "Forename: " + kids[kidslistbox.SelectedIndex].Forename;
+            snamelbl.Text = "Surname: " + kids[kidslistbox.SelectedIndex].Surname;
+            doblbl.Text = "DOB: " + kids[kidslistbox.SelectedIndex].DOB;
+        }
     }
 }

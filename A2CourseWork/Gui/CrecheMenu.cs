@@ -19,8 +19,7 @@ namespace A2CourseWork.Gui
         //exit button
         private void btnexit_Click(object sender, EventArgs e)
         {
-            MiscFunctions misc = new MiscFunctions();
-            misc.exit();
+            MiscFunctions.exit();
         }
         //minimize button
         private void minbtn_Click(object sender, EventArgs e)
@@ -56,8 +55,7 @@ namespace A2CourseWork.Gui
         {
             Timer.Start();
             Timelbl.Text = DateTime.Now.ToLongTimeString();
-            MiscFunctions misc = new MiscFunctions();
-            misc.buttonhover(this);
+            MiscFunctions.buttonhover(this);
         }
 
         private void Timer_Tick(object sender, EventArgs e)

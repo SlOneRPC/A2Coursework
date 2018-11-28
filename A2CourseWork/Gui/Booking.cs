@@ -34,8 +34,7 @@ namespace A2CourseWork.Gui
 
         private void btnexit_Click(object sender, EventArgs e)
         {
-            MiscFunctions misc = new MiscFunctions();
-            misc.exit();
+            MiscFunctions.exit();
         }
 
         private void minbtn_Click(object sender, EventArgs e)
@@ -199,6 +198,7 @@ namespace A2CourseWork.Gui
                 {
                     OnNewkid();
                 }
+                BookingCalendar.MinDate = DateTime.Now;
                 book3pnl.Visible = false;
                 book2pnl.Visible = false;
                 book4pnl.Visible = true;
@@ -276,8 +276,7 @@ namespace A2CourseWork.Gui
         {
             Timer.Start();
             Timelbl.Text = DateTime.Now.ToLongTimeString();
-            MiscFunctions misc = new MiscFunctions();
-            misc.buttonhover(this);
+            MiscFunctions.buttonhover(this);
         }
 
         private void btnback_Click(object sender, EventArgs e)
@@ -407,6 +406,7 @@ namespace A2CourseWork.Gui
 
         private void populatedayslist()
         {
+            dayslistbx.Items.Clear();
             dayslistbx.Items.Add("Monday");
             dayslistbx.Items.Add("Tuesday");
             dayslistbx.Items.Add("Wednesday");

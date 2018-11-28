@@ -183,6 +183,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ViewBooking.png" />
+    <None Include="Resources\staff.png" />
     <None Include="Resources\circled-left-2.png" />
     <None Include="Resources\Advicebtn.png" />
     <Content Include="CrecheData.mdf">
@@ -192,6 +194,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>CrecheData.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\booking.png" />
     <Content Include="Resources\bus2.png" />
     <None Include="Resources\Transport.png" />
     <None Include="Resources\classes.png" />

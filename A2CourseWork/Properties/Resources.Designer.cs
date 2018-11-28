@@ -103,6 +103,16 @@ namespace A2CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap booking {
+            get {
+                object obj = ResourceManager.GetObject("booking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bus {
             get {
                 object obj = ResourceManager.GetObject("bus", resourceCulture);
@@ -213,9 +223,29 @@ namespace A2CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap staff {
+            get {
+                object obj = ResourceManager.GetObject("staff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Transport {
             get {
                 object obj = ResourceManager.GetObject("Transport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ViewBooking {
+            get {
+                object obj = ResourceManager.GetObject("ViewBooking", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

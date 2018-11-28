@@ -8,7 +8,7 @@ namespace A2CourseWork.Classes
 {
     class MiscFunctions
     {
-        public void buttonhover(Form form)
+        public static void buttonhover(Form form)
         {
             foreach (Button b in form.Controls.OfType<Button>())
             {
@@ -17,13 +17,18 @@ namespace A2CourseWork.Classes
             }
         }
 
-        public void exit()
+        public static void exit()
         {
             DialogResult dialogResult = MessageBox.Show("Are you Sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Application.Exit();
             }
+        }
+
+        public static void nextform(Form newform)
+        {
+            
         }
     }
 }
