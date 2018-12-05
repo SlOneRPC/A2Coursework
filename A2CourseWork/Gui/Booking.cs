@@ -24,12 +24,26 @@ namespace A2CourseWork.Gui
         string startdate = null;
         string enddate = null;
 
+        //exsisting user
+        Customer existingcustomer = null;
+        Kid existingkid = null;
 
-        public Booking()
+
+        public Booking(Customer existingcustomer,Kid existingkid)
         {
             db = new Database();
             InitializeComponent();
             db.connect();
+            this.existingcustomer = existingcustomer;
+            this.existingkid = existingkid;
+            if(existingcustomer != null)
+            {
+                book1pnl.Visible = false;
+            }
+            if(existingkid != null && !book1pnl.Visible)
+            {
+                book4pnl.Visible = true;
+            }
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -88,10 +102,20 @@ namespace A2CourseWork.Gui
                 cust.Address = addresstxt.Text;
 
 
-                //hide customer show kid
-                book1pnl.Visible = false;
-                book2pnl.Visible = true;
-                book3pnl.Visible = true;
+                if(existingkid != null)
+                {
+                    //hide customer show booking
+                    book1pnl.Visible = false;
+                    book4pnl.Visible = true;
+                }
+                else
+                {
+                    //hide customer show kid
+                    book1pnl.Visible = false;
+                    book2pnl.Visible = true;
+                    book3pnl.Visible = true;
+                }
+
 
                 //setup dates for DOB
                 DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
@@ -248,20 +272,37 @@ namespace A2CourseWork.Gui
         {
             //add customer to Database
             BookingDB book = new BookingDB(db);
-            book.Addcustomer(cust.Forename, cust.Surname, cust.TeleNo, cust.Postcode, cust.Address);
-
-            //add all the kids to db
-            int i = 0;
-            foreach (Kid child in kids)
+            if(existingcustomer == null)
             {
-                book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename);
-                List<string> date = dates[i];
-                book.AddDates(date[0], date[1], child.Forename, date[2],Convert.ToInt32(date[3]), Convert.ToInt32(date[4]), Convert.ToInt32(date[5]), Convert.ToInt32(date[6]), Convert.ToInt32(date[7]));
-                i++;
+                book.Addcustomer(cust.Forename, cust.Surname, cust.TeleNo, cust.Postcode, cust.Address);
+            }
+            else
+            {
+                cust = existingcustomer;
             }
 
+
+            if(existingkid == null)
+            {
+                //add all the kids to db
+                int i = 0;
+                foreach (Kid child in kids)
+                {
+                    book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename);
+                    List<string> date = dates[i];
+                    book.AddDates(date[0], date[1], child.Forename, date[2], Convert.ToInt32(date[3]), Convert.ToInt32(date[4]), Convert.ToInt32(date[5]), Convert.ToInt32(date[6]), Convert.ToInt32(date[7]));
+                    i++;
+                }
+            }
+            else
+            {
+                List<string> date = dates[0];
+                book.AddDates(date[0], date[1], existingkid.Forename, date[2], Convert.ToInt32(date[3]), Convert.ToInt32(date[4]), Convert.ToInt32(date[5]), Convert.ToInt32(date[6]), Convert.ToInt32(date[7]));
+            }
+
+
             MessageBox.Show("Booking completed");
-            Menu next = new Gui.Menu();
+            CrecheMenu next = new Gui.CrecheMenu();
             this.Hide();
             next.Show();
         }
@@ -328,8 +369,19 @@ namespace A2CourseWork.Gui
                 enddate = BookingCalendar.SelectionRange.Start.ToShortDateString();
 
                 //calculate age
-                int months = DateTime.Now.Month - Convert.ToDateTime(kids[kids.Count - 1].DOB).Month;
-                int years = DateTime.Now.Year - Convert.ToDateTime(kids[kids.Count - 1].DOB).Year;
+                int months = 0;
+                int years = 0;
+                if (existingkid == null)
+                {
+                    months = DateTime.Now.Month - Convert.ToDateTime(kids[kids.Count - 1].DOB).Month;
+                    years = DateTime.Now.Year - Convert.ToDateTime(kids[kids.Count - 1].DOB).Year;
+                }
+                else
+                {
+                    months = DateTime.Now.Month - Convert.ToDateTime(existingkid.DOB).Month;
+                    years = DateTime.Now.Year - Convert.ToDateTime(existingkid.DOB).Year;
+                }
+               
                 if (months < 0)
                 {
                     years--;
@@ -387,9 +439,16 @@ namespace A2CourseWork.Gui
                 btnsavedate.Location = new Point(26, 259);
 
 
-                if (booked == Nokids)
+                if (booked == Nokids || existingkid != null)
                 {
-                    KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
+                    if(existingkid != null)
+                    {
+                        KidsBookedlbl.Text = "Number of Kids Booked: 1";
+                    }
+                    else
+                    {
+                        KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
+                    }
                     book4pnl.Visible = false;
                     book3pnl.Location = new Point(408, 65);
                     book3pnl.Visible = true;

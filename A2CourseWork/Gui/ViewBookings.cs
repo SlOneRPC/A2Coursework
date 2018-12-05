@@ -87,6 +87,14 @@ namespace A2CourseWork.Gui
             fnamelbl.Text = "Forename: " + kids[kidslistbox.SelectedIndex].Forename;
             snamelbl.Text = "Surname: " + kids[kidslistbox.SelectedIndex].Surname;
             doblbl.Text = "DOB: " + kids[kidslistbox.SelectedIndex].DOB;
+            List<custBooking> bookings = new List<custBooking>();
+            BookingDB booking = new BookingDB(db);
+            bookings = booking.getallbookingsforkid(kids[kidslistbox.SelectedIndex].Forename);
+
+            foreach (custBooking dates in bookings)
+            {
+                bookinglistbox.Items.Add(dates.Startdate + "-" + dates.Enddate);
+            }
         }
     }
 }

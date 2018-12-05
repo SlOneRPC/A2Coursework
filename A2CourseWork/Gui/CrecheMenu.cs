@@ -66,7 +66,7 @@ namespace A2CourseWork.Gui
 
         private void btnbooking_Click(object sender, EventArgs e)
         {
-            Booking form = new Booking();
+            BookingMenu form = new BookingMenu();
             this.Hide();
             form.Show();
         }

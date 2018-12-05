@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using A2CourseWork.Classes;
 namespace A2CourseWork.Gui
 {
     public partial class Default : Form
@@ -16,14 +16,11 @@ namespace A2CourseWork.Gui
         {
             InitializeComponent();
         }
+   
         //exit button
-        private void btnexit_Click(object sender, EventArgs e)
+        private void btnexit_Click_1(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you Sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            MiscFunctions.exit();
         }
         //minimize button
         private void minbtn_Click(object sender, EventArgs e)
@@ -31,10 +28,15 @@ namespace A2CourseWork.Gui
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
         //Dragable panel
         System.Drawing.Point lastclick;
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        private void panel1_MouseMove_1(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -43,7 +45,7 @@ namespace A2CourseWork.Gui
             }
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
         {
             lastclick = e.Location;
         }

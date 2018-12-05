@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace A2CourseWork.Objects
 {
-    class Customer
+    public class Customer
     {
         private int custId;
         private string forename;

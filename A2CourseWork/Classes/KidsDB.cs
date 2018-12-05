@@ -25,6 +25,7 @@ namespace A2CourseWork.Classes
             {
                 kids.Add(getkidfromreader(db.Rdr));
             }
+            db.Rdr.Close();
             return kids;
         }
 

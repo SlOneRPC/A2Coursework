@@ -30,7 +30,10 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.Homelbl = new System.Windows.Forms.Label();
+            this.homepbx = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.minbtn = new System.Windows.Forms.PictureBox();
+            this.btnexit = new System.Windows.Forms.PictureBox();
             this.titlelbl = new System.Windows.Forms.Label();
             this.bookingpnl1 = new System.Windows.Forms.Panel();
             this.btncheck = new System.Windows.Forms.Button();
@@ -39,8 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bookingpnl2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.bookinglistbox = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.agelbl = new System.Windows.Forms.Label();
@@ -56,13 +61,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
-            this.homepbx = new System.Windows.Forms.PictureBox();
-            this.minbtn = new System.Windows.Forms.PictureBox();
-            this.btnexit = new System.Windows.Forms.PictureBox();
-            this.btnadd = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             this.bookingpnl1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.bookingpnl2.SuspendLayout();
@@ -72,9 +75,6 @@
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -98,6 +98,16 @@
             this.Homelbl.TabIndex = 1;
             this.Homelbl.Text = "Home";
             // 
+            // homepbx
+            // 
+            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
+            this.homepbx.Location = new System.Drawing.Point(7, 3);
+            this.homepbx.Name = "homepbx";
+            this.homepbx.Size = new System.Drawing.Size(76, 72);
+            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.homepbx.TabIndex = 0;
+            this.homepbx.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
@@ -110,6 +120,28 @@
             this.panel1.TabIndex = 10;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // minbtn
+            // 
+            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
+            this.minbtn.Location = new System.Drawing.Point(805, 0);
+            this.minbtn.Name = "minbtn";
+            this.minbtn.Size = new System.Drawing.Size(41, 38);
+            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minbtn.TabIndex = 3;
+            this.minbtn.TabStop = false;
+            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
+            // 
+            // btnexit
+            // 
+            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
+            this.btnexit.Location = new System.Drawing.Point(852, 0);
+            this.btnexit.Name = "btnexit";
+            this.btnexit.Size = new System.Drawing.Size(41, 38);
+            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnexit.TabIndex = 2;
+            this.btnexit.TabStop = false;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // titlelbl
             // 
@@ -196,11 +228,35 @@
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.btnadd);
             this.panel7.Controls.Add(this.label9);
-            this.panel7.Controls.Add(this.listBox1);
+            this.panel7.Controls.Add(this.bookinglistbox);
             this.panel7.Location = new System.Drawing.Point(308, 60);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(290, 401);
             this.panel7.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(146, 344);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 31);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnadd
+            // 
+            this.btnadd.BackColor = System.Drawing.Color.Gray;
+            this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadd.Location = new System.Drawing.Point(19, 344);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(113, 31);
+            this.btnadd.TabIndex = 15;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -213,18 +269,18 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Dates Booked:";
             // 
-            // listBox1
+            // bookinglistbox
             // 
-            this.listBox1.BackColor = System.Drawing.Color.Gray;
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 23;
-            this.listBox1.Location = new System.Drawing.Point(19, 49);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(240, 278);
-            this.listBox1.TabIndex = 0;
+            this.bookinglistbox.BackColor = System.Drawing.Color.Gray;
+            this.bookinglistbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bookinglistbox.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookinglistbox.ForeColor = System.Drawing.Color.White;
+            this.bookinglistbox.FormattingEnabled = true;
+            this.bookinglistbox.ItemHeight = 23;
+            this.bookinglistbox.Location = new System.Drawing.Point(19, 49);
+            this.bookinglistbox.Name = "bookinglistbox";
+            this.bookinglistbox.Size = new System.Drawing.Size(240, 278);
+            this.bookinglistbox.TabIndex = 0;
             // 
             // panel6
             // 
@@ -392,81 +448,28 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // homepbx
-            // 
-            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.homepbx.Location = new System.Drawing.Point(7, 3);
-            this.homepbx.Name = "homepbx";
-            this.homepbx.Size = new System.Drawing.Size(76, 72);
-            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.homepbx.TabIndex = 0;
-            this.homepbx.TabStop = false;
-            // 
-            // minbtn
-            // 
-            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
-            this.minbtn.Location = new System.Drawing.Point(805, 0);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(41, 38);
-            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minbtn.TabIndex = 3;
-            this.minbtn.TabStop = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
-            // 
-            // btnexit
-            // 
-            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
-            this.btnexit.Location = new System.Drawing.Point(852, 0);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(41, 38);
-            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnexit.TabIndex = 2;
-            this.btnexit.TabStop = false;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
-            // 
-            // btnadd
-            // 
-            this.btnadd.BackColor = System.Drawing.Color.Gray;
-            this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadd.Location = new System.Drawing.Point(19, 344);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(113, 31);
-            this.btnadd.TabIndex = 15;
-            this.btnadd.Text = "Add";
-            this.btnadd.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(146, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 31);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // ViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
-            this.Controls.Add(this.bookingpnl2);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.bookingpnl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bookingpnl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViewBookings";
             this.Text = "ViewBookings";
             this.Load += new System.EventHandler(this.ViewBookings_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
             this.bookingpnl1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -481,9 +484,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -515,7 +515,7 @@
         private System.Windows.Forms.Label fnamelbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox bookinglistbox;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label doblbl;
         private System.Windows.Forms.Label agegrouplbl;

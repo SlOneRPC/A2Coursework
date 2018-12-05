@@ -183,6 +183,16 @@ namespace A2CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap existing {
+            get {
+                object obj = ResourceManager.GetObject("existing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exitbutton {
             get {
                 object obj = ResourceManager.GetObject("exitbutton", resourceCulture);
@@ -216,6 +226,16 @@ namespace A2CourseWork.Properties {
         internal static System.Drawing.Bitmap minbutton {
             get {
                 object obj = ResourceManager.GetObject("minbutton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_customer {
+            get {
+                object obj = ResourceManager.GetObject("new_customer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

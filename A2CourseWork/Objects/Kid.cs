@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace A2CourseWork.Objects
 {
-    class Kid
+    public class Kid
     {
         public Kid() { }
         private int kidid;
