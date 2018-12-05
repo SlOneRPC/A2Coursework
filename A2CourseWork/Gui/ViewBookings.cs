@@ -87,6 +87,10 @@ namespace A2CourseWork.Gui
             fnamelbl.Text = "Forename: " + kids[kidslistbox.SelectedIndex].Forename;
             snamelbl.Text = "Surname: " + kids[kidslistbox.SelectedIndex].Surname;
             doblbl.Text = "DOB: " + kids[kidslistbox.SelectedIndex].DOB;
+            agelbl.Text = "Age: " + calculateAge() + " months old";
+            agegrouplbl.Text = "Age Group Name: " + MiscFunctions.getgroupfromage(Convert.ToInt32(calculateAge()));
+
+            //gather bookings
             List<custBooking> bookings = new List<custBooking>();
             BookingDB booking = new BookingDB(db);
             bookings = booking.getallbookingsforkid(kids[kidslistbox.SelectedIndex].Forename);
@@ -95,6 +99,22 @@ namespace A2CourseWork.Gui
             {
                 bookinglistbox.Items.Add(dates.Startdate + "-" + dates.Enddate);
             }
+        }
+
+        private string calculateAge()
+        {
+            int months = DateTime.Now.Month - Convert.ToDateTime(kids[kidslistbox.SelectedIndex].DOB).Month;
+            int years = DateTime.Now.Year - Convert.ToDateTime(kids[kidslistbox.SelectedIndex].DOB).Year;
+            if (months < 0)
+            {
+                years--;
+                months += 12;
+            }
+            if (years > 0)
+            {
+                months += (years * 12);
+            }
+            return Convert.ToString(months);
         }
     }
 }

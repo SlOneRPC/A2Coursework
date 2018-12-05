@@ -30,5 +30,29 @@ namespace A2CourseWork.Classes
         {
             
         }
+
+        public static string getgroupfromage(int months)
+        {
+            string groupName = "";
+            //calculate group
+            if (months > 5 && months < 19)
+            {
+                groupName = "Baby";
+            }
+            else if (months >= 18 && months <= 30)
+            {
+                groupName = "Toddlers";
+            }
+            else if (months >= 30 && months <= 48)
+            {
+                groupName = "Children";
+            }
+            else
+            {
+                MessageBox.Show("Error - Invalid group name");
+                return "";
+            }
+            return groupName;
+        }
     }
 }

@@ -73,10 +73,11 @@
             this.bookpnl1.Controls.Add(this.btnregister);
             this.bookpnl1.Controls.Add(this.label2);
             this.bookpnl1.Controls.Add(this.panel4);
-            this.bookpnl1.Location = new System.Drawing.Point(169, 155);
+            this.bookpnl1.Location = new System.Drawing.Point(162, 155);
             this.bookpnl1.Name = "bookpnl1";
             this.bookpnl1.Size = new System.Drawing.Size(342, 384);
             this.bookpnl1.TabIndex = 3;
+            this.bookpnl1.Visible = false;
             // 
             // pictureBox1
             // 
@@ -91,22 +92,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(57, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(231, 22);
+            this.label6.Size = new System.Drawing.Size(214, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "- Customer does not exist yet";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(5, 109);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 22);
+            this.label5.Size = new System.Drawing.Size(83, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "Use this if:";
             // 
@@ -151,7 +152,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(341, 55);
+            this.label9.Size = new System.Drawing.Size(338, 55);
             this.label9.TabIndex = 1;
             this.label9.Text = "New customer";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,12 +168,11 @@
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 55);
+            this.label1.Size = new System.Drawing.Size(337, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "Existing customer";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,6 +192,7 @@
             this.bookpnl2.Name = "bookpnl2";
             this.bookpnl2.Size = new System.Drawing.Size(342, 383);
             this.bookpnl2.TabIndex = 4;
+            this.bookpnl2.Visible = false;
             // 
             // btnsearch
             // 
@@ -221,11 +222,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(27, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 22);
+            this.label4.Size = new System.Drawing.Size(199, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Please select the following:";
             // 
@@ -285,7 +286,7 @@
             this.bookpnl3.Controls.Add(this.btnselect);
             this.bookpnl3.Controls.Add(this.subtitlelbl);
             this.bookpnl3.Controls.Add(this.panel8);
-            this.bookpnl3.Location = new System.Drawing.Point(410, 158);
+            this.bookpnl3.Location = new System.Drawing.Point(367, 153);
             this.bookpnl3.Name = "bookpnl3";
             this.bookpnl3.Size = new System.Drawing.Size(342, 383);
             this.bookpnl3.TabIndex = 11;
@@ -340,12 +341,11 @@
             // 
             // label10
             // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(341, 55);
+            this.label10.Size = new System.Drawing.Size(338, 55);
             this.label10.TabIndex = 1;
             this.label10.Text = "Existing customer";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

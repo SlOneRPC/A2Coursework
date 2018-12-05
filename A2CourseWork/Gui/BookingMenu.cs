@@ -23,6 +23,8 @@ namespace A2CourseWork.Gui
             db = new Database();
             InitializeComponent();
             db.connect();
+            bookpnl1.Visible = true;
+            bookpnl2.Visible = true;
         }
 
         private void BookingMenu_Load(object sender, EventArgs e)
@@ -64,6 +66,7 @@ namespace A2CourseWork.Gui
                 else
                 {
                     MessageBox.Show("No kids yet!");
+                    returntomenu(); 
                 }
             }
             else
@@ -82,6 +85,7 @@ namespace A2CourseWork.Gui
                 else
                 {
                     MessageBox.Show("No customers yet!");
+                    returntomenu();
                 }
             }
            
@@ -116,6 +120,13 @@ namespace A2CourseWork.Gui
         {
             Booking book = new Booking(null, null);
             book.Show();
+            this.Hide();
+        }
+
+        private void returntomenu()
+        {
+            CrecheMenu menu = new CrecheMenu();
+            menu.Show();
             this.Hide();
         }
     }
