@@ -129,5 +129,12 @@ namespace A2CourseWork.Gui
             menu.Show();
             this.Hide();
         }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            CrecheMenu menu = new CrecheMenu();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

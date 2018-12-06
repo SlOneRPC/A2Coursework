@@ -11,7 +11,7 @@ using A2CourseWork.Classes;
 using A2CourseWork.Objects;
 namespace A2CourseWork.Gui
 {
-    public partial class ViewBookings : Form
+    public partial class ViewBookings : Default
     {
         Database db;
         List<Kid> kids = new List<Kid>();
@@ -21,6 +21,7 @@ namespace A2CourseWork.Gui
             db = new Database();
             InitializeComponent();
             db.connect();
+            titlelbl.Text = "Woodside Community - Creche - Bookings";
         }
 
         private void ViewBookings_Load(object sender, EventArgs e)
@@ -83,6 +84,7 @@ namespace A2CourseWork.Gui
         private void btncheck_Click(object sender, EventArgs e)
         {
             bookingpnl1.Visible = false;
+            filterpnl.Visible = false;
             bookingpnl2.Visible = true;
             fnamelbl.Text = "Forename: " + kids[kidslistbox.SelectedIndex].Forename;
             snamelbl.Text = "Surname: " + kids[kidslistbox.SelectedIndex].Surname;

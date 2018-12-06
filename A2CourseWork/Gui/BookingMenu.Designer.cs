@@ -52,6 +52,7 @@
             this.subtitlelbl = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.PictureBox();
             this.bookpnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).BeginInit();
             this.bookpnl3.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
             // bookpnl1
@@ -350,11 +352,23 @@
             this.label10.Text = "Existing customer";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnback
+            // 
+            this.btnback.Image = global::A2CourseWork.Properties.Resources.circled_left_2;
+            this.btnback.Location = new System.Drawing.Point(101, 505);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(51, 51);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 12;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
             // BookingMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.bookpnl3);
             this.Controls.Add(this.titlepxb);
             this.Controls.Add(this.bookpnl1);
@@ -367,6 +381,7 @@
             this.Controls.SetChildIndex(this.bookpnl1, 0);
             this.Controls.SetChildIndex(this.titlepxb, 0);
             this.Controls.SetChildIndex(this.bookpnl3, 0);
+            this.Controls.SetChildIndex(this.btnback, 0);
             this.bookpnl1.ResumeLayout(false);
             this.bookpnl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -379,6 +394,7 @@
             this.bookpnl3.ResumeLayout(false);
             this.bookpnl3.PerformLayout();
             this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +425,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox containerlistbox;
+        private System.Windows.Forms.PictureBox btnback;
     }
 }

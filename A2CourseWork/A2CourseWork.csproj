@@ -103,12 +103,6 @@
     <Compile Include="Gui\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gui\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gui\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Gui\ViewBookings.cs">
       <SubType>Form</SubType>
     </Compile>

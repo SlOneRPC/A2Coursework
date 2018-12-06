@@ -352,9 +352,10 @@
             // 
             // addresstxt
             // 
-            this.addresstxt.BackColor = System.Drawing.Color.Gray;
+            this.addresstxt.BackColor = System.Drawing.Color.Silver;
             this.addresstxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addresstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addresstxt.ForeColor = System.Drawing.Color.Black;
             this.addresstxt.Location = new System.Drawing.Point(330, 122);
             this.addresstxt.Multiline = true;
             this.addresstxt.Name = "addresstxt";
@@ -389,9 +390,10 @@
             // 
             // posttxt
             // 
-            this.posttxt.BackColor = System.Drawing.Color.Gray;
+            this.posttxt.BackColor = System.Drawing.Color.Silver;
             this.posttxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.posttxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posttxt.ForeColor = System.Drawing.Color.Black;
             this.posttxt.Location = new System.Drawing.Point(25, 330);
             this.posttxt.Multiline = true;
             this.posttxt.Name = "posttxt";
@@ -431,9 +433,10 @@
             // 
             // teleNotxt
             // 
-            this.teleNotxt.BackColor = System.Drawing.Color.Gray;
+            this.teleNotxt.BackColor = System.Drawing.Color.Silver;
             this.teleNotxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teleNotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teleNotxt.ForeColor = System.Drawing.Color.Black;
             this.teleNotxt.Location = new System.Drawing.Point(25, 259);
             this.teleNotxt.Multiline = true;
             this.teleNotxt.Name = "teleNotxt";
@@ -453,9 +456,10 @@
             // 
             // Snametxt
             // 
-            this.Snametxt.BackColor = System.Drawing.Color.Gray;
+            this.Snametxt.BackColor = System.Drawing.Color.Silver;
             this.Snametxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Snametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Snametxt.ForeColor = System.Drawing.Color.Black;
             this.Snametxt.Location = new System.Drawing.Point(25, 189);
             this.Snametxt.Multiline = true;
             this.Snametxt.Name = "Snametxt";
@@ -486,9 +490,10 @@
             // 
             // Fnametxt
             // 
-            this.Fnametxt.BackColor = System.Drawing.Color.Gray;
+            this.Fnametxt.BackColor = System.Drawing.Color.Silver;
             this.Fnametxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Fnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fnametxt.ForeColor = System.Drawing.Color.Black;
             this.Fnametxt.Location = new System.Drawing.Point(25, 123);
             this.Fnametxt.Multiline = true;
             this.Fnametxt.Name = "Fnametxt";
@@ -893,6 +898,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.book1pnl);
             this.Controls.Add(this.book4pnl);
             this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.btnback);
@@ -901,7 +907,6 @@
             this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.book1pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

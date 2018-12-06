@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Homelbl = new System.Windows.Forms.Label();
-            this.homepbx = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.minbtn = new System.Windows.Forms.PictureBox();
-            this.btnexit = new System.Windows.Forms.PictureBox();
-            this.titlelbl = new System.Windows.Forms.Label();
             this.bookingpnl1 = new System.Windows.Forms.Panel();
             this.btncheck = new System.Windows.Forms.Button();
             this.kidslistbox = new System.Windows.Forms.ListBox();
@@ -54,6 +47,7 @@
             this.fnamelbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.agegrouplbl = new System.Windows.Forms.Label();
             this.daysmissedlbl = new System.Windows.Forms.Label();
             this.totalpricelbl = new System.Windows.Forms.Label();
@@ -61,12 +55,19 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
+            this.filterpnl = new System.Windows.Forms.Panel();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.unkown = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bookpnl3 = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.bookingpnl1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.bookingpnl2.SuspendLayout();
@@ -76,84 +77,11 @@
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            this.filterpnl.SuspendLayout();
+            this.unkown.SuspendLayout();
+            this.bookpnl3.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.Homelbl);
-            this.panel2.Controls.Add(this.homepbx);
-            this.panel2.Location = new System.Drawing.Point(-3, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(90, 569);
-            this.panel2.TabIndex = 9;
-            // 
-            // Homelbl
-            // 
-            this.Homelbl.AutoSize = true;
-            this.Homelbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Homelbl.ForeColor = System.Drawing.Color.White;
-            this.Homelbl.Location = new System.Drawing.Point(19, 80);
-            this.Homelbl.Name = "Homelbl";
-            this.Homelbl.Size = new System.Drawing.Size(51, 19);
-            this.Homelbl.TabIndex = 1;
-            this.Homelbl.Text = "Home";
-            // 
-            // homepbx
-            // 
-            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.homepbx.Location = new System.Drawing.Point(7, 3);
-            this.homepbx.Name = "homepbx";
-            this.homepbx.Size = new System.Drawing.Size(76, 72);
-            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.homepbx.TabIndex = 0;
-            this.homepbx.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.minbtn);
-            this.panel1.Controls.Add(this.btnexit);
-            this.panel1.Controls.Add(this.titlelbl);
-            this.panel1.Location = new System.Drawing.Point(87, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 41);
-            this.panel1.TabIndex = 10;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // minbtn
-            // 
-            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
-            this.minbtn.Location = new System.Drawing.Point(805, 0);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(41, 38);
-            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minbtn.TabIndex = 3;
-            this.minbtn.TabStop = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
-            // 
-            // btnexit
-            // 
-            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
-            this.btnexit.Location = new System.Drawing.Point(852, 0);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(41, 38);
-            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnexit.TabIndex = 2;
-            this.btnexit.TabStop = false;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
-            // 
-            // titlelbl
-            // 
-            this.titlelbl.AutoSize = true;
-            this.titlelbl.BackColor = System.Drawing.Color.Transparent;
-            this.titlelbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titlelbl.Location = new System.Drawing.Point(7, 9);
-            this.titlelbl.Name = "titlelbl";
-            this.titlelbl.Size = new System.Drawing.Size(407, 25);
-            this.titlelbl.TabIndex = 1;
-            this.titlelbl.Text = "Woodside Community - Creche - Bookings";
             // 
             // bookingpnl1
             // 
@@ -161,7 +89,7 @@
             this.bookingpnl1.Controls.Add(this.btncheck);
             this.bookingpnl1.Controls.Add(this.kidslistbox);
             this.bookingpnl1.Controls.Add(this.panel4);
-            this.bookingpnl1.Location = new System.Drawing.Point(371, 80);
+            this.bookingpnl1.Location = new System.Drawing.Point(259, 80);
             this.bookingpnl1.Name = "bookingpnl1";
             this.bookingpnl1.Size = new System.Drawing.Size(309, 440);
             this.bookingpnl1.TabIndex = 11;
@@ -374,6 +302,17 @@
             this.panel8.Size = new System.Drawing.Size(283, 216);
             this.panel8.TabIndex = 5;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(7, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "More information:";
+            // 
             // agegrouplbl
             // 
             this.agegrouplbl.AutoSize = true;
@@ -450,16 +389,155 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // label4
+            // filterpnl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(7, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "More information:";
+            this.filterpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.filterpnl.Controls.Add(this.radioButton4);
+            this.filterpnl.Controls.Add(this.radioButton3);
+            this.filterpnl.Controls.Add(this.radioButton2);
+            this.filterpnl.Controls.Add(this.label6);
+            this.filterpnl.Controls.Add(this.radioButton1);
+            this.filterpnl.Controls.Add(this.unkown);
+            this.filterpnl.Location = new System.Drawing.Point(604, 80);
+            this.filterpnl.Name = "filterpnl";
+            this.filterpnl.Size = new System.Drawing.Size(243, 236);
+            this.filterpnl.TabIndex = 12;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.ForeColor = System.Drawing.Color.White;
+            this.radioButton4.Location = new System.Drawing.Point(26, 189);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(81, 28);
+            this.radioButton4.TabIndex = 5;
+            this.radioButton4.Text = "Group";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.ForeColor = System.Drawing.Color.White;
+            this.radioButton3.Location = new System.Drawing.Point(26, 155);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(82, 28);
+            this.radioButton3.TabIndex = 4;
+            this.radioButton3.Text = "Parent";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.ForeColor = System.Drawing.Color.White;
+            this.radioButton2.Location = new System.Drawing.Point(26, 125);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(66, 28);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.Text = "Date";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(22, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Sort bookings by:";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(26, 96);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(64, 28);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Kids";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // unkown
+            // 
+            this.unkown.BackColor = System.Drawing.Color.Black;
+            this.unkown.Controls.Add(this.label5);
+            this.unkown.Location = new System.Drawing.Point(0, 0);
+            this.unkown.Name = "unkown";
+            this.unkown.Size = new System.Drawing.Size(243, 59);
+            this.unkown.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(102, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Filter";
+            // 
+            // bookpnl3
+            // 
+            this.bookpnl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bookpnl3.Controls.Add(this.monthCalendar1);
+            this.bookpnl3.Controls.Add(this.button2);
+            this.bookpnl3.Controls.Add(this.panel12);
+            this.bookpnl3.Location = new System.Drawing.Point(259, 82);
+            this.bookpnl3.Name = "bookpnl3";
+            this.bookpnl3.Size = new System.Drawing.Size(309, 307);
+            this.bookpnl3.TabIndex = 12;
+            this.bookpnl3.Visible = false;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.monthCalendar1.ForeColor = System.Drawing.Color.Silver;
+            this.monthCalendar1.Location = new System.Drawing.Point(41, 72);
+            this.monthCalendar1.MaxSelectionCount = 1;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(13, 246);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(280, 50);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "View Bookings";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Black;
+            this.panel12.Controls.Add(this.label7);
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(309, 59);
+            this.panel12.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(109, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 24);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Bookings";
             // 
             // ViewBookings
             // 
@@ -467,22 +545,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.bookpnl3);
+            this.Controls.Add(this.filterpnl);
             this.Controls.Add(this.btnback);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.bookingpnl2);
             this.Controls.Add(this.bookingpnl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.bookingpnl2);
             this.Name = "ViewBookings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewBookings";
             this.Load += new System.EventHandler(this.ViewBookings_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
+            this.Controls.SetChildIndex(this.bookingpnl2, 0);
+            this.Controls.SetChildIndex(this.bookingpnl1, 0);
+            this.Controls.SetChildIndex(this.btnback, 0);
+            this.Controls.SetChildIndex(this.filterpnl, 0);
+            this.Controls.SetChildIndex(this.bookpnl3, 0);
             this.bookingpnl1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -497,19 +573,18 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            this.filterpnl.ResumeLayout(false);
+            this.filterpnl.PerformLayout();
+            this.unkown.ResumeLayout(false);
+            this.unkown.PerformLayout();
+            this.bookpnl3.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label Homelbl;
-        private System.Windows.Forms.PictureBox homepbx;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox minbtn;
-        private System.Windows.Forms.PictureBox btnexit;
-        private System.Windows.Forms.Label titlelbl;
         private System.Windows.Forms.Panel bookingpnl1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
@@ -537,5 +612,18 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel filterpnl;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Panel unkown;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel bookpnl3;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton radioButton4;
     }
 }
