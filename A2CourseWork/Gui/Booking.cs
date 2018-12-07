@@ -460,5 +460,40 @@ namespace A2CourseWork.Gui
                 dayslistbx.SetItemChecked(i,true);
             }
         }
+
+        private void initaliseweeks()
+        {
+            int buttonNo = 0;
+            int monday = 0;
+            int friday = 0;
+            var now = DateTime.Now;
+            var startdate = new DateTime(now.Year, now.Month, 1);
+            DateTime enddate = new DateTime(now.Year, now.Month, DateTime.DaysInMonth(now.Year, now.Month));
+            for (DateTime date = startdate; date <= enddate; date = date.AddDays(1))
+            {
+                buttonNo++;
+                if (date.DayOfWeek == DayOfWeek.Monday)
+                {
+                    monday = date.Day;
+                }
+                else if(date.DayOfWeek == DayOfWeek.Friday)
+                {
+                    friday = date.Day;
+                }
+                string day1 = Convert.ToString(monday);
+                string day2 = Convert.ToString(friday);
+                string text = day1 + " " + day2;
+                switch (buttonNo)
+                {
+                    case 1:
+                        week1btn.Text = text;
+                        break;
+                    case 2:
+                        week2btn.Text = text;
+                        break;
+
+                }
+            }
+        }
     }
 }

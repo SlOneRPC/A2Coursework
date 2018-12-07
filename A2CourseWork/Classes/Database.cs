@@ -58,5 +58,17 @@ namespace A2CourseWork.Classes
                 return false;
             }
         }
+
+        public bool isopen()
+        {
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

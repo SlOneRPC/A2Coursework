@@ -94,6 +94,20 @@
             this.book4titlepnl = new System.Windows.Forms.Panel();
             this.datestitlelbl = new System.Windows.Forms.Label();
             this.BookingCalendar = new System.Windows.Forms.MonthCalendar();
+            this.book6pnl = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.week1btn = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.button21 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.week2btn = new System.Windows.Forms.Button();
+            this.week3btn = new System.Windows.Forms.Button();
+            this.week4btn = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -109,6 +123,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.book4pnl.SuspendLayout();
             this.book4titlepnl.SuspendLayout();
+            this.book6pnl.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -801,11 +821,11 @@
             // book4pnl
             // 
             this.book4pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.book4pnl.Controls.Add(this.book4titlepnl);
             this.book4pnl.Controls.Add(this.dayslbl);
             this.book4pnl.Controls.Add(this.dayslistbx);
             this.book4pnl.Controls.Add(this.btnsavedate);
             this.book4pnl.Controls.Add(this.datelbl);
-            this.book4pnl.Controls.Add(this.book4titlepnl);
             this.book4pnl.Controls.Add(this.BookingCalendar);
             this.book4pnl.Location = new System.Drawing.Point(261, 41);
             this.book4pnl.Name = "book4pnl";
@@ -892,13 +912,168 @@
             this.BookingCalendar.TabIndex = 0;
             this.BookingCalendar.TitleBackColor = System.Drawing.Color.Gray;
             // 
+            // book6pnl
+            // 
+            this.book6pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.book6pnl.Controls.Add(this.label19);
+            this.book6pnl.Controls.Add(this.label18);
+            this.book6pnl.Controls.Add(this.button21);
+            this.book6pnl.Controls.Add(this.panel10);
+            this.book6pnl.Controls.Add(this.panel9);
+            this.book6pnl.Controls.Add(this.panel8);
+            this.book6pnl.Controls.Add(this.panel3);
+            this.book6pnl.Controls.Add(this.panel7);
+            this.book6pnl.Location = new System.Drawing.Point(145, 44);
+            this.book6pnl.Name = "book6pnl";
+            this.book6pnl.Size = new System.Drawing.Size(823, 476);
+            this.book6pnl.TabIndex = 24;
+            this.book6pnl.Visible = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Controls.Add(this.label17);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(823, 51);
+            this.panel7.TabIndex = 3;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(303, 15);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(218, 25);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "First Select your week";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gray;
+            this.panel3.Controls.Add(this.week1btn);
+            this.panel3.Location = new System.Drawing.Point(15, 139);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(794, 70);
+            this.panel3.TabIndex = 4;
+            // 
+            // week1btn
+            // 
+            this.week1btn.BackColor = System.Drawing.Color.Silver;
+            this.week1btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.week1btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week1btn.Location = new System.Drawing.Point(8, 10);
+            this.week1btn.Name = "week1btn";
+            this.week1btn.Size = new System.Drawing.Size(765, 49);
+            this.week1btn.TabIndex = 0;
+            this.week1btn.Text = "Week Starting on 1st";
+            this.week1btn.UseVisualStyleBackColor = false;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Gray;
+            this.panel8.Controls.Add(this.week2btn);
+            this.panel8.Location = new System.Drawing.Point(15, 218);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(794, 70);
+            this.panel8.TabIndex = 5;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Gray;
+            this.panel9.Controls.Add(this.week3btn);
+            this.panel9.Location = new System.Drawing.Point(15, 302);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(794, 70);
+            this.panel9.TabIndex = 5;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Gray;
+            this.panel10.Controls.Add(this.week4btn);
+            this.panel10.Location = new System.Drawing.Point(15, 390);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(794, 70);
+            this.panel10.TabIndex = 5;
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.Silver;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Location = new System.Drawing.Point(17, 54);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(156, 49);
+            this.button21.TabIndex = 5;
+            this.button21.Text = "Select Month";
+            this.button21.UseVisualStyleBackColor = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(324, 71);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(143, 25);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "January 2018";
+            // 
+            // week2btn
+            // 
+            this.week2btn.BackColor = System.Drawing.Color.Silver;
+            this.week2btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.week2btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week2btn.Location = new System.Drawing.Point(8, 12);
+            this.week2btn.Name = "week2btn";
+            this.week2btn.Size = new System.Drawing.Size(765, 49);
+            this.week2btn.TabIndex = 1;
+            this.week2btn.Text = "Week Starting on 7";
+            this.week2btn.UseVisualStyleBackColor = false;
+            // 
+            // week3btn
+            // 
+            this.week3btn.BackColor = System.Drawing.Color.Silver;
+            this.week3btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.week3btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week3btn.Location = new System.Drawing.Point(15, 11);
+            this.week3btn.Name = "week3btn";
+            this.week3btn.Size = new System.Drawing.Size(765, 49);
+            this.week3btn.TabIndex = 1;
+            this.week3btn.Text = "Week Starting on 1st";
+            this.week3btn.UseVisualStyleBackColor = false;
+            // 
+            // week4btn
+            // 
+            this.week4btn.BackColor = System.Drawing.Color.Silver;
+            this.week4btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.week4btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week4btn.Location = new System.Drawing.Point(15, 11);
+            this.week4btn.Name = "week4btn";
+            this.week4btn.Size = new System.Drawing.Size(765, 49);
+            this.week4btn.TabIndex = 1;
+            this.week4btn.Text = "Week Starting on 1st";
+            this.week4btn.UseVisualStyleBackColor = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(16, 111);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(298, 20);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "First select the weeks you wish to attend:";
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
-            this.Controls.Add(this.book1pnl);
+            this.Controls.Add(this.book6pnl);
             this.Controls.Add(this.book4pnl);
             this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.btnback);
@@ -907,6 +1082,7 @@
             this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.book1pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -937,6 +1113,14 @@
             this.book4pnl.PerformLayout();
             this.book4titlepnl.ResumeLayout(false);
             this.book4titlepnl.PerformLayout();
+            this.book6pnl.ResumeLayout(false);
+            this.book6pnl.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1009,5 +1193,19 @@
         private System.Windows.Forms.MonthCalendar BookingCalendar;
         private System.Windows.Forms.CheckedListBox dayslistbx;
         private System.Windows.Forms.Label dayslbl;
+        private System.Windows.Forms.Panel book6pnl;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button week4btn;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button week3btn;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button week2btn;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button week1btn;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label17;
     }
 }
