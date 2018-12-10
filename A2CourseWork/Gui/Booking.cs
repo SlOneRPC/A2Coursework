@@ -42,7 +42,9 @@ namespace A2CourseWork.Gui
             }
             if(existingkid != null && !book1pnl.Visible)
             {
-                book4pnl.Visible = true;
+                //book4pnl.Visible = true;
+                initaliseweeks(0);
+                book6pnl.Visible = true;
             }
         }
 
@@ -225,7 +227,9 @@ namespace A2CourseWork.Gui
                 BookingCalendar.MinDate = DateTime.Now;
                 book3pnl.Visible = false;
                 book2pnl.Visible = false;
-                book4pnl.Visible = true;
+                initaliseweeks(0);
+                book6pnl.Visible = true;
+                //book4pnl.Visible = true;
             }
         }
 
@@ -461,39 +465,73 @@ namespace A2CourseWork.Gui
             }
         }
 
-        private void initaliseweeks()
+        private void initaliseweeks(int months)
         {
-            int buttonNo = 0;
-            int monday = 0;
-            int friday = 0;
-            var now = DateTime.Now;
-            var startdate = new DateTime(now.Year, now.Month, 1);
-            DateTime enddate = new DateTime(now.Year, now.Month, DateTime.DaysInMonth(now.Year, now.Month));
+            List<int> mondays = new List<int>();
+            List<int> fridays = new List<int>();
+
+            DateTime now = DateTime.Now;
+            DateTime startdate = new DateTime(now.AddMonths(months).Year, now.AddMonths(months).Month, 1);
+            DateTime enddate = new DateTime(now.AddMonths(months).Year, now.AddMonths(months).Month, DateTime.DaysInMonth(now.AddMonths(months).Year, now.AddMonths(months).Month));
             for (DateTime date = startdate; date <= enddate; date = date.AddDays(1))
             {
-                buttonNo++;
                 if (date.DayOfWeek == DayOfWeek.Monday)
                 {
-                    monday = date.Day;
+                    mondays.Add(date.Day);
                 }
                 else if(date.DayOfWeek == DayOfWeek.Friday)
                 {
-                    friday = date.Day;
+                    fridays.Add(date.Day);
                 }
-                string day1 = Convert.ToString(monday);
-                string day2 = Convert.ToString(friday);
-                string text = day1 + " " + day2;
-                switch (buttonNo)
+            }
+
+            for (int x = 0; x <= mondays.Count-1; x++)
+            {
+                string day1 = Convert.ToString(mondays[x]);
+                string day2 = "";
+                if (x == mondays.Count-1 && fridays.Count != mondays.Count)
                 {
+                    continue;
+                }
+                else
+                {
+                    day2 = Convert.ToString(fridays[x]);
+                }
+                string text = "Week:" + day1 + "-" + day2;
+                switch (x)
+                {
+                    case 0:
+                        week1btn.Text ="First " + text;
+                        break;
                     case 1:
-                        week1btn.Text = text;
+                        week2btn.Text = "Second " + text;
                         break;
                     case 2:
-                        week2btn.Text = text;
+                        week3btn.Text ="Third " + text;
                         break;
-
+                    case 3:
+                        week4btn.Text ="Four " + text;
+                        break;
                 }
             }
         }
+
+        private void populatemonthscbx()
+        {
+            monthscbx.Items.Add("January");
+            monthscbx.Items.Add("Febuary");
+            monthscbx.Items.Add("March");
+            monthscbx.Items.Add("April");
+            monthscbx.Items.Add("May");
+            monthscbx.Items.Add("June");
+            monthscbx.Items.Add("July");
+            monthscbx.Items.Add("August");
+            monthscbx.Items.Add("September");
+            monthscbx.Items.Add("October");
+            monthscbx.Items.Add("November");
+            monthscbx.Items.Add("Decembe ");
+
+        }
+
     }
 }
