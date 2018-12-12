@@ -20,6 +20,12 @@ namespace A2CourseWork.Gui
         List<Kid> kids = new List<Kid>();
         List<List<string>> dates = new List<List<string>>();
 
+
+        List<int> mondays = new List<int>();
+        List<int> fridays = new List<int>();
+        List<int> bookeddays = new List<int>();
+        List<bool> btnbooks = new List<bool>();
+
         //dates
         string startdate = null;
         string enddate = null;
@@ -44,6 +50,7 @@ namespace A2CourseWork.Gui
             {
                 //book4pnl.Visible = true;
                 initaliseweeks(0);
+                populatemonthscbx();
                 book6pnl.Visible = true;
             }
         }
@@ -353,123 +360,120 @@ namespace A2CourseWork.Gui
         int count = 0;
         private void btnsavedate_Click(object sender, EventArgs e)
         {
-            if (count < 1)
-            {
-                startdate = BookingCalendar.SelectionRange.Start.ToShortDateString();
-                BookingCalendar.MinDate = BookingCalendar.SelectionRange.Start;
-                BookingCalendar.ResetText();
-                datelbl.Text = "Please select the End Date";
+            //if (count < 1)
+            //{
+            //    startdate = BookingCalendar.SelectionRange.Start.ToShortDateString();
+            //    BookingCalendar.MinDate = BookingCalendar.SelectionRange.Start;
+            //    BookingCalendar.ResetText();
+            //    datelbl.Text = "Please select the End Date";
 
-                //days
-                book4pnl.Size = new Size(538, 325);
-                datestitlelbl.Location = new Point(224, 10);
+            //    //days
+            //    book4pnl.Size = new Size(538, 325);
+            //    datestitlelbl.Location = new Point(224, 10);
 
-                btnsavedate.Size = new Size(483, 51);
-                btnsavedate.Location = new Point(40, 265);
-                populatedayslist();
-            }
-            else
-            {
-                enddate = BookingCalendar.SelectionRange.Start.ToShortDateString();
+            //    btnsavedate.Size = new Size(483, 51);
+            //    btnsavedate.Location = new Point(40, 265);
+            //    populatedayslist();
+            //}
+            //else
+            //{
+            //    enddate = BookingCalendar.SelectionRange.Start.ToShortDateString();
 
-                //calculate age
-                int months = 0;
-                int years = 0;
-                if (existingkid == null)
-                {
-                    months = DateTime.Now.Month - Convert.ToDateTime(kids[kids.Count - 1].DOB).Month;
-                    years = DateTime.Now.Year - Convert.ToDateTime(kids[kids.Count - 1].DOB).Year;
-                }
-                else
-                {
-                    months = DateTime.Now.Month - Convert.ToDateTime(existingkid.DOB).Month;
-                    years = DateTime.Now.Year - Convert.ToDateTime(existingkid.DOB).Year;
-                }
+            //    //calculate age
+            //    int months = 0;
+            //    int years = 0;
+            //    if (existingkid == null)
+            //    {
+            //        months = DateTime.Now.Month - Convert.ToDateTime(kids[kids.Count - 1].DOB).Month;
+            //        years = DateTime.Now.Year - Convert.ToDateTime(kids[kids.Count - 1].DOB).Year;
+            //    }
+            //    else
+            //    {
+            //        months = DateTime.Now.Month - Convert.ToDateTime(existingkid.DOB).Month;
+            //        years = DateTime.Now.Year - Convert.ToDateTime(existingkid.DOB).Year;
+            //    }
                
-                if (months < 0)
-                {
-                    years--;
-                    months += 12;
-                }
+            //    if (months < 0)
+            //    {
+            //        years--;
+            //        months += 12;
+            //    }
 
-                if(years > 0)
-                {
-                    months += (years * 12);
-                }
+            //    if(years > 0)
+            //    {
+            //        months += (years * 12);
+            //    }
 
-                string groupName = "";
-                groupName = MiscFunctions.getgroupfromage(months);
-                //add dates to list
-                List<string> date = new List<string>();
-                date.Add(startdate);
-                date.Add(enddate);
-                date.Add(groupName);
-                for(int i = 0; i < dayslistbx.Items.Count; i++)
-                {
-                    if (dayslistbx.GetItemChecked(i))
-                    {
-                        date.Add("1");
-                    }
-                    else
-                    {
-                        date.Add("0");
-                    }
-                }
-                dates.Add(date);
+            //    string groupName = "";
+            //    groupName = MiscFunctions.getgroupfromage(months);
+            //    //add dates to list
+            //    List<string> date = new List<string>();
+            //    date.Add(startdate);
+            //    date.Add(enddate);
+            //    date.Add(groupName);
+            //    for(int i = 0; i < dayslistbx.Items.Count; i++)
+            //    {
+            //        if (dayslistbx.GetItemChecked(i))
+            //        {
+            //            date.Add("1");
+            //        }
+            //        else
+            //        {
+            //            date.Add("0");
+            //        }
+            //    }
+            //    dates.Add(date);
 
-                //reset for new kid
-                count = -1;
-                datelbl.Text = "Please select the Start Date";
-                book4pnl.Size = new Size(273, 325);
-                datestitlelbl.Location = new Point(106, 5);
-                btnsavedate.Size = new Size(233, 51);
-                btnsavedate.Location = new Point(26, 259);
+            //    //reset for new kid
+            //    count = -1;
+            //    datelbl.Text = "Please select the Start Date";
+            //    book4pnl.Size = new Size(273, 325);
+            //    datestitlelbl.Location = new Point(106, 5);
+            //    btnsavedate.Size = new Size(233, 51);
+            //    btnsavedate.Location = new Point(26, 259);
 
 
-                if (booked == Nokids || existingkid != null)
-                {
-                    if(existingkid != null)
-                    {
-                        KidsBookedlbl.Text = "Number of Kids Booked: 1";
-                        Kidslist.Items.Add(existingkid.Forename + " " + existingkid.Surname);
-                    }
-                    else
-                    {
-                        KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
-                    }
-                    book4pnl.Visible = false;
-                    book3pnl.Location = new Point(408, 65);
-                    book3pnl.Visible = true;
-                }
-                else
-                {
-                    book4pnl.Visible = false;
-                    book2pnl.Visible = true;
-                    book3pnl.Visible = true;
-                }
-            }
-            count++;
+            //    if (booked == Nokids || existingkid != null)
+            //    {
+            //        if(existingkid != null)
+            //        {
+            //            KidsBookedlbl.Text = "Number of Kids Booked: 1";
+            //            Kidslist.Items.Add(existingkid.Forename + " " + existingkid.Surname);
+            //        }
+            //        else
+            //        {
+            //            KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
+            //        }
+            //        book4pnl.Visible = false;
+            //        book3pnl.Location = new Point(408, 65);
+            //        book3pnl.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        book4pnl.Visible = false;
+            //        book2pnl.Visible = true;
+            //        book3pnl.Visible = true;
+            //    }
+            //}
+            //count++;
         }
 
-        private void populatedayslist()
-        {
-            dayslistbx.Items.Clear();
-            dayslistbx.Items.Add("Monday");
-            dayslistbx.Items.Add("Tuesday");
-            dayslistbx.Items.Add("Wednesday");
-            dayslistbx.Items.Add("Thursday");
-            dayslistbx.Items.Add("Friday");
-            for (int i = 0; i < dayslistbx.Items.Count; i++)
-            {
-                dayslistbx.SetItemChecked(i,true);
-            }
-        }
+        //private void populatedayslist()
+        //{
+        //    dayslistbx.Items.Clear();
+        //    dayslistbx.Items.Add("Monday");
+        //    dayslistbx.Items.Add("Tuesday");
+        //    dayslistbx.Items.Add("Wednesday");
+        //    dayslistbx.Items.Add("Thursday");
+        //    dayslistbx.Items.Add("Friday");
+        //    for (int i = 0; i < dayslistbx.Items.Count; i++)
+        //    {
+        //        dayslistbx.SetItemChecked(i,true);
+        //    }
+        //}
 
         private void initaliseweeks(int months)
         {
-            List<int> mondays = new List<int>();
-            List<int> fridays = new List<int>();
-
             DateTime now = DateTime.Now;
             DateTime startdate = new DateTime(now.AddMonths(months).Year, now.AddMonths(months).Month, 1);
             DateTime enddate = new DateTime(now.AddMonths(months).Year, now.AddMonths(months).Month, DateTime.DaysInMonth(now.AddMonths(months).Year, now.AddMonths(months).Month));
@@ -514,24 +518,98 @@ namespace A2CourseWork.Gui
                         break;
                 }
             }
+            btnbooks = new List<bool>();
+            for(int i = 0; i<= 4; i++)
+            {
+                btnbooks.Add(false);
+            }
         }
 
         private void populatemonthscbx()
         {
-            monthscbx.Items.Add("January");
-            monthscbx.Items.Add("Febuary");
-            monthscbx.Items.Add("March");
-            monthscbx.Items.Add("April");
-            monthscbx.Items.Add("May");
-            monthscbx.Items.Add("June");
-            monthscbx.Items.Add("July");
-            monthscbx.Items.Add("August");
-            monthscbx.Items.Add("September");
-            monthscbx.Items.Add("October");
-            monthscbx.Items.Add("November");
-            monthscbx.Items.Add("Decembe ");
+            monthscbx.Items.Clear();
+            List<string> months = new List<string>() { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+            for(int i = DateTime.Now.Month-1; i<12; i++)
+            {
+                //if(bookeddays.Contains(mondays[i]))
+                monthscbx.Items.Add(months[i]);
+            }
+            monthscbx.SelectedIndex = 0;
+            monthtitlelbl.Text = monthscbx.Text + " " + Convert.ToString(DateTime.Now.Year);
+        }
+
+        private void week1btn_Click(object sender, EventArgs e)
+        {
+            if (!btnbooks[0])
+            {
+                bookeddays.Add(mondays[0]);
+                week1btn.BackColor = Color.LimeGreen;
+                week1btn.Text = week1btn.Text + " [Booked]";
+                btnbooks[0] = true;
+            }
+            else
+            {
+                bookeddays.Remove(mondays[0]);
+                week1btn.BackColor = Color.Silver;
+                week1btn.Text = week1btn.Text.Remove(week1btn.Text.Length - 9);
+                btnbooks[0] = false;
+            }
+        }
+
+        private void week2btn_Click(object sender, EventArgs e)
+        {
+            if (!btnbooks[1])
+            {
+                bookeddays.Add(mondays[1]);
+                week2btn.BackColor = Color.LimeGreen;
+                week2btn.Text = week2btn.Text + " [Booked]";
+                btnbooks[1] = true;
+            }
+            else
+            {
+                bookeddays.Remove(mondays[1]);
+                week2btn.BackColor = Color.Silver;
+                week2btn.Text = week2btn.Text.Remove(week2btn.Text.Length - 9);
+                btnbooks[1] = false;
+            }
 
         }
 
+        private void week3btn_Click(object sender, EventArgs e)
+        {
+            if (!btnbooks[2])
+            {
+                bookeddays.Add(mondays[2]);
+                week3btn.BackColor = Color.LimeGreen;
+                week3btn.Text = week3btn.Text + " [Booked]";
+                btnbooks[2] = true;
+            }
+            else
+            {
+                bookeddays.Remove(mondays[2]);
+                week3btn.BackColor = Color.Silver;
+                week3btn.Text = week3btn.Text.Remove(week3btn.Text.Length - 9);
+                btnbooks[2] = false;
+            }
+
+        }
+
+        private void week4btn_Click(object sender, EventArgs e)
+        {
+            if (!btnbooks[3])
+            {
+                bookeddays.Add(mondays[3]);
+                week4btn.BackColor = Color.LimeGreen;
+                week4btn.Text = week4btn.Text + " [Booked]";
+                btnbooks[3] = true;
+            }
+            else
+            {
+                bookeddays.Remove(mondays[3]);
+                week4btn.BackColor = Color.Silver;
+                week4btn.Text = week4btn.Text.Remove(week4btn.Text.Length - 9);
+                btnbooks[3] = false;
+            }
+        }
     }
 }

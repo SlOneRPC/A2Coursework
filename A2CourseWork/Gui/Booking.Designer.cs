@@ -93,7 +93,10 @@
             this.dayslistbx = new System.Windows.Forms.CheckedListBox();
             this.btnsavedate = new System.Windows.Forms.Button();
             this.datelbl = new System.Windows.Forms.Label();
+            this.BookingCalendar = new System.Windows.Forms.MonthCalendar();
             this.book6pnl = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.monthscbx = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.monthtitlelbl = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -106,9 +109,8 @@
             this.week1btn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.BookingCalendar = new System.Windows.Forms.MonthCalendar();
-            this.monthscbx = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.yearcbx = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -903,9 +905,21 @@
             this.datelbl.TabIndex = 21;
             this.datelbl.Text = "Select the month:";
             // 
+            // BookingCalendar
+            // 
+            this.BookingCalendar.Location = new System.Drawing.Point(26, 89);
+            this.BookingCalendar.MaxSelectionCount = 1;
+            this.BookingCalendar.MinDate = new System.DateTime(2018, 11, 8, 0, 0, 0, 0);
+            this.BookingCalendar.Name = "BookingCalendar";
+            this.BookingCalendar.ShowToday = false;
+            this.BookingCalendar.TabIndex = 0;
+            this.BookingCalendar.TitleBackColor = System.Drawing.Color.Gray;
+            // 
             // book6pnl
             // 
             this.book6pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.book6pnl.Controls.Add(this.label18);
+            this.book6pnl.Controls.Add(this.yearcbx);
             this.book6pnl.Controls.Add(this.label20);
             this.book6pnl.Controls.Add(this.monthscbx);
             this.book6pnl.Controls.Add(this.label19);
@@ -920,6 +934,26 @@
             this.book6pnl.Size = new System.Drawing.Size(823, 476);
             this.book6pnl.TabIndex = 24;
             this.book6pnl.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(19, 51);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(58, 20);
+            this.label20.TabIndex = 9;
+            this.label20.Text = "Month:";
+            // 
+            // monthscbx
+            // 
+            this.monthscbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthscbx.FormattingEnabled = true;
+            this.monthscbx.Location = new System.Drawing.Point(20, 76);
+            this.monthscbx.Name = "monthscbx";
+            this.monthscbx.Size = new System.Drawing.Size(153, 32);
+            this.monthscbx.TabIndex = 8;
             // 
             // label19
             // 
@@ -937,7 +971,7 @@
             this.monthtitlelbl.AutoSize = true;
             this.monthtitlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthtitlelbl.ForeColor = System.Drawing.Color.White;
-            this.monthtitlelbl.Location = new System.Drawing.Point(324, 71);
+            this.monthtitlelbl.Location = new System.Drawing.Point(352, 54);
             this.monthtitlelbl.Name = "monthtitlelbl";
             this.monthtitlelbl.Size = new System.Drawing.Size(143, 25);
             this.monthtitlelbl.TabIndex = 6;
@@ -963,6 +997,7 @@
             this.week4btn.TabIndex = 1;
             this.week4btn.Text = "Week Starting on 1st";
             this.week4btn.UseVisualStyleBackColor = false;
+            this.week4btn.Click += new System.EventHandler(this.week4btn_Click);
             // 
             // panel9
             // 
@@ -984,6 +1019,7 @@
             this.week3btn.TabIndex = 1;
             this.week3btn.Text = "Week Starting on 1st";
             this.week3btn.UseVisualStyleBackColor = false;
+            this.week3btn.Click += new System.EventHandler(this.week3btn_Click);
             // 
             // panel8
             // 
@@ -1005,6 +1041,7 @@
             this.week2btn.TabIndex = 1;
             this.week2btn.Text = "Week Starting on 7";
             this.week2btn.UseVisualStyleBackColor = false;
+            this.week2btn.Click += new System.EventHandler(this.week2btn_Click);
             // 
             // panel3
             // 
@@ -1026,6 +1063,7 @@
             this.week1btn.TabIndex = 0;
             this.week1btn.Text = "Week Starting on 1st";
             this.week1btn.UseVisualStyleBackColor = false;
+            this.week1btn.Click += new System.EventHandler(this.week1btn_Click);
             // 
             // panel7
             // 
@@ -1047,35 +1085,25 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "First Select your week";
             // 
-            // BookingCalendar
+            // yearcbx
             // 
-            this.BookingCalendar.Location = new System.Drawing.Point(26, 89);
-            this.BookingCalendar.MaxSelectionCount = 1;
-            this.BookingCalendar.MinDate = new System.DateTime(2018, 11, 8, 0, 0, 0, 0);
-            this.BookingCalendar.Name = "BookingCalendar";
-            this.BookingCalendar.ShowToday = false;
-            this.BookingCalendar.TabIndex = 0;
-            this.BookingCalendar.TitleBackColor = System.Drawing.Color.Gray;
+            this.yearcbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearcbx.FormattingEnabled = true;
+            this.yearcbx.Location = new System.Drawing.Point(182, 76);
+            this.yearcbx.Name = "yearcbx";
+            this.yearcbx.Size = new System.Drawing.Size(153, 32);
+            this.yearcbx.TabIndex = 10;
             // 
-            // monthscbx
+            // label18
             // 
-            this.monthscbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthscbx.FormattingEnabled = true;
-            this.monthscbx.Location = new System.Drawing.Point(20, 76);
-            this.monthscbx.Name = "monthscbx";
-            this.monthscbx.Size = new System.Drawing.Size(153, 32);
-            this.monthscbx.TabIndex = 8;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(19, 51);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 20);
-            this.label20.TabIndex = 9;
-            this.label20.Text = "Month:";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(182, 51);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(47, 20);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Year:";
             // 
             // Booking
             // 
@@ -1218,5 +1246,7 @@
         private System.Windows.Forms.MonthCalendar BookingCalendar;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox monthscbx;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox yearcbx;
     }
 }
