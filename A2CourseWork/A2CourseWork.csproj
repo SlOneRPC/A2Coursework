@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="Objects\custBooking.cs" />
     <Compile Include="Objects\Customer.cs" />
+    <Compile Include="Objects\Booking.cs" />
     <Compile Include="Objects\Kid.cs" />
     <Compile Include="Objects\StaffMember.cs" />
     <Compile Include="Program.cs" />

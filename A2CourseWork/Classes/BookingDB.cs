@@ -64,12 +64,19 @@ namespace A2CourseWork.Classes
             }
         }
 
-        public void AddDates(string startdate,string endate,string childname,string groupname,int Mon,int Tues,int Wed,int Thur,int Friday)
+        public void AddBooking(string childname,string groupname,int Mon,int Tues,int Wed,int Thur,int Friday)
         {
             int childId = getchildID(childname);
             int groupId = getgroupID(groupname);
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "INSERT INTO Booking(ChildId,GroupId,StartDate,EndDate) VALUES( '" + childId + "','" + groupId + "','" + startdate + "','" + endate + "')";
+            db.Cmd.CommandText = "INSERT INTO Booking(ChildId,GroupId,Monday,Tuesday,Wednesday,Thursday,Friday) VALUES( '" + childId + "','" + groupId + "','" + Mon + "','" + Tues + "','" + Wed + "','" + Thur + "','" + Friday + "')";
+            doquery();
+        }
+
+        public void AddDate(int monday)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "";
             doquery();
         }
 

@@ -92,9 +92,9 @@
             this.dayslbl = new System.Windows.Forms.Label();
             this.dayslistbx = new System.Windows.Forms.CheckedListBox();
             this.btnsavedate = new System.Windows.Forms.Button();
-            this.datelbl = new System.Windows.Forms.Label();
-            this.BookingCalendar = new System.Windows.Forms.MonthCalendar();
             this.book6pnl = new System.Windows.Forms.Panel();
+            this.extrapnl = new System.Windows.Forms.Panel();
+            this.week5btn = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.yearcbx = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -111,8 +111,6 @@
             this.week1btn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.extrapnl = new System.Windows.Forms.Panel();
-            this.week5btn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -129,12 +127,12 @@
             this.book4pnl.SuspendLayout();
             this.book4titlepnl.SuspendLayout();
             this.book6pnl.SuspendLayout();
+            this.extrapnl.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.extrapnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -831,11 +829,9 @@
             this.book4pnl.Controls.Add(this.dayslbl);
             this.book4pnl.Controls.Add(this.dayslistbx);
             this.book4pnl.Controls.Add(this.btnsavedate);
-            this.book4pnl.Controls.Add(this.datelbl);
-            this.book4pnl.Controls.Add(this.BookingCalendar);
-            this.book4pnl.Location = new System.Drawing.Point(261, 41);
+            this.book4pnl.Location = new System.Drawing.Point(394, 97);
             this.book4pnl.Name = "book4pnl";
-            this.book4pnl.Size = new System.Drawing.Size(281, 325);
+            this.book4pnl.Size = new System.Drawing.Size(268, 325);
             this.book4pnl.TabIndex = 22;
             this.book4pnl.Visible = false;
             // 
@@ -845,7 +841,7 @@
             this.book4titlepnl.Controls.Add(this.datestitlelbl);
             this.book4titlepnl.Location = new System.Drawing.Point(0, 0);
             this.book4titlepnl.Name = "book4titlepnl";
-            this.book4titlepnl.Size = new System.Drawing.Size(558, 51);
+            this.book4titlepnl.Size = new System.Drawing.Size(268, 51);
             this.book4titlepnl.TabIndex = 3;
             // 
             // datestitlelbl
@@ -853,22 +849,22 @@
             this.datestitlelbl.AutoSize = true;
             this.datestitlelbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datestitlelbl.ForeColor = System.Drawing.Color.White;
-            this.datestitlelbl.Location = new System.Drawing.Point(106, 5);
+            this.datestitlelbl.Location = new System.Drawing.Point(98, 11);
             this.datestitlelbl.Name = "datestitlelbl";
-            this.datestitlelbl.Size = new System.Drawing.Size(79, 25);
+            this.datestitlelbl.Size = new System.Drawing.Size(56, 25);
             this.datestitlelbl.TabIndex = 0;
-            this.datestitlelbl.Text = "Months";
+            this.datestitlelbl.Text = "Days";
             // 
             // dayslbl
             // 
             this.dayslbl.AutoSize = true;
             this.dayslbl.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dayslbl.ForeColor = System.Drawing.Color.White;
-            this.dayslbl.Location = new System.Drawing.Point(285, 54);
+            this.dayslbl.Location = new System.Drawing.Point(15, 52);
             this.dayslbl.Name = "dayslbl";
-            this.dayslbl.Size = new System.Drawing.Size(245, 23);
+            this.dayslbl.Size = new System.Drawing.Size(233, 23);
             this.dayslbl.TabIndex = 23;
-            this.dayslbl.Text = "What days will be attended:";
+            this.dayslbl.Text = "Attending on which days?:";
             // 
             // dayslistbx
             // 
@@ -877,7 +873,7 @@
             this.dayslistbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dayslistbx.ForeColor = System.Drawing.Color.White;
             this.dayslistbx.FormattingEnabled = true;
-            this.dayslistbx.Location = new System.Drawing.Point(284, 80);
+            this.dayslistbx.Location = new System.Drawing.Point(14, 74);
             this.dayslistbx.Name = "dayslistbx";
             this.dayslistbx.Size = new System.Drawing.Size(246, 182);
             this.dayslistbx.TabIndex = 22;
@@ -896,27 +892,6 @@
             this.btnsavedate.Text = "Save";
             this.btnsavedate.UseVisualStyleBackColor = false;
             this.btnsavedate.Click += new System.EventHandler(this.btnsavedate_Click);
-            // 
-            // datelbl
-            // 
-            this.datelbl.AutoSize = true;
-            this.datelbl.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datelbl.ForeColor = System.Drawing.Color.White;
-            this.datelbl.Location = new System.Drawing.Point(22, 66);
-            this.datelbl.Name = "datelbl";
-            this.datelbl.Size = new System.Drawing.Size(160, 23);
-            this.datelbl.TabIndex = 21;
-            this.datelbl.Text = "Select the month:";
-            // 
-            // BookingCalendar
-            // 
-            this.BookingCalendar.Location = new System.Drawing.Point(26, 89);
-            this.BookingCalendar.MaxSelectionCount = 1;
-            this.BookingCalendar.MinDate = new System.DateTime(2018, 11, 8, 0, 0, 0, 0);
-            this.BookingCalendar.Name = "BookingCalendar";
-            this.BookingCalendar.ShowToday = false;
-            this.BookingCalendar.TabIndex = 0;
-            this.BookingCalendar.TitleBackColor = System.Drawing.Color.Gray;
             // 
             // book6pnl
             // 
@@ -938,6 +913,29 @@
             this.book6pnl.Size = new System.Drawing.Size(823, 493);
             this.book6pnl.TabIndex = 24;
             this.book6pnl.Visible = false;
+            // 
+            // extrapnl
+            // 
+            this.extrapnl.BackColor = System.Drawing.Color.Gray;
+            this.extrapnl.Controls.Add(this.week5btn);
+            this.extrapnl.Location = new System.Drawing.Point(15, 417);
+            this.extrapnl.Name = "extrapnl";
+            this.extrapnl.Size = new System.Drawing.Size(794, 70);
+            this.extrapnl.TabIndex = 6;
+            this.extrapnl.Visible = false;
+            // 
+            // week5btn
+            // 
+            this.week5btn.BackColor = System.Drawing.Color.Silver;
+            this.week5btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.week5btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week5btn.Location = new System.Drawing.Point(15, 11);
+            this.week5btn.Name = "week5btn";
+            this.week5btn.Size = new System.Drawing.Size(765, 49);
+            this.week5btn.TabIndex = 1;
+            this.week5btn.Text = "Week Starting on 1st";
+            this.week5btn.UseVisualStyleBackColor = false;
+            this.week5btn.Click += new System.EventHandler(this.week5btn_Click);
             // 
             // label18
             // 
@@ -1111,36 +1109,12 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "First Select your week";
             // 
-            // extrapnl
-            // 
-            this.extrapnl.BackColor = System.Drawing.Color.Gray;
-            this.extrapnl.Controls.Add(this.week5btn);
-            this.extrapnl.Location = new System.Drawing.Point(15, 417);
-            this.extrapnl.Name = "extrapnl";
-            this.extrapnl.Size = new System.Drawing.Size(794, 70);
-            this.extrapnl.TabIndex = 6;
-            this.extrapnl.Visible = false;
-            // 
-            // week5btn
-            // 
-            this.week5btn.BackColor = System.Drawing.Color.Silver;
-            this.week5btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.week5btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week5btn.Location = new System.Drawing.Point(15, 11);
-            this.week5btn.Name = "week5btn";
-            this.week5btn.Size = new System.Drawing.Size(765, 49);
-            this.week5btn.TabIndex = 1;
-            this.week5btn.Text = "Week Starting on 1st";
-            this.week5btn.UseVisualStyleBackColor = false;
-            this.week5btn.Click += new System.EventHandler(this.week5btn_Click);
-            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
-            this.Controls.Add(this.book6pnl);
             this.Controls.Add(this.book4pnl);
             this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.btnback);
@@ -1150,6 +1124,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.book1pnl);
+            this.Controls.Add(this.book6pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1182,13 +1157,13 @@
             this.book4titlepnl.PerformLayout();
             this.book6pnl.ResumeLayout(false);
             this.book6pnl.PerformLayout();
+            this.extrapnl.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.extrapnl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1255,7 +1230,6 @@
         private System.Windows.Forms.Button btncancel1;
         private System.Windows.Forms.Panel book4pnl;
         private System.Windows.Forms.Button btnsavedate;
-        private System.Windows.Forms.Label datelbl;
         private System.Windows.Forms.Panel book4titlepnl;
         private System.Windows.Forms.Label datestitlelbl;
         private System.Windows.Forms.CheckedListBox dayslistbx;
@@ -1273,7 +1247,6 @@
         private System.Windows.Forms.Button week1btn;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.MonthCalendar BookingCalendar;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox monthscbx;
         private System.Windows.Forms.Label label18;

@@ -44,8 +44,11 @@ CREATE TABLE [dbo].[Booking]
         [BookingID] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	[ChildId] INT FOREIGN KEY REFERENCES [dbo].[Kids]([ChildId]),
         [GroupId] INT FOREIGN KEY REFERENCES [dbo].[Groups]([GroupId]),
-	[StartDate] varchar(50) NULL,
-	[EndDate] varchar(50) NULL,
+	[Monday] INT NULL,
+    [Tuesday]   INT NULL,
+    [Wednesday] INT NULL, 
+    [Thrusday] INT NULL, 
+    [Friday] INT NULL, 
 )
 
 INSERT Groups(GroupName) VALUES('Baby')
