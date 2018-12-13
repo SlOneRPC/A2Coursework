@@ -49,8 +49,9 @@ namespace A2CourseWork.Gui
             if(existingkid != null && !book1pnl.Visible)
             {
                 //book4pnl.Visible = true;
-                initaliseweeks(0);
-                populatemonthscbx();
+                initaliseweeks(DateTime.Now);
+                populatemonthscbx(true);
+                populateyearscbx();
                 book6pnl.Visible = true;
             }
         }
@@ -234,7 +235,9 @@ namespace A2CourseWork.Gui
                 BookingCalendar.MinDate = DateTime.Now;
                 book3pnl.Visible = false;
                 book2pnl.Visible = false;
-                initaliseweeks(0);
+                initaliseweeks(DateTime.Now);
+                populatemonthscbx(true);
+                populateyearscbx();
                 book6pnl.Visible = true;
                 //book4pnl.Visible = true;
             }
@@ -472,11 +475,14 @@ namespace A2CourseWork.Gui
         //    }
         //}
 
-        private void initaliseweeks(int months)
+        private void initaliseweeks(DateTime now)
         {
-            DateTime now = DateTime.Now;
-            DateTime startdate = new DateTime(now.AddMonths(months).Year, now.AddMonths(months).Month, 1);
-            DateTime enddate = new DateTime(now.AddMonths(months).Year, now.AddMonths(months).Month, DateTime.DaysInMonth(now.AddMonths(months).Year, now.AddMonths(months).Month));
+            extrapnl.Visible = false;
+            book6pnl.Size = new Size(823, 424);
+            DateTime startdate = new DateTime(now.Year, now.Month, 1);
+            DateTime enddate = new DateTime(now.Year, now.Month, DateTime.DaysInMonth(now.Year, now.Month));
+            mondays = new List<int>();
+            fridays = new List<int>();
             for (DateTime date = startdate; date <= enddate; date = date.AddDays(1))
             {
                 if (date.DayOfWeek == DayOfWeek.Monday)
@@ -491,125 +497,212 @@ namespace A2CourseWork.Gui
 
             for (int x = 0; x <= mondays.Count-1; x++)
             {
-                string day1 = Convert.ToString(mondays[x]);
+                string day1 = "";
                 string day2 = "";
-                if (x == mondays.Count-1 && fridays.Count != mondays.Count)
+
+                if(x == fridays.Count)
                 {
-                    continue;
+                    if(x == mondays.Count)
+                    {
+                        day1 = Convert.ToString(mondays[x - 1]);
+                    }
+                    else
+                    {
+                        day1 = Convert.ToString(mondays[x]);
+                    }
+                    day2 = "Next Month";
+                    extrapnl.Visible = true;
+                    book6pnl.Size = new Size(823, 493);
+                }
+                else if (mondays[x] > fridays[x])
+                {
+                    day1 = Convert.ToString(mondays[x]);
+                    if (x == fridays.Count - 1)
+                    {
+                        day2 = "Next Month";
+                    }
+                    else
+                    {
+                        day2 = Convert.ToString(fridays[x + 1]);
+                    }
                 }
                 else
                 {
+                    day1 = Convert.ToString(mondays[x]);
                     day2 = Convert.ToString(fridays[x]);
                 }
-                string text = "Week:" + day1 + "-" + day2;
+        
+                string text =  day1 + "-" + day2;
                 switch (x)
                 {
                     case 0:
-                        week1btn.Text ="First " + text;
+                        week1btn.Text = "Week 1: " + text;
                         break;
                     case 1:
-                        week2btn.Text = "Second " + text;
+                        week2btn.Text = "Week 2: " + text;
                         break;
                     case 2:
-                        week3btn.Text ="Third " + text;
+                        week3btn.Text = "Week 3: " + text;
                         break;
                     case 3:
-                        week4btn.Text ="Four " + text;
+                        week4btn.Text = "Week 4: " + text;
+                        break;
+                    case 4:
+                        week5btn.Text = "Week 5: " + text;
                         break;
                 }
             }
+
             btnbooks = new List<bool>();
-            for(int i = 0; i<= 4; i++)
+            for(int i = 0; i<= mondays.Count-1; i++)
             {
-                btnbooks.Add(false);
+                if (bookeddays.Contains(mondays[i]))
+                {
+                    btnbooks.Add(true);
+                }
+                else
+                {
+                    btnbooks.Add(false);
+                }
+            }
+            List<Button> bookingbuttons = new List<Button>() { week1btn, week2btn, week3btn, week4btn };
+            if(mondays.Count-1 == 4)
+            {
+                bookingbuttons.Add(week5btn);
+            }
+            int y = 0;
+            foreach(Button b in bookingbuttons)
+            {
+                buttons(b, y);
+                y++;
             }
         }
 
-        private void populatemonthscbx()
+        private void populatemonthscbx(bool currentyear)
         {
             monthscbx.Items.Clear();
             List<string> months = new List<string>() { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-            for(int i = DateTime.Now.Month-1; i<12; i++)
+            if (currentyear)
             {
-                //if(bookeddays.Contains(mondays[i]))
-                monthscbx.Items.Add(months[i]);
+                for (int i = DateTime.Now.Month - 1; i < 12; i++)
+                {
+                    //if(bookeddays.Contains(mondays[i]))
+                    monthscbx.Items.Add(months[i]);
+                }
+                monthscbx.SelectedIndex = 0;
             }
-            monthscbx.SelectedIndex = 0;
-            monthtitlelbl.Text = monthscbx.Text + " " + Convert.ToString(DateTime.Now.Year);
+            else
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    monthscbx.Items.Add(months[i]);
+                }
+                monthscbx.SelectedIndex = 0;
+            }
+            monthtitlelbl.Text = monthscbx.Text + " " + yearcbx.Text;
+        }
+
+        private void populateyearscbx()
+        {
+            yearcbx.Items.Clear();
+            for (int i = 0; i < 5; i++)
+            {
+                yearcbx.Items.Add(DateTime.Now.Year+i);
+            }
+            yearcbx.SelectedIndex = 0;
+        }
+
+        private void buttons(Button current, int index)
+        {
+            if (btnbooks[index])
+            {
+                current.BackColor = Color.LimeGreen;
+                current.Text = current.Text + " [Booked]";
+            }
+            else
+            {
+                current.BackColor = Color.Silver;
+            }
+        }
+
+        private void buttonsclicked(Button current,int index)
+        {
+            if (!btnbooks[index])
+            {
+                bookeddays.Add(mondays[index]);
+                current.BackColor = Color.LimeGreen;
+                current.Text = current.Text + " [Booked]";
+                btnbooks[index] = true;
+            }
+            else
+            {
+                bookeddays.Remove(mondays[index]);
+                current.BackColor = Color.Silver;
+                current.Text = current.Text.Remove(current.Text.Length - 9);
+                btnbooks[index] = false;
+            }
         }
 
         private void week1btn_Click(object sender, EventArgs e)
         {
-            if (!btnbooks[0])
-            {
-                bookeddays.Add(mondays[0]);
-                week1btn.BackColor = Color.LimeGreen;
-                week1btn.Text = week1btn.Text + " [Booked]";
-                btnbooks[0] = true;
-            }
-            else
-            {
-                bookeddays.Remove(mondays[0]);
-                week1btn.BackColor = Color.Silver;
-                week1btn.Text = week1btn.Text.Remove(week1btn.Text.Length - 9);
-                btnbooks[0] = false;
-            }
+            buttonsclicked(week1btn, 0);
         }
 
         private void week2btn_Click(object sender, EventArgs e)
         {
-            if (!btnbooks[1])
-            {
-                bookeddays.Add(mondays[1]);
-                week2btn.BackColor = Color.LimeGreen;
-                week2btn.Text = week2btn.Text + " [Booked]";
-                btnbooks[1] = true;
-            }
-            else
-            {
-                bookeddays.Remove(mondays[1]);
-                week2btn.BackColor = Color.Silver;
-                week2btn.Text = week2btn.Text.Remove(week2btn.Text.Length - 9);
-                btnbooks[1] = false;
-            }
-
+            buttonsclicked(week2btn, 1);
         }
 
         private void week3btn_Click(object sender, EventArgs e)
         {
-            if (!btnbooks[2])
-            {
-                bookeddays.Add(mondays[2]);
-                week3btn.BackColor = Color.LimeGreen;
-                week3btn.Text = week3btn.Text + " [Booked]";
-                btnbooks[2] = true;
-            }
-            else
-            {
-                bookeddays.Remove(mondays[2]);
-                week3btn.BackColor = Color.Silver;
-                week3btn.Text = week3btn.Text.Remove(week3btn.Text.Length - 9);
-                btnbooks[2] = false;
-            }
-
+            buttonsclicked(week3btn, 2);
         }
 
         private void week4btn_Click(object sender, EventArgs e)
         {
-            if (!btnbooks[3])
+            buttonsclicked(week4btn, 3);
+        }
+
+        private void week5btn_Click(object sender, EventArgs e)
+        {
+            buttonsclicked(week5btn, 4);
+        }
+        bool intialy = true;
+        private void yearcbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!intialy)
             {
-                bookeddays.Add(mondays[3]);
-                week4btn.BackColor = Color.LimeGreen;
-                week4btn.Text = week4btn.Text + " [Booked]";
-                btnbooks[3] = true;
+                if (yearcbx.Text == DateTime.Now.Year.ToString())
+                {
+                    populatemonthscbx(true);
+                }
+                else
+                {
+                    populatemonthscbx(false);
+                }
+                initaliseweeks(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year, monthscbx.SelectedIndex + 1, 1));
             }
             else
             {
-                bookeddays.Remove(mondays[3]);
-                week4btn.BackColor = Color.Silver;
-                week4btn.Text = week4btn.Text.Remove(week4btn.Text.Length - 9);
-                btnbooks[3] = false;
+                intialy = false;
             }
+           
+        }
+        bool initalm = true;
+        private void monthscbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = 0;
+            int x = 0;
+            if (initalm)
+            {
+                initalm = false;
+            }
+            else
+            {
+                x = monthscbx.SelectedIndex + 1;
+                initaliseweeks(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year + 0, x, DateTime.Now.Day));
+            }
+            monthtitlelbl.Text = monthscbx.Text + " " + yearcbx.Text;
         }
     }
 }
