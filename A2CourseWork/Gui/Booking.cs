@@ -23,7 +23,7 @@ namespace A2CourseWork.Gui
 
         List<int> mondays = new List<int>();
         List<int> fridays = new List<int>();
-        List<int> bookeddates = new List<int>();
+        List<DateTime> bookeddates = new List<DateTime>();
         List<bool> btnbooks = new List<bool>();
         List<string> bookeddays = new List<string>();
         List<Objects.Booking> datesbooked = new List<Objects.Booking>();
@@ -49,9 +49,9 @@ namespace A2CourseWork.Gui
             {
                 DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
                 DOBpicker.MaxDate = DateTime.Now.AddMonths(-6);
-                initaliseweeks(DateTime.Now);
                 populatemonthscbx(true);
                 populateyearscbx();
+                initaliseweeks(DateTime.Now);
                 book6pnl.Visible = true;
             }
         }
@@ -312,7 +312,7 @@ namespace A2CourseWork.Gui
             else
             {
                 List<string> date = dates[0];
-                book.AddDates(date[0], date[1], existingkid.Forename, date[2], Convert.ToInt32(date[3]), Convert.ToInt32(date[4]), Convert.ToInt32(date[5]), Convert.ToInt32(date[6]), Convert.ToInt32(date[7]));
+                //book.AddDates(date[0], date[1], existingkid.Forename, date[2], Convert.ToInt32(date[3]), Convert.ToInt32(date[4]), Convert.ToInt32(date[5]), Convert.ToInt32(date[6]), Convert.ToInt32(date[7]));
             }
 
 
@@ -376,9 +376,9 @@ namespace A2CourseWork.Gui
             }
             Objects.Booking book = new Objects.Booking();
             book.Days = bookeddays;
-            book.Mondays = bookeddates;
+           // book.Mondays =  bookeddates;
             datesbooked.Add(book);
-            bookeddates = new List<int>();
+            //bookeddates = new List<int>();
             bookeddays = new List<string>();
 
             //next
@@ -496,11 +496,13 @@ namespace A2CourseWork.Gui
                         break;
                 }
             }
-
+            string MonthName = monthscbx.Text;
+            int MonthNo = Convert.ToDateTime("01-" + MonthName + "-2011").Month;
             btnbooks = new List<bool>();
             for(int i = 0; i<= mondays.Count-1; i++)
             {
-                if (bookeddates.Contains(mondays[i]))
+                DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo, mondays[i]);
+                if (bookeddates.Contains(current))
                 {
                     btnbooks.Add(true);
                 }
@@ -573,14 +575,16 @@ namespace A2CourseWork.Gui
         {
             if (!btnbooks[index])
             {
-                bookeddates.Add(mondays[index]);
+                DateTime selecteddate = new DateTime(Convert.ToInt32(yearcbx.Text),monthscbx.SelectedIndex +1, mondays[index]);
+                bookeddates.Add(selecteddate);
                 current.BackColor = Color.LimeGreen;
                 current.Text = current.Text + " [Booked]";
                 btnbooks[index] = true;
             }
             else
             {
-                bookeddates.Remove(mondays[index]);
+                DateTime selecteddate = new DateTime(Convert.ToInt32(yearcbx.Text), monthscbx.SelectedIndex + 1, mondays[index]);
+                bookeddates.Remove(selecteddate);
                 current.BackColor = Color.Silver;
                 current.Text = current.Text.Remove(current.Text.Length - 9);
                 btnbooks[index] = false;

@@ -93,6 +93,7 @@
             this.dayslistbx = new System.Windows.Forms.CheckedListBox();
             this.btnsavedate = new System.Windows.Forms.Button();
             this.book6pnl = new System.Windows.Forms.Panel();
+            this.btnfinished = new System.Windows.Forms.Button();
             this.extrapnl = new System.Windows.Forms.Panel();
             this.week5btn = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
@@ -896,6 +897,7 @@
             // book6pnl
             // 
             this.book6pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.book6pnl.Controls.Add(this.btnfinished);
             this.book6pnl.Controls.Add(this.extrapnl);
             this.book6pnl.Controls.Add(this.label18);
             this.book6pnl.Controls.Add(this.yearcbx);
@@ -913,6 +915,20 @@
             this.book6pnl.Size = new System.Drawing.Size(823, 493);
             this.book6pnl.TabIndex = 24;
             this.book6pnl.Visible = false;
+            // 
+            // btnfinished
+            // 
+            this.btnfinished.BackColor = System.Drawing.Color.Gray;
+            this.btnfinished.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnfinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfinished.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfinished.ForeColor = System.Drawing.Color.White;
+            this.btnfinished.Location = new System.Drawing.Point(679, 71);
+            this.btnfinished.Name = "btnfinished";
+            this.btnfinished.Size = new System.Drawing.Size(130, 54);
+            this.btnfinished.TabIndex = 9;
+            this.btnfinished.Text = "Finished";
+            this.btnfinished.UseVisualStyleBackColor = false;
             // 
             // extrapnl
             // 
@@ -1253,5 +1269,6 @@
         private System.Windows.Forms.ComboBox yearcbx;
         private System.Windows.Forms.Panel extrapnl;
         private System.Windows.Forms.Button week5btn;
+        private System.Windows.Forms.Button btnfinished;
     }
 }
