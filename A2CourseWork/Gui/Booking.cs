@@ -352,9 +352,9 @@ namespace A2CourseWork.Gui
                 cust = existingcustomer;
             }
 
-            if(existingkid == null)
+            if(existingkid !=null)
             {
-                book.AddBooking(existingkid.Forename, MiscFunctions.getgroupfromage(existingkid.DOB), finishedbookings[0].Days[0], finishedbookings[0].Days[1], finishedbookings[0].Days[2], finishedbookings[0].Days[3], finishedbookings[0].Days[4]);
+                //book.AddBooking(existingkid.Forename, MiscFunctions.getgroupfromage(existingkid.DOB), finishedbookings[0].Days[0], finishedbookings[0].Days[1], finishedbookings[0].Days[2], finishedbookings[0].Days[3], finishedbookings[0].Days[4]);
                 book.AddDate(finishedbookings[0].Mondays, existingkid.Forename);
             }
             else

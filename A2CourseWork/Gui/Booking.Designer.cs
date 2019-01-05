@@ -1132,6 +1132,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.book6pnl);
             this.Controls.Add(this.book4pnl);
             this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.btnback);
@@ -1141,7 +1142,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.book1pnl);
-            this.Controls.Add(this.book6pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

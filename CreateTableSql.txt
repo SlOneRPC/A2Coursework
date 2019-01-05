@@ -47,7 +47,7 @@ CREATE TABLE [dbo].[Booking]
 	[Monday] INT NULL,
     	[Tuesday]   INT NULL,
     	[Wednesday] INT NULL, 
-    	[Thrusday] INT NULL, 
+    	[Thursday] INT NULL, 
     	[Friday] INT NULL, 
 )
 

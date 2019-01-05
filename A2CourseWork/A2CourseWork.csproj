@@ -103,10 +103,16 @@
     <Compile Include="Gui\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gui\ViewBookings.cs">
+    <Compile Include="Gui\ViewBooking\ByDate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\ViewBookings.Designer.cs">
+    <Compile Include="Gui\ViewBooking\ByDate.Designer.cs">
+      <DependentUpon>ByDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ViewBooking\ViewBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\ViewBooking\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\custBooking.cs" />
@@ -134,7 +140,7 @@
     <EmbeddedResource Include="Gui\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\ViewBookings.resx">
+    <EmbeddedResource Include="Gui\ViewBooking\ViewBookings.resx">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
