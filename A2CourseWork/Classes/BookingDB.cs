@@ -17,6 +17,20 @@ namespace A2CourseWork.Classes
 
         }
 
+        public Booking getalldates()
+        {
+            Booking bookings = new Booking();
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT * FROM Dates";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                bookings.Mondays.Add(Convert.ToDateTime(db.Rdr.GetString(1)));
+            }
+            db.Rdr.Close();
+            return bookings;
+        }
+
         public List<custBooking> getallbookingsforkid(string childname)
         {
             int id = getchildID(childname);
@@ -31,14 +45,17 @@ namespace A2CourseWork.Classes
             return bookings;
         }
 
-        public custBooking getbookingfromreader(SqlDataReader reader)
+        private custBooking getbookingfromreader(SqlDataReader reader)
         {
             custBooking booking = new custBooking();
             booking.Id = reader.GetInt32(0);
             booking.ChildId = reader.GetInt32(1);
             booking.GroupId = reader.GetInt32(2);
-            booking.Startdate = reader.GetString(3);
-            booking.Enddate = reader.GetString(4);
+            booking.Monday = reader.GetByte(3);
+            booking.Tuesday = reader.GetByte(4);
+            booking.Wednesday = reader.GetByte(5);
+            booking.Thursday = reader.GetByte(6);
+            booking.Friday = reader.GetByte(7);
             return booking;
         }
 

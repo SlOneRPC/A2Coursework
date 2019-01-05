@@ -13,16 +13,23 @@ namespace A2CourseWork.Objects
         private int id;
         private int childid;
         private int groupid;
-        private string startdate;
-        private string enddate;
+        private int mon;
+        private int tues;
+        private int weds;
+        private int thur;
+        private int friday;
 
-        public custBooking(int id,int childid,int groupid,string startdate,string enddate)
+
+        public custBooking(int id,int childid,int groupid,int monday,int tues,int weds,int thurs,int friday)
         {
             this.id = id;
             this.childid = childid;
             this.groupid = groupid;
-            this.startdate = startdate;
-            this.enddate = enddate;
+            this.mon = monday;
+            this.tues = tues;
+            this.weds = weds;
+            this.thur = thurs;
+            this.friday = friday;
         }
 
         public int Id
@@ -43,16 +50,35 @@ namespace A2CourseWork.Objects
             set { groupid = value; }
         }
 
-        public string Startdate
+        public int Monday
         {
-            get { return startdate; }
-            set { startdate = value; }
+            get { return Monday; }
+            set { Monday = value; }
         }
 
-        public string Enddate
+        public int Tuesday
         {
-            get { return enddate; }
-            set { enddate = value; }
+            get { return tues; }
+            set { tues = value; }
         }
+
+        public int Wednesday
+        {
+            get { return weds; }
+            set { weds = value; }
+        }
+
+        public int Thursday
+        {
+            get { return thur; }
+            set { thur = value; }
+        }
+
+        public int Friday
+        {
+            get { return friday; }
+            set { friday = value; }
+        }
+
     }
 }

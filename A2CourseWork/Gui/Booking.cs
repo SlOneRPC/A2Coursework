@@ -519,7 +519,9 @@ namespace A2CourseWork.Gui
             }
             string currentmonth = monthscbx.Text;
             int MonthNo = months.FindIndex(a => a.StartsWith(currentmonth));
+            BookingDB bookingdb = new BookingDB(db);
             btnbooks = new List<bool>();
+            Objects.Booking alldates = bookingdb.getalldates();
             for(int i = 0; i<= mondays.Count-1; i++)
             {
                 DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo+1, mondays[i]);
