@@ -90,7 +90,7 @@ namespace A2CourseWork.Gui
             snamelbl.Text = "Surname: " + kids[kidslistbox.SelectedIndex].Surname;
             doblbl.Text = "DOB: " + kids[kidslistbox.SelectedIndex].DOB;
             agelbl.Text = "Age: " + calculateAge() + " months old";
-            agegrouplbl.Text = "Age Group Name: " + MiscFunctions.getgroupfromage(Convert.ToInt32(calculateAge()));
+            agegrouplbl.Text = "Age Group Name: " + MiscFunctions.getgroupfromage(kids[kidslistbox.SelectedIndex].DOB);
 
             //gather bookings
             List<custBooking> bookings = new List<custBooking>();

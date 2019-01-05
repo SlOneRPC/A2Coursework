@@ -10,22 +10,22 @@ namespace A2CourseWork.Objects
     {
         public Booking() { }
 
-        private List<int> mondays = new List<int>();
-        private List<string> days = new List<string>();
+        private List<DateTime> mondays = new List<DateTime>();
+        private List<int> days = new List<int>();
 
-        public Booking(List<int> mondays,List<string> days)
+        public Booking(List<DateTime> mondays,List<int> days)
         {
             this.mondays = mondays;
             this.days = days;
         }
 
-        public List<int> Mondays
+        public List<DateTime> Mondays
         {
             get { return mondays; }
             set { mondays = value; }
         }
 
-        public List<string> Days
+        public List<int> Days
         {
             get { return days; }
             set { days = value; }

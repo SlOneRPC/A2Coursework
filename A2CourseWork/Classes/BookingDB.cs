@@ -73,11 +73,15 @@ namespace A2CourseWork.Classes
             doquery();
         }
 
-        public void AddDate(int monday)
+        public void AddDate(List<DateTime> mondays,string childForename)
         {
-            db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "";
-            doquery();
+            int bookingid = getBookingID(childForename);
+            foreach(DateTime monday in mondays)
+            {
+                db.Cmd = db.Conn.CreateCommand();
+                db.Cmd.CommandText = $"INSERT INTO Dates(BookingId,Monday) VALUES({bookingid},{monday.ToShortDateString()})";
+                doquery();
+            }
         }
 
         private int getchildID(string childname)
@@ -125,6 +129,21 @@ namespace A2CourseWork.Classes
             return -1;
         }
 
+        private int getBookingID(string childname)
+        {
+            int childid = getchildID(childname);
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "SELECT * FROM Booking WHERE ChildId = " + childid + "";
+            db.Rdr = db.Cmd.ExecuteReader();
+            if (db.Rdr.Read())
+            {
+                int id = db.Rdr.GetInt32(0);
+                db.Rdr.Close();
+                return id;
+            }
+            db.Rdr.Close();
+            return -1;
+        }
 
         private void doquery()
         {

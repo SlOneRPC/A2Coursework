@@ -927,8 +927,9 @@
             this.btnfinished.Name = "btnfinished";
             this.btnfinished.Size = new System.Drawing.Size(130, 54);
             this.btnfinished.TabIndex = 9;
-            this.btnfinished.Text = "Finished";
+            this.btnfinished.Text = "Complete";
             this.btnfinished.UseVisualStyleBackColor = false;
+            this.btnfinished.Click += new System.EventHandler(this.btnfinished_Click);
             // 
             // extrapnl
             // 

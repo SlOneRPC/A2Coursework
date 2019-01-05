@@ -13,6 +13,8 @@ namespace A2CourseWork.Gui
 {
     public partial class Booking : Form
     {
+        #region definitions
+        //============== Definitions ==============
         Database db;
         decimal Nokids;
         int booked=0;
@@ -25,14 +27,15 @@ namespace A2CourseWork.Gui
         List<int> fridays = new List<int>();
         List<DateTime> bookeddates = new List<DateTime>();
         List<bool> btnbooks = new List<bool>();
-        List<string> bookeddays = new List<string>();
-        List<Objects.Booking> datesbooked = new List<Objects.Booking>();
+        List<int> bookeddays = new List<int>();
+        List<Objects.Booking> finishedbookings = new List<Objects.Booking>();
 
+        List<string> months = new List<string>() { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
         //exsisting user
         Customer existingcustomer = null;
         Kid existingkid = null;
-
+        #endregion
 
         public Booking(Customer existingcustomer,Kid existingkid)
         {
@@ -56,6 +59,15 @@ namespace A2CourseWork.Gui
             }
         }
 
+        private void Booking_Load(object sender, EventArgs e)
+        {
+            Timer.Start();
+            Timelbl.Text = DateTime.Now.ToLongTimeString();
+            MiscFunctions.buttonhover(this);
+        }
+
+        #region Form
+        //============== Bookin Form ==============
         private void btnexit_Click(object sender, EventArgs e)
         {
             MiscFunctions.exit();
@@ -100,6 +112,43 @@ namespace A2CourseWork.Gui
                 this.Top += e.Y - lastclick.Y;
             }
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Timelbl.Text = DateTime.Now.ToLongTimeString();
+            Timer.Start();
+        }
+
+        private void leave()
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CrecheMenu form = new CrecheMenu();
+                form.Show();
+                this.Hide();
+            }
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            leave();
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            leave();
+        }
+
+        private void btncancel1_Click(object sender, EventArgs e)
+        {
+            leave();
+        }
+
+        #endregion
+
+        #region Customer booking
+        //============== Customer Booking ==============
         private void btnsave_Click(object sender, EventArgs e)
         {
             if (CustomerRequirements())
@@ -213,6 +262,10 @@ namespace A2CourseWork.Gui
 
         }
 
+        #endregion
+
+        #region Child Booking
+        //============== Child Booking ==============
         private void btnnext_Click(object sender, EventArgs e)
         {
             if (childrequirements())
@@ -235,9 +288,9 @@ namespace A2CourseWork.Gui
 
                 book3pnl.Visible = false;
                 book2pnl.Visible = false;
-                initaliseweeks(DateTime.Now);
                 populatemonthscbx(true);
                 populateyearscbx();
+                initaliseweeks(DateTime.Now);
                 book6pnl.Visible = true;
             }
         }
@@ -264,6 +317,11 @@ namespace A2CourseWork.Gui
                 return true;
             }
         }
+
+        #endregion
+
+        #region checkout
+        //============== Checkout ==============
 
         private void btncheckout_Click(object sender, EventArgs e)
         {
@@ -294,26 +352,23 @@ namespace A2CourseWork.Gui
                 cust = existingcustomer;
             }
 
-
             if(existingkid == null)
             {
-                //add all the kids to db
-                int i = 0;
-                foreach (Kid child in kids)
-                {
-                    book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename);
-                    List<string> date = dates[i];
-                    List<int> Dates = datesbooked[i].Mondays;
-                    List<string> Days = datesbooked[i].Days;
-                    //book.AddDates(date[0], date[1], child.Forename, date[2], Convert.ToInt32(date[3]), Convert.ToInt32(date[4]), Convert.ToInt32(date[5]), Convert.ToInt32(date[6]), Convert.ToInt32(date[7]));
-                    i++;
-                }
+                book.AddBooking(existingkid.Forename, MiscFunctions.getgroupfromage(existingkid.DOB), finishedbookings[0].Days[0], finishedbookings[0].Days[1], finishedbookings[0].Days[2], finishedbookings[0].Days[3], finishedbookings[0].Days[4]);
+                book.AddDate(finishedbookings[0].Mondays, existingkid.Forename);
             }
             else
             {
-                List<string> date = dates[0];
-                //book.AddDates(date[0], date[1], existingkid.Forename, date[2], Convert.ToInt32(date[3]), Convert.ToInt32(date[4]), Convert.ToInt32(date[5]), Convert.ToInt32(date[6]), Convert.ToInt32(date[7]));
+                int i = 0;
+                foreach(Kid child in kids)
+                {
+                    book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename);
+                    book.AddBooking(child.Forename, MiscFunctions.getgroupfromage(child.DOB), finishedbookings[i].Days[0], finishedbookings[i].Days[1], finishedbookings[i].Days[2], finishedbookings[i].Days[3], finishedbookings[i].Days[4]);
+                    book.AddDate(finishedbookings[i].Mondays, child.Forename);
+                    i++;
+                }
             }
+
 
 
             MessageBox.Show("Booking completed");
@@ -322,44 +377,9 @@ namespace A2CourseWork.Gui
             next.Show();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            Timelbl.Text = DateTime.Now.ToLongTimeString();
-            Timer.Start();
-        }
+        #endregion
 
-        private void Booking_Load(object sender, EventArgs e)
-        {
-            Timer.Start();
-            Timelbl.Text = DateTime.Now.ToLongTimeString();
-            MiscFunctions.buttonhover(this);
-        }
-
-        private void btnback_Click(object sender, EventArgs e)
-        {
-            leave();
-        }
-
-        private void btncancel_Click(object sender, EventArgs e)
-        {
-            leave();
-        }
-
-        private void btncancel1_Click(object sender, EventArgs e)
-        {
-            leave();
-        }
-
-        private void leave()
-        {
-            DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                CrecheMenu form = new CrecheMenu();
-                form.Show();
-                this.Hide();
-            }
-        }
+        #region DateBooking
 
         private void btnsavedate_Click(object sender, EventArgs e)
         {
@@ -367,19 +387,19 @@ namespace A2CourseWork.Gui
             {
                 if (dayslistbx.GetItemChecked(i))
                 {
-                    bookeddays.Add("1");
+                    bookeddays.Add(1);
                 }
                 else
                 {
-                    bookeddays.Add("0");
+                    bookeddays.Add(0);
                 }
             }
             Objects.Booking book = new Objects.Booking();
             book.Days = bookeddays;
-           // book.Mondays =  bookeddates;
-            datesbooked.Add(book);
-            //bookeddates = new List<int>();
-            bookeddays = new List<string>();
+            book.Mondays = bookeddates;
+            finishedbookings.Add(book);
+            bookeddates = new List<DateTime>();
+            bookeddays = new List<int>();
 
             //next
             if (booked == Nokids || existingkid != null)
@@ -404,6 +424,7 @@ namespace A2CourseWork.Gui
                 book3pnl.Visible = true;
             }
         }
+        #endregion
 
         private void populatedayslist()
         {
@@ -496,12 +517,12 @@ namespace A2CourseWork.Gui
                         break;
                 }
             }
-            string MonthName = monthscbx.Text;
-            int MonthNo = Convert.ToDateTime("01-" + MonthName + "-2011").Month;
+            string currentmonth = monthscbx.Text;
+            int MonthNo = months.FindIndex(a => a.StartsWith(currentmonth));
             btnbooks = new List<bool>();
             for(int i = 0; i<= mondays.Count-1; i++)
             {
-                DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo, mondays[i]);
+                DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo+1, mondays[i]);
                 if (bookeddates.Contains(current))
                 {
                     btnbooks.Add(true);
@@ -527,7 +548,6 @@ namespace A2CourseWork.Gui
         private void populatemonthscbx(bool currentyear)
         {
             monthscbx.Items.Clear();
-            List<string> months = new List<string>() { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
             if (currentyear)
             {
                 for (int i = DateTime.Now.Month - 1; i < 12; i++)
@@ -558,6 +578,8 @@ namespace A2CourseWork.Gui
             yearcbx.SelectedIndex = 0;
         }
 
+        #region Buttons
+
         private void buttons(Button current, int index)
         {
             if (btnbooks[index])
@@ -573,9 +595,11 @@ namespace A2CourseWork.Gui
 
         private void buttonsclicked(Button current,int index)
         {
+            string currentmonth = monthscbx.Text;
+            int MonthNo = months.FindIndex(a => a.StartsWith(currentmonth));
             if (!btnbooks[index])
             {
-                DateTime selecteddate = new DateTime(Convert.ToInt32(yearcbx.Text),monthscbx.SelectedIndex +1, mondays[index]);
+                DateTime selecteddate = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo + 1, mondays[index]);
                 bookeddates.Add(selecteddate);
                 current.BackColor = Color.LimeGreen;
                 current.Text = current.Text + " [Booked]";
@@ -583,7 +607,7 @@ namespace A2CourseWork.Gui
             }
             else
             {
-                DateTime selecteddate = new DateTime(Convert.ToInt32(yearcbx.Text), monthscbx.SelectedIndex + 1, mondays[index]);
+                DateTime selecteddate = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo + 1, mondays[index]);
                 bookeddates.Remove(selecteddate);
                 current.BackColor = Color.Silver;
                 current.Text = current.Text.Remove(current.Text.Length - 9);
@@ -615,6 +639,10 @@ namespace A2CourseWork.Gui
         {
             buttonsclicked(week5btn, 4);
         }
+
+        #endregion
+
+        #region index change
         bool intialy = true;
         private void yearcbx_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -650,6 +678,14 @@ namespace A2CourseWork.Gui
                 initaliseweeks(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year + 0, x, DateTime.Now.Day));
             }
             monthtitlelbl.Text = monthscbx.Text + " " + yearcbx.Text;
+        }
+        #endregion
+
+        private void btnfinished_Click(object sender, EventArgs e)
+        {
+            book6pnl.Visible = false;
+            populatedayslist();
+            book4pnl.Visible = true;
         }
     }
 }

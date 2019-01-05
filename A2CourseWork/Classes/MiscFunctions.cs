@@ -31,8 +31,25 @@ namespace A2CourseWork.Classes
             
         }
 
-        public static string getgroupfromage(int months)
+        private static int calculateAge(string DOB)
         {
+            int months = DateTime.Now.Month - Convert.ToDateTime(DOB).Month;
+            int years = DateTime.Now.Year - Convert.ToDateTime(DOB).Year;
+            if (months < 0)
+            {
+                years--;
+                months += 12;
+            }
+            if (years > 0)
+            {
+                months += (years * 12);
+            }
+            return months;
+        }
+
+        public static string getgroupfromage(string DOB)
+        {
+            int months = calculateAge(DOB);
             string groupName = "";
             //calculate group
             if (months > 5 && months < 19)
