@@ -26,6 +26,7 @@ namespace A2CourseWork.Gui
         List<int> mondays = new List<int>();
         List<int> fridays = new List<int>();
         List<DateTime> bookeddates = new List<DateTime>();
+        List<DateTime> alreadybooked = new List<DateTime>();
         List<bool> btnbooks = new List<bool>();
         List<int> bookeddays = new List<int>();
         List<Objects.Booking> finishedbookings = new List<Objects.Booking>();
@@ -50,6 +51,8 @@ namespace A2CourseWork.Gui
             }
             if(existingkid != null && !book1pnl.Visible)
             {
+                BookingDB bookingdb = new BookingDB(db);
+                alreadybooked = bookingdb.getalldates(existingkid.Forename).Mondays;
                 DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
                 DOBpicker.MaxDate = DateTime.Now.AddMonths(-6);
                 populatemonthscbx(true);
@@ -521,11 +524,10 @@ namespace A2CourseWork.Gui
             int MonthNo = months.FindIndex(a => a.StartsWith(currentmonth));
             BookingDB bookingdb = new BookingDB(db);
             btnbooks = new List<bool>();
-            Objects.Booking alldates = bookingdb.getalldates();
             for(int i = 0; i<= mondays.Count-1; i++)
             {
                 DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo+1, mondays[i]);
-                if (bookeddates.Contains(current))
+                if (bookeddates.Contains(current) || alreadybooked.Contains(current))
                 {
                     btnbooks.Add(true);
                 }

@@ -140,6 +140,9 @@
     <EmbeddedResource Include="Gui\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\ViewBooking\ByDate.resx">
+      <DependentUpon>ByDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\ViewBooking\ViewBookings.resx">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,8 +215,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="CrecheData_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>CrecheData.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\bus2.png" />
     <None Include="Resources\Transport.png" />

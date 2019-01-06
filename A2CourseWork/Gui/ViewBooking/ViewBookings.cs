@@ -97,10 +97,10 @@ namespace A2CourseWork.Gui
             BookingDB booking = new BookingDB(db);
             bookings = booking.getallbookingsforkid(kids[kidslistbox.SelectedIndex].Forename);
 
-            foreach (custBooking dates in bookings)
-            {
-                bookinglistbox.Items.Add(dates.Startdate + "-" + dates.Enddate);
-            }
+            //foreach (custBooking dates in bookings)
+            //{
+            //    bookinglistbox.Items.Add(dates.Startdate + "-" + dates.Enddate);
+            //}
         }
 
         private string calculateAge()

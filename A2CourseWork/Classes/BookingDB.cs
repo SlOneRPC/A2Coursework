@@ -17,15 +17,17 @@ namespace A2CourseWork.Classes
 
         }
 
-        public Booking getalldates()
+        public Booking getalldates(string childname)
         {
+            int id = getBookingID(childname);
             Booking bookings = new Booking();
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT * FROM Dates";
+            db.Cmd.CommandText = $"SELECT Monday FROM Dates WHERE BookingId={id}";
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
             {
-                bookings.Mondays.Add(Convert.ToDateTime(db.Rdr.GetString(1)));
+                string date = db.Rdr.GetString(0);
+                bookings.Mondays.Add(Convert.ToDateTime(date));
             }
             db.Rdr.Close();
             return bookings;
@@ -96,7 +98,8 @@ namespace A2CourseWork.Classes
             foreach(DateTime monday in mondays)
             {
                 db.Cmd = db.Conn.CreateCommand();
-                db.Cmd.CommandText = $"INSERT INTO Dates(BookingId,Monday) VALUES({bookingid},{monday.ToShortDateString()})";
+                string shortmonday = monday.ToShortDateString();
+                db.Cmd.CommandText = $"INSERT INTO Dates(BookingId,Monday) VALUES({bookingid},'{shortmonday}')";
                 doquery();
             }
         }

@@ -36,6 +36,7 @@ namespace A2CourseWork.Classes
         public bool connect()
         {
             string local = Application.StartupPath;
+            local = local.Remove(local.Length-10);
             SqlConnectionStringBuilder scStrBuild = new SqlConnectionStringBuilder();
             scStrBuild.DataSource = "(LocalDB)\\MSSQLLocalDB";
             scStrBuild.AttachDBFilename = local + "\\CrecheData.mdf";
