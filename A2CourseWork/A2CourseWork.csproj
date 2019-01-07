@@ -212,11 +212,11 @@
     <None Include="Resources\Advicebtn.png" />
     <None Include="Resources\booking.png" />
     <Content Include="CrecheData.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="CrecheData_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CrecheData.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\bus2.png" />
     <None Include="Resources\Transport.png" />

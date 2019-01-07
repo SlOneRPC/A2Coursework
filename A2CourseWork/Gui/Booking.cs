@@ -60,6 +60,11 @@ namespace A2CourseWork.Gui
                 initaliseweeks(DateTime.Now);
                 book6pnl.Visible = true;
             }
+            else
+            {
+                book2pnl.Visible = true;
+                book3pnl.Visible = true;
+            }
         }
 
         private void Booking_Load(object sender, EventArgs e)
@@ -238,7 +243,7 @@ namespace A2CourseWork.Gui
                 }
             }
             string postcode = posttxt.Text.Replace(" ", String.Empty);
-            if(postcode.Length > 8 || postcode.Length < 7)
+            if(postcode.Length > 8 || postcode.Length < 6)
             {
                 error4txt.Visible = true;
                 MessageBox.Show("Postcode does not meet UK requirements");
