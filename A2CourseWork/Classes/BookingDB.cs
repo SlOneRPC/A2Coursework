@@ -104,6 +104,18 @@ namespace A2CourseWork.Classes
             }
         }
 
+        public void removeDate(List<DateTime> mondays, string childForename)
+        {
+            int bookingid = getBookingID(childForename);
+            foreach (DateTime monday in mondays)
+            {
+                db.Cmd = db.Conn.CreateCommand();
+                string shortmonday = monday.ToShortDateString();
+                db.Cmd.CommandText = $"DELETE FROM Dates WHERE BookingId = {bookingid} AND Monday = '{shortmonday}'";
+                doquery();
+            }
+        }
+
         private int getchildID(string childname)
         {
             db.Cmd = db.Conn.CreateCommand();
@@ -171,9 +183,10 @@ namespace A2CourseWork.Classes
             {
                 db.Cmd.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error - Could not execute query");
+                MessageBox.Show(ex.Message);
             }
         }
     }

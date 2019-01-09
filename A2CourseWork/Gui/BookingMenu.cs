@@ -50,6 +50,7 @@ namespace A2CourseWork.Gui
 
         private void initlistbox(bool kid)
         {
+
             if (kid)
             {
                 KidsDB kidsdbaccess = new KidsDB(db);
@@ -57,7 +58,10 @@ namespace A2CourseWork.Gui
                 containerlistbox.Items.Clear();
                 foreach (Kid child in kids)
                 {
-                    containerlistbox.Items.Add(child.Forename + " " + child.Surname);
+                    if(child.ParentID == currentcustomer.CustId)
+                    {
+                        containerlistbox.Items.Add(child.Forename + " " + child.Surname);
+                    }
                 }
                 if (kids.Count > 0)
                 {

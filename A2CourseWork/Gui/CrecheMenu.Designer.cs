@@ -31,7 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Homelbl = new System.Windows.Forms.Label();
+            this.homepbx = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.minbtn = new System.Windows.Forms.PictureBox();
+            this.btnexit = new System.Windows.Forms.PictureBox();
             this.titlelbl = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnbookingsview = new System.Windows.Forms.Button();
@@ -42,15 +45,12 @@
             this.btnstaff = new System.Windows.Forms.Button();
             this.btnbooking = new System.Windows.Forms.Button();
             this.titlepxb = new System.Windows.Forms.PictureBox();
-            this.homepbx = new System.Windows.Forms.PictureBox();
-            this.minbtn = new System.Windows.Forms.PictureBox();
-            this.btnexit = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -74,6 +74,17 @@
             this.Homelbl.TabIndex = 1;
             this.Homelbl.Text = "Home";
             // 
+            // homepbx
+            // 
+            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
+            this.homepbx.Location = new System.Drawing.Point(7, 3);
+            this.homepbx.Name = "homepbx";
+            this.homepbx.Size = new System.Drawing.Size(76, 72);
+            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.homepbx.TabIndex = 0;
+            this.homepbx.TabStop = false;
+            this.homepbx.Click += new System.EventHandler(this.homepbx_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
@@ -86,6 +97,28 @@
             this.panel1.TabIndex = 6;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // minbtn
+            // 
+            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
+            this.minbtn.Location = new System.Drawing.Point(805, 0);
+            this.minbtn.Name = "minbtn";
+            this.minbtn.Size = new System.Drawing.Size(41, 38);
+            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minbtn.TabIndex = 3;
+            this.minbtn.TabStop = false;
+            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
+            // 
+            // btnexit
+            // 
+            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
+            this.btnexit.Location = new System.Drawing.Point(852, 0);
+            this.btnexit.Name = "btnexit";
+            this.btnexit.Size = new System.Drawing.Size(41, 38);
+            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnexit.TabIndex = 2;
+            this.btnexit.TabStop = false;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // titlelbl
             // 
@@ -111,6 +144,7 @@
             // 
             this.btnbookingsview.BackgroundImage = global::A2CourseWork.Properties.Resources.ViewBooking;
             this.btnbookingsview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnbookingsview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbookingsview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbookingsview.Location = new System.Drawing.Point(385, 359);
             this.btnbookingsview.Name = "btnbookingsview";
@@ -160,6 +194,7 @@
             // 
             this.btnstaff.BackgroundImage = global::A2CourseWork.Properties.Resources.staff;
             this.btnstaff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnstaff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnstaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnstaff.Location = new System.Drawing.Point(497, 182);
             this.btnstaff.Name = "btnstaff";
@@ -172,6 +207,7 @@
             // 
             this.btnbooking.BackgroundImage = global::A2CourseWork.Properties.Resources.booking;
             this.btnbooking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnbooking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbooking.Location = new System.Drawing.Point(286, 182);
             this.btnbooking.Name = "btnbooking";
@@ -190,39 +226,6 @@
             this.titlepxb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.titlepxb.TabIndex = 2;
             this.titlepxb.TabStop = false;
-            // 
-            // homepbx
-            // 
-            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.homepbx.Location = new System.Drawing.Point(7, 3);
-            this.homepbx.Name = "homepbx";
-            this.homepbx.Size = new System.Drawing.Size(76, 72);
-            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.homepbx.TabIndex = 0;
-            this.homepbx.TabStop = false;
-            this.homepbx.Click += new System.EventHandler(this.homepbx_Click);
-            // 
-            // minbtn
-            // 
-            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
-            this.minbtn.Location = new System.Drawing.Point(805, 0);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(41, 38);
-            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minbtn.TabIndex = 3;
-            this.minbtn.TabStop = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
-            // 
-            // btnexit
-            // 
-            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
-            this.btnexit.Location = new System.Drawing.Point(852, 0);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(41, 38);
-            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnexit.TabIndex = 2;
-            this.btnexit.TabStop = false;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // CrecheMenu
             // 
@@ -247,12 +250,12 @@
             this.Load += new System.EventHandler(this.CrecheMenu_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

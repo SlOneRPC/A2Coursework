@@ -27,6 +27,7 @@ namespace A2CourseWork.Gui
         List<int> fridays = new List<int>();
         List<DateTime> bookeddates = new List<DateTime>();
         List<DateTime> alreadybooked = new List<DateTime>();
+        List<DateTime> Dates2Remove = new List<DateTime>();
         List<bool> btnbooks = new List<bool>();
         List<int> bookeddays = new List<int>();
         List<Objects.Booking> finishedbookings = new List<Objects.Booking>();
@@ -364,6 +365,10 @@ namespace A2CourseWork.Gui
             {
                 //book.AddBooking(existingkid.Forename, MiscFunctions.getgroupfromage(existingkid.DOB), finishedbookings[0].Days[0], finishedbookings[0].Days[1], finishedbookings[0].Days[2], finishedbookings[0].Days[3], finishedbookings[0].Days[4]);
                 book.AddDate(finishedbookings[0].Mondays, existingkid.Forename);
+                if(Dates2Remove.Count > 0)
+                {
+                    book.removeDate(Dates2Remove, existingkid.Forename);
+                }
             }
             else
             {
@@ -373,6 +378,10 @@ namespace A2CourseWork.Gui
                     book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename);
                     book.AddBooking(child.Forename, MiscFunctions.getgroupfromage(child.DOB), finishedbookings[i].Days[0], finishedbookings[i].Days[1], finishedbookings[i].Days[2], finishedbookings[i].Days[3], finishedbookings[i].Days[4]);
                     book.AddDate(finishedbookings[i].Mondays, child.Forename);
+                    if (Dates2Remove.Count > 0)
+                    {
+                        book.removeDate(Dates2Remove, child.Forename);
+                    }
                     i++;
                 }
             }
@@ -609,7 +618,14 @@ namespace A2CourseWork.Gui
             if (!btnbooks[index])
             {
                 DateTime selecteddate = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo + 1, mondays[index]);
-                bookeddates.Add(selecteddate);
+                if (Dates2Remove.Contains(selecteddate))
+                {
+                    Dates2Remove.Remove(selecteddate);
+                }
+                else
+                {
+                    bookeddates.Add(selecteddate);
+                }
                 current.BackColor = Color.LimeGreen;
                 current.Text = current.Text + " [Booked]";
                 btnbooks[index] = true;
@@ -617,7 +633,14 @@ namespace A2CourseWork.Gui
             else
             {
                 DateTime selecteddate = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo + 1, mondays[index]);
-                bookeddates.Remove(selecteddate);
+                if (bookeddates.Contains(selecteddate))
+                {
+                    bookeddates.Remove(selecteddate);
+                }
+                else
+                {
+                    Dates2Remove.Add(selecteddate);
+                }
                 current.BackColor = Color.Silver;
                 current.Text = current.Text.Remove(current.Text.Length - 9);
                 btnbooks[index] = false;

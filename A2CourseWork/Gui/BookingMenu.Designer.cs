@@ -116,6 +116,7 @@
             // btnregister
             // 
             this.btnregister.BackColor = System.Drawing.Color.Gray;
+            this.btnregister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnregister.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnregister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregister.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,6 +200,7 @@
             // btnsearch
             // 
             this.btnsearch.BackColor = System.Drawing.Color.Gray;
+            this.btnsearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnsearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,6 +226,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(27, 102);
@@ -235,6 +238,7 @@
             // kidcheck
             // 
             this.kidcheck.AutoSize = true;
+            this.kidcheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.kidcheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kidcheck.ForeColor = System.Drawing.Color.White;
             this.kidcheck.Location = new System.Drawing.Point(30, 145);
@@ -249,6 +253,7 @@
             this.customercheck.AutoSize = true;
             this.customercheck.Checked = true;
             this.customercheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.customercheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.customercheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customercheck.ForeColor = System.Drawing.Color.White;
             this.customercheck.Location = new System.Drawing.Point(30, 124);
@@ -309,6 +314,7 @@
             // btnselect
             // 
             this.btnselect.BackColor = System.Drawing.Color.Gray;
+            this.btnselect.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnselect.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnselect.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -369,18 +375,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 568);
             this.Controls.Add(this.btnback);
-            this.Controls.Add(this.bookpnl3);
             this.Controls.Add(this.titlepxb);
             this.Controls.Add(this.bookpnl1);
             this.Controls.Add(this.bookpnl2);
+            this.Controls.Add(this.bookpnl3);
             this.Name = "BookingMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingMenu";
             this.Load += new System.EventHandler(this.BookingMenu_Load);
+            this.Controls.SetChildIndex(this.bookpnl3, 0);
             this.Controls.SetChildIndex(this.bookpnl2, 0);
             this.Controls.SetChildIndex(this.bookpnl1, 0);
             this.Controls.SetChildIndex(this.titlepxb, 0);
-            this.Controls.SetChildIndex(this.bookpnl3, 0);
             this.Controls.SetChildIndex(this.btnback, 0);
             this.bookpnl1.ResumeLayout(false);
             this.bookpnl1.PerformLayout();

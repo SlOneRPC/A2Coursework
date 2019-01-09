@@ -52,7 +52,7 @@ namespace A2CourseWork.Classes
             int months = calculateAge(DOB);
             string groupName = "";
             //calculate group
-            if (months > 5 && months < 19)
+            if (months < 19)
             {
                 groupName = "Baby";
             }
