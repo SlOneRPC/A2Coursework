@@ -116,6 +116,21 @@ namespace A2CourseWork.Classes
             }
         }
 
+        public int GetBookingSlot(DateTime searchdate, int groupid)
+        {
+            int counter = 0;
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT COUNT(*) FROM Booking INNER JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday = '{searchdate.ToShortDateString()}' AND Booking.GroupId = {groupid}";
+            db.Rdr = db.Cmd.ExecuteReader();
+            if (db.Rdr.Read())
+            {
+                counter = db.Rdr.GetInt32(0);
+            }
+            db.Rdr.Close();
+            return counter;
+        }
+
+
         private int getchildID(string childname)
         {
             db.Cmd = db.Conn.CreateCommand();
@@ -131,7 +146,7 @@ namespace A2CourseWork.Classes
             return -1;
         }
 
-        private int getgroupID(string groupname)
+        public int getgroupID(string groupname)
         {
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = "SELECT * FROM Groups WHERE GroupName = '" + groupname + "'";

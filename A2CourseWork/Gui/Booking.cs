@@ -18,6 +18,7 @@ namespace A2CourseWork.Gui
         Database db;
         decimal Nokids;
         int booked=0;
+        List<bool> overbooked = new List<bool>();
         Customer cust = new Customer();
         List<Kid> kids = new List<Kid>();
         List<List<string>> dates = new List<List<string>>();
@@ -188,7 +189,6 @@ namespace A2CourseWork.Gui
                 //setup dates for DOB
                 DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
                 DOBpicker.MaxDate = DateTime.Now.AddMonths(-6);
-                //DOBpicker.MinDate = 
 
                 Nokids = KidsNo.Value;
                 if (booked == Nokids - 1)
@@ -538,10 +538,21 @@ namespace A2CourseWork.Gui
             int MonthNo = months.FindIndex(a => a.StartsWith(currentmonth));
             BookingDB bookingdb = new BookingDB(db);
             btnbooks = new List<bool>();
+            string DOB = "";
+            if(existingkid != null)
+            {
+                DOB = existingkid.DOB;
+            }
+            else
+            {
+                DOB = kids[kids.Count - 1].DOB;
+            }
             for(int i = 0; i<= mondays.Count-1; i++)
             {
                 DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo+1, mondays[i]);
-                if (bookeddates.Contains(current) || alreadybooked.Contains(current))
+                bool Currentoverbooked = MiscFunctions.CheckAvalability(current, db, DOB);
+                overbooked.Add(Currentoverbooked);
+                if ((bookeddates.Contains(current) || alreadybooked.Contains(current)) && !Currentoverbooked)
                 {
                     btnbooks.Add(true);
                 }
@@ -604,10 +615,21 @@ namespace A2CourseWork.Gui
             {
                 current.BackColor = Color.LimeGreen;
                 current.Text = current.Text + " [Booked]";
+                current.Enabled = true;
             }
             else
             {
-                current.BackColor = Color.Silver;
+                if (overbooked[index])
+                {
+                    current.BackColor = Color.Yellow;
+                    current.Text = current.Text + " [No Spaces avaliable]";
+                    current.Enabled = false;
+                }
+                else
+                {
+                    current.BackColor = Color.Silver;
+                    current.Enabled = true;
+                }
             }
         }
 

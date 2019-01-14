@@ -71,5 +71,36 @@ namespace A2CourseWork.Classes
             }
             return groupName;
         }
+
+        public static bool CheckAvalability(DateTime currentDate,Database db,string DOB)
+        {
+            string group = getgroupfromage(DOB);
+            BookingDB bookDB = new BookingDB(db);
+            int groupID = bookDB.getgroupID(group);
+            int bookingscount = bookDB.GetBookingSlot(currentDate, groupID);
+            bool overbooked = false;
+            if(groupID == 1)
+            {
+                if (bookingscount > 6)
+                {
+                    overbooked = true;
+                }
+            }
+            else if(groupID == 2)
+            {
+                if(bookingscount > 10)
+                {
+                    overbooked = true;
+                }
+            }
+            else if(groupID == 3)
+            {
+                if(bookingscount > 9)
+                {
+                    overbooked = true;
+                }
+            }
+            return overbooked;
+        }
     }
 }
