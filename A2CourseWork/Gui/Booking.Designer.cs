@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Homelbl = new System.Windows.Forms.Label();
             this.homepbx = new System.Windows.Forms.PictureBox();
@@ -82,9 +81,6 @@
             this.Kidslist = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Timelbl = new System.Windows.Forms.Label();
-            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.btnback = new System.Windows.Forms.PictureBox();
             this.book4pnl = new System.Windows.Forms.Panel();
             this.book4titlepnl = new System.Windows.Forms.Panel();
@@ -112,6 +108,7 @@
             this.week1btn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
+            this.totalpricelbl = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -784,34 +781,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Checkout";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(757, 540);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 20);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Current Time:";
-            // 
-            // Timelbl
-            // 
-            this.Timelbl.AutoSize = true;
-            this.Timelbl.BackColor = System.Drawing.Color.Transparent;
-            this.Timelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Timelbl.ForeColor = System.Drawing.Color.White;
-            this.Timelbl.Location = new System.Drawing.Point(861, 540);
-            this.Timelbl.Name = "Timelbl";
-            this.Timelbl.Size = new System.Drawing.Size(43, 20);
-            this.Timelbl.TabIndex = 20;
-            this.Timelbl.Text = "Time";
-            // 
-            // Timer
-            // 
-            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
             // btnback
             // 
             this.btnback.Image = global::A2CourseWork.Properties.Resources.circled_left_2;
@@ -912,13 +881,14 @@
             this.book6pnl.Controls.Add(this.panel7);
             this.book6pnl.Location = new System.Drawing.Point(145, 44);
             this.book6pnl.Name = "book6pnl";
-            this.book6pnl.Size = new System.Drawing.Size(823, 493);
+            this.book6pnl.Size = new System.Drawing.Size(823, 494);
             this.book6pnl.TabIndex = 24;
             this.book6pnl.Visible = false;
             // 
             // btnfinished
             // 
             this.btnfinished.BackColor = System.Drawing.Color.Gray;
+            this.btnfinished.Enabled = false;
             this.btnfinished.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnfinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfinished.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1126,22 +1096,33 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "First Select your week";
             // 
+            // totalpricelbl
+            // 
+            this.totalpricelbl.AutoSize = true;
+            this.totalpricelbl.BackColor = System.Drawing.Color.Transparent;
+            this.totalpricelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalpricelbl.ForeColor = System.Drawing.Color.White;
+            this.totalpricelbl.Location = new System.Drawing.Point(821, 541);
+            this.totalpricelbl.Name = "totalpricelbl";
+            this.totalpricelbl.Size = new System.Drawing.Size(91, 20);
+            this.totalpricelbl.TabIndex = 25;
+            this.totalpricelbl.Text = "Total Price: ";
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
-            this.Controls.Add(this.book1pnl);
-            this.Controls.Add(this.book4pnl);
-            this.Controls.Add(this.book2pnl);
+            this.Controls.Add(this.totalpricelbl);
             this.Controls.Add(this.btnback);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.Timelbl);
-            this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.book6pnl);
+            this.Controls.Add(this.book1pnl);
+            this.Controls.Add(this.book2pnl);
+            this.Controls.Add(this.book3pnl);
+            this.Controls.Add(this.book4pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1231,9 +1212,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btncancel;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label Timelbl;
-        private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Label errorlabellbl;
         private System.Windows.Forms.Label error5txt;
         private System.Windows.Forms.Label error4txt;
@@ -1271,5 +1249,6 @@
         private System.Windows.Forms.Panel extrapnl;
         private System.Windows.Forms.Button week5btn;
         private System.Windows.Forms.Button btnfinished;
+        private System.Windows.Forms.Label totalpricelbl;
     }
 }

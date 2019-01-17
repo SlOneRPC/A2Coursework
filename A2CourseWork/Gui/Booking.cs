@@ -22,7 +22,8 @@ namespace A2CourseWork.Gui
         Customer cust = new Customer();
         List<Kid> kids = new List<Kid>();
         List<List<string>> dates = new List<List<string>>();
-
+        int currentprice = 0;
+        int currentDiscount = 0;
 
         List<int> mondays = new List<int>();
         List<int> fridays = new List<int>();
@@ -71,8 +72,6 @@ namespace A2CourseWork.Gui
 
         private void Booking_Load(object sender, EventArgs e)
         {
-            Timer.Start();
-            Timelbl.Text = DateTime.Now.ToLongTimeString();
             MiscFunctions.buttonhover(this);
         }
 
@@ -547,10 +546,13 @@ namespace A2CourseWork.Gui
             {
                 DOB = kids[kids.Count - 1].DOB;
             }
+            overbooked = new List<bool>();
             for(int i = 0; i<= mondays.Count-1; i++)
             {
                 DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo+1, mondays[i]);
-                bool Currentoverbooked = MiscFunctions.CheckAvalability(current, db, DOB);
+                bool Currentoverbooked = false;
+                if (!alreadybooked.Contains(current))
+                    Currentoverbooked = MiscFunctions.CheckAvalability(current, db, DOB);
                 overbooked.Add(Currentoverbooked);
                 if ((bookeddates.Contains(current) || alreadybooked.Contains(current)) && !Currentoverbooked)
                 {
@@ -621,7 +623,7 @@ namespace A2CourseWork.Gui
             {
                 if (overbooked[index])
                 {
-                    current.BackColor = Color.Yellow;
+                    current.BackColor = Color.Red;
                     current.Text = current.Text + " [No Spaces avaliable]";
                     current.Enabled = false;
                 }
@@ -667,6 +669,8 @@ namespace A2CourseWork.Gui
                 current.Text = current.Text.Remove(current.Text.Length - 9);
                 btnbooks[index] = false;
             }
+            btnfinished.Enabled = true;
+            totalpricelbl.Text = "Total Price: " + currentprice * (1 - currentDiscount);
         }
 
         private void week1btn_Click(object sender, EventArgs e)
@@ -740,6 +744,70 @@ namespace A2CourseWork.Gui
             book6pnl.Visible = false;
             populatedayslist();
             book4pnl.Visible = true;
+        }
+
+        private void calculatePrice(DateTime bookeddate,bool remove)
+        {
+            if (remove)
+            {
+                if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
+                {
+                    bool keep = false;
+                    foreach(DateTime date in bookeddates)
+                    {
+                        if(date > DateTime.Now.AddMonths(3) && date < DateTime.Now.AddMonths(6))
+                        {
+                            keep = true;
+                        }
+                    }
+                    if (!keep)
+                    {
+                        currentDiscount = 0;
+                    }
+                }
+                else if (bookeddate >= DateTime.Now.AddMonths(6))
+                {
+                    bool keep = false;
+                    foreach (DateTime date in bookeddates)
+                    {
+                        if (date >= DateTime.Now.AddMonths(6))
+                        {
+                            keep = true;
+                        }
+                    }
+                    if (!keep)
+                    {
+                        foreach (DateTime date in bookeddates)
+                        {
+                            if (date > DateTime.Now.AddMonths(3) && date < DateTime.Now.AddMonths(6))
+                            {
+                                keep = true;
+                            }
+                        }
+                        if (!keep)
+                        {
+                            currentDiscount = 0;
+                        }
+                        else
+                        {
+                            currentDiscount = 3;
+                        }
+                    }
+                }
+                currentprice -= 15;
+            }
+            else
+            {
+                if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
+                {
+                    currentDiscount = 3;
+                }
+                else if (bookeddate >= DateTime.Now.AddMonths(6))
+                {
+                    currentDiscount = 5;
+                }
+                currentprice += 15;
+            }
         }
     }
 }
