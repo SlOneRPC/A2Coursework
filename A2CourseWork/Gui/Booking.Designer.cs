@@ -74,7 +74,7 @@
             this.ChildFnametxt = new System.Windows.Forms.TextBox();
             this.book3pnl = new System.Windows.Forms.Panel();
             this.btncancel = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.FinalPrice = new System.Windows.Forms.Label();
             this.KidsBookedlbl = new System.Windows.Forms.Label();
             this.btncheckout = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -238,7 +238,7 @@
             this.book1pnl.Controls.Add(this.label4);
             this.book1pnl.Controls.Add(this.label2);
             this.book1pnl.Controls.Add(this.Fnametxt);
-            this.book1pnl.Location = new System.Drawing.Point(196, 66);
+            this.book1pnl.Location = new System.Drawing.Point(196, 47);
             this.book1pnl.Name = "book1pnl";
             this.book1pnl.Size = new System.Drawing.Size(626, 436);
             this.book1pnl.TabIndex = 5;
@@ -673,7 +673,7 @@
             // 
             this.book3pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.book3pnl.Controls.Add(this.btncancel);
-            this.book3pnl.Controls.Add(this.label12);
+            this.book3pnl.Controls.Add(this.FinalPrice);
             this.book3pnl.Controls.Add(this.KidsBookedlbl);
             this.book3pnl.Controls.Add(this.btncheckout);
             this.book3pnl.Controls.Add(this.label10);
@@ -700,16 +700,16 @@
             this.btncancel.UseVisualStyleBackColor = false;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
-            // label12
+            // FinalPrice
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(9, 332);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 20);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Price:";
+            this.FinalPrice.AutoSize = true;
+            this.FinalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinalPrice.ForeColor = System.Drawing.Color.White;
+            this.FinalPrice.Location = new System.Drawing.Point(9, 332);
+            this.FinalPrice.Name = "FinalPrice";
+            this.FinalPrice.Size = new System.Drawing.Size(48, 20);
+            this.FinalPrice.TabIndex = 7;
+            this.FinalPrice.Text = "Price:";
             // 
             // KidsBookedlbl
             // 
@@ -1065,7 +1065,7 @@
             // 
             // week1btn
             // 
-            this.week1btn.BackColor = System.Drawing.Color.Silver;
+            this.week1btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.week1btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.week1btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.week1btn.Location = new System.Drawing.Point(8, 10);
@@ -1107,6 +1107,7 @@
             this.totalpricelbl.Size = new System.Drawing.Size(91, 20);
             this.totalpricelbl.TabIndex = 25;
             this.totalpricelbl.Text = "Total Price: ";
+            this.totalpricelbl.Visible = false;
             // 
             // Booking
             // 
@@ -1118,11 +1119,11 @@
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.book6pnl);
             this.Controls.Add(this.book1pnl);
             this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.book4pnl);
+            this.Controls.Add(this.book6pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1204,7 +1205,7 @@
         private System.Windows.Forms.TextBox ChildFnametxt;
         private System.Windows.Forms.DateTimePicker DOBpicker;
         private System.Windows.Forms.Panel book3pnl;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label FinalPrice;
         private System.Windows.Forms.Label KidsBookedlbl;
         private System.Windows.Forms.Button btncheckout;
         private System.Windows.Forms.Label label10;

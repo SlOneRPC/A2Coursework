@@ -23,7 +23,7 @@ namespace A2CourseWork.Gui
         List<Kid> kids = new List<Kid>();
         List<List<string>> dates = new List<List<string>>();
         int currentprice = 0;
-        int currentDiscount = 0;
+        double currentDiscount = 0;
 
         List<int> mondays = new List<int>();
         List<int> fridays = new List<int>();
@@ -56,6 +56,10 @@ namespace A2CourseWork.Gui
             {
                 BookingDB bookingdb = new BookingDB(db);
                 alreadybooked = bookingdb.getalldates(existingkid.Forename).Mondays;
+                foreach(DateTime booking in alreadybooked)
+                {
+                    calculatePrice(booking, false);
+                }
                 DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
                 DOBpicker.MaxDate = DateTime.Now.AddMonths(-6);
                 populatemonthscbx(true);
@@ -124,8 +128,7 @@ namespace A2CourseWork.Gui
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Timelbl.Text = DateTime.Now.ToLongTimeString();
-            Timer.Start();
+
         }
 
         private void leave()
@@ -429,6 +432,7 @@ namespace A2CourseWork.Gui
                 {
                     KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
                 }
+                FinalPrice.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount));
                 book4pnl.Visible = false;
                 book3pnl.Location = new Point(408, 65);
                 book3pnl.Visible = true;
@@ -623,7 +627,7 @@ namespace A2CourseWork.Gui
             {
                 if (overbooked[index])
                 {
-                    current.BackColor = Color.Red;
+                    current.BackColor = Color.FromArgb(255, 128, 128);
                     current.Text = current.Text + " [No Spaces avaliable]";
                     current.Enabled = false;
                 }
@@ -650,9 +654,11 @@ namespace A2CourseWork.Gui
                 {
                     bookeddates.Add(selecteddate);
                 }
+                calculatePrice(selecteddate, false);
                 current.BackColor = Color.LimeGreen;
                 current.Text = current.Text + " [Booked]";
                 btnbooks[index] = true;
+                btnfinished.Enabled = true;
             }
             else
             {
@@ -665,11 +671,13 @@ namespace A2CourseWork.Gui
                 {
                     Dates2Remove.Add(selecteddate);
                 }
+                calculatePrice(selecteddate, true);
                 current.BackColor = Color.Silver;
                 current.Text = current.Text.Remove(current.Text.Length - 9);
                 btnbooks[index] = false;
+                btnfinished.Enabled = false;
             }
-            btnfinished.Enabled = true;
+
             totalpricelbl.Text = "Total Price: " + currentprice * (1 - currentDiscount);
         }
 
@@ -741,6 +749,7 @@ namespace A2CourseWork.Gui
 
         private void btnfinished_Click(object sender, EventArgs e)
         {
+            totalpricelbl.Visible = false;
             book6pnl.Visible = false;
             populatedayslist();
             book4pnl.Visible = true;
@@ -790,7 +799,7 @@ namespace A2CourseWork.Gui
                         }
                         else
                         {
-                            currentDiscount = 3;
+                            currentDiscount = 0.03;
                         }
                     }
                 }
@@ -800,14 +809,17 @@ namespace A2CourseWork.Gui
             {
                 if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
                 {
-                    currentDiscount = 3;
+                    currentDiscount = 0.03;
                 }
                 else if (bookeddate >= DateTime.Now.AddMonths(6))
                 {
-                    currentDiscount = 5;
+                    currentDiscount = 0.05;
                 }
                 currentprice += 15;
             }
+            totalpricelbl.Visible = true;
+            totalpricelbl.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount));
         }
+
     }
 }
