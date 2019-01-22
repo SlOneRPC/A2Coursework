@@ -52,8 +52,8 @@ namespace A2CourseWork.Objects
 
         public int Monday
         {
-            get { return Monday; }
-            set { Monday = value; }
+            get { return mon; }
+            set { mon = value; }
         }
 
         public int Tuesday

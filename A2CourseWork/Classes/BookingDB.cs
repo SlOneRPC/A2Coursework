@@ -53,11 +53,11 @@ namespace A2CourseWork.Classes
             booking.Id = reader.GetInt32(0);
             booking.ChildId = reader.GetInt32(1);
             booking.GroupId = reader.GetInt32(2);
-            booking.Monday = reader.GetByte(3);
-            booking.Tuesday = reader.GetByte(4);
-            booking.Wednesday = reader.GetByte(5);
-            booking.Thursday = reader.GetByte(6);
-            booking.Friday = reader.GetByte(7);
+            booking.Monday = reader.GetInt32(3);
+            booking.Tuesday = reader.GetInt32(4);
+            booking.Wednesday = reader.GetInt32(5);
+            booking.Thursday = reader.GetInt32(6);
+            booking.Friday = reader.GetInt32(7);
             return booking;
         }
 

@@ -558,7 +558,7 @@ namespace A2CourseWork.Gui
                 if (!alreadybooked.Contains(current))
                     Currentoverbooked = MiscFunctions.CheckAvalability(current, db, DOB);
                 overbooked.Add(Currentoverbooked);
-                if ((bookeddates.Contains(current) || alreadybooked.Contains(current)) && !Currentoverbooked)
+                if ((bookeddates.Contains(current) || (alreadybooked.Contains(current) && !Dates2Remove.Contains(current))) && !Currentoverbooked)
                 {
                     btnbooks.Add(true);
                 }

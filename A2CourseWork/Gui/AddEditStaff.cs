@@ -147,6 +147,7 @@ namespace A2CourseWork.Gui
                 if (dialogResult == DialogResult.Yes)
                 {
                     resetTextboxes();
+                    mode = "add";
                 }
                 else
                 {

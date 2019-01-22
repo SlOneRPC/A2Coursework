@@ -115,6 +115,12 @@
     <Compile Include="Gui\ViewBooking\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\ViewBooking\ViewMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\ViewBooking\ViewMenu.Designer.cs">
+      <DependentUpon>ViewMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objects\custBooking.cs" />
     <Compile Include="Objects\Customer.cs" />
     <Compile Include="Objects\Booking.cs" />
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\ViewBooking\ViewBookings.resx">
       <DependentUpon>ViewBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\ViewBooking\ViewMenu.resx">
+      <DependentUpon>ViewMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
