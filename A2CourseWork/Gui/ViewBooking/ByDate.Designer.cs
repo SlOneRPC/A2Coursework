@@ -29,48 +29,166 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.week3rbtn = new System.Windows.Forms.RadioButton();
+            this.week5rbtn = new System.Windows.Forms.RadioButton();
+            this.week2rbtn = new System.Windows.Forms.RadioButton();
+            this.week4rbtn = new System.Windows.Forms.RadioButton();
+            this.week1rbtn = new System.Windows.Forms.RadioButton();
+            this.WeekView = new System.Windows.Forms.DataGridView();
+            this.monthscbx = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.yearcbx = new System.Windows.Forms.ComboBox();
             this.btnsearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.KidsView = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnweek1 = new System.Windows.Forms.Button();
-            this.btnweek2 = new System.Windows.Forms.Button();
-            this.btnweek3 = new System.Windows.Forms.Button();
-            this.btnweek4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.yearcbx = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.monthscbx = new System.Windows.Forms.ComboBox();
-            this.WeekView = new System.Windows.Forms.DataGridView();
+            this.btnback = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WeekView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KidsView)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WeekView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.week3rbtn);
+            this.panel3.Controls.Add(this.week5rbtn);
+            this.panel3.Controls.Add(this.week2rbtn);
+            this.panel3.Controls.Add(this.week4rbtn);
+            this.panel3.Controls.Add(this.week1rbtn);
             this.panel3.Controls.Add(this.WeekView);
             this.panel3.Controls.Add(this.monthscbx);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.yearcbx);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.btnweek4);
-            this.panel3.Controls.Add(this.btnweek3);
-            this.panel3.Controls.Add(this.btnweek2);
-            this.panel3.Controls.Add(this.btnweek1);
             this.panel3.Controls.Add(this.btnsearch);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.KidsView);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(172, 47);
+            this.panel3.Location = new System.Drawing.Point(162, 47);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(806, 509);
             this.panel3.TabIndex = 3;
+            // 
+            // week3rbtn
+            // 
+            this.week3rbtn.AutoSize = true;
+            this.week3rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week3rbtn.ForeColor = System.Drawing.Color.White;
+            this.week3rbtn.Location = new System.Drawing.Point(165, 184);
+            this.week3rbtn.Name = "week3rbtn";
+            this.week3rbtn.Size = new System.Drawing.Size(77, 24);
+            this.week3rbtn.TabIndex = 23;
+            this.week3rbtn.Text = "Week3";
+            this.week3rbtn.UseVisualStyleBackColor = true;
+            // 
+            // week5rbtn
+            // 
+            this.week5rbtn.AutoSize = true;
+            this.week5rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week5rbtn.ForeColor = System.Drawing.Color.White;
+            this.week5rbtn.Location = new System.Drawing.Point(90, 206);
+            this.week5rbtn.Name = "week5rbtn";
+            this.week5rbtn.Size = new System.Drawing.Size(77, 24);
+            this.week5rbtn.TabIndex = 22;
+            this.week5rbtn.Text = "Week5";
+            this.week5rbtn.UseVisualStyleBackColor = true;
+            // 
+            // week2rbtn
+            // 
+            this.week2rbtn.AutoSize = true;
+            this.week2rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week2rbtn.ForeColor = System.Drawing.Color.White;
+            this.week2rbtn.Location = new System.Drawing.Point(90, 184);
+            this.week2rbtn.Name = "week2rbtn";
+            this.week2rbtn.Size = new System.Drawing.Size(77, 24);
+            this.week2rbtn.TabIndex = 21;
+            this.week2rbtn.Text = "Week2";
+            this.week2rbtn.UseVisualStyleBackColor = true;
+            // 
+            // week4rbtn
+            // 
+            this.week4rbtn.AutoSize = true;
+            this.week4rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week4rbtn.ForeColor = System.Drawing.Color.White;
+            this.week4rbtn.Location = new System.Drawing.Point(7, 206);
+            this.week4rbtn.Name = "week4rbtn";
+            this.week4rbtn.Size = new System.Drawing.Size(77, 24);
+            this.week4rbtn.TabIndex = 20;
+            this.week4rbtn.Text = "Week4";
+            this.week4rbtn.UseVisualStyleBackColor = true;
+            // 
+            // week1rbtn
+            // 
+            this.week1rbtn.AutoSize = true;
+            this.week1rbtn.Checked = true;
+            this.week1rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week1rbtn.ForeColor = System.Drawing.Color.White;
+            this.week1rbtn.Location = new System.Drawing.Point(7, 184);
+            this.week1rbtn.Name = "week1rbtn";
+            this.week1rbtn.Size = new System.Drawing.Size(77, 24);
+            this.week1rbtn.TabIndex = 19;
+            this.week1rbtn.TabStop = true;
+            this.week1rbtn.Text = "Week1";
+            this.week1rbtn.UseVisualStyleBackColor = true;
+            // 
+            // WeekView
+            // 
+            this.WeekView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.WeekView.Location = new System.Drawing.Point(241, 229);
+            this.WeekView.Name = "WeekView";
+            this.WeekView.Size = new System.Drawing.Size(557, 273);
+            this.WeekView.TabIndex = 18;
+            // 
+            // monthscbx
+            // 
+            this.monthscbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthscbx.FormattingEnabled = true;
+            this.monthscbx.Location = new System.Drawing.Point(5, 131);
+            this.monthscbx.Name = "monthscbx";
+            this.monthscbx.Size = new System.Drawing.Size(210, 28);
+            this.monthscbx.TabIndex = 17;
+            this.monthscbx.SelectedIndexChanged += new System.EventHandler(this.monthscbx_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 24);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Select Month:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(7, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 24);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Select Year:";
+            // 
+            // yearcbx
+            // 
+            this.yearcbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearcbx.FormattingEnabled = true;
+            this.yearcbx.Location = new System.Drawing.Point(5, 78);
+            this.yearcbx.Name = "yearcbx";
+            this.yearcbx.Size = new System.Drawing.Size(212, 28);
+            this.yearcbx.TabIndex = 14;
+            this.yearcbx.SelectedIndexChanged += new System.EventHandler(this.yearcbx_SelectedIndexChanged);
             // 
             // btnsearch
             // 
@@ -79,7 +197,7 @@
             this.btnsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsearch.ForeColor = System.Drawing.Color.White;
-            this.btnsearch.Location = new System.Drawing.Point(3, 454);
+            this.btnsearch.Location = new System.Drawing.Point(11, 236);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(212, 48);
             this.btnsearch.TabIndex = 8;
@@ -126,142 +244,57 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Viewbooking - Date";
             // 
-            // btnweek1
+            // btnback
             // 
-            this.btnweek1.BackColor = System.Drawing.Color.Gray;
-            this.btnweek1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnweek1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnweek1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnweek1.ForeColor = System.Drawing.Color.White;
-            this.btnweek1.Location = new System.Drawing.Point(3, 184);
-            this.btnweek1.Name = "btnweek1";
-            this.btnweek1.Size = new System.Drawing.Size(212, 48);
-            this.btnweek1.TabIndex = 9;
-            this.btnweek1.Text = "Week 1";
-            this.btnweek1.UseVisualStyleBackColor = false;
+            this.btnback.Image = global::A2CourseWork.Properties.Resources.circled_left_2;
+            this.btnback.Location = new System.Drawing.Point(96, 498);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(51, 51);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 4;
+            this.btnback.TabStop = false;
             // 
-            // btnweek2
+            // panel5
             // 
-            this.btnweek2.BackColor = System.Drawing.Color.Gray;
-            this.btnweek2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnweek2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnweek2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnweek2.ForeColor = System.Drawing.Color.White;
-            this.btnweek2.Location = new System.Drawing.Point(3, 238);
-            this.btnweek2.Name = "btnweek2";
-            this.btnweek2.Size = new System.Drawing.Size(212, 48);
-            this.btnweek2.TabIndex = 10;
-            this.btnweek2.Text = "Week 2";
-            this.btnweek2.UseVisualStyleBackColor = false;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(7, 290);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(228, 212);
+            this.panel5.TabIndex = 24;
             // 
-            // btnweek3
+            // label5
             // 
-            this.btnweek3.BackColor = System.Drawing.Color.Gray;
-            this.btnweek3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnweek3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnweek3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnweek3.ForeColor = System.Drawing.Color.White;
-            this.btnweek3.Location = new System.Drawing.Point(3, 292);
-            this.btnweek3.Name = "btnweek3";
-            this.btnweek3.Size = new System.Drawing.Size(212, 48);
-            this.btnweek3.TabIndex = 11;
-            this.btnweek3.Text = "Week 3";
-            this.btnweek3.UseVisualStyleBackColor = false;
-            // 
-            // btnweek4
-            // 
-            this.btnweek4.BackColor = System.Drawing.Color.Gray;
-            this.btnweek4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnweek4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnweek4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnweek4.ForeColor = System.Drawing.Color.White;
-            this.btnweek4.Location = new System.Drawing.Point(3, 346);
-            this.btnweek4.Name = "btnweek4";
-            this.btnweek4.Size = new System.Drawing.Size(212, 48);
-            this.btnweek4.TabIndex = 12;
-            this.btnweek4.Text = "Week 4";
-            this.btnweek4.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 48);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Week 5";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // yearcbx
-            // 
-            this.yearcbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearcbx.FormattingEnabled = true;
-            this.yearcbx.Location = new System.Drawing.Point(5, 78);
-            this.yearcbx.Name = "yearcbx";
-            this.yearcbx.Size = new System.Drawing.Size(212, 28);
-            this.yearcbx.TabIndex = 14;
-            this.yearcbx.SelectedIndexChanged += new System.EventHandler(this.yearcbx_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(7, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 24);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Select Year:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 24);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Select Month:";
-            // 
-            // monthscbx
-            // 
-            this.monthscbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthscbx.FormattingEnabled = true;
-            this.monthscbx.Location = new System.Drawing.Point(5, 131);
-            this.monthscbx.Name = "monthscbx";
-            this.monthscbx.Size = new System.Drawing.Size(210, 28);
-            this.monthscbx.TabIndex = 17;
-            this.monthscbx.SelectedIndexChanged += new System.EventHandler(this.monthscbx_SelectedIndexChanged);
-            // 
-            // WeekView
-            // 
-            this.WeekView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.WeekView.Location = new System.Drawing.Point(241, 229);
-            this.WeekView.Name = "WeekView";
-            this.WeekView.Size = new System.Drawing.Size(557, 273);
-            this.WeekView.TabIndex = 18;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 24);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Week:";
             // 
             // ByDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.panel3);
             this.Name = "ByDate";
             this.Text = "ByDate";
             this.Load += new System.EventHandler(this.ByDate_Load);
             this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.btnback, 0);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WeekView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KidsView)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WeekView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,10 +312,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox yearcbx;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnweek4;
-        private System.Windows.Forms.Button btnweek3;
-        private System.Windows.Forms.Button btnweek2;
-        private System.Windows.Forms.Button btnweek1;
+        private System.Windows.Forms.RadioButton week3rbtn;
+        private System.Windows.Forms.RadioButton week5rbtn;
+        private System.Windows.Forms.RadioButton week2rbtn;
+        private System.Windows.Forms.RadioButton week4rbtn;
+        private System.Windows.Forms.RadioButton week1rbtn;
+        private System.Windows.Forms.PictureBox btnback;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label5;
     }
 }

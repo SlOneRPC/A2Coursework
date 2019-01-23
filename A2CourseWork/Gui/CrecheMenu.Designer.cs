@@ -38,7 +38,7 @@
             this.titlelbl = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnbookingsview = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnbydate = new System.Windows.Forms.Button();
             this.Timelbl = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -153,14 +153,15 @@
             this.btnbookingsview.UseVisualStyleBackColor = true;
             this.btnbookingsview.Click += new System.EventHandler(this.btnbookingsview_Click);
             // 
-            // button6
+            // btnbydate
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(612, 359);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(166, 162);
-            this.button6.TabIndex = 16;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnbydate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbydate.Location = new System.Drawing.Point(612, 359);
+            this.btnbydate.Name = "btnbydate";
+            this.btnbydate.Size = new System.Drawing.Size(166, 162);
+            this.btnbydate.TabIndex = 16;
+            this.btnbydate.UseVisualStyleBackColor = true;
+            this.btnbydate.Click += new System.EventHandler(this.btnbydate_Click);
             // 
             // Timelbl
             // 
@@ -235,7 +236,7 @@
             this.ClientSize = new System.Drawing.Size(980, 568);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Timelbl);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnbydate);
             this.Controls.Add(this.btnbookingsview);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnstaff);
@@ -275,7 +276,7 @@
         private System.Windows.Forms.Button btnstaff;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnbookingsview;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnbydate;
         private System.Windows.Forms.Label Timelbl;
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Label label1;
