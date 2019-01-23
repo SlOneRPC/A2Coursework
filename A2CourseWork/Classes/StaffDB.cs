@@ -54,5 +54,62 @@ namespace A2CourseWork.Classes
             db.Cmd.CommandText = "UPDATE Staff SET Forename = '" + forename + "',Surname = '" + surname + "',TeleNo = '" + teleno + "', Postcode = '" + postcode + "',Address = '" + address + "' WHERE Forename = '" + oldForename +"'";
             db.Cmd.ExecuteNonQuery();
         }
+
+        public void removeStaffmember(string forename)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"DELETE FROM Staff WHERE Forename = '{forename}'";
+            db.Cmd.ExecuteNonQuery();
+        }
+
+        public void addStaffGroup(string forename,int groupid)
+        {
+            int id = getStaffID(forename);
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"INSERT INTO GroupRota(StaffID,GroupID) VALUES({id},{groupid})";
+            db.Cmd.ExecuteNonQuery();
+        }
+
+        private int getStaffID(string forename)
+        {
+            int id = 0;
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT StaffId FROM Staff WHERE ForeName = '{forename}'";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                id = db.Rdr.GetInt32(0);
+            }
+            db.Rdr.Close();
+            return id;
+        }
+
+        public List<string> getallgroups()
+        {
+            List<string> results = new List<string>();
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "SELECT GroupName FROM Groups";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                results.Add(db.Rdr.GetString(0));
+            }
+            db.Rdr.Close();
+            return results;
+        }
+
+        public int getStaffGroup(string Forename)
+        {
+            int results = 0;
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT GroupID FROM GroupRota INNER JOIN GroupRota.StaffID = Staff.StaffId ON Staff WHERE Staff.ForeName = '{Forename}'";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                results = db.Rdr.GetInt32(0);
+            }
+            db.Rdr.Close();
+            return results;
+        }
     }
 }
