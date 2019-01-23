@@ -68,28 +68,28 @@
     <Compile Include="Classes\MiscDB.cs" />
     <Compile Include="Classes\MiscFunctions.cs" />
     <Compile Include="Classes\StaffDB.cs" />
-    <Compile Include="Gui\AddEditStaff.cs">
+    <Compile Include="Gui\Staff\AddEditStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\AddEditStaff.Designer.cs">
+    <Compile Include="Gui\Staff\AddEditStaff.Designer.cs">
       <DependentUpon>AddEditStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gui\Booking.cs">
+    <Compile Include="Gui\Booking\Booking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\Booking.Designer.cs">
+    <Compile Include="Gui\Booking\Booking.Designer.cs">
       <DependentUpon>Booking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gui\BookingMenu.cs">
+    <Compile Include="Gui\Booking\BookingMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\BookingMenu.Designer.cs">
+    <Compile Include="Gui\Booking\BookingMenu.Designer.cs">
       <DependentUpon>BookingMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gui\CrecheMenu.cs">
+    <Compile Include="Gui\Menu\CrecheMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\CrecheMenu.Designer.cs">
+    <Compile Include="Gui\Menu\CrecheMenu.Designer.cs">
       <DependentUpon>CrecheMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\Default.cs">
@@ -98,10 +98,10 @@
     <Compile Include="Gui\Default.Designer.cs">
       <DependentUpon>Default.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gui\Menu.cs">
+    <Compile Include="Gui\Menu\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\Menu.Designer.cs">
+    <Compile Include="Gui\Menu\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\ViewBooking\ByDate.cs">
@@ -116,6 +116,12 @@
     <Compile Include="Gui\ViewBooking\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\ViewBooking\ViewMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\ViewBooking\ViewMenu.Designer.cs">
+      <DependentUpon>ViewMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objects\custBooking.cs" />
     <Compile Include="Objects\Customer.cs" />
     <Compile Include="Objects\Booking.cs" />
@@ -123,22 +129,22 @@
     <Compile Include="Objects\StaffMember.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Gui\AddEditStaff.resx">
+    <EmbeddedResource Include="Gui\Staff\AddEditStaff.resx">
       <DependentUpon>AddEditStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Booking.resx">
+    <EmbeddedResource Include="Gui\Booking\Booking.resx">
       <DependentUpon>Booking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\BookingMenu.resx">
+    <EmbeddedResource Include="Gui\Booking\BookingMenu.resx">
       <DependentUpon>BookingMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\CrecheMenu.resx">
+    <EmbeddedResource Include="Gui\Menu\CrecheMenu.resx">
       <DependentUpon>CrecheMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Default.resx">
       <DependentUpon>Default.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Menu.resx">
+    <EmbeddedResource Include="Gui\Menu\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\ViewBooking\ByDate.resx">
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\ViewBooking\ViewBookings.resx">
       <DependentUpon>ViewBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\ViewBooking\ViewMenu.resx">
+      <DependentUpon>ViewMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -254,6 +254,7 @@
             this.customercheck.Checked = true;
             this.customercheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.customercheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customercheck.Enabled = false;
             this.customercheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customercheck.ForeColor = System.Drawing.Color.White;
             this.customercheck.Location = new System.Drawing.Point(30, 124);
