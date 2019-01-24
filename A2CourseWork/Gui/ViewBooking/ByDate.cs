@@ -108,6 +108,7 @@ namespace A2CourseWork.Gui.ViewBooking
             }
             DateTime current = new DateTime(now.Year, now.Month, mondays[selected]);
             createTableforKids(current);
+            createTableforBooking(current);
         }
 
         private void yearcbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,9 +161,23 @@ namespace A2CourseWork.Gui.ViewBooking
             KidsView.DataSource = table;
         }
 
-        private void createTableforBooking()
+        private void createTableforBooking(DateTime now)
         {
+            table = new DataTable();
+            table.Columns.Add("Kid Name");
+            table.Columns.Add("Mon");
+            table.Columns.Add("Tues");
+            table.Columns.Add("Weds");
+            table.Columns.Add("Thurs");
+            table.Columns.Add("Friday");
 
+            MiscDB miscdb = new MiscDB(db);
+            List<List<string>> data = miscdb.BookingDays(now);
+            foreach (List<string> current in data)
+            {
+                table.Rows.Add(current[0] + " " + current[1],current[2],current[3],current[4],current[5],current[6]);
+            }
+            WeekView.DataSource = table;
         }
     }
 }
