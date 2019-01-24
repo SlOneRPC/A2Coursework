@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using A2CourseWork.Classes;
+using A2CourseWork.Gui.ViewBooking;
 namespace A2CourseWork.Gui
 {
     public partial class CrecheMenu : Form
@@ -81,6 +82,13 @@ namespace A2CourseWork.Gui
         private void btnbookingsview_Click(object sender, EventArgs e)
         {
             ViewBookings form = new ViewBookings();
+            this.Hide();
+            form.Show();
+        }
+
+        private void btnbydate_Click(object sender, EventArgs e)
+        {
+            ByDate form = new ByDate();
             this.Hide();
             form.Show();
         }
