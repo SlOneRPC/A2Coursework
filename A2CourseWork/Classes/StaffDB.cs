@@ -90,7 +90,7 @@ namespace A2CourseWork.Classes
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = "SELECT GroupName FROM Groups";
             db.Rdr = db.Cmd.ExecuteReader();
-            while (db.Rdr.Read())
+            if (db.Rdr.Read())
             {
                 results.Add(db.Rdr.GetString(0));
             }
@@ -102,9 +102,9 @@ namespace A2CourseWork.Classes
         {
             int results = 0;
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT GroupID FROM GroupRota INNER JOIN GroupRota.StaffID = Staff.StaffId ON Staff WHERE Staff.ForeName = '{Forename}'";
+            db.Cmd.CommandText = $"SELECT GroupID FROM GroupRota INNER JOIN Staff ON GroupRota.StaffID = Staff.StaffId WHERE Staff.ForeName = '{Forename}'";
             db.Rdr = db.Cmd.ExecuteReader();
-            while (db.Rdr.Read())
+            if (db.Rdr.Read())
             {
                 results = db.Rdr.GetInt32(0);
             }

@@ -58,8 +58,8 @@ namespace A2CourseWork.Gui
 
         private void AddEditStaff_Load(object sender, EventArgs e)
         {
-            initcombo();
             populatecbx();
+            initcombo();
             Timer.Start();
             Timelbl.Text = DateTime.Now.ToLongTimeString();
             MiscFunctions.buttonhover(this);
@@ -98,6 +98,7 @@ namespace A2CourseWork.Gui
             groupcbx.Items.Add("Babies");
             groupcbx.Items.Add("Toddler");
             groupcbx.Items.Add("Child");
+            groupcbx.SelectedIndex = 0;
         }
 
         private void searchtxt_TextChanged(object sender, EventArgs e)
@@ -300,7 +301,7 @@ namespace A2CourseWork.Gui
             TeleNotxt.Text = staff[stafflist.SelectedIndex].TeleNo;
             Addresstxt.Text = staff[stafflist.SelectedIndex].Address;
             Postcodetxt.Text = staff[stafflist.SelectedIndex].Postcode;
-            groupcbx.SelectedIndex = staffGroup + 1;
+            groupcbx.SelectedIndex = staffGroup-1;
             btnupdate.Text = "Edit";
         }
 
