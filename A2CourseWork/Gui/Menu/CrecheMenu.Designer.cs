@@ -160,6 +160,7 @@
             this.btnbydate.Name = "btnbydate";
             this.btnbydate.Size = new System.Drawing.Size(166, 162);
             this.btnbydate.TabIndex = 16;
+            this.btnbydate.Text = "View By Date Placeholder";
             this.btnbydate.UseVisualStyleBackColor = true;
             this.btnbydate.Click += new System.EventHandler(this.btnbydate_Click);
             // 

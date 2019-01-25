@@ -38,9 +38,9 @@ namespace A2CourseWork.Gui.ViewBooking
             yearcbx.Items.Clear();
             for (int i = 0; i < 5; i++)
             {
-                yearcbx.Items.Add(DateTime.Now.Year + i);
+                yearcbx.Items.Add(DateTime.Now.Year + i -1);
             }
-            yearcbx.SelectedIndex = 0;
+            yearcbx.SelectedIndex = 1;
         }
 
         private void populatemonthscbx(bool currentyear)
@@ -106,7 +106,8 @@ namespace A2CourseWork.Gui.ViewBooking
                 selected = 5;
 
             }
-            DateTime current = new DateTime(now.Year, now.Month, mondays[selected]);
+            weeklbl.Text = "Week: " + selected.ToString();
+            DateTime current = new DateTime(now.Year, now.Month, mondays[selected-1]);
             createTableforKids(current);
             createTableforBooking(current);
         }
@@ -121,13 +122,13 @@ namespace A2CourseWork.Gui.ViewBooking
             {
                 populatemonthscbx(false);
             }
-            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year, monthscbx.SelectedIndex + 1, 1));
+            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, monthscbx.SelectedIndex + 1, 1));
         }
 
         private void monthscbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             int x = monthscbx.SelectedIndex + 1;
-            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year + 0, x, DateTime.Now.Day));
+            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, x, DateTime.Now.Day));
         }
 
         private void ByDate_Load(object sender, EventArgs e)
@@ -156,7 +157,7 @@ namespace A2CourseWork.Gui.ViewBooking
 
             foreach(List<string> current in data)
             {
-                table.Rows.Add(current[0],current[1],current[2]);
+                table.Rows.Add(current[0],current[1],current[2],MiscFunctions.getgroupfromage(current[2]));
             }
             KidsView.DataSource = table;
         }
@@ -171,13 +172,48 @@ namespace A2CourseWork.Gui.ViewBooking
             table.Columns.Add("Thurs");
             table.Columns.Add("Friday");
 
+
             MiscDB miscdb = new MiscDB(db);
             List<List<string>> data = miscdb.BookingDays(now);
             foreach (List<string> current in data)
             {
-                table.Rows.Add(current[0] + " " + current[1],current[2],current[3],current[4],current[5],current[6]);
+                table.Rows.Add(current[0] + " " + current[1]);
             }
+            amountlbl.Text = "Booking amount: " + data.Count.ToString();
+            revenuelbl.Text = "Estimated revenue: £" + (data.Count*15).ToString();
             WeekView.DataSource = table;
+            WeekView.AllowUserToAddRows = false;
+            int x = 0;
+            foreach(DataGridViewRow row in WeekView.Rows)
+            {
+                List<string> current = data[x];
+                for (int i = 0; i <5; i++)
+                {
+                    if (current[i + 2] == "1")
+                    {
+                        row.Cells[i+1].Style.BackColor = Color.LimeGreen;
+                    }
+                    else
+                    {
+                        row.Cells[i+1].Style.BackColor = Color.Red;
+                    }
+                }
+                x++;
+            }
+            WeekView.Enabled = false;
+        }
+
+        private void week2rbtn_CheckedChanged(object sender, EventArgs e)
+        {
+            int x = monthscbx.SelectedIndex + 1;
+            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, x, DateTime.Now.Day));
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            CrecheMenu menu = new CrecheMenu();
+            this.Hide();
+            menu.Show();
         }
     }
 }
