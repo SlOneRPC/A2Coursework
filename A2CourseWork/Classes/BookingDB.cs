@@ -44,8 +44,10 @@ namespace A2CourseWork.Classes
             {
                 bookings.Add(getbookingfromreader(db.Rdr));
             }
+            db.Rdr.Close();
             return bookings;
         }
+
 
         private custBooking getbookingfromreader(SqlDataReader reader)
         {

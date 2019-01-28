@@ -29,6 +29,20 @@ namespace A2CourseWork.Classes
             return customers;
         }
 
+        public Customer getSpecificCustomer(string kidName)
+        {
+            Customer customer = new Customer();
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT * FROM Customer INNER JOIN Kids ON Customer.CustId = Kids.ParentId WHERE Kids.ForeName = '{kidName}'";
+            db.Rdr = db.Cmd.ExecuteReader();
+            if (db.Rdr.Read())
+            {
+                customer = getcustomerfromreader(db.Rdr);
+            }
+            db.Rdr.Close();
+            return customer;
+        }
+
         private Customer getcustomerfromreader(SqlDataReader reader)
         {
             Customer current = new Customer();

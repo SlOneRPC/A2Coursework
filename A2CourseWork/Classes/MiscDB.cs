@@ -55,5 +55,19 @@ namespace A2CourseWork.Classes
             db.Rdr.Close();
             return details;
         }
+
+        public List<DateTime> BookingWeeksFromKid(string kidForename)
+        {
+            List<DateTime> details = new List<DateTime>();
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT Dates.Monday From Dates INNER JOIN Booking ON Dates.BookingId = Booking.BookingID INNER JOIN Kids ON Booking.ChildId = Kids.ChildId WHERE Kids.ForeName = '{kidForename}'";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                details.Add(Convert.ToDateTime(db.Rdr.GetString(0)));
+            }
+            db.Rdr.Close();
+            return details;
+        }
     }
 }

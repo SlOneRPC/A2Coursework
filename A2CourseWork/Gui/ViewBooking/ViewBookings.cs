@@ -84,7 +84,6 @@ namespace A2CourseWork.Gui
         private void btncheck_Click(object sender, EventArgs e)
         {
             bookingpnl1.Visible = false;
-            filterpnl.Visible = false;
             bookingpnl2.Visible = true;
             fnamelbl.Text = "Forename: " + kids[kidslistbox.SelectedIndex].Forename;
             snamelbl.Text = "Surname: " + kids[kidslistbox.SelectedIndex].Surname;
@@ -97,10 +96,16 @@ namespace A2CourseWork.Gui
             BookingDB booking = new BookingDB(db);
             bookings = booking.getallbookingsforkid(kids[kidslistbox.SelectedIndex].Forename);
 
-            //foreach (custBooking dates in bookings)
-            //{
-            //    bookinglistbox.Items.Add(dates.Startdate + "-" + dates.Enddate);
-            //}
+            List<DateTime> dates = new List<DateTime>();
+            MiscDB miscdb = new MiscDB(db);
+            dates = miscdb.BookingWeeksFromKid(kids[kidslistbox.SelectedIndex].Forename);
+
+            foreach (DateTime date in dates)
+            {
+                bookinglistbox.Items.Add(date.ToShortDateString());
+            }
+            daysbookedlbl.Text = "Days Booked: " + dates.Count.ToString();
+            setPrice(dates);
         }
 
         private string calculateAge()
@@ -117,6 +122,52 @@ namespace A2CourseWork.Gui
                 months += (years * 12);
             }
             return Convert.ToString(months);
+        }
+
+        private void setPrice(List<DateTime> dates)
+        {
+            double discount = 0;
+            string discountApplied = "";
+            foreach(DateTime date in dates)
+            {
+                if (date >= DateTime.Now.AddMonths(6))
+                {
+                    discount = 0.05;
+                    discountApplied = "5%";
+                }
+                else if(date > DateTime.Now.AddMonths(3) && date < DateTime.Now.AddMonths(6))
+                {
+                    discount = 0.03;
+                    discountApplied = "3%";
+                }
+            }
+            if(discount == 0)
+            {
+                discountlbl.Text = "Discount Applied: None";
+            }
+            else
+            {
+                discountlbl.Text = "Discount Applied: " + discountApplied;
+            }
+            double price = (15 * dates.Count) * (1-discount);
+            totalpricelbl.Text = "Total Price: £" + price.ToString();
+        }
+
+        private void btnadd_Click(object sender, EventArgs e)
+        {
+            CustomerDB custdb = new CustomerDB(db);
+            Customer cust = custdb.getSpecificCustomer(kids[kidslistbox.SelectedIndex].Forename);
+            KidsDB kiddb = new KidsDB(db);
+            Kid child = kiddb.getSpecificKid(kids[kidslistbox.SelectedIndex].Forename);
+
+            Booking book = new Booking(cust, child);
+            book.Show();
+            this.Hide();
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

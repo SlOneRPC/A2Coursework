@@ -29,6 +29,20 @@ namespace A2CourseWork.Classes
             return kids;
         }
 
+        public Kid getSpecificKid(string KidForename)
+        {
+            Kid child = new Kid();
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT * FROM Kids WHERE ForeName = '{KidForename}'";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                child = getkidfromreader(db.Rdr);
+            }
+            db.Rdr.Close();
+            return child;
+        }
+
         private Kid getkidfromreader(SqlDataReader reader)
         {
             Kid child = new Kid();
