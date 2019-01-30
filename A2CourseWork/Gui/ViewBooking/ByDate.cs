@@ -128,7 +128,7 @@ namespace A2CourseWork.Gui.ViewBooking
         private void monthscbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             int x = monthscbx.SelectedIndex + 1;
-            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, x, DateTime.Now.Day));
+            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, x, 1));
         }
 
         private void ByDate_Load(object sender, EventArgs e)
@@ -206,8 +206,10 @@ namespace A2CourseWork.Gui.ViewBooking
         private void week2rbtn_CheckedChanged(object sender, EventArgs e)
         {
             int x = monthscbx.SelectedIndex + 1;
-            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, x, DateTime.Now.Day));
+            populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, x, 1));
         }
+
+        //private void getweekdate()
 
         private void btnback_Click(object sender, EventArgs e)
         {
