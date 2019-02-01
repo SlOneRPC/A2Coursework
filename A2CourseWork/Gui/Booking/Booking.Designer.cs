@@ -109,6 +109,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.totalpricelbl = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -526,6 +527,7 @@
             // 
             this.book2pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.book2pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.book2pnl.Controls.Add(this.label11);
             this.book2pnl.Controls.Add(this.Cerror2);
             this.book2pnl.Controls.Add(this.Cerror1);
             this.book2pnl.Controls.Add(this.DOBpicker);
@@ -573,7 +575,7 @@
             this.DOBpicker.CalendarMonthBackground = System.Drawing.Color.Gray;
             this.DOBpicker.CalendarTitleBackColor = System.Drawing.Color.Gray;
             this.DOBpicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DOBpicker.Location = new System.Drawing.Point(25, 237);
+            this.DOBpicker.Location = new System.Drawing.Point(25, 249);
             this.DOBpicker.Name = "DOBpicker";
             this.DOBpicker.Size = new System.Drawing.Size(167, 20);
             this.DOBpicker.TabIndex = 14;
@@ -619,7 +621,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(21, 163);
+            this.label14.Location = new System.Drawing.Point(21, 164);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 23);
             this.label14.TabIndex = 8;
@@ -1109,6 +1111,17 @@
             this.totalpricelbl.Text = "Total Price: ";
             this.totalpricelbl.Visible = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(21, 223);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 23);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Date of Birth";
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1119,11 +1132,11 @@
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.book6pnl);
             this.Controls.Add(this.book1pnl);
             this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.book4pnl);
-            this.Controls.Add(this.book6pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1251,5 +1264,6 @@
         private System.Windows.Forms.Button week5btn;
         private System.Windows.Forms.Button btnfinished;
         private System.Windows.Forms.Label totalpricelbl;
+        private System.Windows.Forms.Label label11;
     }
 }

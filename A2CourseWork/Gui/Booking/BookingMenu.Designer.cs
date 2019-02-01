@@ -157,7 +157,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(338, 55);
             this.label9.TabIndex = 1;
-            this.label9.Text = "New customer";
+            this.label9.Text = "New Booking";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -177,7 +177,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(337, 55);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Existing customer";
+            this.label1.Text = "Existing customer/booking";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bookpnl2

@@ -17,6 +17,7 @@ namespace A2CourseWork.Gui
         List<StaffMember> staff = new List<StaffMember>();
         int staffGroup = 0;
         string mode;
+        bool stilladding = false;
 
         public AddEditStaff()
         {
@@ -162,6 +163,7 @@ namespace A2CourseWork.Gui
                 {
                     resetTextboxes();
                     mode = "add";
+                    stilladding = true;
                 }
                 else
                 {
@@ -169,6 +171,7 @@ namespace A2CourseWork.Gui
                     enableTextboxes();
                     btnadd.Visible = true;
                     btncancel.Visible = false;
+                    stilladding = false;
                 }
                 initcombo();
             }
@@ -293,16 +296,19 @@ namespace A2CourseWork.Gui
 
         private void stafflist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            StaffDB sdb = new StaffDB(db);
-            staffGroup = sdb.getStaffGroup(staff[stafflist.SelectedIndex].Forename);
-            mode = "edit1";
-            fnametxt.Text = staff[stafflist.SelectedIndex].Forename;
-            Surnametxt.Text = staff[stafflist.SelectedIndex].Surname;
-            TeleNotxt.Text = staff[stafflist.SelectedIndex].TeleNo;
-            Addresstxt.Text = staff[stafflist.SelectedIndex].Address;
-            Postcodetxt.Text = staff[stafflist.SelectedIndex].Postcode;
-            groupcbx.SelectedIndex = staffGroup-1;
-            btnupdate.Text = "Edit";
+            if (!stilladding)
+            {
+                StaffDB sdb = new StaffDB(db);
+                staffGroup = sdb.getStaffGroup(staff[stafflist.SelectedIndex].Forename);
+                mode = "edit1";
+                fnametxt.Text = staff[stafflist.SelectedIndex].Forename;
+                Surnametxt.Text = staff[stafflist.SelectedIndex].Surname;
+                TeleNotxt.Text = staff[stafflist.SelectedIndex].TeleNo;
+                Addresstxt.Text = staff[stafflist.SelectedIndex].Address;
+                Postcodetxt.Text = staff[stafflist.SelectedIndex].Postcode;
+                groupcbx.SelectedIndex = staffGroup - 1;
+                btnupdate.Text = "Edit";
+            }
         }
 
         private void btnback_Click(object sender, EventArgs e)

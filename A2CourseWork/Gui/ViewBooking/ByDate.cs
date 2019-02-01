@@ -46,23 +46,11 @@ namespace A2CourseWork.Gui.ViewBooking
         private void populatemonthscbx(bool currentyear)
         {
             monthscbx.Items.Clear();
-            if (currentyear)
+            for (int i = 0; i < 12; i++)
             {
-                for (int i = DateTime.Now.Month - 1; i < 12; i++)
-                {
-                    //if(bookeddays.Contains(mondays[i]))
-                    monthscbx.Items.Add(months[i]);
-                }
-                monthscbx.SelectedIndex = 0;
+                monthscbx.Items.Add(months[i]);
             }
-            else
-            {
-                for (int i = 0; i < 12; i++)
-                {
-                    monthscbx.Items.Add(months[i]);
-                }
-                monthscbx.SelectedIndex = 0;
-            }
+            monthscbx.SelectedIndex = 0;
         }
 
         private void populateweekbtns(DateTime now)
@@ -143,6 +131,7 @@ namespace A2CourseWork.Gui.ViewBooking
                 populatemonthscbx(false);
             }
             populateweekbtns(DateTime.Now);
+            monthscbx.SelectedIndex = DateTime.Now.Month - 1;
         }
 
         private void createTableforKids(DateTime now)
@@ -208,8 +197,6 @@ namespace A2CourseWork.Gui.ViewBooking
             int x = monthscbx.SelectedIndex + 1;
             populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, x, 1));
         }
-
-        //private void getweekdate()
 
         private void btnback_Click(object sender, EventArgs e)
         {

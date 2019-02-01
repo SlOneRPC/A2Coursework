@@ -45,6 +45,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.groupcbx = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btncancel = new System.Windows.Forms.Button();
             this.messagelbl = new System.Windows.Forms.Label();
             this.error5 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Timelbl = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupcbx = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -285,6 +285,28 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(326, 486);
             this.panel5.TabIndex = 10;
+            // 
+            // groupcbx
+            // 
+            this.groupcbx.BackColor = System.Drawing.Color.Silver;
+            this.groupcbx.Enabled = false;
+            this.groupcbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupcbx.FormattingEnabled = true;
+            this.groupcbx.Location = new System.Drawing.Point(90, 383);
+            this.groupcbx.Name = "groupcbx";
+            this.groupcbx.Size = new System.Drawing.Size(202, 28);
+            this.groupcbx.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(26, 387);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 18);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Group";
             // 
             // btncancel
             // 
@@ -560,27 +582,6 @@
             // Timer
             // 
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(26, 387);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 18);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Group";
-            // 
-            // groupcbx
-            // 
-            this.groupcbx.BackColor = System.Drawing.Color.Silver;
-            this.groupcbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupcbx.FormattingEnabled = true;
-            this.groupcbx.Location = new System.Drawing.Point(90, 383);
-            this.groupcbx.Name = "groupcbx";
-            this.groupcbx.Size = new System.Drawing.Size(202, 28);
-            this.groupcbx.TabIndex = 29;
             // 
             // AddEditStaff
             // 

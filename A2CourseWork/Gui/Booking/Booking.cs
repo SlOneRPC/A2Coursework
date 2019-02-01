@@ -489,11 +489,11 @@ namespace A2CourseWork.Gui
                 {
                     if(x == mondays.Count)
                     {
-                        day1 = Convert.ToString(mondays[x - 1]);
+                        day1 = MiscFunctions.AddOrdinal(mondays[x - 1]);
                     }
                     else
                     {
-                        day1 = Convert.ToString(mondays[x]);
+                        day1 = MiscFunctions.AddOrdinal(mondays[x]);
                     }
                     day2 = "Next Month";
                     extrapnl.Visible = true;
@@ -501,22 +501,22 @@ namespace A2CourseWork.Gui
                 }
                 else if (mondays[x] > fridays[x])
                 {
-                    day1 = Convert.ToString(mondays[x]);
+                    day1 = MiscFunctions.AddOrdinal(mondays[x]);
                     if (x == fridays.Count - 1)
                     {
                         day2 = "Next Month";
                     }
                     else
                     {
-                        day2 = Convert.ToString(fridays[x + 1]);
+                        day2 = MiscFunctions.AddOrdinal(fridays[x + 1]);
                     }
                 }
                 else
                 {
-                    day1 = Convert.ToString(mondays[x]);
-                    day2 = Convert.ToString(fridays[x]);
+                    day1 = MiscFunctions.AddOrdinal(mondays[x]);
+                    day2 = MiscFunctions.AddOrdinal(fridays[x]);
                 }
-        
+
                 string text =  day1 + "-" + day2;
                 switch (x)
                 {
@@ -537,8 +537,6 @@ namespace A2CourseWork.Gui
                         break;
                 }
             }
-            string currentmonth = monthscbx.Text;
-            int MonthNo = months.FindIndex(a => a.StartsWith(currentmonth));
             BookingDB bookingdb = new BookingDB(db);
             btnbooks = new List<bool>();
             string DOB = "";
@@ -551,9 +549,10 @@ namespace A2CourseWork.Gui
                 DOB = kids[kids.Count - 1].DOB;
             }
             overbooked = new List<bool>();
-            for(int i = 0; i<= mondays.Count-1; i++)
+            int currentMonth = months.IndexOf(monthscbx.Text) + 1;
+            for (int i = 0; i<= mondays.Count-1; i++)
             {
-                DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), MonthNo+1, mondays[i]);
+                DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), currentMonth, mondays[i]);
                 bool Currentoverbooked = false;
                 if (!alreadybooked.Contains(current))
                     Currentoverbooked = MiscFunctions.CheckAvalability(current, db, DOB);
@@ -669,13 +668,15 @@ namespace A2CourseWork.Gui
                 }
                 else
                 {
+                    btnfinished.Enabled = true;
                     Dates2Remove.Add(selecteddate);
                 }
                 calculatePrice(selecteddate, true);
                 current.BackColor = Color.Silver;
                 current.Text = current.Text.Remove(current.Text.Length - 9);
                 btnbooks[index] = false;
-                btnfinished.Enabled = false;
+                if(bookeddates.Count<1 && Dates2Remove.Count<1)
+                    btnfinished.Enabled = false;
             }
 
             totalpricelbl.Text = "Total Price: " + currentprice * (1 - currentDiscount);
@@ -722,7 +723,8 @@ namespace A2CourseWork.Gui
                 {
                     populatemonthscbx(false);
                 }
-                initaliseweeks(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year, monthscbx.SelectedIndex + 1, 1));
+                int x = months.IndexOf(monthscbx.Text);
+                initaliseweeks(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year, x+1, 1));
             }
             else
             {
@@ -740,8 +742,8 @@ namespace A2CourseWork.Gui
             }
             else
             {
-                x = monthscbx.SelectedIndex + 1;
-                initaliseweeks(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year + 0, x, DateTime.Now.Day));
+                x = months.IndexOf(monthscbx.Text);
+                initaliseweeks(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year + 0, x+1, DateTime.Now.Day));
             }
             monthtitlelbl.Text = monthscbx.Text + " " + yearcbx.Text;
         }
