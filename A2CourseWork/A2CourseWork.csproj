@@ -67,7 +67,14 @@
     <Compile Include="Classes\KidsDB.cs" />
     <Compile Include="Classes\MiscDB.cs" />
     <Compile Include="Classes\MiscFunctions.cs" />
+    <Compile Include="Classes\PricesDB.cs" />
     <Compile Include="Classes\StaffDB.cs" />
+    <Compile Include="Gui\Prices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Prices.Designer.cs">
+      <DependentUpon>Prices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Staff\AddEditStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +136,9 @@
     <Compile Include="Objects\StaffMember.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Gui\Prices.resx">
+      <DependentUpon>Prices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Staff\AddEditStaff.resx">
       <DependentUpon>AddEditStaff.cs</DependentUpon>
     </EmbeddedResource>

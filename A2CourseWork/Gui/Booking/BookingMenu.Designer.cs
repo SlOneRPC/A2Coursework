@@ -33,9 +33,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnregister = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.bookpnl2 = new System.Windows.Forms.Panel();
@@ -53,10 +53,10 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.bookpnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.bookpnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).BeginInit();
@@ -69,11 +69,11 @@
             // 
             this.bookpnl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bookpnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bookpnl1.Controls.Add(this.label7);
             this.bookpnl1.Controls.Add(this.pictureBox1);
             this.bookpnl1.Controls.Add(this.label6);
             this.bookpnl1.Controls.Add(this.label5);
             this.bookpnl1.Controls.Add(this.btnregister);
-            this.bookpnl1.Controls.Add(this.label2);
             this.bookpnl1.Controls.Add(this.panel4);
             this.bookpnl1.Location = new System.Drawing.Point(162, 155);
             this.bookpnl1.Name = "bookpnl1";
@@ -129,17 +129,6 @@
             this.btnregister.UseVisualStyleBackColor = false;
             this.btnregister.Click += new System.EventHandler(this.btnregister_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Booking a new customer?";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
@@ -160,10 +149,20 @@
             this.label9.Text = "New Booking";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(5, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Booking a new customer?";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Controls.Add(this.label1);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(341, 55);
@@ -370,30 +369,40 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(1, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(228, 24);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Booking a new customer?";
+            // 
             // BookingMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 568);
             this.Controls.Add(this.btnback);
-            this.Controls.Add(this.titlepxb);
-            this.Controls.Add(this.bookpnl1);
             this.Controls.Add(this.bookpnl2);
             this.Controls.Add(this.bookpnl3);
+            this.Controls.Add(this.titlepxb);
+            this.Controls.Add(this.bookpnl1);
             this.Name = "BookingMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingMenu";
             this.Load += new System.EventHandler(this.BookingMenu_Load);
-            this.Controls.SetChildIndex(this.bookpnl3, 0);
-            this.Controls.SetChildIndex(this.bookpnl2, 0);
             this.Controls.SetChildIndex(this.bookpnl1, 0);
             this.Controls.SetChildIndex(this.titlepxb, 0);
+            this.Controls.SetChildIndex(this.bookpnl3, 0);
+            this.Controls.SetChildIndex(this.bookpnl2, 0);
             this.Controls.SetChildIndex(this.btnback, 0);
             this.bookpnl1.ResumeLayout(false);
             this.bookpnl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.bookpnl2.ResumeLayout(false);
             this.bookpnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -433,5 +442,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox containerlistbox;
         private System.Windows.Forms.PictureBox btnback;
+        private System.Windows.Forms.Label label7;
     }
 }

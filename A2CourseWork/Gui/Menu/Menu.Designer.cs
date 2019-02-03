@@ -188,6 +188,7 @@
             // 
             // classespbx
             // 
+            this.classespbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.classespbx.Image = global::A2CourseWork.Properties.Resources.classes1;
             this.classespbx.Location = new System.Drawing.Point(7, 478);
             this.classespbx.Name = "classespbx";
@@ -211,6 +212,7 @@
             // 
             // grouppbx
             // 
+            this.grouppbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.grouppbx.Image = global::A2CourseWork.Properties.Resources.Group;
             this.grouppbx.Location = new System.Drawing.Point(7, 387);
             this.grouppbx.Name = "grouppbx";
@@ -234,6 +236,7 @@
             // 
             // advicepbx
             // 
+            this.advicepbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.advicepbx.Image = global::A2CourseWork.Properties.Resources.advice;
             this.advicepbx.Location = new System.Drawing.Point(7, 291);
             this.advicepbx.Name = "advicepbx";
@@ -258,6 +261,7 @@
             // transportpbx
             // 
             this.transportpbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.transportpbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.transportpbx.Image = global::A2CourseWork.Properties.Resources.bus;
             this.transportpbx.Location = new System.Drawing.Point(7, 195);
             this.transportpbx.Name = "transportpbx";
@@ -282,6 +286,7 @@
             // crechepbx
             // 
             this.crechepbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.crechepbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.crechepbx.Image = global::A2CourseWork.Properties.Resources.baby1;
             this.crechepbx.Location = new System.Drawing.Point(7, 99);
             this.crechepbx.Name = "crechepbx";

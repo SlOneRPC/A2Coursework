@@ -169,7 +169,8 @@ namespace A2CourseWork.Gui.ViewBooking
                 table.Rows.Add(current[0] + " " + current[1]);
             }
             amountlbl.Text = "Booking amount: " + data.Count.ToString();
-            revenuelbl.Text = "Estimated revenue: £" + (data.Count*15).ToString();
+            PricesDB pdb = new PricesDB(db);
+            revenuelbl.Text = "Estimated revenue: £" + (data.Count*pdb.getBase()).ToString();
             WeekView.DataSource = table;
             WeekView.AllowUserToAddRows = false;
             int x = 0;
@@ -200,7 +201,7 @@ namespace A2CourseWork.Gui.ViewBooking
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            CrecheMenu menu = new CrecheMenu();
+            ViewMenu menu = new ViewMenu();
             this.Hide();
             menu.Show();
         }

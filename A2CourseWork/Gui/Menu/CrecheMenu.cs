@@ -11,7 +11,7 @@ using A2CourseWork.Classes;
 using A2CourseWork.Gui.ViewBooking;
 namespace A2CourseWork.Gui
 {
-    public partial class CrecheMenu : Form
+    public partial class CrecheMenu : Default
     {
         public CrecheMenu()
         {
@@ -81,16 +81,21 @@ namespace A2CourseWork.Gui
 
         private void btnbookingsview_Click(object sender, EventArgs e)
         {
-            ViewBookings form = new ViewBookings();
+            ViewMenu form = new ViewMenu();
             this.Hide();
             form.Show();
         }
 
         private void btnbydate_Click(object sender, EventArgs e)
         {
-            ByDate form = new ByDate();
+            Prices menu = new Prices();
             this.Hide();
-            form.Show();
+            menu.Show();
+        }
+
+        private void btnwaiting_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is not a section i plan to add");
         }
     }
 }

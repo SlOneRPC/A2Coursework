@@ -19,6 +19,8 @@ namespace A2CourseWork.Gui
         decimal Nokids;
         int booked=0;
         List<bool> overbooked = new List<bool>();
+        List<bool> oldDate = new List<bool>();
+        List<bool> understaffed = new List<bool>();
         Customer cust = new Customer();
         List<Kid> kids = new List<Kid>();
         List<List<string>> dates = new List<List<string>>();
@@ -557,7 +559,15 @@ namespace A2CourseWork.Gui
                 if (!alreadybooked.Contains(current))
                     Currentoverbooked = MiscFunctions.CheckAvalability(current, db, DOB);
                 overbooked.Add(Currentoverbooked);
-                if ((bookeddates.Contains(current) || (alreadybooked.Contains(current) && !Dates2Remove.Contains(current))) && !Currentoverbooked)
+
+                if (current > DateTime.Now)
+                    oldDate.Add(false);
+                else
+                    oldDate.Add(true);
+
+                bool missingstaff = MiscFunctions.checkStaffAvaliability(db, DOB);
+                understaffed.Add(missingstaff);
+                if ((bookeddates.Contains(current) || (alreadybooked.Contains(current) && !Dates2Remove.Contains(current))) && !Currentoverbooked && current > DateTime.Now && !missingstaff)
                 {
                     btnbooks.Add(true);
                 }
@@ -624,7 +634,18 @@ namespace A2CourseWork.Gui
             }
             else
             {
-                if (overbooked[index])
+                if (oldDate[index])
+                {
+                    current.BackColor = Color.FromArgb(64, 64, 64);
+                    current.Enabled = false;
+                }
+                else if(understaffed[index])
+                {
+                    current.BackColor = Color.FromArgb(255, 128, 128);
+                    current.Text = current.Text + " [No staff avaliable]";
+                    current.Enabled = false;
+                }
+                else if (overbooked[index])
                 {
                     current.BackColor = Color.FromArgb(255, 128, 128);
                     current.Text = current.Text + " [No Spaces avaliable]";
@@ -679,7 +700,7 @@ namespace A2CourseWork.Gui
                     btnfinished.Enabled = false;
             }
 
-            totalpricelbl.Text = "Total Price: " + currentprice * (1 - currentDiscount);
+            totalpricelbl.Text = "Total Price: " + currentprice * (1 - currentDiscount/100);
         }
 
         private void week1btn_Click(object sender, EventArgs e)
@@ -759,6 +780,8 @@ namespace A2CourseWork.Gui
 
         private void calculatePrice(DateTime bookeddate,bool remove)
         {
+            PricesDB pdb = new PricesDB(db);
+            int baserate = pdb.getBase();
             if (remove)
             {
                 if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
@@ -801,26 +824,26 @@ namespace A2CourseWork.Gui
                         }
                         else
                         {
-                            currentDiscount = 0.03;
+                            pdb.getMedDiscount();
                         }
                     }
                 }
-                currentprice -= 15;
+                currentprice -= baserate;
             }
             else
             {
                 if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
                 {
-                    currentDiscount = 0.03;
+                    currentDiscount = pdb.getMedDiscount();
                 }
                 else if (bookeddate >= DateTime.Now.AddMonths(6))
                 {
-                    currentDiscount = 0.05;
+                    currentDiscount = pdb.getMaxDiscount();
                 }
-                currentprice += 15;
+                currentprice += baserate;
             }
             totalpricelbl.Visible = true;
-            totalpricelbl.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount));
+            totalpricelbl.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount / 100) );
         }
 
     }

@@ -21,7 +21,6 @@ namespace A2CourseWork.Gui
         {
             InitializeComponent();
             db = new Database();
-            InitializeComponent();
             db.connect();
             bookpnl1.Visible = true;
             bookpnl2.Visible = true;
@@ -30,6 +29,7 @@ namespace A2CourseWork.Gui
         private void BookingMenu_Load(object sender, EventArgs e)
         {
             this.titlelbl.Text = "Woodside Community - Creche - Booking Menu";
+            panel2.BringToFront();
         }
 
         private void btnsearch_Click(object sender, EventArgs e)

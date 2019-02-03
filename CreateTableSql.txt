@@ -57,6 +57,17 @@ CREATE TABLE [dbo].[Dates]
     	[Monday] VARCHAR(25) NOT NULL,
 )
 
+CREATE TABLE [dbo].[Prices]
+(
+    [Base] INT NOT NULL, 
+    [MinDiscount] INT NULL, 
+    [MedDiscount] INT NULL, 
+    [MaxDiscount] INT NULL 
+)
+
+
 INSERT Groups(GroupName) VALUES('Baby')
 INSERT Groups(GroupName) VALUES('Toddler')
 INSERT Groups(GroupName) VALUES('Child')
+
+INSERT Prices VALUES(15,0,3,5)

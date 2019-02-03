@@ -15,6 +15,28 @@ namespace A2CourseWork.Gui.ViewBooking
         public ViewMenu()
         {
             InitializeComponent();
+            panel2.BringToFront();
+        }
+
+        private void btndate_Click(object sender, EventArgs e)
+        {
+            ByDate date = new ByDate();
+            this.Hide();
+            date.Show();
+        }
+
+        private void btnchild_Click(object sender, EventArgs e)
+        {
+            ViewBookings child = new ViewBookings();
+            this.Hide();
+            child.Show();
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            CrecheMenu menu = new CrecheMenu();
+            this.Hide();
+            menu.Show();
         }
     }
 }

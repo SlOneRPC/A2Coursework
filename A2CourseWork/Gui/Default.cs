@@ -15,6 +15,7 @@ namespace A2CourseWork.Gui
         public Default()
         {
             InitializeComponent();
+            this.panel2.BringToFront();
         }
    
         //exit button
@@ -48,6 +49,89 @@ namespace A2CourseWork.Gui
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
         {
             lastclick = e.Location;
+        }
+
+        private void panel2_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Size = new Size(312, 569);
+        }
+
+        private void panel2_MouseLeave(object sender, EventArgs e)
+        {
+            panel2.Size = new Size(91, 569);
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Size = new Size(312, 569);
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Size = new Size(312, 569);
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Size = new Size(312, 569);
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            booksidebtn.BackColor = Color.Gray;
+        }
+
+        private void booksidebtn_MouseLeave(object sender, EventArgs e)
+        {
+            booksidebtn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void viewsidebtn_MouseHover(object sender, EventArgs e)
+        {
+            viewsidebtn.BackColor = Color.Gray;
+        }
+
+        private void viewsidebtn_MouseLeave(object sender, EventArgs e)
+        {
+            viewsidebtn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void staffsidebtn_MouseHover(object sender, EventArgs e)
+        {
+            staffsidebtn.BackColor = Color.Gray;
+        }
+
+        private void staffsidebtn_MouseLeave(object sender, EventArgs e)
+        {
+            staffsidebtn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void booksidebtn_Click(object sender, EventArgs e)
+        {
+            BookingMenu menu = new BookingMenu();
+            this.Hide();
+            menu.Show();
+        }
+
+        private void viewsidebtn_Click(object sender, EventArgs e)
+        {
+            ViewBookings menu = new ViewBookings();
+            this.Hide();
+            menu.Show();
+        }
+
+        private void staffsidebtn_Click(object sender, EventArgs e)
+        {
+            AddEditStaff staffmenu = new AddEditStaff();
+            this.Hide();
+            staffmenu.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Gui.Menu menu = new Gui.Menu();
+            this.Hide();
+            menu.Show();
         }
     }
 }

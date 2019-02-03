@@ -175,6 +175,10 @@ namespace A2CourseWork.Gui
                 }
                 initcombo();
             }
+            else
+            {
+                MessageBox.Show("Please fill in the fields marked with *");
+            }
         }
 
         private void doedit()
@@ -268,7 +272,7 @@ namespace A2CourseWork.Gui
                 error = true;
             }
             string postcode = Postcodetxt.Text.Replace(" ", String.Empty);
-            if (postcode.Length>8 ||postcode.Length<7  )
+            if (postcode.Length>8 ||postcode.Length<6  )
             {
                 error5.Visible = true;
                 error = true;
@@ -353,10 +357,25 @@ namespace A2CourseWork.Gui
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to Remove this staff member?", "Removal", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                removeBookings();
                 StaffDB staffdb = new StaffDB(db);
                 staffdb.removeStaffmember(staff[stafflist.SelectedIndex].Forename);
                 initcombo();
             }
+        }
+
+
+        private void removeBookings()
+        {
+            StaffDB staffdb = new StaffDB(db);
+            int count = staffdb.countStaff(staff[stafflist.SelectedIndex].Forename);
+
+            if (count <= 2)
+            {
+                int deleted = staffdb.DeleteDates(staff[stafflist.SelectedIndex].Forename);
+                MessageBox.Show($"{deleted} Bookings remove due to the removal of the staff member");
+            }
+
         }
 
         private void label4_Click(object sender, EventArgs e)

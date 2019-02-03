@@ -29,14 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Homelbl = new System.Windows.Forms.Label();
-            this.homepbx = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.minbtn = new System.Windows.Forms.PictureBox();
-            this.btnexit = new System.Windows.Forms.PictureBox();
-            this.titlelbl = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnwaiting = new System.Windows.Forms.Button();
             this.btnbookingsview = new System.Windows.Forms.Button();
             this.btnbydate = new System.Windows.Forms.Button();
             this.Timelbl = new System.Windows.Forms.Label();
@@ -45,100 +38,19 @@
             this.btnstaff = new System.Windows.Forms.Button();
             this.btnbooking = new System.Windows.Forms.Button();
             this.titlepxb = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // btnwaiting
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.Homelbl);
-            this.panel2.Controls.Add(this.homepbx);
-            this.panel2.Location = new System.Drawing.Point(-3, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(90, 569);
-            this.panel2.TabIndex = 5;
-            // 
-            // Homelbl
-            // 
-            this.Homelbl.AutoSize = true;
-            this.Homelbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Homelbl.ForeColor = System.Drawing.Color.White;
-            this.Homelbl.Location = new System.Drawing.Point(19, 80);
-            this.Homelbl.Name = "Homelbl";
-            this.Homelbl.Size = new System.Drawing.Size(51, 19);
-            this.Homelbl.TabIndex = 1;
-            this.Homelbl.Text = "Home";
-            // 
-            // homepbx
-            // 
-            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.homepbx.Location = new System.Drawing.Point(7, 3);
-            this.homepbx.Name = "homepbx";
-            this.homepbx.Size = new System.Drawing.Size(76, 72);
-            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.homepbx.TabIndex = 0;
-            this.homepbx.TabStop = false;
-            this.homepbx.Click += new System.EventHandler(this.homepbx_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.minbtn);
-            this.panel1.Controls.Add(this.btnexit);
-            this.panel1.Controls.Add(this.titlelbl);
-            this.panel1.Location = new System.Drawing.Point(87, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 41);
-            this.panel1.TabIndex = 6;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // minbtn
-            // 
-            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
-            this.minbtn.Location = new System.Drawing.Point(805, 0);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(41, 38);
-            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minbtn.TabIndex = 3;
-            this.minbtn.TabStop = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
-            // 
-            // btnexit
-            // 
-            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
-            this.btnexit.Location = new System.Drawing.Point(852, 0);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(41, 38);
-            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnexit.TabIndex = 2;
-            this.btnexit.TabStop = false;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
-            // 
-            // titlelbl
-            // 
-            this.titlelbl.AutoSize = true;
-            this.titlelbl.BackColor = System.Drawing.Color.Transparent;
-            this.titlelbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titlelbl.Location = new System.Drawing.Point(7, 9);
-            this.titlelbl.Name = "titlelbl";
-            this.titlelbl.Size = new System.Drawing.Size(302, 25);
-            this.titlelbl.TabIndex = 1;
-            this.titlelbl.Text = "Woodside Community - Creche";
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(700, 182);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(166, 162);
-            this.button3.TabIndex = 14;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnwaiting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnwaiting.Location = new System.Drawing.Point(700, 182);
+            this.btnwaiting.Name = "btnwaiting";
+            this.btnwaiting.Size = new System.Drawing.Size(166, 162);
+            this.btnwaiting.TabIndex = 14;
+            this.btnwaiting.Text = "Waiting list placeholder";
+            this.btnwaiting.UseVisualStyleBackColor = true;
+            this.btnwaiting.Click += new System.EventHandler(this.btnwaiting_Click);
             // 
             // btnbookingsview
             // 
@@ -160,7 +72,7 @@
             this.btnbydate.Name = "btnbydate";
             this.btnbydate.Size = new System.Drawing.Size(166, 162);
             this.btnbydate.TabIndex = 16;
-            this.btnbydate.Text = "View By Date Placeholder";
+            this.btnbydate.Text = "Prices Placeholder";
             this.btnbydate.UseVisualStyleBackColor = true;
             this.btnbydate.Click += new System.EventHandler(this.btnbydate_Click);
             // 
@@ -239,24 +151,23 @@
             this.Controls.Add(this.Timelbl);
             this.Controls.Add(this.btnbydate);
             this.Controls.Add(this.btnbookingsview);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnwaiting);
             this.Controls.Add(this.btnstaff);
             this.Controls.Add(this.btnbooking);
             this.Controls.Add(this.titlepxb);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrecheMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrecheMenu";
             this.Load += new System.EventHandler(this.CrecheMenu_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
+            this.Controls.SetChildIndex(this.titlepxb, 0);
+            this.Controls.SetChildIndex(this.btnbooking, 0);
+            this.Controls.SetChildIndex(this.btnstaff, 0);
+            this.Controls.SetChildIndex(this.btnwaiting, 0);
+            this.Controls.SetChildIndex(this.btnbookingsview, 0);
+            this.Controls.SetChildIndex(this.btnbydate, 0);
+            this.Controls.SetChildIndex(this.Timelbl, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -264,18 +175,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label Homelbl;
-        private System.Windows.Forms.PictureBox homepbx;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox minbtn;
-        private System.Windows.Forms.PictureBox btnexit;
-        private System.Windows.Forms.Label titlelbl;
         private System.Windows.Forms.PictureBox titlepxb;
         private System.Windows.Forms.Button btnbooking;
         private System.Windows.Forms.Button btnstaff;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnwaiting;
         private System.Windows.Forms.Button btnbookingsview;
         private System.Windows.Forms.Button btnbydate;
         private System.Windows.Forms.Label Timelbl;

@@ -58,6 +58,10 @@ namespace A2CourseWork.Classes
         public void removeStaffmember(string forename)
         {
             db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"DELETE GroupRota FROM GroupRota INNER JOIN Staff ON GroupRota.StaffID = Staff.StaffId WHERE Forename = '{forename}'";
+            db.Cmd.ExecuteNonQuery();
+
+            db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $"DELETE FROM Staff WHERE Forename = '{forename}'";
             db.Cmd.ExecuteNonQuery();
         }
@@ -68,6 +72,44 @@ namespace A2CourseWork.Classes
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $"INSERT INTO GroupRota(StaffID,GroupID) VALUES({id},{groupid})";
             db.Cmd.ExecuteNonQuery();
+        }
+
+        public int DeleteDates(string Forename)
+        {
+            int groupid = getStaffGroup(Forename);
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"DELETE Dates FROM Dates INNER JOIN Booking ON Dates.BookingId = Booking.BookingID WHERE Booking.GroupId = {groupid}";
+            int num = db.Cmd.ExecuteNonQuery();
+            return num;
+        }
+
+        public int countStaff(string Forename)
+        {
+            int groupid = getStaffGroup(Forename);
+            int id = 0;
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT COUNT(*) FROM GroupRota WHERE GroupID = {groupid}";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                id = db.Rdr.GetInt32(0);
+            }
+            db.Rdr.Close();
+            return id;
+        }
+
+        public int countStaffbyid(int groupid)
+        {
+            int id = 0;
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT COUNT(*) FROM GroupRota WHERE GroupID = {groupid}";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                id = db.Rdr.GetInt32(0);
+            }
+            db.Rdr.Close();
+            return id;
         }
 
         private int getStaffID(string forename)

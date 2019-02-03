@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using A2CourseWork.Classes;
 using A2CourseWork.Objects;
+using A2CourseWork.Gui.ViewBooking;
 namespace A2CourseWork.Gui
 {
     public partial class ViewBookings : Default
@@ -58,7 +59,7 @@ namespace A2CourseWork.Gui
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            CrecheMenu menu = new CrecheMenu();
+            ViewMenu menu = new ViewMenu();
             this.Hide();
             menu.Show();
         }
@@ -128,16 +129,17 @@ namespace A2CourseWork.Gui
         {
             double discount = 0;
             string discountApplied = "";
+            PricesDB pdb = new PricesDB(db);
             foreach(DateTime date in dates)
             {
                 if (date >= DateTime.Now.AddMonths(6))
                 {
-                    discount = 0.05;
+                    discount = pdb.getMaxDiscount();
                     discountApplied = "5%";
                 }
                 else if(date > DateTime.Now.AddMonths(3) && date < DateTime.Now.AddMonths(6))
                 {
-                    discount = 0.03;
+                    discount = pdb.getMedDiscount();
                     discountApplied = "3%";
                 }
             }
@@ -149,7 +151,7 @@ namespace A2CourseWork.Gui
             {
                 discountlbl.Text = "Discount Applied: " + discountApplied;
             }
-            double price = (15 * dates.Count) * (1-discount);
+            double price = (pdb.getBase() * dates.Count) * (1-discount);
             totalpricelbl.Text = "Total Price: £" + price.ToString();
         }
 

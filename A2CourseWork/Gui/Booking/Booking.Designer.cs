@@ -61,6 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Fnametxt = new System.Windows.Forms.TextBox();
             this.book2pnl = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.Cerror2 = new System.Windows.Forms.Label();
             this.Cerror1 = new System.Windows.Forms.Label();
             this.DOBpicker = new System.Windows.Forms.DateTimePicker();
@@ -109,7 +110,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.totalpricelbl = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
             this.panel1.SuspendLayout();
@@ -543,6 +543,17 @@
             this.book2pnl.Size = new System.Drawing.Size(289, 356);
             this.book2pnl.TabIndex = 18;
             this.book2pnl.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(21, 223);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 23);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Date of Birth";
             // 
             // Cerror2
             // 
@@ -1110,17 +1121,6 @@
             this.totalpricelbl.TabIndex = 25;
             this.totalpricelbl.Text = "Total Price: ";
             this.totalpricelbl.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(21, 223);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(116, 23);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Date of Birth";
             // 
             // Booking
             // 

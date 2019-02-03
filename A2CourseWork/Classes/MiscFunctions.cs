@@ -103,6 +103,23 @@ namespace A2CourseWork.Classes
             return overbooked;
         }
 
+        public static bool checkStaffAvaliability(Database db, string DOB)
+        {
+            string group = getgroupfromage(DOB);
+            BookingDB bookDB = new BookingDB(db);
+            int groupID = bookDB.getgroupID(group);
+            StaffDB staffdb = new StaffDB(db);
+            int staffNum = staffdb.countStaffbyid(groupID);
+            if(staffNum < 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static string AddOrdinal(int num)
         {
             if (num <= 0) return num.ToString();
