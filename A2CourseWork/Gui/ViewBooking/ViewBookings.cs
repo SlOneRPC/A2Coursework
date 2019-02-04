@@ -169,7 +169,12 @@ namespace A2CourseWork.Gui
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-
+            DateTime date = Convert.ToDateTime(bookinglistbox.Text);
+            List<DateTime> dates = new List<DateTime>();
+            dates.Add(date);
+            BookingDB bdb = new BookingDB(db);
+            bdb.removeDate(dates, kids[kidslistbox.SelectedIndex].Forename);
+            MessageBox.Show("Sucess");
         }
     }
 }

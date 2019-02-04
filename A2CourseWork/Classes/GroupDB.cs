@@ -28,9 +28,19 @@ namespace A2CourseWork.Classes
             return groupNames;
         }
 
-        
+        public void updateGroupNames(string groupA,string GroupB,string GroupC)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE Groups SET GroupName = '{groupA}' WHERE GroupId = 1";
+            db.Cmd.ExecuteNonQuery();
 
-    
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE Groups SET GroupName = '{GroupB}' WHERE GroupId = 2";
+            db.Cmd.ExecuteNonQuery();
 
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE Groups SET GroupName = '{GroupC}' WHERE GroupId = 2";
+            db.Cmd.ExecuteNonQuery();
+        }
     }
 }

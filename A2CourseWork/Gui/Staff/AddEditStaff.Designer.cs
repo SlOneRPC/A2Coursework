@@ -177,6 +177,7 @@
             // btnremove
             // 
             this.btnremove.BackColor = System.Drawing.Color.Gray;
+            this.btnremove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnremove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnremove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnremove.Location = new System.Drawing.Point(184, 415);
@@ -190,6 +191,7 @@
             // btnadd
             // 
             this.btnadd.BackColor = System.Drawing.Color.Gray;
+            this.btnadd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.Location = new System.Drawing.Point(16, 415);
@@ -311,6 +313,7 @@
             // btncancel
             // 
             this.btncancel.BackColor = System.Drawing.Color.Gray;
+            this.btncancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.Location = new System.Drawing.Point(191, 424);
@@ -398,6 +401,7 @@
             // btnupdate
             // 
             this.btnupdate.BackColor = System.Drawing.Color.Gray;
+            this.btnupdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.Location = new System.Drawing.Point(23, 424);

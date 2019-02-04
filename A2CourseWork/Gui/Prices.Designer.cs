@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
             this.messagelbl = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnapply = new System.Windows.Forms.Button();
@@ -44,12 +45,13 @@
             this.MinDiscount = new System.Windows.Forms.Label();
             this.Base = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btngapply = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.NameC = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -66,8 +68,6 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaxD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MedD)).BeginInit();
@@ -105,6 +105,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(336, 409);
             this.panel3.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(16, 103);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(120, 25);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "Base price:";
             // 
             // messagelbl
             // 
@@ -266,6 +277,17 @@
             this.panel4.Size = new System.Drawing.Size(334, 64);
             this.panel4.TabIndex = 0;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(104, 17);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(69, 29);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Price";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -311,7 +333,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel6.Controls.Add(this.button1);
+            this.panel6.Controls.Add(this.btngapply);
             this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.NameC);
             this.panel6.Controls.Add(this.label18);
@@ -333,17 +355,18 @@
             this.panel6.Size = new System.Drawing.Size(336, 409);
             this.panel6.TabIndex = 4;
             // 
-            // button1
+            // btngapply
             // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(34, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(273, 42);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Apply";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btngapply.BackColor = System.Drawing.Color.Gray;
+            this.btngapply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngapply.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngapply.Location = new System.Drawing.Point(34, 362);
+            this.btngapply.Name = "btngapply";
+            this.btngapply.Size = new System.Drawing.Size(273, 42);
+            this.btngapply.TabIndex = 27;
+            this.btngapply.Text = "Apply";
+            this.btngapply.UseVisualStyleBackColor = false;
+            this.btngapply.Click += new System.EventHandler(this.btngapply_Click);
             // 
             // label19
             // 
@@ -506,28 +529,6 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(16, 103);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(120, 25);
-            this.label20.TabIndex = 27;
-            this.label20.Text = "Base price:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(104, 17);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 29);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Price";
-            // 
             // Prices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,7 +589,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label messagelbl;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btngapply;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox NameC;
         private System.Windows.Forms.Label label18;

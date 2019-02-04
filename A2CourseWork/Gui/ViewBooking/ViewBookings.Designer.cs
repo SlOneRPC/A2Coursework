@@ -45,25 +45,23 @@
             this.doblbl = new System.Windows.Forms.Label();
             this.snamelbl = new System.Windows.Forms.Label();
             this.fnamelbl = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.discountlbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.agegrouplbl = new System.Windows.Forms.Label();
             this.daysmissedlbl = new System.Windows.Forms.Label();
             this.totalpricelbl = new System.Windows.Forms.Label();
             this.daysbookedlbl = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
             this.bookingpnl1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.bookingpnl2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +103,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(309, 59);
@@ -150,6 +147,7 @@
             // btndelete
             // 
             this.btndelete.BackColor = System.Drawing.Color.Gray;
+            this.btndelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.Location = new System.Drawing.Point(146, 344);
@@ -163,6 +161,7 @@
             // btnadd
             // 
             this.btnadd.BackColor = System.Drawing.Color.Gray;
+            this.btnadd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.Location = new System.Drawing.Point(19, 344);
@@ -214,11 +213,14 @@
             this.panel9.Controls.Add(this.doblbl);
             this.panel9.Controls.Add(this.snamelbl);
             this.panel9.Controls.Add(this.fnamelbl);
-            this.panel9.Controls.Add(this.label3);
             this.panel9.Location = new System.Drawing.Point(11, 3);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(283, 168);
             this.panel9.TabIndex = 6;
+            this.panel9.Controls.SetChildIndex(this.fnamelbl, 0);
+            this.panel9.Controls.SetChildIndex(this.snamelbl, 0);
+            this.panel9.Controls.SetChildIndex(this.doblbl, 0);
+            this.panel9.Controls.SetChildIndex(this.agelbl, 0);
             // 
             // agelbl
             // 
@@ -264,22 +266,10 @@
             this.fnamelbl.TabIndex = 1;
             this.fnamelbl.Text = "Forename:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(2, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Child Details:";
-            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.discountlbl);
-            this.panel8.Controls.Add(this.label4);
             this.panel8.Controls.Add(this.agegrouplbl);
             this.panel8.Controls.Add(this.daysmissedlbl);
             this.panel8.Controls.Add(this.totalpricelbl);
@@ -288,6 +278,11 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(283, 216);
             this.panel8.TabIndex = 5;
+            this.panel8.Controls.SetChildIndex(this.daysbookedlbl, 0);
+            this.panel8.Controls.SetChildIndex(this.totalpricelbl, 0);
+            this.panel8.Controls.SetChildIndex(this.daysmissedlbl, 0);
+            this.panel8.Controls.SetChildIndex(this.agegrouplbl, 0);
+            this.panel8.Controls.SetChildIndex(this.discountlbl, 0);
             // 
             // discountlbl
             // 
@@ -299,17 +294,6 @@
             this.discountlbl.Size = new System.Drawing.Size(133, 20);
             this.discountlbl.TabIndex = 7;
             this.discountlbl.Text = "Discount Applied:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(7, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "More information:";
             // 
             // agegrouplbl
             // 
@@ -358,11 +342,32 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Controls.Add(this.label2);
             this.panel5.Location = new System.Drawing.Point(3, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(597, 57);
             this.panel5.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(2, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Child Details:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(7, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "More information:";
             // 
             // label2
             // 
@@ -400,12 +405,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewBookings";
             this.Load += new System.EventHandler(this.ViewBookings_Load);
+            this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.bookingpnl1, 0);
             this.Controls.SetChildIndex(this.bookingpnl2, 0);
             this.Controls.SetChildIndex(this.btnback, 0);
             this.bookingpnl1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.bookingpnl2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -414,8 +418,6 @@
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
 

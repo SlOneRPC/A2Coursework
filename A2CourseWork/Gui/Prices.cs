@@ -62,5 +62,10 @@ namespace A2CourseWork.Gui
                 messagelbl.Visible = true;
             }
         }
+
+        private void btngapply_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Current not working, needs fixed!");
+        }
     }
 }
