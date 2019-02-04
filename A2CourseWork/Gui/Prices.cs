@@ -31,6 +31,7 @@ namespace A2CourseWork.Gui
         private void Prices_Load(object sender, EventArgs e)
         {
             setPrices();
+            setGroups();
         }
 
         private void setPrices()
@@ -40,6 +41,15 @@ namespace A2CourseWork.Gui
             MinD.Value = pdb.getMinDiscount();
             MedD.Value = pdb.getMedDiscount();
             MaxD.Value = pdb.getMaxDiscount();
+        }
+
+        private void setGroups()
+        {
+            GroupDB gdb = new GroupDB(db);
+            List<string> groupNames = gdb.getgroupnames();
+            NameA.Text = groupNames[0];
+            NameB.Text = groupNames[1];
+            NameC.Text = groupNames[2];
         }
 
         private void btnapply_Click(object sender, EventArgs e)

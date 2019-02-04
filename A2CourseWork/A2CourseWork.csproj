@@ -64,6 +64,7 @@
     <Compile Include="Classes\BookingDB.cs" />
     <Compile Include="Classes\CustomerDB.cs" />
     <Compile Include="Classes\Database.cs" />
+    <Compile Include="Classes\GroupDB.cs" />
     <Compile Include="Classes\KidsDB.cs" />
     <Compile Include="Classes\MiscDB.cs" />
     <Compile Include="Classes\MiscFunctions.cs" />
