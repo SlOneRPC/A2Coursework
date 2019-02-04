@@ -25,6 +25,7 @@ namespace A2CourseWork.Gui.ViewBooking
             titlelbl.Text = "Woodside Community - creche - View";
             db = new Database();
             db.connect();
+            panel2.BringToFront();
         }
 
         private void btnsearch_Click(object sender, EventArgs e)
@@ -146,7 +147,7 @@ namespace A2CourseWork.Gui.ViewBooking
 
             foreach(List<string> current in data)
             {
-                table.Rows.Add(current[0],current[1],current[2],MiscFunctions.getgroupfromage(current[2]));
+                table.Rows.Add(current[0] + " " + current[1],current[2] + " " + current[3],current[4],MiscFunctions.getgroupfromage(current[4]));
             }
             KidsView.DataSource = table;
         }

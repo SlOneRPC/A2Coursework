@@ -224,6 +224,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\By-Child.png" />
+    <None Include="Resources\By-Date.png" />
+    <None Include="Resources\waiting1.png" />
+    <None Include="Resources\Prices1.png" />
+    <None Include="Resources\waiting.png" />
+    <None Include="Resources\Prices.png" />
     <None Include="Resources\existing.png" />
     <None Include="Resources\new_customer.png" />
     <None Include="Resources\ViewBooking.png" />

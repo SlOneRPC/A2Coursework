@@ -133,6 +133,26 @@ namespace A2CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap By_Child {
+            get {
+                object obj = ResourceManager.GetObject("By-Child", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap By_Date {
+            get {
+                object obj = ResourceManager.GetObject("By-Date", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap circled_left_2 {
             get {
                 object obj = ResourceManager.GetObject("circled-left-2", resourceCulture);
@@ -243,6 +263,16 @@ namespace A2CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Prices {
+            get {
+                object obj = ResourceManager.GetObject("Prices", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap staff {
             get {
                 object obj = ResourceManager.GetObject("staff", resourceCulture);
@@ -273,9 +303,9 @@ namespace A2CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap white_menu_icon {
+        internal static System.Drawing.Bitmap waiting {
             get {
-                object obj = ResourceManager.GetObject("white-menu-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("waiting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

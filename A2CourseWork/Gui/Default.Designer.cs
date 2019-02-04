@@ -28,23 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Default));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.waitinglistbtn = new System.Windows.Forms.PictureBox();
+            this.pricesbtn = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.crechelbl = new System.Windows.Forms.Label();
             this.staffsidebtn = new System.Windows.Forms.PictureBox();
             this.viewsidebtn = new System.Windows.Forms.PictureBox();
             this.booksidebtn = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.honebtn = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.titlelbl = new System.Windows.Forms.Label();
             this.minbtn = new System.Windows.Forms.PictureBox();
             this.btnexit = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waitinglistbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pricesbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffsidebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewsidebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksidebtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.honebtn)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
@@ -53,19 +60,75 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.waitinglistbtn);
+            this.panel2.Controls.Add(this.pricesbtn);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.crechelbl);
             this.panel2.Controls.Add(this.staffsidebtn);
             this.panel2.Controls.Add(this.viewsidebtn);
             this.panel2.Controls.Add(this.booksidebtn);
-            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.honebtn);
             this.panel2.Location = new System.Drawing.Point(-1, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(91, 569);
             this.panel2.TabIndex = 1;
             this.panel2.MouseEnter += new System.EventHandler(this.panel2_MouseEnter);
             this.panel2.MouseLeave += new System.EventHandler(this.panel2_MouseLeave);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(89, 468);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 27);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Waiting List";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(89, 381);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 27);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Prices";
+            // 
+            // waitinglistbtn
+            // 
+            this.waitinglistbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.waitinglistbtn.Image = ((System.Drawing.Image)(resources.GetObject("waitinglistbtn.Image")));
+            this.waitinglistbtn.Location = new System.Drawing.Point(7, 445);
+            this.waitinglistbtn.Name = "waitinglistbtn";
+            this.waitinglistbtn.Size = new System.Drawing.Size(76, 72);
+            this.waitinglistbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.waitinglistbtn.TabIndex = 10;
+            this.waitinglistbtn.TabStop = false;
+            this.waitinglistbtn.Click += new System.EventHandler(this.waitinglistbtn_Click);
+            this.waitinglistbtn.MouseEnter += new System.EventHandler(this.waitinglistbtn_MouseEnter);
+            this.waitinglistbtn.MouseLeave += new System.EventHandler(this.waitinglistbtn_MouseLeave);
+            this.waitinglistbtn.MouseHover += new System.EventHandler(this.waitinglistbtn_MouseHover);
+            // 
+            // pricesbtn
+            // 
+            this.pricesbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pricesbtn.Image = ((System.Drawing.Image)(resources.GetObject("pricesbtn.Image")));
+            this.pricesbtn.Location = new System.Drawing.Point(7, 358);
+            this.pricesbtn.Name = "pricesbtn";
+            this.pricesbtn.Size = new System.Drawing.Size(76, 72);
+            this.pricesbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pricesbtn.TabIndex = 9;
+            this.pricesbtn.TabStop = false;
+            this.pricesbtn.Click += new System.EventHandler(this.pricesbtn_Click);
+            this.pricesbtn.MouseEnter += new System.EventHandler(this.pricesbtn_MouseEnter);
+            this.pricesbtn.MouseLeave += new System.EventHandler(this.pricesbtn_MouseLeave);
+            this.pricesbtn.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover_1);
             // 
             // label2
             // 
@@ -145,16 +208,19 @@
             this.booksidebtn.MouseLeave += new System.EventHandler(this.booksidebtn_MouseLeave);
             this.booksidebtn.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
-            // pictureBox2
+            // honebtn
             // 
-            this.pictureBox2.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(76, 72);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.honebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.honebtn.Image = global::A2CourseWork.Properties.Resources.homebtn;
+            this.honebtn.Location = new System.Drawing.Point(7, 3);
+            this.honebtn.Name = "honebtn";
+            this.honebtn.Size = new System.Drawing.Size(76, 72);
+            this.honebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.honebtn.TabIndex = 0;
+            this.honebtn.TabStop = false;
+            this.honebtn.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.honebtn.MouseLeave += new System.EventHandler(this.honebtn_MouseLeave);
+            this.honebtn.MouseHover += new System.EventHandler(this.honebtn_MouseHover);
             // 
             // panel1
             // 
@@ -216,10 +282,12 @@
             this.Text = "Default";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waitinglistbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pricesbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffsidebtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewsidebtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksidebtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.honebtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
@@ -232,7 +300,7 @@
 
         public System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox honebtn;
         private System.Windows.Forms.PictureBox minbtn;
         private System.Windows.Forms.PictureBox btnexit;
         public System.Windows.Forms.Label titlelbl;
@@ -242,5 +310,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label crechelbl;
+        private System.Windows.Forms.PictureBox waitinglistbtn;
+        private System.Windows.Forms.PictureBox pricesbtn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

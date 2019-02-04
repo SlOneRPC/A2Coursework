@@ -61,15 +61,17 @@
             // btndate
             // 
             this.btndate.BackColor = System.Drawing.Color.Gray;
+            this.btndate.BackgroundImage = global::A2CourseWork.Properties.Resources.By_Date;
+            this.btndate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btndate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btndate.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btndate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndate.ForeColor = System.Drawing.Color.White;
-            this.btndate.Location = new System.Drawing.Point(30, 91);
+            this.btndate.Location = new System.Drawing.Point(28, 59);
             this.btndate.Name = "btndate";
-            this.btndate.Size = new System.Drawing.Size(241, 146);
+            this.btndate.Size = new System.Drawing.Size(225, 212);
             this.btndate.TabIndex = 1;
-            this.btndate.Text = "view";
             this.btndate.UseVisualStyleBackColor = false;
             this.btndate.Click += new System.EventHandler(this.btndate_Click);
             // 
@@ -117,15 +119,17 @@
             // btnchild
             // 
             this.btnchild.BackColor = System.Drawing.Color.Gray;
+            this.btnchild.BackgroundImage = global::A2CourseWork.Properties.Resources.By_Child;
+            this.btnchild.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnchild.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnchild.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnchild.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnchild.Font = new System.Drawing.Font("Open Sans", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnchild.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnchild.ForeColor = System.Drawing.Color.White;
-            this.btnchild.Location = new System.Drawing.Point(22, 91);
+            this.btnchild.Location = new System.Drawing.Point(40, 59);
             this.btnchild.Name = "btnchild";
-            this.btnchild.Size = new System.Drawing.Size(247, 146);
+            this.btnchild.Size = new System.Drawing.Size(225, 212);
             this.btnchild.TabIndex = 2;
-            this.btnchild.Text = "view";
             this.btnchild.UseVisualStyleBackColor = false;
             this.btnchild.Click += new System.EventHandler(this.btnchild_Click);
             // 

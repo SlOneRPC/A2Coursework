@@ -17,6 +17,7 @@ namespace A2CourseWork.Gui
         List<Kid> kids = new List<Kid>();
         List<Customer> customers = new List<Customer>();
         Customer currentcustomer = new Customer();
+        bool NoBookings = false;
         public BookingMenu()
         {
             InitializeComponent();
@@ -43,9 +44,12 @@ namespace A2CourseWork.Gui
             {
                 initlistbox(false);
             }
-            bookpnl1.Visible = false;
-            bookpnl2.Visible = false;
-            bookpnl3.Visible = true;
+            if (!NoBookings)
+            {
+                bookpnl1.Visible = false;
+                bookpnl2.Visible = false;
+                bookpnl3.Visible = true;
+            }
         }
 
         private void initlistbox(bool kid)
@@ -89,7 +93,7 @@ namespace A2CourseWork.Gui
                 else
                 {
                     MessageBox.Show("No customers yet!");
-                    returntomenu();
+                    NoBookings = true;
                 }
             }
            

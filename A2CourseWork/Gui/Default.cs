@@ -115,7 +115,7 @@ namespace A2CourseWork.Gui
 
         private void viewsidebtn_Click(object sender, EventArgs e)
         {
-            ViewBookings menu = new ViewBookings();
+            ViewBooking.ViewMenu menu = new ViewBooking.ViewMenu();
             this.Hide();
             menu.Show();
         }
@@ -132,6 +132,60 @@ namespace A2CourseWork.Gui
             Gui.Menu menu = new Gui.Menu();
             this.Hide();
             menu.Show();
+        }
+
+        private void pictureBox1_MouseHover_1(object sender, EventArgs e)
+        {
+            pricesbtn.BackColor = Color.Gray;
+        }
+
+        private void pricesbtn_MouseLeave(object sender, EventArgs e)
+        {
+            pricesbtn.BackColor = Color.FromArgb(64, 64, 64);
+            panel2.Size = new Size(91, 569);
+        }
+
+        private void waitinglistbtn_MouseHover(object sender, EventArgs e)
+        {
+            waitinglistbtn.BackColor = Color.Gray;
+        }
+
+        private void waitinglistbtn_MouseLeave(object sender, EventArgs e)
+        {
+            waitinglistbtn.BackColor = Color.FromArgb(64, 64, 64);
+            panel2.Size = new Size(91, 569);
+        }
+
+        private void pricesbtn_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Size = new Size(312, 569);
+        }
+
+        private void waitinglistbtn_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Size = new Size(312, 569);
+        }
+
+        private void honebtn_MouseHover(object sender, EventArgs e)
+        {
+            honebtn.BackColor = Color.Gray;
+        }
+
+        private void honebtn_MouseLeave(object sender, EventArgs e)
+        {
+            honebtn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void pricesbtn_Click(object sender, EventArgs e)
+        {
+            Prices p = new Prices();
+            this.Hide();
+            p.Show();
+        }
+
+        private void waitinglistbtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is not something i plan to add");
         }
     }
 }

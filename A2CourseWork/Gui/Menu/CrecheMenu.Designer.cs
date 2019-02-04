@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrecheMenu));
             this.btnwaiting = new System.Windows.Forms.Button();
             this.btnbookingsview = new System.Windows.Forms.Button();
             this.btnbydate = new System.Windows.Forms.Button();
@@ -44,11 +45,11 @@
             // btnwaiting
             // 
             this.btnwaiting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnwaiting.Image = global::A2CourseWork.Properties.Resources.waiting;
             this.btnwaiting.Location = new System.Drawing.Point(700, 182);
             this.btnwaiting.Name = "btnwaiting";
             this.btnwaiting.Size = new System.Drawing.Size(166, 162);
             this.btnwaiting.TabIndex = 14;
-            this.btnwaiting.Text = "Waiting list placeholder";
             this.btnwaiting.UseVisualStyleBackColor = true;
             this.btnwaiting.Click += new System.EventHandler(this.btnwaiting_Click);
             // 
@@ -68,11 +69,11 @@
             // btnbydate
             // 
             this.btnbydate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbydate.Image = ((System.Drawing.Image)(resources.GetObject("btnbydate.Image")));
             this.btnbydate.Location = new System.Drawing.Point(612, 359);
             this.btnbydate.Name = "btnbydate";
             this.btnbydate.Size = new System.Drawing.Size(166, 162);
             this.btnbydate.TabIndex = 16;
-            this.btnbydate.Text = "Prices Placeholder";
             this.btnbydate.UseVisualStyleBackColor = true;
             this.btnbydate.Click += new System.EventHandler(this.btnbydate_Click);
             // 

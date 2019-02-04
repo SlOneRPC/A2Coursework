@@ -19,7 +19,7 @@ namespace A2CourseWork.Classes
             List<List<string>> details = new List<List<string>>();
             List<string> current = new List<string>();
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT Customer.ForeName, Kids.ForeName,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}'";
+            db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}'";
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
             {
@@ -27,6 +27,8 @@ namespace A2CourseWork.Classes
                 current.Add(db.Rdr.GetString(0));
                 current.Add(db.Rdr.GetString(1));
                 current.Add(db.Rdr.GetString(2));
+                current.Add(db.Rdr.GetString(3));
+                current.Add(db.Rdr.GetString(4));
                 details.Add(current);
             }
             db.Rdr.Close();

@@ -552,6 +552,8 @@ namespace A2CourseWork.Gui
             }
             overbooked = new List<bool>();
             int currentMonth = months.IndexOf(monthscbx.Text) + 1;
+            oldDate = new List<bool>();
+            understaffed = new List<bool>();
             for (int i = 0; i<= mondays.Count-1; i++)
             {
                 DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), currentMonth, mondays[i]);
@@ -700,7 +702,7 @@ namespace A2CourseWork.Gui
                     btnfinished.Enabled = false;
             }
 
-            totalpricelbl.Text = "Total Price: " + currentprice * (1 - currentDiscount/100);
+            totalpricelbl.Text = "Total Price: £" + currentprice * (1 - currentDiscount/100);
         }
 
         private void week1btn_Click(object sender, EventArgs e)
