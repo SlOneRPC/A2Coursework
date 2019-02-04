@@ -71,3 +71,15 @@ INSERT Groups(GroupName) VALUES('Toddler')
 INSERT Groups(GroupName) VALUES('Child')
 
 INSERT Prices VALUES(15,0,3,5)
+
+INSERT Staff(Forename,Surname,TeleNo,Address,Postcode) Values('Robert','Johnston',02891810010,12 Kally street,BT86SA)
+INSERT Staff(Forename,Surname,TeleNo,Address,Postcode) Values('Paul','Johnston',02891810010,12 Kally street,BT86SA)
+INSERT Staff(Forename,Surname,TeleNo,Address,Postcode) Values('Mark','Robertson',02891810010,12 Kally street,BT86SA)
+INSERT Staff(Forename,Surname,TeleNo,Address,Postcode) Values('Jack','Lennon',02891810010,12 Kally street,BT86SA)
+INSERT Staff(Forename,Surname,TeleNo,Address,Postcode) Values('Jake','Melin',02891810010,12 Kally street,BT86SA)
+
+INSERT GroupRota VALUES(1,1)
+INSERT GroupRota VALUES(2,1)
+INSERT GroupRota VALUES(3,2)
+INSERT GroupRota VALUES(4,2)
+INSERT GroupRota VALUES(5,3)
