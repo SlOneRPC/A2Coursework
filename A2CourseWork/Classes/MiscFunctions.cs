@@ -52,17 +52,22 @@ namespace A2CourseWork.Classes
             int months = calculateAge(DOB);
             string groupName = "";
             //calculate group
+            Database db = new Database();
+            db.connect();
+            GroupDB gdb = new GroupDB(db);
+            List<string> names = gdb.getgroupnames();
+
             if (months < 19)
             {
-                groupName = "Baby";
+                groupName = names[0];
             }
             else if (months >= 18 && months <= 30)
             {
-                groupName = "Toddlers";
+                groupName = names[1];
             }
             else if (months >= 30 && months <= 48)
             {
-                groupName = "Children";
+                groupName = names[2];
             }
             else
             {
@@ -79,23 +84,24 @@ namespace A2CourseWork.Classes
             int groupID = bookDB.getgroupID(group);
             int bookingscount = bookDB.GetBookingSlot(currentDate, groupID);
             bool overbooked = false;
+            GroupDB gdb = new GroupDB(db);
             if(groupID == 1)
             {
-                if (bookingscount > 6)
+                if (bookingscount > gdb.getANum())
                 {
                     overbooked = true;
                 }
             }
             else if(groupID == 2)
             {
-                if(bookingscount > 10)
+                if(bookingscount > gdb.getBNum())
                 {
                     overbooked = true;
                 }
             }
             else if(groupID == 3)
             {
-                if(bookingscount > 9)
+                if(bookingscount > gdb.getCNum())
                 {
                     overbooked = true;
                 }

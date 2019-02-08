@@ -21,7 +21,8 @@ CREATE TABLE [dbo].[Staff]
 CREATE TABLE [dbo].[Groups]
 (
     [GroupId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	[GroupName] varchar(20) NULL,
+    [GroupName] varchar(20) NULL,
+    [GroupAmount] INT NULL
 
 )
 
@@ -66,9 +67,9 @@ CREATE TABLE [dbo].[Prices]
 )
 
 
-INSERT Groups(GroupName) VALUES('Baby')
-INSERT Groups(GroupName) VALUES('Toddler')
-INSERT Groups(GroupName) VALUES('Child')
+INSERT Groups(GroupName,GroupAmount) VALUES('Baby',6)
+INSERT Groups(GroupName,GroupAmount) VALUES('Toddler',10)
+INSERT Groups(GroupName,GroupAmount) VALUES('Child',9)
 
 INSERT Prices VALUES(15,0,3,5)
 

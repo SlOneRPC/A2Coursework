@@ -96,11 +96,16 @@ namespace A2CourseWork.Gui
             List<custBooking> bookings = new List<custBooking>();
             BookingDB booking = new BookingDB(db);
             bookings = booking.getallbookingsforkid(kids[kidslistbox.SelectedIndex].Forename);
+            populateDates();
+        }
 
+        private void populateDates()
+        {
             List<DateTime> dates = new List<DateTime>();
             MiscDB miscdb = new MiscDB(db);
             dates = miscdb.BookingWeeksFromKid(kids[kidslistbox.SelectedIndex].Forename);
 
+            bookinglistbox.Items.Clear();
             foreach (DateTime date in dates)
             {
                 bookinglistbox.Items.Add(date.ToShortDateString());
@@ -175,6 +180,7 @@ namespace A2CourseWork.Gui
             BookingDB bdb = new BookingDB(db);
             bdb.removeDate(dates, kids[kidslistbox.SelectedIndex].Forename);
             MessageBox.Show("Sucess");
+            populateDates();
         }
     }
 }

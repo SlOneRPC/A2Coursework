@@ -189,6 +189,7 @@ namespace A2CourseWork.Gui
                 StaffDB staffdb = new StaffDB(db);
                 staffdb.updatestaffmember(staff[stafflist.SelectedIndex].Forename,fnametxt.Text,Surnametxt.Text,TeleNotxt.Text,Postcodetxt.Text,Addresstxt.Text);
                 initcombo();
+                enableTextboxes();
                 messagelbl.Text = "Edit complete";
                 messagelbl.Visible = true;
                 mode = "edit1";
@@ -292,6 +293,7 @@ namespace A2CourseWork.Gui
             btnremove.Visible = false;
             mode = "add";
             btnupdate.Text = "Add";
+            stilladding = true;
             enableTextboxes();
             resetTextboxes();
             btnadd.Visible = false;
@@ -345,6 +347,7 @@ namespace A2CourseWork.Gui
             {
                 int index = stafflist.SelectedIndex;
                 enableTextboxes();
+                stilladding = false;
                 initcombo();
                 btncancel.Visible = false;
                 stafflist.SelectedIndex = index;

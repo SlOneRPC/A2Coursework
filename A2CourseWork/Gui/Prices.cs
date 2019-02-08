@@ -50,6 +50,10 @@ namespace A2CourseWork.Gui
             NameA.Text = groupNames[0];
             NameB.Text = groupNames[1];
             NameC.Text = groupNames[2];
+
+            Anum.Value = gdb.getANum();
+            bNum.Value = gdb.getBNum();
+            cNum.Value = gdb.getCNum();
         }
 
         private void btnapply_Click(object sender, EventArgs e)
@@ -65,7 +69,12 @@ namespace A2CourseWork.Gui
 
         private void btngapply_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Current not working, needs fixed!");
+            //MessageBox.Show("Current not working, needs fixed!");
+            GroupDB gdb = new GroupDB(db);
+            gdb.updateGroupNames(NameA.Text, NameB.Text,NameC.Text);
+            gdb.updateGroupNumbers(Convert.ToInt32(Anum.Value), Convert.ToInt32(bNum.Value), Convert.ToInt32(cNum.Value));
+            msg2lbl.Visible = true;
+
         }
     }
 }

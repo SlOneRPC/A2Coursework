@@ -798,7 +798,7 @@ namespace A2CourseWork.Gui
                     }
                     if (!keep)
                     {
-                        currentDiscount = 0;
+                        currentDiscount = pdb.getMinDiscount();
                     }
                 }
                 else if (bookeddate >= DateTime.Now.AddMonths(6))
@@ -822,7 +822,7 @@ namespace A2CourseWork.Gui
                         }
                         if (!keep)
                         {
-                            currentDiscount = 0;
+                            currentDiscount = pdb.getMinDiscount();
                         }
                         else
                         {
@@ -841,6 +841,10 @@ namespace A2CourseWork.Gui
                 else if (bookeddate >= DateTime.Now.AddMonths(6))
                 {
                     currentDiscount = pdb.getMaxDiscount();
+                }
+                else
+                {
+                    currentDiscount = pdb.getMinDiscount();
                 }
                 currentprice += baserate;
             }

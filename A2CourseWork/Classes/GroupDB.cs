@@ -14,6 +14,48 @@ namespace A2CourseWork.Classes
             this.db = db;
         }
 
+        public int getANum()
+        {
+            int amount = 0;
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "SELECT * FROM Groups WHERE GroupId = 1";
+            db.Rdr = db.Cmd.ExecuteReader();
+            if (db.Rdr.Read())
+            {
+                amount = db.Rdr.GetInt32(2);
+            }
+            db.Rdr.Close();
+            return amount;
+        }
+
+        public int getBNum()
+        {
+            int amount = 0;
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "SELECT * FROM Groups WHERE GroupId = 2";
+            db.Rdr = db.Cmd.ExecuteReader();
+            if (db.Rdr.Read())
+            {
+                amount = db.Rdr.GetInt32(2);
+            }
+            db.Rdr.Close();
+            return amount;
+        }
+
+        public int getCNum()
+        {
+            int amount = 0;
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = "SELECT * FROM Groups WHERE GroupId = 3";
+            db.Rdr = db.Cmd.ExecuteReader();
+            if (db.Rdr.Read())
+            {
+                amount = db.Rdr.GetInt32(2);
+            }
+            db.Rdr.Close();
+            return amount;
+        }
+
         public List<string> getgroupnames()
         {
             List<string> groupNames = new List<string>();
@@ -40,6 +82,21 @@ namespace A2CourseWork.Classes
 
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $"UPDATE Groups SET GroupName = '{GroupC}' WHERE GroupId = 2";
+            db.Cmd.ExecuteNonQuery();
+        }
+
+        public void updateGroupNumbers(int A,int B,int C)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE Groups SET GroupAmount = {A} WHERE GroupId = 1";
+            db.Cmd.ExecuteNonQuery();
+
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE Groups SET GroupAmount = {B} WHERE GroupId = 2";
+            db.Cmd.ExecuteNonQuery();
+
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE Groups SET GroupAmount = {C} WHERE GroupId = 3";
             db.Cmd.ExecuteNonQuery();
         }
     }
