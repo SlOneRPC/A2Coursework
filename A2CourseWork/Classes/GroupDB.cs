@@ -99,5 +99,24 @@ namespace A2CourseWork.Classes
             db.Cmd.CommandText = $"UPDATE Groups SET GroupAmount = {C} WHERE GroupId = 3";
             db.Cmd.ExecuteNonQuery();
         }
+
+        public List<int> numineachgroup()
+        {
+            List<int> groupNums = new List<int>();
+            for(int i = 1; i <= 3;i++)
+            {
+                db.Cmd = db.Conn.CreateCommand();
+                db.Cmd.CommandText = $"SELECT COUNT(*) FROM Booking WHERE GroupId = {i}";
+                db.Rdr = db.Cmd.ExecuteReader();
+                int current = 0;
+                if (db.Rdr.Read())
+                {
+                    current = db.Rdr.GetInt32(0);
+                }
+                groupNums.Add(current);
+                db.Rdr.Close();
+            }
+            return groupNums;
+        }
     }
 }

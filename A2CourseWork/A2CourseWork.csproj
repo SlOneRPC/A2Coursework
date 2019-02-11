@@ -112,6 +112,12 @@
     <Compile Include="Gui\Menu\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Groups.Designer.cs">
+      <DependentUpon>Groups.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\ViewBooking\ByDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Menu\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Groups.resx">
+      <DependentUpon>Groups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\ViewBooking\ByDate.resx">
       <DependentUpon>ByDate.cs</DependentUpon>

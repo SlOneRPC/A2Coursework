@@ -39,6 +39,7 @@
             this.btnstaff = new System.Windows.Forms.Button();
             this.btnbooking = new System.Windows.Forms.Button();
             this.titlepxb = new System.Windows.Forms.PictureBox();
+            this.groupsbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.btnbookingsview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnbookingsview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbookingsview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbookingsview.Location = new System.Drawing.Point(385, 359);
+            this.btnbookingsview.Location = new System.Drawing.Point(286, 355);
             this.btnbookingsview.Name = "btnbookingsview";
             this.btnbookingsview.Size = new System.Drawing.Size(166, 162);
             this.btnbookingsview.TabIndex = 15;
@@ -70,7 +71,7 @@
             // 
             this.btnbydate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbydate.Image = ((System.Drawing.Image)(resources.GetObject("btnbydate.Image")));
-            this.btnbydate.Location = new System.Drawing.Point(612, 359);
+            this.btnbydate.Location = new System.Drawing.Point(700, 355);
             this.btnbydate.Name = "btnbydate";
             this.btnbydate.Size = new System.Drawing.Size(166, 162);
             this.btnbydate.TabIndex = 16;
@@ -142,13 +143,26 @@
             this.titlepxb.TabIndex = 2;
             this.titlepxb.TabStop = false;
             // 
+            // groupsbtn
+            // 
+            this.groupsbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupsbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.groupsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupsbtn.Location = new System.Drawing.Point(497, 358);
+            this.groupsbtn.Name = "groupsbtn";
+            this.groupsbtn.Size = new System.Drawing.Size(166, 162);
+            this.groupsbtn.TabIndex = 20;
+            this.groupsbtn.Text = "Groups placeholder";
+            this.groupsbtn.UseVisualStyleBackColor = true;
+            this.groupsbtn.Click += new System.EventHandler(this.groupsbtn_Click);
+            // 
             // CrecheMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupsbtn);
             this.Controls.Add(this.Timelbl);
             this.Controls.Add(this.btnbydate);
             this.Controls.Add(this.btnbookingsview);
@@ -167,8 +181,8 @@
             this.Controls.SetChildIndex(this.btnbookingsview, 0);
             this.Controls.SetChildIndex(this.btnbydate, 0);
             this.Controls.SetChildIndex(this.Timelbl, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.groupsbtn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,5 +199,6 @@
         private System.Windows.Forms.Label Timelbl;
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button groupsbtn;
     }
 }

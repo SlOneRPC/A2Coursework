@@ -97,5 +97,17 @@ namespace A2CourseWork.Gui
         {
             MessageBox.Show("This is not a section i plan to add");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupsbtn_Click(object sender, EventArgs e)
+        {
+            Groups gmenu = new Groups();
+            gmenu.Show();
+            this.Hide();
+        }
     }
 }
