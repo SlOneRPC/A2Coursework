@@ -31,40 +31,55 @@ namespace A2CourseWork.Gui
         {
             GroupDB gdb = new GroupDB(db);
             List<int> groupNums = gdb.numineachgroup();
-            GroupANum.Text = "Group A : " + groupNums[0].ToString();
-            GroupBNum.Text = "Group B : " + groupNums[1].ToString();
-            GroupCNum.Text = "Group C : " + groupNums[2].ToString();
+            List<string> groupNames = gdb.getgroupnames();
+            GroupANum.Text = groupNames[0] + " : ";  
+            GroupBNum.Text = groupNames[1] + " : "; 
+            GroupCNum.Text = groupNames[2] + " : ";
 
+            num1.Text = groupNums[0].ToString();
+            Num2.Text = groupNums[1].ToString();
+            Num3.Text = groupNums[2].ToString();
+
+            availableA.Text = "Avaliable : " + (gdb.getANum() - groupNums[0]).ToString();
+            AvaliableB.Text = "Avaliable : " + (gdb.getBNum() - groupNums[1]).ToString();
+            AvaliableC.Text = "Avaliable : " + (gdb.getCNum() - groupNums[2]).ToString();
             if (groupNums[0] >= gdb.getANum())
             {
-                GroupANum.ForeColor = Color.Red;
+                num1.ForeColor = Color.Red;
             }
             else
             {
-                GroupANum.ForeColor = Color.LimeGreen;
+                num1.ForeColor = Color.LimeGreen;
             }
             if(groupNums[1] >= gdb.getBNum())
             {
-                GroupBNum.ForeColor = Color.Red;
+                Num2.ForeColor = Color.Red;
             }
             else
             {
-                GroupBNum.ForeColor = Color.LimeGreen;
+                Num2.ForeColor = Color.LimeGreen;
             }
 
             if(groupNums[2] >= gdb.getCNum())
             {
-                GroupCNum.ForeColor = Color.Red;
+                Num3.ForeColor = Color.Red;
             }
             else
             {
-                GroupCNum.ForeColor = Color.LimeGreen;
+                Num3.ForeColor = Color.LimeGreen;
             }
         }
 
         private void label7_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            CrecheMenu menu = new CrecheMenu();
+            this.Hide();
+            menu.Show();
         }
     }
 }

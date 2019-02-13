@@ -31,17 +31,31 @@
             this.titlebox = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.availableA = new System.Windows.Forms.Label();
+            this.AvaliableC = new System.Windows.Forms.Label();
+            this.AvaliableB = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Num3 = new System.Windows.Forms.Label();
+            this.Num2 = new System.Windows.Forms.Label();
+            this.num1 = new System.Windows.Forms.Label();
+            this.GroupANum = new System.Windows.Forms.Label();
             this.GroupCNum = new System.Windows.Forms.Label();
             this.GroupBNum = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.GroupANum = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.PictureBox();
             this.titlebox.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
             // titlebox
@@ -68,6 +82,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.titlebox);
             this.panel3.Location = new System.Drawing.Point(162, 47);
@@ -75,9 +90,85 @@
             this.panel3.Size = new System.Drawing.Size(806, 509);
             this.panel3.TabIndex = 4;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Silver;
+            this.panel6.Controls.Add(this.availableA);
+            this.panel6.Controls.Add(this.AvaliableC);
+            this.panel6.Controls.Add(this.AvaliableB);
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Location = new System.Drawing.Point(315, 58);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(288, 180);
+            this.panel6.TabIndex = 8;
+            // 
+            // availableA
+            // 
+            this.availableA.AutoSize = true;
+            this.availableA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.availableA.Location = new System.Drawing.Point(3, 76);
+            this.availableA.Name = "availableA";
+            this.availableA.Size = new System.Drawing.Size(77, 20);
+            this.availableA.TabIndex = 7;
+            this.availableA.Text = "Group A :";
+            // 
+            // AvaliableC
+            // 
+            this.AvaliableC.AutoSize = true;
+            this.AvaliableC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AvaliableC.Location = new System.Drawing.Point(3, 142);
+            this.AvaliableC.Name = "AvaliableC";
+            this.AvaliableC.Size = new System.Drawing.Size(77, 20);
+            this.AvaliableC.TabIndex = 6;
+            this.AvaliableC.Text = "Group C :";
+            // 
+            // AvaliableB
+            // 
+            this.AvaliableB.AutoSize = true;
+            this.AvaliableB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AvaliableB.Location = new System.Drawing.Point(3, 109);
+            this.AvaliableB.Name = "AvaliableB";
+            this.AvaliableB.Size = new System.Drawing.Size(77, 20);
+            this.AvaliableB.TabIndex = 5;
+            this.AvaliableB.Text = "Group B :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 40);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(229, 24);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Number of spaces avaliable:";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(288, 34);
+            this.panel7.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(103, 7);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 20);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Avaliability";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
+            this.panel4.Controls.Add(this.Num3);
+            this.panel4.Controls.Add(this.Num2);
+            this.panel4.Controls.Add(this.num1);
             this.panel4.Controls.Add(this.GroupANum);
             this.panel4.Controls.Add(this.GroupCNum);
             this.panel4.Controls.Add(this.GroupBNum);
@@ -87,6 +178,46 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(288, 180);
             this.panel4.TabIndex = 5;
+            // 
+            // Num3
+            // 
+            this.Num3.AutoSize = true;
+            this.Num3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Num3.Location = new System.Drawing.Point(107, 142);
+            this.Num3.Name = "Num3";
+            this.Num3.Size = new System.Drawing.Size(18, 20);
+            this.Num3.TabIndex = 10;
+            this.Num3.Text = "0";
+            // 
+            // Num2
+            // 
+            this.Num2.AutoSize = true;
+            this.Num2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Num2.Location = new System.Drawing.Point(107, 109);
+            this.Num2.Name = "Num2";
+            this.Num2.Size = new System.Drawing.Size(18, 20);
+            this.Num2.TabIndex = 9;
+            this.Num2.Text = "0";
+            // 
+            // num1
+            // 
+            this.num1.AutoSize = true;
+            this.num1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num1.Location = new System.Drawing.Point(107, 76);
+            this.num1.Name = "num1";
+            this.num1.Size = new System.Drawing.Size(18, 20);
+            this.num1.TabIndex = 8;
+            this.num1.Text = "0";
+            // 
+            // GroupANum
+            // 
+            this.GroupANum.AutoSize = true;
+            this.GroupANum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupANum.Location = new System.Drawing.Point(3, 76);
+            this.GroupANum.Name = "GroupANum";
+            this.GroupANum.Size = new System.Drawing.Size(77, 20);
+            this.GroupANum.TabIndex = 7;
+            this.GroupANum.Text = "Group A :";
             // 
             // GroupCNum
             // 
@@ -138,21 +269,23 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Groups";
             // 
-            // GroupANum
+            // btnback
             // 
-            this.GroupANum.AutoSize = true;
-            this.GroupANum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupANum.Location = new System.Drawing.Point(3, 76);
-            this.GroupANum.Name = "GroupANum";
-            this.GroupANum.Size = new System.Drawing.Size(77, 20);
-            this.GroupANum.TabIndex = 7;
-            this.GroupANum.Text = "Group A :";
+            this.btnback.Image = global::A2CourseWork.Properties.Resources.circled_left_2;
+            this.btnback.Location = new System.Drawing.Point(105, 498);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(51, 51);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnback.TabIndex = 12;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // Groups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 568);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.panel3);
             this.Name = "Groups";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -160,13 +293,19 @@
             this.Load += new System.EventHandler(this.Groups_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.btnback, 0);
             this.titlebox.ResumeLayout(false);
             this.titlebox.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -183,5 +322,16 @@
         private System.Windows.Forms.Label GroupCNum;
         private System.Windows.Forms.Label GroupBNum;
         private System.Windows.Forms.Label GroupANum;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label availableA;
+        private System.Windows.Forms.Label AvaliableC;
+        private System.Windows.Forms.Label AvaliableB;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label Num3;
+        private System.Windows.Forms.Label Num2;
+        private System.Windows.Forms.Label num1;
+        private System.Windows.Forms.PictureBox btnback;
     }
 }
