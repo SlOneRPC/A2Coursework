@@ -55,6 +55,14 @@ namespace A2CourseWork.Classes
             db.Cmd.ExecuteNonQuery();
         }
 
+        public void updateStaffGroup(string forename,int groupid)
+        {
+            int id = getStaffID(forename);
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE GroupRota SET GroupID={groupid} WHERE StaffID ={id}";
+            db.Cmd.ExecuteNonQuery();
+        }
+
         public void removeStaffmember(string forename)
         {
             db.Cmd = db.Conn.CreateCommand();

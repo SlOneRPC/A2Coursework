@@ -137,5 +137,30 @@ namespace A2CourseWork.Gui
         {
             MiscFunctions.buttonhover(this);
         }
+
+        private void notcoded()
+        {
+            MessageBox.Show("This section will come later");
+        }
+
+        private void transportpbx_Click(object sender, EventArgs e)
+        {
+            notcoded();
+        }
+
+        private void advicepbx_Click(object sender, EventArgs e)
+        {
+            notcoded();
+        }
+
+        private void grouppbx_Click(object sender, EventArgs e)
+        {
+            notcoded();
+        }
+
+        private void classespbx_Click(object sender, EventArgs e)
+        {
+            notcoded();
+        }
     }
 }

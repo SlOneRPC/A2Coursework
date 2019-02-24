@@ -70,6 +70,7 @@
     <Compile Include="Classes\MiscFunctions.cs" />
     <Compile Include="Classes\PricesDB.cs" />
     <Compile Include="Classes\StaffDB.cs" />
+    <Compile Include="CustExpections\RequirementsException.cs" />
     <Compile Include="Gui\Prices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,9 +264,7 @@
     <None Include="Resources\bus.png" />
     <None Include="Resources\baby1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CustExpections\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

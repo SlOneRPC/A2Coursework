@@ -49,6 +49,13 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.titlebox.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -56,6 +63,8 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlebox
@@ -82,6 +91,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.panel8);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.titlebox);
@@ -98,9 +108,9 @@
             this.panel6.Controls.Add(this.AvaliableB);
             this.panel6.Controls.Add(this.label11);
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(315, 58);
+            this.panel6.Location = new System.Drawing.Point(282, 58);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(288, 180);
+            this.panel6.Size = new System.Drawing.Size(243, 180);
             this.panel6.TabIndex = 8;
             // 
             // availableA
@@ -136,10 +146,10 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 40);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(229, 24);
+            this.label11.Size = new System.Drawing.Size(207, 20);
             this.label11.TabIndex = 3;
             this.label11.Text = "Number of spaces avaliable:";
             // 
@@ -157,7 +167,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(103, 7);
+            this.label12.Location = new System.Drawing.Point(82, 7);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 20);
             this.label12.TabIndex = 0;
@@ -176,7 +186,7 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(15, 58);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(288, 180);
+            this.panel4.Size = new System.Drawing.Size(245, 180);
             this.panel4.TabIndex = 5;
             // 
             // Num3
@@ -242,10 +252,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Meiryo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 40);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(248, 24);
+            this.label8.Size = new System.Drawing.Size(219, 20);
             this.label8.TabIndex = 3;
             this.label8.Text = "Number of kids in each group:";
             // 
@@ -263,7 +273,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(103, 7);
+            this.label6.Location = new System.Drawing.Point(83, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 20);
             this.label6.TabIndex = 0;
@@ -279,6 +289,79 @@
             this.btnback.TabIndex = 12;
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Silver;
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.label9);
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Location = new System.Drawing.Point(548, 58);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(243, 180);
+            this.panel8.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Group A :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 142);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 20);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Group C :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 109);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 20);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Group B :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 40);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(188, 20);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Number of staff avaliable:";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Controls.Add(this.label14);
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(288, 34);
+            this.panel9.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(64, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Staff Avaliability";
             // 
             // Groups
             // 
@@ -306,6 +389,10 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -333,5 +420,12 @@
         private System.Windows.Forms.Label Num2;
         private System.Windows.Forms.Label num1;
         private System.Windows.Forms.PictureBox btnback;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label14;
     }
 }

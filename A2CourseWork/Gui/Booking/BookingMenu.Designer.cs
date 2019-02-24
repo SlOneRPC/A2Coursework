@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.bookpnl1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,10 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bookpnl2 = new System.Windows.Forms.Panel();
             this.btnsearch = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.kidcheck = new System.Windows.Forms.CheckBox();
-            this.customercheck = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.titlepxb = new System.Windows.Forms.PictureBox();
             this.bookpnl3 = new System.Windows.Forms.Panel();
@@ -53,16 +51,23 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.kidcheck = new System.Windows.Forms.CheckBox();
+            this.customercheck = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.bookpnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.bookpnl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).BeginInit();
             this.bookpnl3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // bookpnl1
@@ -80,6 +85,17 @@
             this.bookpnl1.Size = new System.Drawing.Size(342, 384);
             this.bookpnl1.TabIndex = 3;
             this.bookpnl1.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(1, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(228, 24);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Booking a new customer?";
             // 
             // pictureBox1
             // 
@@ -163,6 +179,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Controls.Add(this.label13);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(341, 55);
@@ -183,12 +200,13 @@
             // 
             this.bookpnl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bookpnl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bookpnl2.Controls.Add(this.label11);
+            this.bookpnl2.Controls.Add(this.label12);
+            this.bookpnl2.Controls.Add(this.label8);
             this.bookpnl2.Controls.Add(this.btnsearch);
             this.bookpnl2.Controls.Add(this.pictureBox3);
-            this.bookpnl2.Controls.Add(this.label4);
             this.bookpnl2.Controls.Add(this.kidcheck);
             this.bookpnl2.Controls.Add(this.customercheck);
-            this.bookpnl2.Controls.Add(this.label3);
             this.bookpnl2.Controls.Add(this.panel5);
             this.bookpnl2.Location = new System.Drawing.Point(566, 155);
             this.bookpnl2.Name = "bookpnl2";
@@ -212,16 +230,6 @@
             this.btnsearch.UseVisualStyleBackColor = false;
             this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::A2CourseWork.Properties.Resources.existing;
-            this.pictureBox3.Location = new System.Drawing.Point(78, 167);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(173, 164);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -233,35 +241,6 @@
             this.label4.Size = new System.Drawing.Size(199, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Please select the following:";
-            // 
-            // kidcheck
-            // 
-            this.kidcheck.AutoSize = true;
-            this.kidcheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kidcheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kidcheck.ForeColor = System.Drawing.Color.White;
-            this.kidcheck.Location = new System.Drawing.Point(30, 145);
-            this.kidcheck.Name = "kidcheck";
-            this.kidcheck.Size = new System.Drawing.Size(109, 24);
-            this.kidcheck.TabIndex = 5;
-            this.kidcheck.Text = "Existing Kid";
-            this.kidcheck.UseVisualStyleBackColor = true;
-            // 
-            // customercheck
-            // 
-            this.customercheck.AutoSize = true;
-            this.customercheck.Checked = true;
-            this.customercheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.customercheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customercheck.Enabled = false;
-            this.customercheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customercheck.ForeColor = System.Drawing.Color.White;
-            this.customercheck.Location = new System.Drawing.Point(30, 124);
-            this.customercheck.Name = "customercheck";
-            this.customercheck.Size = new System.Drawing.Size(153, 24);
-            this.customercheck.TabIndex = 4;
-            this.customercheck.Text = "Existing customer";
-            this.customercheck.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -369,16 +348,88 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // label7
+            // label8
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1, 73);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(228, 24);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Booking a new customer?";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(12, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(159, 24);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Existing booking?";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::A2CourseWork.Properties.Resources.existing;
+            this.pictureBox3.Location = new System.Drawing.Point(81, 175);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(173, 156);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // kidcheck
+            // 
+            this.kidcheck.AutoSize = true;
+            this.kidcheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kidcheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kidcheck.ForeColor = System.Drawing.Color.White;
+            this.kidcheck.Location = new System.Drawing.Point(18, 151);
+            this.kidcheck.Name = "kidcheck";
+            this.kidcheck.Size = new System.Drawing.Size(109, 24);
+            this.kidcheck.TabIndex = 5;
+            this.kidcheck.Text = "Existing Kid";
+            this.kidcheck.UseVisualStyleBackColor = true;
+            // 
+            // customercheck
+            // 
+            this.customercheck.AutoSize = true;
+            this.customercheck.Checked = true;
+            this.customercheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.customercheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customercheck.Enabled = false;
+            this.customercheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customercheck.ForeColor = System.Drawing.Color.White;
+            this.customercheck.Location = new System.Drawing.Point(18, 130);
+            this.customercheck.Name = "customercheck";
+            this.customercheck.Size = new System.Drawing.Size(153, 24);
+            this.customercheck.TabIndex = 4;
+            this.customercheck.Text = "Existing customer";
+            this.customercheck.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(63, 112);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 20);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "- Customer exists";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(11, 93);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 20);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Use this if:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(94, 17);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(149, 24);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Existing booking";
             // 
             // BookingMenu
             // 
@@ -387,30 +438,33 @@
             this.ClientSize = new System.Drawing.Size(980, 568);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.bookpnl2);
-            this.Controls.Add(this.bookpnl3);
             this.Controls.Add(this.titlepxb);
             this.Controls.Add(this.bookpnl1);
+            this.Controls.Add(this.bookpnl3);
             this.Name = "BookingMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingMenu";
             this.Load += new System.EventHandler(this.BookingMenu_Load);
+            this.Controls.SetChildIndex(this.bookpnl3, 0);
             this.Controls.SetChildIndex(this.bookpnl1, 0);
             this.Controls.SetChildIndex(this.titlepxb, 0);
-            this.Controls.SetChildIndex(this.bookpnl3, 0);
             this.Controls.SetChildIndex(this.bookpnl2, 0);
             this.Controls.SetChildIndex(this.btnback, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
             this.bookpnl1.ResumeLayout(false);
             this.bookpnl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.bookpnl2.ResumeLayout(false);
             this.bookpnl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.titlepxb)).EndInit();
             this.bookpnl3.ResumeLayout(false);
             this.bookpnl3.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,12 +483,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox kidcheck;
-        private System.Windows.Forms.CheckBox customercheck;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox titlepxb;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel bookpnl3;
         private System.Windows.Forms.Button btnselect;
         private System.Windows.Forms.Label subtitlelbl;
@@ -443,5 +494,12 @@
         private System.Windows.Forms.ListBox containerlistbox;
         private System.Windows.Forms.PictureBox btnback;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.CheckBox kidcheck;
+        private System.Windows.Forms.CheckBox customercheck;
     }
 }

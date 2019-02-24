@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using A2CourseWork.Objects;
 using A2CourseWork.Classes;
+using A2CourseWork.CustExpections;
 namespace A2CourseWork.Gui
 {
-    public partial class AddEditStaff : Form
+    public partial class AddEditStaff : Default
     {
         Database db;
         List<StaffMember> staff = new List<StaffMember>();
@@ -29,10 +30,40 @@ namespace A2CourseWork.Gui
             }
         }
 
+        private void shouldQuit(bool back)
+        {
+            FormCollection fc = Application.OpenForms;
+            int count = 0;
+            foreach (Form f in fc)
+            {
+                if (f.Visible)
+                {
+                    count++;
+                }
+            }
+            if (count > 1)
+            {
+                this.Close();
+            }
+            else
+            {
+                if (back)
+                {
+                    CrecheMenu form = new CrecheMenu();
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MiscFunctions.exit();
+                }
+            }
+        }
+
         //exit button
         private void btnexit_Click(object sender, EventArgs e)
         {
-            MiscFunctions.exit();
+            shouldQuit(false);
         }
         //minimize button
         private void minbtn_Click(object sender, EventArgs e)
@@ -143,6 +174,7 @@ namespace A2CourseWork.Gui
             TeleNotxt.Enabled = true;
             Addresstxt.Enabled = true;
             Postcodetxt.Enabled = true;
+            groupcbx.Enabled = true;
             btnupdate.Text = "Save";
             mode = "edit";
             btncancel.Visible = true;
@@ -177,7 +209,7 @@ namespace A2CourseWork.Gui
             }
             else
             {
-                MessageBox.Show("Please fill in the fields marked with *");
+                MessageBox.Show("Please fix fields marked with *");
             }
         }
 
@@ -188,6 +220,7 @@ namespace A2CourseWork.Gui
             {
                 StaffDB staffdb = new StaffDB(db);
                 staffdb.updatestaffmember(staff[stafflist.SelectedIndex].Forename,fnametxt.Text,Surnametxt.Text,TeleNotxt.Text,Postcodetxt.Text,Addresstxt.Text);
+                staffdb.updateStaffGroup(staff[stafflist.SelectedIndex].Forename, groupcbx.SelectedIndex + 1);
                 initcombo();
                 enableTextboxes();
                 messagelbl.Text = "Edit complete";
@@ -239,18 +272,22 @@ namespace A2CourseWork.Gui
         private bool performchecks()
         {
             bool error = false;
+            string message = "";
             if(fnametxt.Text == "")
             {
+                message = "Missing Forename";
                 error1.Visible = true;
                 error = true;
             }
             if(Surnametxt.Text == "")
             {
+                message = "Missing Surname";
                 error2.Visible = true;
                 error = true;
             }
             if(TeleNotxt.TextLength != 11)
             {
+                message = "Telephone number must be 11 digits";
                 error3.Visible = true;
                 error = true;
             }
@@ -269,17 +306,27 @@ namespace A2CourseWork.Gui
             }
             if(Addresstxt.Text == "")
             {
+                message = "Address is missing";
                 error4.Visible = true;
                 error = true;
             }
             string postcode = Postcodetxt.Text.Replace(" ", String.Empty);
             if (postcode.Length>8 ||postcode.Length<6  )
             {
+                message = "Postcode does not meet uk requirements";
                 error5.Visible = true;
                 error = true;
             }
             if (error)
             {
+                try
+                {
+                    throw new RequirementsException(message);
+                }
+                catch (RequirementsException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 return false;
             }
             else
@@ -319,9 +366,7 @@ namespace A2CourseWork.Gui
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            CrecheMenu form = new CrecheMenu();
-            form.Show();
-            this.Hide();
+            shouldQuit(true);
         }
 
         int x = 0;

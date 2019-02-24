@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Homelbl = new System.Windows.Forms.Label();
-            this.homepbx = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.minbtn = new System.Windows.Forms.PictureBox();
-            this.btnexit = new System.Windows.Forms.PictureBox();
-            this.titlelbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnremove = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
@@ -71,94 +64,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Timelbl = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.Homelbl);
-            this.panel2.Controls.Add(this.homepbx);
-            this.panel2.Location = new System.Drawing.Point(-3, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(90, 569);
-            this.panel2.TabIndex = 7;
-            // 
-            // Homelbl
-            // 
-            this.Homelbl.AutoSize = true;
-            this.Homelbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Homelbl.ForeColor = System.Drawing.Color.White;
-            this.Homelbl.Location = new System.Drawing.Point(19, 80);
-            this.Homelbl.Name = "Homelbl";
-            this.Homelbl.Size = new System.Drawing.Size(51, 19);
-            this.Homelbl.TabIndex = 1;
-            this.Homelbl.Text = "Home";
-            // 
-            // homepbx
-            // 
-            this.homepbx.Image = global::A2CourseWork.Properties.Resources.homebtn;
-            this.homepbx.Location = new System.Drawing.Point(7, 3);
-            this.homepbx.Name = "homepbx";
-            this.homepbx.Size = new System.Drawing.Size(76, 72);
-            this.homepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.homepbx.TabIndex = 0;
-            this.homepbx.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.minbtn);
-            this.panel1.Controls.Add(this.btnexit);
-            this.panel1.Controls.Add(this.titlelbl);
-            this.panel1.Location = new System.Drawing.Point(87, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 41);
-            this.panel1.TabIndex = 8;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // minbtn
-            // 
-            this.minbtn.Image = global::A2CourseWork.Properties.Resources.minbutton;
-            this.minbtn.Location = new System.Drawing.Point(805, 0);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(41, 38);
-            this.minbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minbtn.TabIndex = 3;
-            this.minbtn.TabStop = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
-            // 
-            // btnexit
-            // 
-            this.btnexit.Image = global::A2CourseWork.Properties.Resources.exitbutton;
-            this.btnexit.Location = new System.Drawing.Point(852, 0);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(41, 38);
-            this.btnexit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnexit.TabIndex = 2;
-            this.btnexit.TabStop = false;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
-            // 
-            // titlelbl
-            // 
-            this.titlelbl.AutoSize = true;
-            this.titlelbl.BackColor = System.Drawing.Color.Transparent;
-            this.titlelbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titlelbl.Location = new System.Drawing.Point(7, 9);
-            this.titlelbl.Name = "titlelbl";
-            this.titlelbl.Size = new System.Drawing.Size(368, 25);
-            this.titlelbl.TabIndex = 1;
-            this.titlelbl.Text = "Woodside Community - Creche - Staff";
             // 
             // panel3
             // 
@@ -598,20 +509,11 @@
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddEditStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEditStaff";
             this.Load += new System.EventHandler(this.AddEditStaff_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homepbx)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -627,14 +529,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label Homelbl;
-        private System.Windows.Forms.PictureBox homepbx;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox minbtn;
-        private System.Windows.Forms.PictureBox btnexit;
-        private System.Windows.Forms.Label titlelbl;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label13;

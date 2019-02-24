@@ -117,9 +117,9 @@
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.btntransport);
             this.panel3.Controls.Add(this.btncreche);
-            this.panel3.Location = new System.Drawing.Point(307, 359);
+            this.panel3.Location = new System.Drawing.Point(307, 364);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(492, 182);
+            this.panel3.Size = new System.Drawing.Size(492, 192);
             this.panel3.TabIndex = 5;
             // 
             // button2
@@ -134,6 +134,7 @@
             // 
             // btntransport
             // 
+            this.btntransport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btntransport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntransport.Image = global::A2CourseWork.Properties.Resources.Transport;
             this.btntransport.Location = new System.Drawing.Point(13, 138);
@@ -144,6 +145,7 @@
             // 
             // btncreche
             // 
+            this.btncreche.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncreche.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncreche.Image = global::A2CourseWork.Properties.Resources.creche1;
             this.btncreche.Location = new System.Drawing.Point(12, 13);
@@ -196,6 +198,7 @@
             this.classespbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.classespbx.TabIndex = 10;
             this.classespbx.TabStop = false;
+            this.classespbx.Click += new System.EventHandler(this.classespbx_Click);
             this.classespbx.MouseLeave += new System.EventHandler(this.classespbx_MouseLeave);
             this.classespbx.MouseHover += new System.EventHandler(this.classespbx_MouseHover);
             // 
@@ -220,6 +223,7 @@
             this.grouppbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.grouppbx.TabIndex = 8;
             this.grouppbx.TabStop = false;
+            this.grouppbx.Click += new System.EventHandler(this.grouppbx_Click);
             this.grouppbx.MouseLeave += new System.EventHandler(this.grouppbx_MouseLeave);
             this.grouppbx.MouseHover += new System.EventHandler(this.grouppbx_MouseHover);
             // 
@@ -244,6 +248,7 @@
             this.advicepbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.advicepbx.TabIndex = 6;
             this.advicepbx.TabStop = false;
+            this.advicepbx.Click += new System.EventHandler(this.advicepbx_Click);
             this.advicepbx.MouseLeave += new System.EventHandler(this.advicepbx_MouseLeave);
             this.advicepbx.MouseHover += new System.EventHandler(this.advicepbx_MouseHover);
             // 
@@ -269,6 +274,7 @@
             this.transportpbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.transportpbx.TabIndex = 4;
             this.transportpbx.TabStop = false;
+            this.transportpbx.Click += new System.EventHandler(this.transportpbx_Click);
             this.transportpbx.MouseLeave += new System.EventHandler(this.transportpbx_MouseLeave);
             this.transportpbx.MouseHover += new System.EventHandler(this.transportpbx_MouseHover);
             // 
@@ -325,7 +331,7 @@
             this.MainImage.Image = global::A2CourseWork.Properties.Resources.back2;
             this.MainImage.Location = new System.Drawing.Point(179, 47);
             this.MainImage.Name = "MainImage";
-            this.MainImage.Size = new System.Drawing.Size(736, 306);
+            this.MainImage.Size = new System.Drawing.Size(736, 311);
             this.MainImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MainImage.TabIndex = 6;
             this.MainImage.TabStop = false;

@@ -9,15 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using A2CourseWork.Classes;
 using A2CourseWork.Objects;
+using A2CourseWork.CustExpections;
 namespace A2CourseWork.Gui
 {
-    public partial class Booking : Form
+    public partial class Booking : Default
     {
         #region definitions
         //============== Definitions ==============
         Database db;
         decimal Nokids;
         int booked=0;
+        Kid child;
         List<bool> overbooked = new List<bool>();
         List<bool> oldDate = new List<bool>();
         List<bool> understaffed = new List<bool>();
@@ -45,15 +47,18 @@ namespace A2CourseWork.Gui
 
         public Booking(Customer existingcustomer,Kid existingkid)
         {
+            //estabilsh db connection
             db = new Database();
             InitializeComponent();
             db.connect();
             this.existingcustomer = existingcustomer;
             this.existingkid = existingkid;
+            //if customer already exist we dont need to create a new one
             if(existingcustomer != null)
             {
                 book1pnl.Visible = false;
             }
+            //if kid already exist we do not need to create a new one
             if(existingkid != null && !book1pnl.Visible)
             {
                 BookingDB bookingdb = new BookingDB(db);
@@ -62,8 +67,10 @@ namespace A2CourseWork.Gui
                 {
                     calculatePrice(booking, false);
                 }
+                //setup dates for DOB
                 DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
                 DOBpicker.MaxDate = DateTime.Now.AddMonths(-6);
+                //setup booking
                 populatemonthscbx(true);
                 populateyearscbx();
                 initaliseweeks(DateTime.Now);
@@ -71,68 +78,22 @@ namespace A2CourseWork.Gui
             }
             else
             {
+                //if existing customer but no existing kid
                 book2pnl.Visible = true;
                 book3pnl.Visible = true;
+                //setup dates for DOB
+                DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
+                DOBpicker.MaxDate = DateTime.Now.AddMonths(-6);
             }
         }
 
         private void Booking_Load(object sender, EventArgs e)
         {
-            MiscFunctions.buttonhover(this);
+            panel2.BringToFront();
         }
 
         #region Form
-        //============== Bookin Form ==============
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            MiscFunctions.exit();
-        }
-
-        private void minbtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        System.Drawing.Point lastclick;
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void homepbx_Click(object sender, EventArgs e)
-        {
-            if (!book3pnl.Visible)
-            {
-                Menu home = new Menu();
-                this.Hide();
-                home.Show();
-            }
-            else
-            {
-                MessageBox.Show("Please complete booking before returning to home");
-            }
-        }
-
-        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
-        {
-            lastclick = e.Location;
-        }
-
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastclick.X;
-                this.Top += e.Y - lastclick.Y;
-            }
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-
-        }
-
+        //prompt the user in order to close the form
         private void leave()
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure, Booking will be lost?", "Leave Booking", MessageBoxButtons.YesNo);
@@ -143,10 +104,41 @@ namespace A2CourseWork.Gui
                 this.Hide();
             }
         }
-
+        //back button changes depending on the panel visible
         private void btnback_Click(object sender, EventArgs e)
         {
-            leave();
+            if (book1pnl.Visible)
+            {
+                leave();
+            }
+            else if (book2pnl.Visible)
+            {
+                if(existingcustomer != null)
+                {
+                    leave();
+                    return;
+                }
+                book2pnl.Visible = false;
+                book3pnl.Visible = false;
+                book1pnl.Visible = true;
+            }
+            else if (book6pnl.Visible)
+            {
+                if (existingkid != null)
+                {
+                    leave();
+                    return;
+                }
+                kids.Remove(child);
+                book6pnl.Visible = false;
+                book2pnl.Visible = true;
+                book3pnl.Visible = true;
+            }
+            else if (book4pnl.Visible)
+            {
+                book4pnl.Visible = false;
+                book6pnl.Visible = true;
+            }
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -204,10 +196,11 @@ namespace A2CourseWork.Gui
             }
             else
             {
+                // if customer does not meet requirements show error
                 errorlabellbl.Visible = true;
             }
         }
-
+        //next kid clear previous data
         private void OnNewkid()
         {
             ChildFnametxt.Text = "";
@@ -215,22 +208,26 @@ namespace A2CourseWork.Gui
             DOBpicker.ResetText();
             KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
         }
-
+        //check customer requirements
         private bool CustomerRequirements()
         {
             bool error = false;
+            string Message = "";
             if(Fnametxt.Text == "")
             {
+                Message = "Missing Forename";
                 Error1txt.Visible = true;
                 error = true;
             }
             if(Snametxt.Text == "")
             {
+                Message = "Missing Surname";
                 error2txt.Visible = true;
                 error = true;
             }
             if (teleNotxt.TextLength != 11)
             {
+                Message = "Telephone Number is not 11 digits";
                 error3txt.Visible = true;
                 error = true;
             }
@@ -242,7 +239,7 @@ namespace A2CourseWork.Gui
                     {
                         error3txt.Visible = true;
                         error = true;
-                        MessageBox.Show("Telephone number must only contain numbers!");
+                        Message = "Telephone Number must on contain numbers";
                         break;
                     }
                 }
@@ -251,21 +248,32 @@ namespace A2CourseWork.Gui
             if(postcode.Length > 8 || postcode.Length < 6)
             {
                 error4txt.Visible = true;
-                MessageBox.Show("Postcode does not meet UK requirements");
+                Message = "Postcode does not meet UK requirements";
                 error = true;
             }
             if(addresstxt.Text == "")
             {
+                Message = "Address is empty";
                 error5txt.Visible = true;
                 error = true;
             }
             if(KidsNo.Value < 1 || (KidsNo.Value % 1) != 0)
             {
+                Message = "You must be booking at least one child";
                 error6txt.Visible = true;
                 error = true;
             }
             if (error)
             {
+                try
+                {
+                    //custom expection
+                    throw new RequirementsException(Message);
+                }
+                catch(RequirementsException e)
+                {
+                    MessageBox.Show(e.Message);
+                }
                 return false;
             }
             else
@@ -283,22 +291,24 @@ namespace A2CourseWork.Gui
         {
             if (childrequirements())
             {
-                //create a kid object (New method)
-                Kid child = new Kid();
+                //create a kid object
+                child = new Kid();
                 child.Forename = ChildFnametxt.Text;
                 child.Surname = childSnametxt.Text;
                 child.DOB = DOBpicker.Value.ToShortDateString();
                 kids.Add(child);
 
+                //add 1 to booked amount
                 booked += 1;
                 Kidslist.Items.Add(ChildFnametxt.Text + " " + childSnametxt.Text);
                 btncheckout.Enabled = true;
 
-                if (booked != Nokids)
+                if (booked != Nokids) // if all kids havent been booked clear data
                 {
                     OnNewkid();
                 }
 
+                //hide kid show booking
                 book3pnl.Visible = false;
                 book2pnl.Visible = false;
                 populatemonthscbx(true);
@@ -311,18 +321,29 @@ namespace A2CourseWork.Gui
         private bool childrequirements()
         {
             bool error = false;
+            string message = "";
             if(ChildFnametxt.Text == "")
             {
+                message = "Missing Forename";
                 Cerror1.Visible = true;
                 error = true;
             }
             if(childSnametxt.Text == "")
             {
+                message = "Missing Surname";
                 Cerror2.Visible = true;
                 error = true;
             }
             if (error)
             {
+                try
+                {
+                    throw new RequirementsException(message);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 return false;
             }
             else
@@ -335,7 +356,7 @@ namespace A2CourseWork.Gui
 
         #region checkout
         //============== Checkout ==============
-
+        //allow user to checkout with only one kid booked
         private void btncheckout_Click(object sender, EventArgs e)
         {
             if(booked != Nokids)
@@ -356,7 +377,7 @@ namespace A2CourseWork.Gui
         {
             //add customer to Database
             BookingDB book = new BookingDB(db);
-            if(existingcustomer == null)
+            if(existingcustomer == null) //if no existing customer
             {
                 book.Addcustomer(cust.Forename, cust.Surname, cust.TeleNo, cust.Postcode, cust.Address);
             }
@@ -365,16 +386,15 @@ namespace A2CourseWork.Gui
                 cust = existingcustomer;
             }
 
-            if(existingkid !=null)
+            if(existingkid !=null) // if existing kid
             {
-                //book.AddBooking(existingkid.Forename, MiscFunctions.getgroupfromage(existingkid.DOB), finishedbookings[0].Days[0], finishedbookings[0].Days[1], finishedbookings[0].Days[2], finishedbookings[0].Days[3], finishedbookings[0].Days[4]);
-                book.AddDate(finishedbookings[0].Mondays, existingkid.Forename);
+                book.AddDate(finishedbookings[0].Mondays, existingkid.Forename); // add dates to db
                 if(Dates2Remove.Count > 0)
                 {
-                    book.removeDate(Dates2Remove, existingkid.Forename);
+                    book.removeDate(Dates2Remove, existingkid.Forename); //remove dates that have been unbooked 
                 }
             }
-            else
+            else //else add new kids/bookings
             {
                 int i = 0;
                 foreach(Kid child in kids)
@@ -852,5 +872,96 @@ namespace A2CourseWork.Gui
             totalpricelbl.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount / 100) );
         }
 
+        #region otherrequirements
+
+        private void Fnametxt_TextChanged(object sender, EventArgs e)
+        {
+            if (Fnametxt.Text.Length > 25)
+            {
+                try
+                {
+                    throw new RequirementsException("Forename length has reached the max!");
+                }
+                catch (RequirementsException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            foreach (char c in Fnametxt.Text)
+            {
+                if (char.IsDigit(c))
+                {
+                    try
+                    {
+                        throw new RequirementsException("Forename should not contain numbers!");
+                    }
+                    catch (RequirementsException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        Fnametxt.Text = "";
+                    }
+                    break;
+                }
+            }
+        }
+
+        private void Snametxt_TextChanged(object sender, EventArgs e)
+        {
+
+            if (Snametxt.Text.Length > 25)
+            {
+                try
+                {
+                    throw new RequirementsException("Surname length has reached the max!");
+                }
+                catch (RequirementsException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            foreach (char c in Snametxt.Text)
+            {
+                if (char.IsDigit(c))
+                {
+                    try
+                    {
+                        throw new RequirementsException("Surname should not contain numbers!");
+                    }
+                    catch (RequirementsException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        Snametxt.Text = "";
+                    }
+                    break;
+                }
+            }
+        }
+
+
+        private void teleNotxt_TextChanged(object sender, EventArgs e)
+        {
+            if (teleNotxt.Text.Length > 11)
+            {
+                try
+                {
+                    throw new RequirementsException("Telephone number should only be 11 numbers!");
+                }
+                catch (RequirementsException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    teleNotxt.Text = teleNotxt.Text.Remove(11);
+                }
+            }
+        }
+
+        #endregion otherrequirements
+
+        private void btnstaff_Click(object sender, EventArgs e)
+        {
+            AddEditStaff staff = new AddEditStaff();
+            staff.Show();
+        }
     }
 }
