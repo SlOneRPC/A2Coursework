@@ -48,6 +48,7 @@
             this.posttxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
             this.teleNotxt = new System.Windows.Forms.TextBox();
             this.Snametxt = new System.Windows.Forms.TextBox();
             this.Fnametxt = new System.Windows.Forms.TextBox();
@@ -106,7 +107,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.totalpricelbl = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.btnrefresh = new System.Windows.Forms.Button();
             this.book1pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KidsNo)).BeginInit();
             this.panel4.SuspendLayout();
@@ -379,6 +380,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(626, 51);
             this.panel4.TabIndex = 1;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(239, 15);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(89, 23);
+            this.label22.TabIndex = 28;
+            this.label22.Text = "Customer";
             // 
             // teleNotxt
             // 
@@ -819,6 +831,7 @@
             // book6pnl
             // 
             this.book6pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.book6pnl.Controls.Add(this.btnrefresh);
             this.book6pnl.Controls.Add(this.btnstaff);
             this.book6pnl.Controls.Add(this.btnfinished);
             this.book6pnl.Controls.Add(this.extrapnl);
@@ -1078,16 +1091,20 @@
             this.totalpricelbl.Text = "Total Price: ";
             this.totalpricelbl.Visible = false;
             // 
-            // label22
+            // btnrefresh
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(239, 15);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(89, 23);
-            this.label22.TabIndex = 28;
-            this.label22.Text = "Customer";
+            this.btnrefresh.BackColor = System.Drawing.Color.Gray;
+            this.btnrefresh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrefresh.ForeColor = System.Drawing.Color.White;
+            this.btnrefresh.Location = new System.Drawing.Point(454, 84);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(85, 41);
+            this.btnrefresh.TabIndex = 13;
+            this.btnrefresh.Text = "Refresh";
+            this.btnrefresh.UseVisualStyleBackColor = false;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
             // 
             // Booking
             // 
@@ -1097,20 +1114,20 @@
             this.ClientSize = new System.Drawing.Size(980, 568);
             this.Controls.Add(this.totalpricelbl);
             this.Controls.Add(this.btnback);
-            this.Controls.Add(this.book1pnl);
-            this.Controls.Add(this.book2pnl);
-            this.Controls.Add(this.book3pnl);
-            this.Controls.Add(this.book4pnl);
             this.Controls.Add(this.book6pnl);
+            this.Controls.Add(this.book1pnl);
+            this.Controls.Add(this.book3pnl);
+            this.Controls.Add(this.book2pnl);
+            this.Controls.Add(this.book4pnl);
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";
             this.Load += new System.EventHandler(this.Booking_Load);
-            this.Controls.SetChildIndex(this.book6pnl, 0);
             this.Controls.SetChildIndex(this.book4pnl, 0);
-            this.Controls.SetChildIndex(this.book3pnl, 0);
             this.Controls.SetChildIndex(this.book2pnl, 0);
+            this.Controls.SetChildIndex(this.book3pnl, 0);
             this.Controls.SetChildIndex(this.book1pnl, 0);
+            this.Controls.SetChildIndex(this.book6pnl, 0);
             this.Controls.SetChildIndex(this.btnback, 0);
             this.Controls.SetChildIndex(this.totalpricelbl, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
@@ -1226,5 +1243,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button btnrefresh;
     }
 }

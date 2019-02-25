@@ -973,5 +973,11 @@ namespace A2CourseWork.Gui
             AddEditStaff staff = new AddEditStaff();
             staff.Show();
         }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+            int x = months.IndexOf(monthscbx.Text);
+            initaliseweeks(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year + 0, x + 1, DateTime.Now.Day));
+        }
     }
 }
