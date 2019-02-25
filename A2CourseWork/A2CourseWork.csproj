@@ -149,6 +149,7 @@
     <Compile Include="Objects\StaffMember.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrecheReport.rdlc" />
     <EmbeddedResource Include="Gui\Prices.resx">
       <DependentUpon>Prices.cs</DependentUpon>
     </EmbeddedResource>
