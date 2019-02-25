@@ -63,7 +63,7 @@ namespace A2CourseWork.Gui
             {
                 BookingDB bookingdb = new BookingDB(db);
                 alreadybooked = bookingdb.getalldates(existingkid.Forename).Mondays;
-                foreach(DateTime booking in alreadybooked)
+                foreach (DateTime booking in alreadybooked)
                 {
                     calculatePrice(booking, false);
                 }
@@ -463,7 +463,7 @@ namespace A2CourseWork.Gui
                 {
                     KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
                 }
-                FinalPrice.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount));
+                FinalPrice.Text = "Total Price: £" + (currentprice * (1 - currentDiscount/100)).ToString("00.00");
                 book4pnl.Visible = false;
                 book3pnl.Location = new Point(408, 65);
                 book3pnl.Visible = true;
@@ -732,7 +732,7 @@ namespace A2CourseWork.Gui
                     btnfinished.Enabled = false;
             }
 
-            totalpricelbl.Text = "Total Price: £" + currentprice * (1 - currentDiscount/100);
+            totalpricelbl.Text = "Total Price: £" + (currentprice * (1 - currentDiscount/100)).ToString("00.00");
         }
 
         private void week1btn_Click(object sender, EventArgs e)
@@ -879,7 +879,7 @@ namespace A2CourseWork.Gui
                 currentprice += baserate;
             }
             totalpricelbl.Visible = true;
-            totalpricelbl.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount / 100) );//calculate cost and display on a label
+            totalpricelbl.Text = "Total Price: £" + (currentprice * (1 - currentDiscount / 100) ).ToString("00.00");//calculate cost and display on a label
         }
 
         #region otherrequirements

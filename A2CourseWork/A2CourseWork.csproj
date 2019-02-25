@@ -251,6 +251,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Group2.png" />
     <None Include="Resources\By-Child.png" />
     <None Include="Resources\By-Date.png" />
     <None Include="Resources\waiting1.png" />

@@ -146,6 +146,7 @@
             // 
             // groupsbtn
             // 
+            this.groupsbtn.BackgroundImage = global::A2CourseWork.Properties.Resources.Group2;
             this.groupsbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupsbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -153,7 +154,6 @@
             this.groupsbtn.Name = "groupsbtn";
             this.groupsbtn.Size = new System.Drawing.Size(166, 162);
             this.groupsbtn.TabIndex = 20;
-            this.groupsbtn.Text = "Groups placeholder";
             this.groupsbtn.UseVisualStyleBackColor = true;
             this.groupsbtn.Click += new System.EventHandler(this.groupsbtn_Click);
             // 

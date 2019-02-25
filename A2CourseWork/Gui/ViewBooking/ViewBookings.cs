@@ -140,12 +140,17 @@ namespace A2CourseWork.Gui
                 if (date >= DateTime.Now.AddMonths(6))
                 {
                     discount = pdb.getMaxDiscount();
-                    discountApplied = "5%";
+                    discountApplied = discount.ToString() + "%";
                 }
                 else if(date > DateTime.Now.AddMonths(3) && date < DateTime.Now.AddMonths(6))
                 {
                     discount = pdb.getMedDiscount();
-                    discountApplied = "3%";
+                    discountApplied = discount.ToString() + "%";
+                }
+                else
+                {
+                    discount = pdb.getMinDiscount();
+                    discountApplied = discount.ToString() + "%";
                 }
             }
             if(discount == 0)
@@ -156,8 +161,8 @@ namespace A2CourseWork.Gui
             {
                 discountlbl.Text = "Discount Applied: " + discountApplied;
             }
-            double price = (pdb.getBase() * dates.Count) * (1-discount);
-            totalpricelbl.Text = "Total Price: £" + price.ToString();
+            double price = (pdb.getBase() * dates.Count) * (1-(discount/100));
+            totalpricelbl.Text = "Total Price: £" + price.ToString("00.00");
         }
         //open add from and pass the child and parent object
         private void btnadd_Click(object sender, EventArgs e)
