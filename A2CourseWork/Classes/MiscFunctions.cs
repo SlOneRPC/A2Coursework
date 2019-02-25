@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using A2CourseWork.Objects;
 namespace A2CourseWork.Classes
 {
     class MiscFunctions
@@ -77,12 +78,31 @@ namespace A2CourseWork.Classes
             return groupName;
         }
 
-        public static bool CheckAvalability(DateTime currentDate,Database db,string DOB)
+        public static bool CheckAvalability(DateTime currentDate,Database db,string DOB,List<Kid> kids,List<Booking> bookings)
         {
             string group = getgroupfromage(DOB);
             BookingDB bookDB = new BookingDB(db);
             int groupID = bookDB.getgroupID(group);
             int bookingscount = bookDB.GetBookingSlot(currentDate, groupID);
+
+            int counter = 0;
+            foreach(Kid kid in kids)
+            {
+                if (kids.Count - 1 == counter)
+                    break;
+                group = getgroupfromage(DOB);
+                int newgroupID = bookDB.getgroupID(group);
+                if(newgroupID == groupID)
+                {
+                    List<DateTime> mondays = bookings[counter].Mondays;
+                    if (mondays.Contains(currentDate))
+                    {
+                        bookingscount++;
+                    }
+                }
+                counter++;
+            }
+
             bool overbooked = false;
             GroupDB gdb = new GroupDB(db);
             if(groupID == 1)
@@ -107,6 +127,29 @@ namespace A2CourseWork.Classes
                 }
             }
             return overbooked;
+        }
+
+        public static int CalculateGroupChange(string dob,int group)
+        {
+            int months = calculateAge(dob);
+            int GroupA = 18;
+            int GroupB = 30;
+            int GroupC = 48;
+
+            int outcome = 0;
+            switch (group)
+            {
+                case 1:
+                    outcome = GroupA - months;
+                    break;
+                case 2:
+                    outcome = GroupB - months;
+                    break;
+                case 3:
+                    outcome = GroupC - months;
+                    break;
+            }
+            return outcome;
         }
 
         public static bool checkStaffAvaliability(Database db, string DOB)

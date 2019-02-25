@@ -81,7 +81,7 @@ namespace A2CourseWork.Classes
             db.Cmd.ExecuteNonQuery();
 
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"UPDATE Groups SET GroupName = '{GroupC}' WHERE GroupId = 2";
+            db.Cmd.CommandText = $"UPDATE Groups SET GroupName = '{GroupC}' WHERE GroupId = 3";
             db.Cmd.ExecuteNonQuery();
         }
 
@@ -117,6 +117,15 @@ namespace A2CourseWork.Classes
                 db.Rdr.Close();
             }
             return groupNums;
+        }
+
+        public void updategroup(string Forename)
+        {
+            BookingDB bdb = new BookingDB(db);
+            int id = bdb.getchildID(Forename);
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE Booking SET GroupID = GroupID+1 WHERE ChildId = {id}";
+            db.Cmd.ExecuteNonQuery();
         }
     }
 }

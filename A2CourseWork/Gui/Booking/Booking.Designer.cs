@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.book1pnl = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.btncancel1 = new System.Windows.Forms.Button();
             this.error6txt = new System.Windows.Forms.Label();
             this.errorlabellbl = new System.Windows.Forms.Label();
@@ -46,13 +48,13 @@
             this.posttxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.teleNotxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.Snametxt = new System.Windows.Forms.TextBox();
+            this.Fnametxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Fnametxt = new System.Windows.Forms.TextBox();
             this.book2pnl = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.Cerror2 = new System.Windows.Forms.Label();
@@ -104,6 +106,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.totalpricelbl = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.book1pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KidsNo)).BeginInit();
             this.panel4.SuspendLayout();
@@ -127,6 +130,8 @@
             // 
             this.book1pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.book1pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.book1pnl.Controls.Add(this.label21);
+            this.book1pnl.Controls.Add(this.label12);
             this.book1pnl.Controls.Add(this.btncancel1);
             this.book1pnl.Controls.Add(this.error6txt);
             this.book1pnl.Controls.Add(this.errorlabellbl);
@@ -145,15 +150,34 @@
             this.book1pnl.Controls.Add(this.label5);
             this.book1pnl.Controls.Add(this.panel4);
             this.book1pnl.Controls.Add(this.teleNotxt);
-            this.book1pnl.Controls.Add(this.label3);
             this.book1pnl.Controls.Add(this.Snametxt);
-            this.book1pnl.Controls.Add(this.label4);
-            this.book1pnl.Controls.Add(this.label2);
             this.book1pnl.Controls.Add(this.Fnametxt);
             this.book1pnl.Location = new System.Drawing.Point(196, 47);
             this.book1pnl.Name = "book1pnl";
             this.book1pnl.Size = new System.Drawing.Size(626, 436);
             this.book1pnl.TabIndex = 5;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(24, 98);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(94, 23);
+            this.label21.TabIndex = 27;
+            this.label21.Text = "Forename";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(21, 164);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 23);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Surname";
             // 
             // btncancel1
             // 
@@ -350,22 +374,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.label22);
             this.panel4.Location = new System.Drawing.Point(-1, -2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(626, 51);
             this.panel4.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(252, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Booking";
             // 
             // teleNotxt
             // 
@@ -380,17 +393,6 @@
             this.teleNotxt.TabIndex = 9;
             this.teleNotxt.TextChanged += new System.EventHandler(this.teleNotxt_TextChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(21, 163);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 23);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Surname";
-            // 
             // Snametxt
             // 
             this.Snametxt.BackColor = System.Drawing.Color.Silver;
@@ -403,6 +405,41 @@
             this.Snametxt.Size = new System.Drawing.Size(232, 31);
             this.Snametxt.TabIndex = 7;
             this.Snametxt.TextChanged += new System.EventHandler(this.Snametxt_TextChanged);
+            // 
+            // Fnametxt
+            // 
+            this.Fnametxt.BackColor = System.Drawing.Color.Silver;
+            this.Fnametxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Fnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fnametxt.ForeColor = System.Drawing.Color.Black;
+            this.Fnametxt.Location = new System.Drawing.Point(25, 123);
+            this.Fnametxt.Multiline = true;
+            this.Fnametxt.Name = "Fnametxt";
+            this.Fnametxt.Size = new System.Drawing.Size(232, 31);
+            this.Fnametxt.TabIndex = 2;
+            this.Fnametxt.TextChanged += new System.EventHandler(this.Fnametxt_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(252, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Booking";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(21, 163);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 23);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Surname";
             // 
             // label4
             // 
@@ -425,19 +462,6 @@
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "First Name";
-            // 
-            // Fnametxt
-            // 
-            this.Fnametxt.BackColor = System.Drawing.Color.Silver;
-            this.Fnametxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Fnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fnametxt.ForeColor = System.Drawing.Color.Black;
-            this.Fnametxt.Location = new System.Drawing.Point(25, 123);
-            this.Fnametxt.Multiline = true;
-            this.Fnametxt.Name = "Fnametxt";
-            this.Fnametxt.Size = new System.Drawing.Size(232, 31);
-            this.Fnametxt.TabIndex = 2;
-            this.Fnametxt.TextChanged += new System.EventHandler(this.Fnametxt_TextChanged);
             // 
             // book2pnl
             // 
@@ -1054,6 +1078,17 @@
             this.totalpricelbl.Text = "Total Price: ";
             this.totalpricelbl.Visible = false;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(239, 15);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(89, 23);
+            this.label22.TabIndex = 28;
+            this.label22.Text = "Customer";
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1062,16 +1097,23 @@
             this.ClientSize = new System.Drawing.Size(980, 568);
             this.Controls.Add(this.totalpricelbl);
             this.Controls.Add(this.btnback);
-            this.Controls.Add(this.book6pnl);
             this.Controls.Add(this.book1pnl);
             this.Controls.Add(this.book2pnl);
             this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.book4pnl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.book6pnl);
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";
             this.Load += new System.EventHandler(this.Booking_Load);
+            this.Controls.SetChildIndex(this.book6pnl, 0);
+            this.Controls.SetChildIndex(this.book4pnl, 0);
+            this.Controls.SetChildIndex(this.book3pnl, 0);
+            this.Controls.SetChildIndex(this.book2pnl, 0);
+            this.Controls.SetChildIndex(this.book1pnl, 0);
+            this.Controls.SetChildIndex(this.btnback, 0);
+            this.Controls.SetChildIndex(this.totalpricelbl, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
             this.book1pnl.ResumeLayout(false);
             this.book1pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KidsNo)).EndInit();
@@ -1181,5 +1223,8 @@
         private System.Windows.Forms.Label totalpricelbl;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnstaff;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label22;
     }
 }

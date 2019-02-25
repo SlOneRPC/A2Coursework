@@ -111,7 +111,7 @@ namespace A2CourseWork.Gui
             }
             else
             {
-                if (!btnadd.Visible || !btnremove.Visible && staff.Count > 0)
+                if (!stilladding && (!btnadd.Visible || !btnremove.Visible && staff.Count > 0))
                 {
                     btnadd.Visible = true;
                     btnremove.Visible = true;
@@ -186,6 +186,12 @@ namespace A2CourseWork.Gui
             if (performchecks())
             {
                 StaffDB staffdb = new StaffDB(db);
+                int count = staffdb.countStaffbyid(groupcbx.SelectedIndex + 1);
+                if (count == 1)
+                {
+                    int num = staffdb.UpdateDates(groupcbx.SelectedIndex + 1);
+                    MessageBox.Show($"{num.ToString()} bookings added back!");
+                }
                 staffdb.addstaffmember(fnametxt.Text, Surnametxt.Text, TeleNotxt.Text, Postcodetxt.Text, Addresstxt.Text);
                 staffdb.addStaffGroup(fnametxt.Text, groupcbx.SelectedIndex + 1);
                 messagelbl.Text = "Success!";
@@ -421,7 +427,7 @@ namespace A2CourseWork.Gui
             if (count <= 2)
             {
                 int deleted = staffdb.DeleteDates(staff[stafflist.SelectedIndex].Forename);
-                MessageBox.Show($"{deleted} Bookings remove due to the removal of the staff member");
+                MessageBox.Show($"{deleted} Bookings temporarly removed due to the removal of the staff member, add another staff member to get these bookings back");
             }
 
         }

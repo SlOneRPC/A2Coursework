@@ -388,6 +388,14 @@ namespace A2CourseWork.Gui
 
             if(existingkid !=null) // if existing kid
             {
+                foreach(DateTime date in finishedbookings[0].Mondays)
+                {
+                    if (alreadybooked.Contains(date))
+                    {
+                        finishedbookings[0].Mondays.Remove(date);
+                        book.UpdateDate(date, existingkid.Forename);
+                    }
+                }
                 book.AddDate(finishedbookings[0].Mondays, existingkid.Forename); // add dates to db
                 if(Dates2Remove.Count > 0)
                 {
@@ -422,6 +430,7 @@ namespace A2CourseWork.Gui
 
         #region DateBooking
 
+        //get check days for saving to the database
         private void btnsavedate_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dayslistbx.Items.Count; i++)
@@ -467,7 +476,7 @@ namespace A2CourseWork.Gui
             }
         }
         #endregion
-
+        //populate days of the week for booking
         private void populatedayslist()
         {
             dayslistbx.Items.Clear();
@@ -481,7 +490,7 @@ namespace A2CourseWork.Gui
                 dayslistbx.SetItemChecked(i, true);
             }
         }
-
+        //get the mondays throughout the month and then check avaliability
         private void initaliseweeks(DateTime now)
         {
             extrapnl.Visible = false;
@@ -490,7 +499,7 @@ namespace A2CourseWork.Gui
             DateTime enddate = new DateTime(now.Year, now.Month, DateTime.DaysInMonth(now.Year, now.Month));
             mondays = new List<int>();
             fridays = new List<int>();
-            for (DateTime date = startdate; date <= enddate; date = date.AddDays(1))
+            for (DateTime date = startdate; date <= enddate; date = date.AddDays(1)) //grab mondays in the months through a loop
             {
                 if (date.DayOfWeek == DayOfWeek.Monday)
                 {
@@ -502,7 +511,7 @@ namespace A2CourseWork.Gui
                 }
             }
 
-            for (int x = 0; x <= mondays.Count-1; x++)
+            for (int x = 0; x <= mondays.Count-1; x++) // create a string in format week (number) start date - end date
             {
                 string day1 = "";
                 string day2 = "";
@@ -578,16 +587,16 @@ namespace A2CourseWork.Gui
             {
                 DateTime current = new DateTime(Convert.ToInt32(yearcbx.Text), currentMonth, mondays[i]);
                 bool Currentoverbooked = false;
-                if (!alreadybooked.Contains(current))
-                    Currentoverbooked = MiscFunctions.CheckAvalability(current, db, DOB);
+                if (!alreadybooked.Contains(current)) //overbook check
+                    Currentoverbooked = MiscFunctions.CheckAvalability(current, db, DOB, kids,finishedbookings);
                 overbooked.Add(Currentoverbooked);
 
-                if (current > DateTime.Now)
+                if (current > DateTime.Now) // dont allow old dates to be bookable
                     oldDate.Add(false);
                 else
                     oldDate.Add(true);
 
-                bool missingstaff = MiscFunctions.checkStaffAvaliability(db, DOB);
+                bool missingstaff = MiscFunctions.checkStaffAvaliability(db, DOB);// missing staff check
                 understaffed.Add(missingstaff);
                 if ((bookeddates.Contains(current) || (alreadybooked.Contains(current) && !Dates2Remove.Contains(current))) && !Currentoverbooked && current > DateTime.Now && !missingstaff)
                 {
@@ -599,18 +608,18 @@ namespace A2CourseWork.Gui
                 }
             }
             List<Button> bookingbuttons = new List<Button>() { week1btn, week2btn, week3btn, week4btn };
-            if(mondays.Count-1 == 4)
+            if(mondays.Count-1 == 4) // if there is 5 weeks in the months and into next month then create a 5th button
             {
                 bookingbuttons.Add(week5btn);
             }
             int y = 0;
-            foreach(Button b in bookingbuttons)
+            foreach(Button b in bookingbuttons) //populate booking buttons for a month
             {
                 buttons(b, y);
                 y++;
             }
         }
-
+        //populate the month combobox with the months in that year that are not before todays month
         private void populatemonthscbx(bool currentyear)
         {
             monthscbx.Items.Clear();
@@ -633,11 +642,11 @@ namespace A2CourseWork.Gui
             }
             monthtitlelbl.Text = monthscbx.Text + " " + yearcbx.Text;
         }
-
+        //populate 5 years ahead as bookable range
         private void populateyearscbx()
         {
             yearcbx.Items.Clear();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)//easy range change here
             {
                 yearcbx.Items.Add(DateTime.Now.Year+i);
             }
@@ -645,7 +654,7 @@ namespace A2CourseWork.Gui
         }
 
         #region Buttons
-
+        //set addition button text, enable state and color depending on avaliablity of the week
         private void buttons(Button current, int index)
         {
             if (btnbooks[index])
@@ -680,7 +689,8 @@ namespace A2CourseWork.Gui
                 }
             }
         }
-
+        // on the button click event add/remove the date depending on the state
+        // add/remove addtion costs for added weeks
         private void buttonsclicked(Button current,int index)
         {
             string currentmonth = monthscbx.Text;
@@ -799,7 +809,7 @@ namespace A2CourseWork.Gui
             populatedayslist();
             book4pnl.Visible = true;
         }
-
+        //calculate price and apply the discount depending how far in the future the booking is made for
         private void calculatePrice(DateTime bookeddate,bool remove)
         {
             PricesDB pdb = new PricesDB(db);
@@ -873,7 +883,7 @@ namespace A2CourseWork.Gui
         }
 
         #region otherrequirements
-
+        //on text change even check for requirement errors
         private void Fnametxt_TextChanged(object sender, EventArgs e)
         {
             if (Fnametxt.Text.Length > 25)

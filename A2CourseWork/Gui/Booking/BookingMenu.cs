@@ -118,7 +118,15 @@ namespace A2CourseWork.Gui
             }
             else
             {
-                Booking book = new Booking(currentcustomer, kids[containerlistbox.SelectedIndex]);
+                Kid kid = new Kid();
+                foreach(Kid child in kids)
+                {
+                    if(child.Forename + " " + child.Surname == containerlistbox.Text)
+                    {
+                        kid = child;
+                    }
+                }
+                Booking book = new Booking(currentcustomer, kid);
                 book.Show();
                 this.Hide();
             }

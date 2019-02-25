@@ -86,7 +86,15 @@ namespace A2CourseWork.Classes
         {
             int groupid = getStaffGroup(Forename);
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"DELETE Dates FROM Dates INNER JOIN Booking ON Dates.BookingId = Booking.BookingID WHERE Booking.GroupId = {groupid}";
+            db.Cmd.CommandText = $"UPDATE Dates Set Active = 0 From Dates INNER JOIN Booking ON Dates.BookingId = Booking.BookingID WHERE Booking.GroupId = {groupid}";
+            int num = db.Cmd.ExecuteNonQuery();
+            return num;
+        }
+
+        public int UpdateDates(int groupid)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"UPDATE Dates Set Active = 1 From Dates INNER JOIN Booking ON Dates.BookingId = Booking.BookingID WHERE Booking.GroupId = {groupid}";
             int num = db.Cmd.ExecuteNonQuery();
             return num;
         }

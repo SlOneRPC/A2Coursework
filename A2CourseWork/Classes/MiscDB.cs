@@ -19,7 +19,7 @@ namespace A2CourseWork.Classes
             List<List<string>> details = new List<List<string>>();
             List<string> current = new List<string>();
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}'";
+            db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}' AND Dates.Active = 1";
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
             {
@@ -40,7 +40,7 @@ namespace A2CourseWork.Classes
             List<List<string>> details = new List<List<string>>();
             List<string> current = new List<string>();
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT Kids.ForeName, Kids.Surname, Booking.Monday, Booking.Tuesday, Booking.Wednesday, Booking.Thursday, Booking.Friday FROM Kids INNER JOIN Booking ON Kids.ChildId = Booking.ChildId INNER JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday = '{date.ToShortDateString()}'";
+            db.Cmd.CommandText = $"SELECT Kids.ForeName, Kids.Surname, Booking.Monday, Booking.Tuesday, Booking.Wednesday, Booking.Thursday, Booking.Friday FROM Kids INNER JOIN Booking ON Kids.ChildId = Booking.ChildId INNER JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday = '{date.ToShortDateString()}' AND Dates.Active = 1";
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
             {
@@ -62,11 +62,30 @@ namespace A2CourseWork.Classes
         {
             List<DateTime> details = new List<DateTime>();
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT Dates.Monday From Dates INNER JOIN Booking ON Dates.BookingId = Booking.BookingID INNER JOIN Kids ON Booking.ChildId = Kids.ChildId WHERE Kids.ForeName = '{kidForename}'";
+            db.Cmd.CommandText = $"SELECT Dates.Monday From Dates INNER JOIN Booking ON Dates.BookingId = Booking.BookingID INNER JOIN Kids ON Booking.ChildId = Kids.ChildId WHERE Kids.ForeName = '{kidForename}' AND Dates.Active = 1";
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
             {
                 details.Add(Convert.ToDateTime(db.Rdr.GetString(0)));
+            }
+            db.Rdr.Close();
+            return details;
+        }
+
+        public List<List<string>> GetGroupDetails(int groupid)
+        {
+            List<List<string>> details = new List<List<string>>();
+            List<string> current = new List<string>();
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $"SELECT Kids.Forename,Kids.Surname,Kids.DOB FROM Kids INNER JOIN Booking ON Kids.ChildID = Booking.ChildId WHERE Booking.GroupID = {groupid}";
+            db.Rdr = db.Cmd.ExecuteReader();
+            while (db.Rdr.Read())
+            {
+                current = new List<string>();
+                current.Add(db.Rdr.GetString(0));
+                current.Add(db.Rdr.GetString(1));
+                current.Add(db.Rdr.GetString(2));
+                details.Add(current);
             }
             db.Rdr.Close();
             return details;

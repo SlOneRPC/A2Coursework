@@ -31,6 +31,19 @@
             this.titlebox = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnupdate = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupnumscbx = new System.Windows.Forms.ComboBox();
+            this.GroupDetails = new System.Windows.Forms.DataGridView();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.StaffA = new System.Windows.Forms.Label();
+            this.StaffC = new System.Windows.Forms.Label();
+            this.StaffB = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.availableA = new System.Windows.Forms.Label();
             this.AvaliableC = new System.Windows.Forms.Label();
@@ -49,22 +62,16 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.titlebox.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupDetails)).BeginInit();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlebox
@@ -91,6 +98,12 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.btnupdate);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.groupnumscbx);
+            this.panel3.Controls.Add(this.GroupDetails);
             this.panel3.Controls.Add(this.panel8);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
@@ -99,6 +112,146 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(806, 509);
             this.panel3.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(634, 426);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(150, 20);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "group automatically:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(634, 406);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(151, 20);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Change all childrens";
+            // 
+            // btnupdate
+            // 
+            this.btnupdate.BackColor = System.Drawing.Color.Gray;
+            this.btnupdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdate.Location = new System.Drawing.Point(634, 451);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(169, 51);
+            this.btnupdate.TabIndex = 16;
+            this.btnupdate.Text = "Do Update";
+            this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(18, 261);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(213, 20);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Select group number to view:";
+            // 
+            // groupnumscbx
+            // 
+            this.groupnumscbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupnumscbx.FormattingEnabled = true;
+            this.groupnumscbx.Location = new System.Drawing.Point(237, 257);
+            this.groupnumscbx.Name = "groupnumscbx";
+            this.groupnumscbx.Size = new System.Drawing.Size(121, 28);
+            this.groupnumscbx.TabIndex = 11;
+            this.groupnumscbx.SelectedIndexChanged += new System.EventHandler(this.groupnumscbx_SelectedIndexChanged);
+            // 
+            // GroupDetails
+            // 
+            this.GroupDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.GroupDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.GroupDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GroupDetails.Location = new System.Drawing.Point(15, 291);
+            this.GroupDetails.Name = "GroupDetails";
+            this.GroupDetails.Size = new System.Drawing.Size(613, 211);
+            this.GroupDetails.TabIndex = 10;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Silver;
+            this.panel8.Controls.Add(this.StaffA);
+            this.panel8.Controls.Add(this.StaffC);
+            this.panel8.Controls.Add(this.StaffB);
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Location = new System.Drawing.Point(548, 58);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(243, 180);
+            this.panel8.TabIndex = 9;
+            // 
+            // StaffA
+            // 
+            this.StaffA.AutoSize = true;
+            this.StaffA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffA.Location = new System.Drawing.Point(3, 76);
+            this.StaffA.Name = "StaffA";
+            this.StaffA.Size = new System.Drawing.Size(77, 20);
+            this.StaffA.TabIndex = 7;
+            this.StaffA.Text = "Group A :";
+            // 
+            // StaffC
+            // 
+            this.StaffC.AutoSize = true;
+            this.StaffC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffC.Location = new System.Drawing.Point(3, 142);
+            this.StaffC.Name = "StaffC";
+            this.StaffC.Size = new System.Drawing.Size(77, 20);
+            this.StaffC.TabIndex = 6;
+            this.StaffC.Text = "Group C :";
+            // 
+            // StaffB
+            // 
+            this.StaffB.AutoSize = true;
+            this.StaffB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffB.Location = new System.Drawing.Point(3, 109);
+            this.StaffB.Name = "StaffB";
+            this.StaffB.Size = new System.Drawing.Size(77, 20);
+            this.StaffB.TabIndex = 5;
+            this.StaffB.Text = "Group B :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 40);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(188, 20);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Number of staff avaliable:";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Controls.Add(this.label14);
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(288, 34);
+            this.panel9.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(64, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Staff Avaliability";
             // 
             // panel6
             // 
@@ -290,79 +443,6 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Silver;
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.label9);
-            this.panel8.Controls.Add(this.label10);
-            this.panel8.Controls.Add(this.label13);
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(548, 58);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(243, 180);
-            this.panel8.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 20);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Group A :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 142);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 20);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Group C :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 109);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 20);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Group B :";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 40);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(188, 20);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Number of staff avaliable:";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Black;
-            this.panel9.Controls.Add(this.label14);
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(288, 34);
-            this.panel9.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(64, 7);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Staff Avaliability";
-            // 
             // Groups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,6 +460,12 @@
             this.titlebox.ResumeLayout(false);
             this.titlebox.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupDetails)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -389,10 +475,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -421,11 +503,17 @@
         private System.Windows.Forms.Label num1;
         private System.Windows.Forms.PictureBox btnback;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label StaffA;
+        private System.Windows.Forms.Label StaffC;
+        private System.Windows.Forms.Label StaffB;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView GroupDetails;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox groupnumscbx;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnupdate;
     }
 }

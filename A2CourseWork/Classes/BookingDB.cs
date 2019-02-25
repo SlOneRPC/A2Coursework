@@ -14,7 +14,6 @@ namespace A2CourseWork.Classes
         public BookingDB(Database db)
         {
             this.db = db;
-
         }
 
         public Booking getalldates(string childname)
@@ -22,7 +21,7 @@ namespace A2CourseWork.Classes
             int id = getBookingID(childname);
             Booking bookings = new Booking();
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT Monday FROM Dates WHERE BookingId={id}";
+            db.Cmd.CommandText = $"SELECT Monday FROM Dates WHERE BookingId={id} AND Active=1";
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
             {
@@ -101,9 +100,18 @@ namespace A2CourseWork.Classes
             {
                 db.Cmd = db.Conn.CreateCommand();
                 string shortmonday = monday.ToShortDateString();
-                db.Cmd.CommandText = $"INSERT INTO Dates(BookingId,Monday) VALUES({bookingid},'{shortmonday}')";
+                db.Cmd.CommandText = $"INSERT INTO Dates(BookingId,Monday,Active) VALUES({bookingid},'{shortmonday}',1)";
                 doquery();
             }
+        }
+
+        public void UpdateDate(DateTime date,string childForename)
+        {
+            int bookingid = getBookingID(childForename);
+            db.Cmd = db.Conn.CreateCommand();
+            string shortmonday = date.ToShortDateString();
+            db.Cmd.CommandText = $"UPDATE Dates set Active = 1 WHERE Monday ='{shortmonday}'";
+            doquery();
         }
 
         public void removeDate(List<DateTime> mondays, string childForename)
@@ -113,7 +121,7 @@ namespace A2CourseWork.Classes
             {
                 db.Cmd = db.Conn.CreateCommand();
                 string shortmonday = monday.ToShortDateString();
-                db.Cmd.CommandText = $"DELETE FROM Dates WHERE BookingId = {bookingid} AND Monday = '{shortmonday}'";
+                db.Cmd.CommandText = $"UPDATE Dates SET Active = 0 WHERE BookingId = {bookingid} AND Monday = '{shortmonday}'";
                 doquery();
             }
         }
@@ -122,7 +130,7 @@ namespace A2CourseWork.Classes
         {
             int counter = 0;
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT COUNT(*) FROM Booking INNER JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday = '{searchdate.ToShortDateString()}' AND Booking.GroupId = {groupid}";
+            db.Cmd.CommandText = $"SELECT COUNT(*) FROM Booking INNER JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday = '{searchdate.ToShortDateString()}' AND Dates.Active = 1 AND Booking.GroupId = {groupid}";
             db.Rdr = db.Cmd.ExecuteReader();
             if (db.Rdr.Read())
             {
@@ -146,7 +154,7 @@ namespace A2CourseWork.Classes
             return counter;
         }
 
-        private int getchildID(string childname)
+        public int getchildID(string childname)
         {
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = "SELECT * FROM Kids WHERE ForeName = '" + childname + "'";
