@@ -52,10 +52,11 @@ namespace A2CourseWork.Gui
             }
         }
 
+        //populate list box with kid/parents
         private void initlistbox(bool kid)
         {
 
-            if (kid)
+            if (kid) // populate with kid
             {
                 KidsDB kidsdbaccess = new KidsDB(db);
                 kids = kidsdbaccess.getallkids();
@@ -71,13 +72,13 @@ namespace A2CourseWork.Gui
                 {
                     containerlistbox.SelectedIndex = 0;
                 }
-                else
+                else // no kids added yet
                 {
                     MessageBox.Show("No kids yet!");
                     returntomenu(); 
                 }
             }
-            else
+            else //populate with parent
             {
                 CustomerDB customerdb = new CustomerDB(db);
                 customers=customerdb.getallcustomers();
@@ -90,7 +91,7 @@ namespace A2CourseWork.Gui
                 {
                     containerlistbox.SelectedIndex = 0;
                 }
-                else
+                else // no customers added yet
                 {
                     MessageBox.Show("No customers yet!");
                     NoBookings = true;
@@ -99,6 +100,7 @@ namespace A2CourseWork.Gui
            
         }
         int x = 0;
+        //pass booking form the required objects
         private void btnselect_Click(object sender, EventArgs e)
         {
             if (customercheck.Checked && x==0)
@@ -106,9 +108,9 @@ namespace A2CourseWork.Gui
                 currentcustomer = customers[containerlistbox.SelectedIndex];
                 if (kidcheck.Checked)
                 {
-                    initlistbox(true);
+                    initlistbox(true); //search through kids
                 }
-                else
+                else // else no kid required
                 {
                     Booking book = new Booking(currentcustomer, null);
                     book.Show();
@@ -123,7 +125,7 @@ namespace A2CourseWork.Gui
                 {
                     if(child.Forename + " " + child.Surname == containerlistbox.Text)
                     {
-                        kid = child;
+                        kid = child;// get kid object
                     }
                 }
                 Booking book = new Booking(currentcustomer, kid);

@@ -33,7 +33,7 @@ namespace A2CourseWork.Gui.ViewBooking
             //if()
         }
 
-
+        //populate the years combo box with 5 years
         private void populateyearscbx()
         {
             yearcbx.Items.Clear();
@@ -44,6 +44,7 @@ namespace A2CourseWork.Gui.ViewBooking
             yearcbx.SelectedIndex = 1;
         }
 
+        //populate months combo with all 12 months 
         private void populatemonthscbx(bool currentyear)
         {
             monthscbx.Items.Clear();
@@ -54,6 +55,7 @@ namespace A2CourseWork.Gui.ViewBooking
             monthscbx.SelectedIndex = 0;
         }
 
+        //populate week buttons depending on the amount of weeks in the months
         private void populateweekbtns(DateTime now)
         {
             DateTime startdate = new DateTime(now.Year, now.Month, 1);
@@ -64,7 +66,7 @@ namespace A2CourseWork.Gui.ViewBooking
             {
                 if (date.DayOfWeek == DayOfWeek.Monday)
                 {
-                    mondays.Add(date.Day);
+                    mondays.Add(date.Day);//grab monday dates for viewing
                 }
             }
             if (mondays.Count <= 4)
@@ -100,7 +102,7 @@ namespace A2CourseWork.Gui.ViewBooking
             createTableforKids(current);
             createTableforBooking(current);
         }
-
+        //on index change update months/weeks accordingly
         private void yearcbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (yearcbx.Text == DateTime.Now.Year.ToString())
@@ -113,7 +115,7 @@ namespace A2CourseWork.Gui.ViewBooking
             }
             populateweekbtns(new DateTime(yearcbx.SelectedIndex + DateTime.Now.Year - 1, monthscbx.SelectedIndex + 1, 1));
         }
-
+        //on month change update weeks accordingly
         private void monthscbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             int x = monthscbx.SelectedIndex + 1;
@@ -134,7 +136,7 @@ namespace A2CourseWork.Gui.ViewBooking
             populateweekbtns(DateTime.Now);
             monthscbx.SelectedIndex = DateTime.Now.Month - 1;
         }
-
+        //create a table for the details about kids/parents booked in that week
         private void createTableforKids(DateTime now)
         {
             table = new DataTable();
@@ -151,7 +153,7 @@ namespace A2CourseWork.Gui.ViewBooking
             }
             KidsView.DataSource = table;
         }
-
+        //create table to show the bookings for that week
         private void createTableforBooking(DateTime now)
         {
             table = new DataTable();
@@ -175,18 +177,18 @@ namespace A2CourseWork.Gui.ViewBooking
             WeekView.DataSource = table;
             WeekView.AllowUserToAddRows = false;
             int x = 0;
-            foreach(DataGridViewRow row in WeekView.Rows)
+            foreach(DataGridViewRow row in WeekView.Rows) //need to loop through the rows in order to color the cells accordingly
             {
                 List<string> current = data[x];
                 for (int i = 0; i <5; i++)
                 {
                     if (current[i + 2] == "1")
                     {
-                        row.Cells[i+1].Style.BackColor = Color.LimeGreen;
+                        row.Cells[i+1].Style.BackColor = Color.LimeGreen;//green for booked
                     }
                     else
                     {
-                        row.Cells[i+1].Style.BackColor = Color.Red;
+                        row.Cells[i+1].Style.BackColor = Color.Red;//red for not booked
                     }
                 }
                 x++;

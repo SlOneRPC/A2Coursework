@@ -31,12 +31,12 @@ namespace A2CourseWork.Gui
             createTableForGroup(groupnumscbx.SelectedIndex + 1);
         }
 
-
+        //populate the group stats for the user
         private void populategroupNums()
         {
             GroupDB gdb = new GroupDB(db);
             List<int> groupNums = gdb.numineachgroup();
-            List<string> groupNames = gdb.getgroupnames();
+            List<string> groupNames = gdb.getgroupnames(); // use the correct group names set by the user
             GroupANum.Text = groupNames[0] + " : ";  
             GroupBNum.Text = groupNames[1] + " : "; 
             GroupCNum.Text = groupNames[2] + " : ";
@@ -88,7 +88,7 @@ namespace A2CourseWork.Gui
                 }
             }
         }
-
+        //populate the three group types
         private void populateGroupNumscbx()
         {
             groupnumscbx.Items.Clear();
@@ -111,7 +111,7 @@ namespace A2CourseWork.Gui
             this.Hide();
             menu.Show();
         }
-
+        //create a table to show the kids in the group and when they will change group
         private void createTableForGroup(int groupid)
         {
             table = new DataTable();
@@ -137,7 +137,7 @@ namespace A2CourseWork.Gui
             GroupDetails.DataSource = table;
             GroupDetails.AllowUserToAddRows = false;
             int x = 0;
-            foreach (DataGridViewRow row in GroupDetails.Rows)
+            foreach (DataGridViewRow row in GroupDetails.Rows) //need to loop through rows in order to color the attention column accordingly
             {
                 if (attention[x] > 0)
                 {
@@ -151,7 +151,7 @@ namespace A2CourseWork.Gui
             }
 
         }
-
+        //group index change, update table
         private void groupnumscbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             createTableForGroup(groupnumscbx.SelectedIndex + 1);
@@ -164,7 +164,7 @@ namespace A2CourseWork.Gui
                 btnupdate.Enabled = true;
             }
         }
-
+        //check for any group updates and apply needed updates
         private void btnupdate_Click(object sender, EventArgs e)
         {
             int updated = 0;
@@ -174,7 +174,7 @@ namespace A2CourseWork.Gui
                 int x = 0;
                foreach(int index in attention)
                {
-                    if (index<0)
+                    if (index<0) // check that the kid is passed the group limit
                     {
                         gdb.updategroup(data[x][0]);
                         createTableForGroup(groupnumscbx.SelectedIndex + 1);

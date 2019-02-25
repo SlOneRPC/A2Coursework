@@ -61,7 +61,7 @@ namespace A2CourseWork.Gui
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Timelbl.Text = DateTime.Now.ToLongTimeString();
+            Timelbl.Text = DateTime.Now.ToLongTimeString(); // print out local time
             Timer.Start();
         }
 

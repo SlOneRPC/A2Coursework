@@ -63,7 +63,7 @@ namespace A2CourseWork.Gui
             this.Hide();
             menu.Show();
         }
-
+        //update the listbox with the kids
         private void initlistbox()
         {
             KidsDB kidsdbaccess = new KidsDB(db);
@@ -81,7 +81,7 @@ namespace A2CourseWork.Gui
                 btncheck.Enabled = false;
             }
         }
-
+        //once the kid is selected setup the view
         private void btncheck_Click(object sender, EventArgs e)
         {
             bookingpnl1.Visible = false;
@@ -98,7 +98,7 @@ namespace A2CourseWork.Gui
             bookings = booking.getallbookingsforkid(kids[kidslistbox.SelectedIndex].Forename);
             populateDates();
         }
-
+        //populate the dates that the kid has booked
         private void populateDates()
         {
             List<DateTime> dates = new List<DateTime>();
@@ -113,7 +113,7 @@ namespace A2CourseWork.Gui
             daysbookedlbl.Text = "Days Booked: " + dates.Count.ToString();
             setPrice(dates);
         }
-
+        //calculate the childs age in months
         private string calculateAge()
         {
             int months = DateTime.Now.Month - Convert.ToDateTime(kids[kidslistbox.SelectedIndex].DOB).Month;
@@ -129,7 +129,7 @@ namespace A2CourseWork.Gui
             }
             return Convert.ToString(months);
         }
-
+        //calculate the price to pay including discounts
         private void setPrice(List<DateTime> dates)
         {
             double discount = 0;
@@ -159,7 +159,7 @@ namespace A2CourseWork.Gui
             double price = (pdb.getBase() * dates.Count) * (1-discount);
             totalpricelbl.Text = "Total Price: £" + price.ToString();
         }
-
+        //open add from and pass the child and parent object
         private void btnadd_Click(object sender, EventArgs e)
         {
             CustomerDB custdb = new CustomerDB(db);
@@ -171,7 +171,7 @@ namespace A2CourseWork.Gui
             book.Show();
             this.Hide();
         }
-
+        //remove the selected booking
         private void btndelete_Click(object sender, EventArgs e)
         {
             DateTime date = Convert.ToDateTime(bookinglistbox.Text);

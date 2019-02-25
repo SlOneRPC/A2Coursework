@@ -814,12 +814,12 @@ namespace A2CourseWork.Gui
         {
             PricesDB pdb = new PricesDB(db);
             int baserate = pdb.getBase();
-            if (remove)
+            if (remove) // check if we should remove the applied discount and remove base price
             {
                 if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
                 {
                     bool keep = false;
-                    foreach(DateTime date in bookeddates)
+                    foreach(DateTime date in bookeddates) //check for other dates that are within the discount range
                     {
                         if(date > DateTime.Now.AddMonths(3) && date < DateTime.Now.AddMonths(6))
                         {
@@ -834,7 +834,7 @@ namespace A2CourseWork.Gui
                 else if (bookeddate >= DateTime.Now.AddMonths(6))
                 {
                     bool keep = false;
-                    foreach (DateTime date in bookeddates)
+                    foreach (DateTime date in bookeddates) //check for other dates that are within the discount range
                     {
                         if (date >= DateTime.Now.AddMonths(6))
                         {
@@ -866,20 +866,20 @@ namespace A2CourseWork.Gui
             {
                 if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
                 {
-                    currentDiscount = pdb.getMedDiscount();
+                    currentDiscount = pdb.getMedDiscount(); //medium discount applied
                 }
                 else if (bookeddate >= DateTime.Now.AddMonths(6))
                 {
-                    currentDiscount = pdb.getMaxDiscount();
+                    currentDiscount = pdb.getMaxDiscount(); //max discount applied
                 }
                 else
                 {
-                    currentDiscount = pdb.getMinDiscount();
+                    currentDiscount = pdb.getMinDiscount(); //min discount applied
                 }
                 currentprice += baserate;
             }
             totalpricelbl.Visible = true;
-            totalpricelbl.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount / 100) );
+            totalpricelbl.Text = "Total Price: £" + Convert.ToString(currentprice * (1 - currentDiscount / 100) );//calculate cost and display on a label
         }
 
         #region otherrequirements
@@ -915,7 +915,7 @@ namespace A2CourseWork.Gui
                 }
             }
         }
-
+        //on text change even check for requirement errors
         private void Snametxt_TextChanged(object sender, EventArgs e)
         {
 
@@ -949,7 +949,7 @@ namespace A2CourseWork.Gui
             }
         }
 
-
+        //on text change even check for requirement errors
         private void teleNotxt_TextChanged(object sender, EventArgs e)
         {
             if (teleNotxt.Text.Length > 11)
@@ -967,7 +967,7 @@ namespace A2CourseWork.Gui
         }
 
         #endregion otherrequirements
-
+        //open staff window but week this window open
         private void btnstaff_Click(object sender, EventArgs e)
         {
             AddEditStaff staff = new AddEditStaff();

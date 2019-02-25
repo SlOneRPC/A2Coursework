@@ -24,13 +24,13 @@ namespace A2CourseWork.Gui
         {
             InitializeComponent();
             db = new Database();
-            if (!db.connect())
+            if (!db.connect()) //db connection failed
             {
                 MessageBox.Show("Error - Connection falied!");
             }
         }
 
-        private void shouldQuit(bool back)
+        private void shouldQuit(bool back) //check if this form was opened form booking
         {
             FormCollection fc = Application.OpenForms;
             int count = 0;
@@ -41,7 +41,7 @@ namespace A2CourseWork.Gui
                     count++;
                 }
             }
-            if (count > 1)
+            if (count > 1) // opened from booking form
             {
                 this.Close();
             }
@@ -96,13 +96,13 @@ namespace A2CourseWork.Gui
             Timelbl.Text = DateTime.Now.ToLongTimeString();
             MiscFunctions.buttonhover(this);
         }
-
+        //populate listbox with staff
         private void initcombo()
         {
             stafflist.Items.Clear();
             StaffDB staffdb = new StaffDB(db);
             staff = staffdb.getallstaff();
-            if(staff.Count == 0)
+            if(staff.Count == 0) // no staff added
             {
                 btnadd.Visible = false;
                 btnremove.Visible = false;
@@ -124,7 +124,7 @@ namespace A2CourseWork.Gui
             }
         }
 
-        private void populatecbx()
+        private void populatecbx() //populate group cbx
         {
             groupcbx.Items.Clear();
             groupcbx.Items.Add("Babies");
@@ -132,7 +132,7 @@ namespace A2CourseWork.Gui
             groupcbx.Items.Add("Child");
             groupcbx.SelectedIndex = 0;
         }
-
+        //text change event for staff search
         private void searchtxt_TextChanged(object sender, EventArgs e)
         {
             List<StaffMember> updatedstaff = new List<StaffMember>();
@@ -140,7 +140,7 @@ namespace A2CourseWork.Gui
             {
                 if ((member.Forename.ToLower().Trim() + " " + member.Surname.ToLower().Trim()).Contains(searchtxt.Text.ToLower().Trim())) 
                 {
-                    updatedstaff.Add(member);
+                    updatedstaff.Add(member);//if found update staff list
                 }
             }
             stafflist.Items.Clear();
@@ -152,7 +152,7 @@ namespace A2CourseWork.Gui
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            switch (mode)
+            switch (mode) //check action depending on mode
             {
                 case "add":
                     doadd();
@@ -167,7 +167,7 @@ namespace A2CourseWork.Gui
             }
         }
 
-        private void startedit()
+        private void startedit() //enable textboxes for editing
         {
             fnametxt.Enabled = true;
             Surnametxt.Enabled = true;
@@ -180,14 +180,14 @@ namespace A2CourseWork.Gui
             btncancel.Visible = true;
         }
 
-        private void doadd()
+        private void doadd() //add a new staff member
         {
             reseterrors();
             if (performchecks())
             {
                 StaffDB staffdb = new StaffDB(db);
                 int count = staffdb.countStaffbyid(groupcbx.SelectedIndex + 1);
-                if (count == 1)
+                if (count == 1)// recover any booking removed due to lacking staff
                 {
                     int num = staffdb.UpdateDates(groupcbx.SelectedIndex + 1);
                     MessageBox.Show($"{num.ToString()} bookings added back!");
@@ -197,7 +197,7 @@ namespace A2CourseWork.Gui
                 messagelbl.Text = "Success!";
                 messagelbl.Visible = true;
                 DialogResult dialogResult = MessageBox.Show("Would you like to add another staff member?", "Adding staff", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (dialogResult == DialogResult.Yes) //allow the user to continue adding staff members
                 {
                     resetTextboxes();
                     mode = "add";
@@ -222,7 +222,7 @@ namespace A2CourseWork.Gui
         private void doedit()
         {
             reseterrors();
-            if (performchecks())
+            if (performchecks()) //check for requirement errors
             {
                 StaffDB staffdb = new StaffDB(db);
                 staffdb.updatestaffmember(staff[stafflist.SelectedIndex].Forename,fnametxt.Text,Surnametxt.Text,TeleNotxt.Text,Postcodetxt.Text,Addresstxt.Text);
@@ -275,6 +275,7 @@ namespace A2CourseWork.Gui
             Postcodetxt.Clear();
             Addresstxt.Clear();
         }
+        //check for error, throw custom exception if error is found
         private bool performchecks()
         {
             bool error = false;
@@ -327,7 +328,7 @@ namespace A2CourseWork.Gui
             {
                 try
                 {
-                    throw new RequirementsException(message);
+                    throw new RequirementsException(message); // custom exception
                 }
                 catch (RequirementsException ex)
                 {
@@ -340,7 +341,7 @@ namespace A2CourseWork.Gui
                 return true;
             }
         }
-
+        //update the mode for adding a new staff member
         private void btnadd_Click(object sender, EventArgs e)
         {
             btnremove.Visible = false;
@@ -355,7 +356,7 @@ namespace A2CourseWork.Gui
 
         private void stafflist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!stilladding)
+            if (!stilladding) // still adding no update needed
             {
                 StaffDB sdb = new StaffDB(db);
                 staffGroup = sdb.getStaffGroup(staff[stafflist.SelectedIndex].Forename);
@@ -390,7 +391,7 @@ namespace A2CourseWork.Gui
             Timelbl.Text = DateTime.Now.ToLongTimeString();
             Timer.Start();
         }
-
+        //cancel adding/editing
         private void btncancel_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel?", "Cancel", MessageBoxButtons.YesNo);
@@ -404,7 +405,7 @@ namespace A2CourseWork.Gui
                 stafflist.SelectedIndex = index;
             }
         }
-
+        //remove staff member/bookings
         private void btnremove_Click(object sender, EventArgs e)
         {
             MessageBox.Show("WARNING removing staff members can affect bookings");
@@ -413,18 +414,18 @@ namespace A2CourseWork.Gui
             {
                 removeBookings();
                 StaffDB staffdb = new StaffDB(db);
-                staffdb.removeStaffmember(staff[stafflist.SelectedIndex].Forename);
+                staffdb.removeStaffmember(staff[stafflist.SelectedIndex].Forename); // remove staff member
                 initcombo();
             }
         }
 
-
+        //remove bookings if required
         private void removeBookings()
         {
             StaffDB staffdb = new StaffDB(db);
             int count = staffdb.countStaff(staff[stafflist.SelectedIndex].Forename);
 
-            if (count <= 2)
+            if (count <= 2) // if there will be less than two staff remove the bookings
             {
                 int deleted = staffdb.DeleteDates(staff[stafflist.SelectedIndex].Forename);
                 MessageBox.Show($"{deleted} Bookings temporarly removed due to the removal of the staff member, add another staff member to get these bookings back");

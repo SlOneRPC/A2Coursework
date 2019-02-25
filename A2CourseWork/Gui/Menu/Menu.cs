@@ -60,7 +60,7 @@ namespace A2CourseWork.Gui
             this.Hide();
             main.Show();
         }
-
+        //use events in order to move side panel
         private void panel2_MouseEnter(object sender, EventArgs e)
         {
             sidepnl.Size = new Size(199, 569);

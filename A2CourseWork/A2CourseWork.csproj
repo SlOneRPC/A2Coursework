@@ -70,6 +70,11 @@
     <Compile Include="Classes\MiscFunctions.cs" />
     <Compile Include="Classes\PricesDB.cs" />
     <Compile Include="Classes\StaffDB.cs" />
+    <Compile Include="CrecheData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrecheData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CustExpections\RequirementsException.cs" />
     <Compile Include="Gui\Prices.cs">
       <SubType>Form</SubType>
@@ -183,6 +188,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="CrecheData.xsc">
+      <DependentUpon>CrecheData.xsd</DependentUpon>
+    </None>
+    <None Include="CrecheData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CrecheData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CrecheData.xss">
+      <DependentUpon>CrecheData.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

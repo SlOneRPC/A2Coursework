@@ -33,7 +33,7 @@ namespace A2CourseWork.Gui
             setPrices();
             setGroups();
         }
-
+        //setup the prices on load
         private void setPrices()
         {
             PricesDB pdb = new PricesDB(db);
@@ -42,7 +42,7 @@ namespace A2CourseWork.Gui
             MedD.Value = pdb.getMedDiscount();
             MaxD.Value = pdb.getMaxDiscount();
         }
-
+        //setup the groups on load
         private void setGroups()
         {
             GroupDB gdb = new GroupDB(db);
@@ -59,17 +59,16 @@ namespace A2CourseWork.Gui
         private void btnapply_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Changing prices will affect bookings, are you sure?", "Prices", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes) // update the price is answer is yes
             {
                 PricesDB pdb = new PricesDB(db);
                 pdb.updateValues(Convert.ToInt32(Base.Value), Convert.ToInt32(MinD.Value), Convert.ToInt32(MedD.Value), Convert.ToInt32(MaxD.Value));
                 messagelbl.Visible = true;
             }
         }
-
+        //update group names/group numbers
         private void btngapply_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Current not working, needs fixed!");
             GroupDB gdb = new GroupDB(db);
             gdb.updateGroupNames(NameA.Text, NameB.Text,NameC.Text);
             gdb.updateGroupNumbers(Convert.ToInt32(Anum.Value), Convert.ToInt32(bNum.Value), Convert.ToInt32(cNum.Value));

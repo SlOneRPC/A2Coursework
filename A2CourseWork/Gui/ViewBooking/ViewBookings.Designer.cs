@@ -46,6 +46,7 @@
             this.snamelbl = new System.Windows.Forms.Label();
             this.fnamelbl = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnreport = new System.Windows.Forms.Button();
             this.discountlbl = new System.Windows.Forms.Label();
             this.agegrouplbl = new System.Windows.Forms.Label();
             this.totalpricelbl = new System.Windows.Forms.Label();
@@ -55,13 +56,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
-            this.btnreport = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.bookingpnl1.SuspendLayout();
             this.bookingpnl2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,6 +277,19 @@
             this.panel8.Size = new System.Drawing.Size(283, 216);
             this.panel8.TabIndex = 5;
             // 
+            // btnreport
+            // 
+            this.btnreport.BackColor = System.Drawing.Color.Gray;
+            this.btnreport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnreport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreport.Location = new System.Drawing.Point(6, 164);
+            this.btnreport.Name = "btnreport";
+            this.btnreport.Size = new System.Drawing.Size(171, 42);
+            this.btnreport.TabIndex = 17;
+            this.btnreport.Text = "Generate report";
+            this.btnreport.UseVisualStyleBackColor = false;
+            // 
             // discountlbl
             // 
             this.discountlbl.AutoSize = true;
@@ -322,6 +337,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(3, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(597, 57);
@@ -372,18 +388,16 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // btnreport
+            // label5
             // 
-            this.btnreport.BackColor = System.Drawing.Color.Gray;
-            this.btnreport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnreport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreport.Location = new System.Drawing.Point(6, 164);
-            this.btnreport.Name = "btnreport";
-            this.btnreport.Size = new System.Drawing.Size(171, 42);
-            this.btnreport.TabIndex = 17;
-            this.btnreport.Text = "Generate report";
-            this.btnreport.UseVisualStyleBackColor = false;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(213, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(161, 29);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "View Booking";
             // 
             // ViewBookings
             // 
@@ -411,6 +425,8 @@
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             this.ResumeLayout(false);
 
@@ -445,5 +461,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label discountlbl;
         private System.Windows.Forms.Button btnreport;
+        private System.Windows.Forms.Label label5;
     }
 }
