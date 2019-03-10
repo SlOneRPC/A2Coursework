@@ -49,8 +49,8 @@ namespace A2CourseWork.Gui
         {
             //estabilsh db connection
             db = new Database();
-            InitializeComponent();
             db.connect();
+            InitializeComponent();
             this.existingcustomer = existingcustomer;
             this.existingkid = existingkid;
             //if customer already exist we dont need to create a new one
@@ -313,6 +313,8 @@ namespace A2CourseWork.Gui
                 book2pnl.Visible = false;
                 populatemonthscbx(true);
                 populateyearscbx();
+                db.Conn.Close();
+                db.connect();
                 initaliseweeks(DateTime.Now);
                 book6pnl.Visible = true;
             }
@@ -967,7 +969,7 @@ namespace A2CourseWork.Gui
         }
 
         #endregion otherrequirements
-        //open staff window but week this window open
+        //open staff window but keep this window open
         private void btnstaff_Click(object sender, EventArgs e)
         {
             AddEditStaff staff = new AddEditStaff();

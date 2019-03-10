@@ -45,9 +45,6 @@ namespace A2CourseWork.Gui
             Num2.Text = groupNums[1].ToString();
             Num3.Text = groupNums[2].ToString();
 
-            availableA.Text = groupNames[0] + " : " + (gdb.getANum() - groupNums[0]).ToString();
-            AvaliableB.Text = groupNames[1] + " : " + (gdb.getBNum() - groupNums[1]).ToString();
-            AvaliableC.Text = groupNames[2] + " : " + (gdb.getCNum() - groupNums[2]).ToString();
             if (groupNums[0] >= gdb.getANum())
             {
                 num1.ForeColor = Color.Red;

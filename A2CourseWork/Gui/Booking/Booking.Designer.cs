@@ -86,6 +86,7 @@
             this.dayslistbx = new System.Windows.Forms.CheckedListBox();
             this.btnsavedate = new System.Windows.Forms.Button();
             this.book6pnl = new System.Windows.Forms.Panel();
+            this.btnrefresh = new System.Windows.Forms.Button();
             this.btnstaff = new System.Windows.Forms.Button();
             this.btnfinished = new System.Windows.Forms.Button();
             this.extrapnl = new System.Windows.Forms.Panel();
@@ -107,7 +108,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.totalpricelbl = new System.Windows.Forms.Label();
-            this.btnrefresh = new System.Windows.Forms.Button();
             this.book1pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KidsNo)).BeginInit();
             this.panel4.SuspendLayout();
@@ -852,6 +852,21 @@
             this.book6pnl.TabIndex = 24;
             this.book6pnl.Visible = false;
             // 
+            // btnrefresh
+            // 
+            this.btnrefresh.BackColor = System.Drawing.Color.Gray;
+            this.btnrefresh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrefresh.ForeColor = System.Drawing.Color.White;
+            this.btnrefresh.Location = new System.Drawing.Point(454, 84);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(85, 41);
+            this.btnrefresh.TabIndex = 13;
+            this.btnrefresh.Text = "Refresh";
+            this.btnrefresh.UseVisualStyleBackColor = false;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
+            // 
             // btnstaff
             // 
             this.btnstaff.BackColor = System.Drawing.Color.Gray;
@@ -896,9 +911,10 @@
             // week5btn
             // 
             this.week5btn.BackColor = System.Drawing.Color.Silver;
+            this.week5btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.week5btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.week5btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week5btn.Location = new System.Drawing.Point(15, 11);
+            this.week5btn.Location = new System.Drawing.Point(8, 13);
             this.week5btn.Name = "week5btn";
             this.week5btn.Size = new System.Drawing.Size(765, 49);
             this.week5btn.TabIndex = 1;
@@ -982,9 +998,10 @@
             // week4btn
             // 
             this.week4btn.BackColor = System.Drawing.Color.Silver;
+            this.week4btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.week4btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.week4btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week4btn.Location = new System.Drawing.Point(15, 11);
+            this.week4btn.Location = new System.Drawing.Point(8, 11);
             this.week4btn.Name = "week4btn";
             this.week4btn.Size = new System.Drawing.Size(765, 49);
             this.week4btn.TabIndex = 1;
@@ -1004,9 +1021,10 @@
             // week3btn
             // 
             this.week3btn.BackColor = System.Drawing.Color.Silver;
+            this.week3btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.week3btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.week3btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week3btn.Location = new System.Drawing.Point(15, 11);
+            this.week3btn.Location = new System.Drawing.Point(8, 16);
             this.week3btn.Name = "week3btn";
             this.week3btn.Size = new System.Drawing.Size(765, 49);
             this.week3btn.TabIndex = 1;
@@ -1026,6 +1044,7 @@
             // week2btn
             // 
             this.week2btn.BackColor = System.Drawing.Color.Silver;
+            this.week2btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.week2btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.week2btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.week2btn.Location = new System.Drawing.Point(8, 12);
@@ -1048,6 +1067,7 @@
             // week1btn
             // 
             this.week1btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.week1btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.week1btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.week1btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.week1btn.Location = new System.Drawing.Point(8, 10);
@@ -1090,21 +1110,6 @@
             this.totalpricelbl.TabIndex = 25;
             this.totalpricelbl.Text = "Total Price: ";
             this.totalpricelbl.Visible = false;
-            // 
-            // btnrefresh
-            // 
-            this.btnrefresh.BackColor = System.Drawing.Color.Gray;
-            this.btnrefresh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrefresh.ForeColor = System.Drawing.Color.White;
-            this.btnrefresh.Location = new System.Drawing.Point(454, 84);
-            this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(85, 41);
-            this.btnrefresh.TabIndex = 13;
-            this.btnrefresh.Text = "Refresh";
-            this.btnrefresh.UseVisualStyleBackColor = false;
-            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
             // 
             // Booking
             // 

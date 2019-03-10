@@ -60,6 +60,8 @@ namespace A2CourseWork.Classes
             }
         }
 
+        
+
         public bool isopen()
         {
             if (conn.State == System.Data.ConnectionState.Open)

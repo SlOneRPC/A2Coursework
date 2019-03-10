@@ -44,13 +44,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.availableA = new System.Windows.Forms.Label();
-            this.AvaliableC = new System.Windows.Forms.Label();
-            this.AvaliableB = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Num3 = new System.Windows.Forms.Label();
             this.Num2 = new System.Windows.Forms.Label();
@@ -67,8 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GroupDetails)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
@@ -105,7 +96,6 @@
             this.panel3.Controls.Add(this.groupnumscbx);
             this.panel3.Controls.Add(this.GroupDetails);
             this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.titlebox);
             this.panel3.Location = new System.Drawing.Point(162, 47);
@@ -188,7 +178,7 @@
             this.panel8.Controls.Add(this.StaffB);
             this.panel8.Controls.Add(this.label13);
             this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(548, 58);
+            this.panel8.Location = new System.Drawing.Point(385, 58);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(243, 180);
             this.panel8.TabIndex = 9;
@@ -252,79 +242,6 @@
             this.label14.Size = new System.Drawing.Size(120, 20);
             this.label14.TabIndex = 0;
             this.label14.Text = "Staff Avaliability";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Controls.Add(this.availableA);
-            this.panel6.Controls.Add(this.AvaliableC);
-            this.panel6.Controls.Add(this.AvaliableB);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(282, 58);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(243, 180);
-            this.panel6.TabIndex = 8;
-            // 
-            // availableA
-            // 
-            this.availableA.AutoSize = true;
-            this.availableA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availableA.Location = new System.Drawing.Point(3, 76);
-            this.availableA.Name = "availableA";
-            this.availableA.Size = new System.Drawing.Size(77, 20);
-            this.availableA.TabIndex = 7;
-            this.availableA.Text = "Group A :";
-            // 
-            // AvaliableC
-            // 
-            this.AvaliableC.AutoSize = true;
-            this.AvaliableC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AvaliableC.Location = new System.Drawing.Point(3, 142);
-            this.AvaliableC.Name = "AvaliableC";
-            this.AvaliableC.Size = new System.Drawing.Size(77, 20);
-            this.AvaliableC.TabIndex = 6;
-            this.AvaliableC.Text = "Group C :";
-            // 
-            // AvaliableB
-            // 
-            this.AvaliableB.AutoSize = true;
-            this.AvaliableB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AvaliableB.Location = new System.Drawing.Point(3, 109);
-            this.AvaliableB.Name = "AvaliableB";
-            this.AvaliableB.Size = new System.Drawing.Size(77, 20);
-            this.AvaliableB.TabIndex = 5;
-            this.AvaliableB.Text = "Group B :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(207, 20);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Number of spaces avaliable:";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Controls.Add(this.label12);
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(288, 34);
-            this.panel7.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(82, 7);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Avaliability";
             // 
             // panel4
             // 
@@ -466,10 +383,6 @@
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -491,13 +404,6 @@
         private System.Windows.Forms.Label GroupCNum;
         private System.Windows.Forms.Label GroupBNum;
         private System.Windows.Forms.Label GroupANum;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label availableA;
-        private System.Windows.Forms.Label AvaliableC;
-        private System.Windows.Forms.Label AvaliableB;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label Num3;
         private System.Windows.Forms.Label Num2;
         private System.Windows.Forms.Label num1;

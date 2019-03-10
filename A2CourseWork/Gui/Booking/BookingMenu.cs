@@ -71,6 +71,7 @@ namespace A2CourseWork.Gui
                 if (kids.Count > 0)
                 {
                     containerlistbox.SelectedIndex = 0;
+                    subtitlelbl.Text = "Select kid:";
                 }
                 else // no kids added yet
                 {
