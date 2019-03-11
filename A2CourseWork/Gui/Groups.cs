@@ -125,7 +125,7 @@ namespace A2CourseWork.Gui
                 int change = MiscFunctions.CalculateGroupChange(current[2], groupid);
                 attention.Add(change);
                 string Attention = "No";
-                if (change < 0)
+                if (change <= 0)
                 {
                     Attention = "Yes";
                 }
@@ -171,7 +171,7 @@ namespace A2CourseWork.Gui
                 int x = 0;
                foreach(int index in attention)
                {
-                    if (index<0) // check that the kid is passed the group limit
+                    if (index<=0) // check that the kid is passed the group limit
                     {
                         gdb.updategroup(data[x][0]);
                         createTableForGroup(groupnumscbx.SelectedIndex + 1);

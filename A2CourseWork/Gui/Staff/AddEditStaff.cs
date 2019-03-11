@@ -149,6 +149,10 @@ namespace A2CourseWork.Gui
             {
                 stafflist.Items.Add(member.Forename + " " + member.Surname);
             }
+            if(updatedstaff.Count > 0)
+            {
+                stafflist.SelectedIndex = 0;
+            }
         }
 
         private void btnupdate_Click(object sender, EventArgs e)

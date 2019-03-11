@@ -211,6 +211,7 @@ namespace A2CourseWork.Gui
         //check customer requirements
         private bool CustomerRequirements()
         {
+            clearerrors();
             bool error = false;
             string Message = "";
             if(Fnametxt.Text == "")
@@ -281,6 +282,16 @@ namespace A2CourseWork.Gui
                 return true;
             }
 
+        }
+
+        private void clearerrors()
+        {
+            Error1txt.Visible = false;
+            error2txt.Visible = false;
+            error3txt.Visible = false;
+            error4txt.Visible = false;
+            error5txt.Visible = false;
+            error6txt.Visible = false;
         }
 
         #endregion

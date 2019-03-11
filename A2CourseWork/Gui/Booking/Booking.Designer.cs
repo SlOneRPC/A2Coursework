@@ -642,8 +642,8 @@
             this.book3pnl.Controls.Add(this.KidsBookedlbl);
             this.book3pnl.Controls.Add(this.btncheckout);
             this.book3pnl.Controls.Add(this.label10);
-            this.book3pnl.Controls.Add(this.Kidslist);
             this.book3pnl.Controls.Add(this.panel5);
+            this.book3pnl.Controls.Add(this.Kidslist);
             this.book3pnl.Location = new System.Drawing.Point(535, 46);
             this.book3pnl.Name = "book3pnl";
             this.book3pnl.Size = new System.Drawing.Size(287, 422);
@@ -1121,16 +1121,16 @@
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.book6pnl);
             this.Controls.Add(this.book1pnl);
-            this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.book2pnl);
+            this.Controls.Add(this.book3pnl);
             this.Controls.Add(this.book4pnl);
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";
             this.Load += new System.EventHandler(this.Booking_Load);
             this.Controls.SetChildIndex(this.book4pnl, 0);
-            this.Controls.SetChildIndex(this.book2pnl, 0);
             this.Controls.SetChildIndex(this.book3pnl, 0);
+            this.Controls.SetChildIndex(this.book2pnl, 0);
             this.Controls.SetChildIndex(this.book1pnl, 0);
             this.Controls.SetChildIndex(this.book6pnl, 0);
             this.Controls.SetChildIndex(this.btnback, 0);
