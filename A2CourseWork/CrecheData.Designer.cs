@@ -279,21 +279,17 @@ namespace A2CourseWork {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
-            private global::System.Data.DataColumn columnActive;
-            
-            private global::System.Data.DataColumn columnMonday;
-            
             private global::System.Data.DataColumn columnForeName;
             
             private global::System.Data.DataColumn columnSurname;
             
             private global::System.Data.DataColumn columnDOB;
             
+            private global::System.Data.DataColumn columnTeleNo;
+            
             private global::System.Data.DataColumn columnExpr1;
             
             private global::System.Data.DataColumn columnExpr2;
-            
-            private global::System.Data.DataColumn columnTeleNo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -330,22 +326,6 @@ namespace A2CourseWork {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ActiveColumn {
-                get {
-                    return this.columnActive;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MondayColumn {
-                get {
-                    return this.columnMonday;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn ForeNameColumn {
                 get {
                     return this.columnForeName;
@@ -370,6 +350,14 @@ namespace A2CourseWork {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TeleNoColumn {
+                get {
+                    return this.columnTeleNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Expr1Column {
                 get {
                     return this.columnExpr1;
@@ -381,14 +369,6 @@ namespace A2CourseWork {
             public global::System.Data.DataColumn Expr2Column {
                 get {
                     return this.columnExpr2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TeleNoColumn {
-                get {
-                    return this.columnTeleNo;
                 }
             }
             
@@ -429,17 +409,15 @@ namespace A2CourseWork {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row(int Active, string Monday, string ForeName, string Surname, string DOB, string Expr1, string Expr2, string TeleNo) {
+            public DataTable1Row AddDataTable1Row(string ForeName, string Surname, string DOB, string TeleNo, string Expr1, string Expr2) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Active,
-                        Monday,
                         ForeName,
                         Surname,
                         DOB,
+                        TeleNo,
                         Expr1,
-                        Expr2,
-                        TeleNo};
+                        Expr2};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -462,43 +440,35 @@ namespace A2CourseWork {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnActive = base.Columns["Active"];
-                this.columnMonday = base.Columns["Monday"];
                 this.columnForeName = base.Columns["ForeName"];
                 this.columnSurname = base.Columns["Surname"];
                 this.columnDOB = base.Columns["DOB"];
+                this.columnTeleNo = base.Columns["TeleNo"];
                 this.columnExpr1 = base.Columns["Expr1"];
                 this.columnExpr2 = base.Columns["Expr2"];
-                this.columnTeleNo = base.Columns["TeleNo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnActive = new global::System.Data.DataColumn("Active", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnActive);
-                this.columnMonday = new global::System.Data.DataColumn("Monday", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMonday);
                 this.columnForeName = new global::System.Data.DataColumn("ForeName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnForeName);
                 this.columnSurname = new global::System.Data.DataColumn("Surname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSurname);
                 this.columnDOB = new global::System.Data.DataColumn("DOB", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDOB);
+                this.columnTeleNo = new global::System.Data.DataColumn("TeleNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTeleNo);
                 this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExpr1);
                 this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExpr2);
-                this.columnTeleNo = new global::System.Data.DataColumn("TeleNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTeleNo);
-                this.columnMonday.AllowDBNull = false;
-                this.columnMonday.MaxLength = 25;
                 this.columnForeName.MaxLength = 50;
                 this.columnSurname.MaxLength = 50;
                 this.columnDOB.MaxLength = 50;
+                this.columnTeleNo.MaxLength = 11;
                 this.columnExpr1.MaxLength = 50;
                 this.columnExpr2.MaxLength = 50;
-                this.columnTeleNo.MaxLength = 11;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -641,33 +611,6 @@ namespace A2CourseWork {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Active {
-                get {
-                    try {
-                        return ((int)(this[this.tableDataTable1.ActiveColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Active\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.ActiveColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Monday {
-                get {
-                    return ((string)(this[this.tableDataTable1.MondayColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.MondayColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ForeName {
                 get {
                     try {
@@ -716,6 +659,22 @@ namespace A2CourseWork {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TeleNo {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.TeleNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TeleNo\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.TeleNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Expr1 {
                 get {
                     try {
@@ -744,34 +703,6 @@ namespace A2CourseWork {
                 set {
                     this[this.tableDataTable1.Expr2Column] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TeleNo {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.TeleNoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TeleNo\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.TeleNoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsActiveNull() {
-                return this.IsNull(this.tableDataTable1.ActiveColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetActiveNull() {
-                this[this.tableDataTable1.ActiveColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -812,6 +743,18 @@ namespace A2CourseWork {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTeleNoNull() {
+                return this.IsNull(this.tableDataTable1.TeleNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTeleNoNull() {
+                this[this.tableDataTable1.TeleNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsExpr1Null() {
                 return this.IsNull(this.tableDataTable1.Expr1Column);
             }
@@ -832,18 +775,6 @@ namespace A2CourseWork {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetExpr2Null() {
                 this[this.tableDataTable1.Expr2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTeleNoNull() {
-                return this.IsNull(this.tableDataTable1.TeleNoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTeleNoNull() {
-                this[this.tableDataTable1.TeleNoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1006,14 +937,12 @@ namespace A2CourseWork.CrecheDataTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("Active", "Active");
-            tableMapping.ColumnMappings.Add("Monday", "Monday");
             tableMapping.ColumnMappings.Add("ForeName", "ForeName");
             tableMapping.ColumnMappings.Add("Surname", "Surname");
             tableMapping.ColumnMappings.Add("DOB", "DOB");
+            tableMapping.ColumnMappings.Add("TeleNo", "TeleNo");
             tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             tableMapping.ColumnMappings.Add("Expr2", "Expr2");
-            tableMapping.ColumnMappings.Add("TeleNo", "TeleNo");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1030,21 +959,29 @@ namespace A2CourseWork.CrecheDataTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT     Dates.Active, Dates.Monday, Kids.ForeName, Kids.Surname, Kids.DOB, Customer.ForeName AS Expr1, Customer.Surname AS Expr2, Customer.TeleNo
-FROM         Booking INNER JOIN
-                      Dates ON Booking.BookingID = Dates.BookingId INNER JOIN
-                      Kids ON Booking.ChildId = Kids.ChildId INNER JOIN
-                      Customer ON Kids.ParentId = Customer.CustId CROSS JOIN
-                      Prices";
+            this._commandCollection[0].CommandText = @"SELECT        Kids.ForeName, Kids.Surname, Kids.DOB, Customer.ForeName AS Expr1, Customer.Surname AS Expr2, Customer.TeleNo
+FROM            Booking INNER JOIN
+                         Dates ON Booking.BookingID = Dates.BookingId INNER JOIN
+                         Kids ON Booking.ChildId = Kids.ChildId INNER JOIN
+                         Customer ON Kids.ParentId = Customer.CustId CROSS JOIN
+                         Prices
+WHERE        (Dates.Active = '1') AND (Dates.Monday = @monday)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@monday", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Monday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CrecheData.DataTable1DataTable dataTable) {
+        public virtual int Fill(CrecheData.DataTable1DataTable dataTable, string monday) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((monday == null)) {
+                throw new global::System.ArgumentNullException("monday");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(monday));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1056,8 +993,14 @@ FROM         Booking INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CrecheData.DataTable1DataTable GetData() {
+        public virtual CrecheData.DataTable1DataTable GetData(string monday) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((monday == null)) {
+                throw new global::System.ArgumentNullException("monday");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(monday));
+            }
             CrecheData.DataTable1DataTable dataTable = new CrecheData.DataTable1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

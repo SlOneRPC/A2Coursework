@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnreport = new System.Windows.Forms.Button();
             this.revenuelbl = new System.Windows.Forms.Label();
@@ -44,15 +47,12 @@
             this.yearcbx = new System.Windows.Forms.ComboBox();
             this.KidsView = new System.Windows.Forms.DataGridView();
             this.titlebox = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WeekView)).BeginInit();
@@ -83,6 +83,39 @@
             this.panel3.Size = new System.Drawing.Size(806, 509);
             this.panel3.TabIndex = 3;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 162);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(121, 24);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Select Week:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(3, 55);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 24);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Select Year:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(1, 107);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 24);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Select Month:";
+            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -107,6 +140,7 @@
             this.btnreport.TabIndex = 18;
             this.btnreport.Text = "Generate report";
             this.btnreport.UseVisualStyleBackColor = false;
+            this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
             // 
             // revenuelbl
             // 
@@ -255,6 +289,17 @@
             this.titlebox.Size = new System.Drawing.Size(835, 52);
             this.titlebox.TabIndex = 4;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(306, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(161, 29);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "View Booking";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -309,50 +354,6 @@
             this.btnback.TabIndex = 4;
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(306, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 29);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "View Booking";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 24);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Select Month:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 24);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Select Year:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 162);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 24);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Select Week:";
             // 
             // ByDate
             // 

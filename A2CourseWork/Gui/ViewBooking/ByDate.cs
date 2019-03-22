@@ -16,7 +16,7 @@ namespace A2CourseWork.Gui.ViewBooking
         List<int> mondays = new List<int>();
         List<int> fridays = new List<int>();
         List<string> months = new List<string>() { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-        
+        DateTime current;
         private DataTable table;
         private Database db;
         public ByDate()
@@ -98,7 +98,7 @@ namespace A2CourseWork.Gui.ViewBooking
 
             }
             weeklbl.Text = "Week: " + selected.ToString();
-            DateTime current = new DateTime(now.Year, now.Month, mondays[selected-1]);
+            current = new DateTime(now.Year, now.Month, mondays[selected-1]);
             createTableforKids(current);
             createTableforBooking(current);
         }
@@ -207,6 +207,12 @@ namespace A2CourseWork.Gui.ViewBooking
             ViewMenu menu = new ViewMenu();
             this.Hide();
             menu.Show();
+        }
+
+        private void btnreport_Click(object sender, EventArgs e)
+        {
+            GeneratedReport form = new GeneratedReport(current);
+            form.Show();
         }
     }
 }

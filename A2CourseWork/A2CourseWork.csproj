@@ -73,11 +73,15 @@
     <Compile Include="Classes\MiscFunctions.cs" />
     <Compile Include="Classes\PricesDB.cs" />
     <Compile Include="Classes\StaffDB.cs" />
+    <Compile Include="CrecheData.cs">
+      <DependentUpon>CrecheData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CrecheData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrecheData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CustExpections\LengthException.cs" />
     <Compile Include="CustExpections\RequirementsException.cs" />
     <Compile Include="Gui\GeneratedReport.cs">
       <SubType>Form</SubType>
