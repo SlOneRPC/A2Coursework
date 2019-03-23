@@ -48,8 +48,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,12 +73,22 @@
     <Compile Include="Classes\MiscFunctions.cs" />
     <Compile Include="Classes\PricesDB.cs" />
     <Compile Include="Classes\StaffDB.cs" />
+    <Compile Include="CrecheData.cs">
+      <DependentUpon>CrecheData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CrecheData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrecheData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CustExpections\LengthException.cs" />
     <Compile Include="CustExpections\RequirementsException.cs" />
+    <Compile Include="Gui\GeneratedReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\GeneratedReport.Designer.cs">
+      <DependentUpon>GeneratedReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Prices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +163,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CrecheReport.rdlc" />
+    <EmbeddedResource Include="Gui\GeneratedReport.resx">
+      <DependentUpon>GeneratedReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Prices.resx">
       <DependentUpon>Prices.cs</DependentUpon>
     </EmbeddedResource>

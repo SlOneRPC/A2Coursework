@@ -208,6 +208,12 @@ namespace A2CourseWork.Gui
             DOBpicker.ResetText();
             KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
         }
+
+        private void checkLength()
+        {
+
+        }
+
         //check customer requirements
         private bool CustomerRequirements()
         {
