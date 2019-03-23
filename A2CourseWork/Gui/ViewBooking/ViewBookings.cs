@@ -111,6 +111,10 @@ namespace A2CourseWork.Gui
                 bookinglistbox.Items.Add(date.ToShortDateString());
             }
             daysbookedlbl.Text = "Days Booked: " + dates.Count.ToString();
+            if(dates.Count > 0)
+            {
+                bookinglistbox.SelectedIndex = 0;
+            }
             setPrice(dates);
         }
         //calculate the childs age in months
