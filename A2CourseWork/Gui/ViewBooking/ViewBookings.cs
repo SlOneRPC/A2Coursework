@@ -183,12 +183,17 @@ namespace A2CourseWork.Gui
         //remove the selected booking
         private void btndelete_Click(object sender, EventArgs e)
         {
+            if (bookinglistbox.Items.Count < 1)
+            {
+                MessageBox.Show("Add a booking first!");
+                return;
+            }
             DateTime date = Convert.ToDateTime(bookinglistbox.Text);
             List<DateTime> dates = new List<DateTime>();
             dates.Add(date);
             BookingDB bdb = new BookingDB(db);
             bdb.removeDate(dates, kids[kidslistbox.SelectedIndex].Forename);
-            MessageBox.Show("Sucess");
+            MessageBox.Show("Success");
             populateDates();
         }
     }

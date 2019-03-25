@@ -20,7 +20,7 @@ namespace A2CourseWork.Classes
 
         public static void exit()
         {
-            DialogResult dialogResult = MessageBox.Show("Are you Sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Application.Exit();
@@ -197,7 +197,7 @@ namespace A2CourseWork.Classes
 
         public static bool insureValid(int length1,int lenght2)
         {
-            if (length1 > lenght2)
+            if (length1 < lenght2)
             {
                 return false;
             }

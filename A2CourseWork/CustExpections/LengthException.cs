@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace A2CourseWork.CustExpections
 {
-    class LengthException
+    class LengthException : Exception
     {
         public LengthException() { }
 
-        public 
+        public LengthException(string message) : base(message) { } 
     }
 }

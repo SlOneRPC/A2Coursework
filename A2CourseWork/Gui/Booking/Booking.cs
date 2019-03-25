@@ -157,7 +157,7 @@ namespace A2CourseWork.Gui
         //============== Customer Booking ==============
         private void btnsave_Click(object sender, EventArgs e)
         {
-            if (CustomerRequirements())
+            if (CustomerRequirements() && checkLength())
             {
                 //create customer object
                 cust.Forename = Fnametxt.Text;
@@ -209,9 +209,32 @@ namespace A2CourseWork.Gui
             KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
         }
 
-        private void checkLength()
+        private bool checkLength()
         {
-
+            try
+            {
+                if (!MiscFunctions.insureValid(Fnametxt.Text.Length, 30))
+                {
+                    throw new LengthException("First name is too long! Max lenght 30 characters");
+                }
+                else if (!MiscFunctions.insureValid(Snametxt.Text.Length, 30))
+                {
+                    throw new LengthException("Second name is too long! Max lenght 30 characters");
+                }
+                else if (!MiscFunctions.insureValid(addresstxt.Text.Length, 50))
+                {
+                    throw new LengthException("Address is too long! Max lenght 50 characters");
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (LengthException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
 
         //check customer requirements
