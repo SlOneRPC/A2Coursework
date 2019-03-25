@@ -329,7 +329,7 @@ namespace A2CourseWork.Gui
         //============== Child Booking ==============
         private void btnnext_Click(object sender, EventArgs e)
         {
-            if (childrequirements())
+            if (childrequirements() && checkLength2())
             {
                 //create a kid object
                 child = new Kid();
@@ -360,6 +360,31 @@ namespace A2CourseWork.Gui
             }
         }
 
+        private bool checkLength2()
+        {
+            try
+            {
+                if (!MiscFunctions.insureValid(ChildFnametxt.Text.Length,30))
+                {
+                    throw new LengthException("Child Forename too long, Max lenght 30 characters");
+                }
+                else if (!MiscFunctions.insureValid(childSnametxt.Text.Length, 30))
+                {
+                    throw new LengthException("Child Surname too long, Max lenght 30 characters");
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch(LengthException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
+
         private bool childrequirements()
         {
             bool error = false;
@@ -370,10 +395,15 @@ namespace A2CourseWork.Gui
                 Cerror1.Visible = true;
                 error = true;
             }
-            if(childSnametxt.Text == "")
+            else if(childSnametxt.Text == "")
             {
                 message = "Missing Surname";
                 Cerror2.Visible = true;
+                error = true;
+            }
+            else if(DOBpicker.Value > DateTime.Now.AddMonths(-6))
+            {
+                message = "DOB is invalid";
                 error = true;
             }
             if (error)

@@ -31,7 +31,7 @@ namespace A2CourseWork.Gui
             }
         }
 
-        private void shouldQuit(bool back) //check if this form was opened form booking
+        private void shouldQuit(bool back) //check if this form was opened by form booking
         {
             FormCollection fc = Application.OpenForms;
             int count = 0;
