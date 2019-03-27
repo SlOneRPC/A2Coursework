@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.crecheData = new A2CourseWork.CrecheData();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTable1TableAdapter = new A2CourseWork.CrecheDataTableAdapters.DataTable1TableAdapter();
             this.datelbl = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
+            this.crecheDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crecheData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crecheDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataTable1BindingSource
@@ -53,13 +57,13 @@
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "CrecheData";
-            reportDataSource2.Value = this.dataTable1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.dataTable1BindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "A2CourseWork.CrecheReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(28, 46);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(736, 406);
+            this.reportViewer1.Size = new System.Drawing.Size(829, 406);
             this.reportViewer1.TabIndex = 0;
             // 
             // dataTable1TableAdapter
@@ -87,11 +91,21 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
+            // crecheDataBindingSource
+            // 
+            this.crecheDataBindingSource.DataSource = this.crecheData;
+            this.crecheDataBindingSource.Position = 0;
+            // 
+            // dataTable1BindingSource1
+            // 
+            this.dataTable1BindingSource1.DataMember = "DataTable1";
+            this.dataTable1BindingSource1.DataSource = this.crecheData;
+            // 
             // GeneratedReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 507);
+            this.ClientSize = new System.Drawing.Size(869, 507);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.datelbl);
             this.Controls.Add(this.reportViewer1);
@@ -101,6 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crecheData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crecheDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +130,7 @@
         private CrecheDataTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
         private System.Windows.Forms.Label datelbl;
         private System.Windows.Forms.PictureBox btnback;
+        private System.Windows.Forms.BindingSource crecheDataBindingSource;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource1;
     }
 }

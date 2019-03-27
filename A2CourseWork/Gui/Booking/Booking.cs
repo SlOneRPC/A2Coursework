@@ -712,6 +712,21 @@ namespace A2CourseWork.Gui
                     //if(bookeddays.Contains(mondays[i]))
                     monthscbx.Items.Add(months[i]);
                 }
+                //DateTime now = DateTime.Now;
+                //DateTime startdate = new DateTime(now.Year, now.Month, 1);
+                //DateTime enddate = new DateTime(now.Year, now.Month, DateTime.DaysInMonth(now.Year, now.Month));
+                //int counter = 0;
+                //for (DateTime date = startdate; date <= enddate; date = date.AddDays(1)) //grab mondays in the months through a loop
+                //{
+                //    if (date.DayOfWeek == DayOfWeek.Monday && date > now)
+                //    {
+                //        counter++;
+                //    }
+                //}
+                //if (counter == 0)
+                //{
+                //    monthscbx.Items.RemoveAt(0);
+                //}
                 monthscbx.SelectedIndex = 0;
             }
             else

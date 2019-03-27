@@ -25,8 +25,7 @@ namespace A2CourseWork.Gui
         private void GeneratedReport_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'crecheData.DataTable1' table. You can move, or remove it, as needed.
-            this.reportViewer1.RefreshReport();
-            this.dataTable1TableAdapter.Fill(this.crecheData.DataTable1,Monday.ToShortDateString(), revenue);
+            this.dataTable1TableAdapter.Fill(this.crecheData.DataTable1,Monday.ToShortDateString());
             this.reportViewer1.RefreshReport();
         }
 
