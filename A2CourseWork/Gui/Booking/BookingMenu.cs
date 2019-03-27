@@ -61,12 +61,19 @@ namespace A2CourseWork.Gui
                 KidsDB kidsdbaccess = new KidsDB(db);
                 kids = kidsdbaccess.getallkids();
                 containerlistbox.Items.Clear();
+                int counter = 0;
                 foreach (Kid child in kids)
                 {
                     if(child.ParentID == currentcustomer.CustId)
                     {
                         containerlistbox.Items.Add(child.Forename + " " + child.Surname);
+                        counter++;
                     }
+                }
+                if(counter == 0)
+                {
+                    MessageBox.Show("No kids have been booked for their parent, this could be caused by conflicting forename and surname");
+                    return;
                 }
                 if (kids.Count > 0)
                 {

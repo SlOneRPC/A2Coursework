@@ -119,10 +119,10 @@ namespace A2CourseWork.Classes
             return groupNums;
         }
 
-        public void updategroup(string Forename)
+        public void updategroup(string Forename,string Surname)
         {
             BookingDB bdb = new BookingDB(db);
-            int id = bdb.getchildID(Forename);
+            int id = bdb.getchildID(Forename, Surname);
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $"UPDATE Booking SET GroupID = GroupID+1 WHERE ChildId = {id}";
             db.Cmd.ExecuteNonQuery();

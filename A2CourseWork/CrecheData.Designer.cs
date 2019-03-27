@@ -291,6 +291,8 @@ namespace A2CourseWork {
             
             private global::System.Data.DataColumn columnExpr2;
             
+            private global::System.Data.DataColumn columnBase;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataTable1DataTable() {
@@ -374,6 +376,14 @@ namespace A2CourseWork {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BaseColumn {
+                get {
+                    return this.columnBase;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace A2CourseWork {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string ForeName, string Surname, string DOB, string TeleNo, string Expr1, string Expr2) {
+            public DataTable1Row AddDataTable1Row(string ForeName, string Surname, string DOB, string TeleNo, string Expr1, string Expr2, int Base) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ForeName,
@@ -417,7 +427,8 @@ namespace A2CourseWork {
                         DOB,
                         TeleNo,
                         Expr1,
-                        Expr2};
+                        Expr2,
+                        Base};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -446,6 +457,7 @@ namespace A2CourseWork {
                 this.columnTeleNo = base.Columns["TeleNo"];
                 this.columnExpr1 = base.Columns["Expr1"];
                 this.columnExpr2 = base.Columns["Expr2"];
+                this.columnBase = base.Columns["Base"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,12 +475,15 @@ namespace A2CourseWork {
                 base.Columns.Add(this.columnExpr1);
                 this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExpr2);
+                this.columnBase = new global::System.Data.DataColumn("Base", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBase);
                 this.columnForeName.MaxLength = 50;
                 this.columnSurname.MaxLength = 50;
                 this.columnDOB.MaxLength = 50;
                 this.columnTeleNo.MaxLength = 11;
                 this.columnExpr1.MaxLength = 50;
                 this.columnExpr2.MaxLength = 50;
+                this.columnBase.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -702,6 +717,17 @@ namespace A2CourseWork {
                 }
                 set {
                     this[this.tableDataTable1.Expr2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Base {
+                get {
+                    return ((int)(this[this.tableDataTable1.BaseColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.BaseColumn] = value;
                 }
             }
             
@@ -943,6 +969,7 @@ namespace A2CourseWork.CrecheDataTableAdapters {
             tableMapping.ColumnMappings.Add("TeleNo", "TeleNo");
             tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             tableMapping.ColumnMappings.Add("Expr2", "Expr2");
+            tableMapping.ColumnMappings.Add("Base", "Base");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -959,7 +986,7 @@ namespace A2CourseWork.CrecheDataTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Kids.ForeName, Kids.Surname, Kids.DOB, Customer.ForeName AS Expr1, Customer.Surname AS Expr2, Customer.TeleNo
+            this._commandCollection[0].CommandText = @"SELECT        Kids.ForeName, Kids.Surname, Kids.DOB, Customer.ForeName AS Expr1, Customer.Surname AS Expr2, Customer.TeleNo, Prices.Base
 FROM            Booking INNER JOIN
                          Dates ON Booking.BookingID = Dates.BookingId INNER JOIN
                          Kids ON Booking.ChildId = Kids.ChildId INNER JOIN

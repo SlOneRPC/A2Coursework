@@ -197,7 +197,7 @@ namespace A2CourseWork.Classes
 
         public static bool insureValid(int length1,int lenght2)
         {
-            if (length1 < lenght2)
+            if (length1 > lenght2)
             {
                 return false;
             }

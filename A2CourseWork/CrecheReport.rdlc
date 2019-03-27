@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.27654cm</Width>
+              <Width>3.40001cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.27654cm</Width>
+              <Width>3.40001cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.27654cm</Width>
+              <Width>3.40001cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.27654cm</Width>
+              <Width>3.40001cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.27654cm</Width>
+              <Width>3.40001cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.27654cm</Width>
+              <Width>3.40001cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -472,10 +472,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>CrecheData</DataSetName>
-        <Top>4.52438cm</Top>
-        <Left>0.04974cm</Left>
+        <Top>3.01363cm</Top>
+        <Left>0.15266cm</Left>
         <Height>2.54938cm</Height>
-        <Width>19.65922cm</Width>
+        <Width>20.40007cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -484,7 +484,7 @@
       </Tablix>
       <Line Name="Line1">
         <Top>0.92287cm</Top>
-        <Left>0.04974cm</Left>
+        <Left>0.29102cm</Left>
         <Height>0cm</Height>
         <Width>19.95026cm</Width>
         <ZIndex>1</ZIndex>
@@ -510,6 +510,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
         <Top>0.32287cm</Top>
+        <Left>0.24128cm</Left>
         <Height>0.6cm</Height>
         <Width>3.18792cm</Width>
         <ZIndex>2</ZIndex>
@@ -541,7 +542,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
         <Top>1.42557cm</Top>
-        <Left>0.04974cm</Left>
+        <Left>0.29102cm</Left>
         <Height>0.6cm</Height>
         <Width>4.32562cm</Width>
         <ZIndex>3</ZIndex>
@@ -573,7 +574,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
         <Top>2.13141cm</Top>
-        <Left>0.04974cm</Left>
+        <Left>0.29102cm</Left>
         <Height>0.6cm</Height>
         <Width>3.55833cm</Width>
         <ZIndex>4</ZIndex>
@@ -594,7 +595,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Count(Fields!ForeName.Value)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -603,7 +604,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
         <Top>1.50495cm</Top>
-        <Left>7.11412cm</Left>
+        <Left>7.3554cm</Left>
         <Height>0.52062cm</Height>
         <Width>1.21708cm</Width>
         <ZIndex>5</ZIndex>
@@ -624,7 +625,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Count(Fields!ForeName.Value)*</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -632,10 +633,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
-        <Top>2.21078cm</Top>
-        <Left>7.11412cm</Left>
-        <Height>0.52062cm</Height>
-        <Width>1.21708cm</Width>
+        <Top>2.20196cm</Top>
+        <Left>7.3554cm</Left>
+        <Height>0.52944cm</Height>
+        <Width>2.64583cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -647,11 +648,22 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line2">
+        <Top>2.9078cm</Top>
+        <Height>0cm</Height>
+        <Width>20.24128cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
     <Height>3.86458in</Height>
     <Style />
   </Body>
-  <Width>7.87402in</Width>
+  <Width>8.28151in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

@@ -62,7 +62,7 @@ namespace A2CourseWork.Gui
             if(existingkid != null && !book1pnl.Visible)
             {
                 BookingDB bookingdb = new BookingDB(db);
-                alreadybooked = bookingdb.getalldates(existingkid.Forename).Mondays;
+                alreadybooked = bookingdb.getalldates(existingkid.Forename, existingkid.Surname).Mondays;
                 foreach (DateTime booking in alreadybooked)
                 {
                     calculatePrice(booking, false);
@@ -118,6 +118,11 @@ namespace A2CourseWork.Gui
                     leave();
                     return;
                 }
+                else if (booked > 0)
+                {
+                    MessageBox.Show("You cannot go back after completing a booking!");
+                    return;
+                }
                 book2pnl.Visible = false;
                 book3pnl.Visible = false;
                 book1pnl.Visible = true;
@@ -130,6 +135,8 @@ namespace A2CourseWork.Gui
                     return;
                 }
                 kids.Remove(child);
+                Kidslist.Items.RemoveAt(Kidslist.Items.Count-1);
+                booked -= 1;
                 book6pnl.Visible = false;
                 book2pnl.Visible = true;
                 book3pnl.Visible = true;
@@ -215,14 +222,17 @@ namespace A2CourseWork.Gui
             {
                 if (!MiscFunctions.insureValid(Fnametxt.Text.Length, 30))
                 {
+                    Error1txt.Visible = true;
                     throw new LengthException("First name is too long! Max lenght 30 characters");
                 }
                 else if (!MiscFunctions.insureValid(Snametxt.Text.Length, 30))
                 {
+                    error2txt.Visible = true;
                     throw new LengthException("Second name is too long! Max lenght 30 characters");
                 }
                 else if (!MiscFunctions.insureValid(addresstxt.Text.Length, 50))
                 {
+                    error5txt.Visible = true;
                     throw new LengthException("Address is too long! Max lenght 50 characters");
                 }
                 else
@@ -465,13 +475,13 @@ namespace A2CourseWork.Gui
                     if (alreadybooked.Contains(date))
                     {
                         finishedbookings[0].Mondays.Remove(date);
-                        book.UpdateDate(date, existingkid.Forename);
+                        book.UpdateDate(date, existingkid.Forename, existingkid.Surname);
                     }
                 }
-                book.AddDate(finishedbookings[0].Mondays, existingkid.Forename); // add dates to db
+                book.AddDate(finishedbookings[0].Mondays, existingkid.Forename, existingkid.Surname); // add dates to db
                 if(Dates2Remove.Count > 0)
                 {
-                    book.removeDate(Dates2Remove, existingkid.Forename); //remove dates that have been unbooked 
+                    book.removeDate(Dates2Remove, existingkid.Forename, existingkid.Surname); //remove dates that have been unbooked 
                 }
             }
             else //else add new kids/bookings
@@ -479,12 +489,12 @@ namespace A2CourseWork.Gui
                 int i = 0;
                 foreach(Kid child in kids)
                 {
-                    book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename);
-                    book.AddBooking(child.Forename, MiscFunctions.getgroupfromage(child.DOB), finishedbookings[i].Days[0], finishedbookings[i].Days[1], finishedbookings[i].Days[2], finishedbookings[i].Days[3], finishedbookings[i].Days[4]);
-                    book.AddDate(finishedbookings[i].Mondays, child.Forename);
+                    book.Addkid(child.Forename, child.Surname, child.DOB, cust.Forename,cust.Surname);
+                    book.AddBooking(child.Forename, MiscFunctions.getgroupfromage(child.DOB), finishedbookings[i].Days[0], finishedbookings[i].Days[1], finishedbookings[i].Days[2], finishedbookings[i].Days[3], finishedbookings[i].Days[4], child.Surname);
+                    book.AddDate(finishedbookings[i].Mondays, child.Forename, child.Surname);
                     if (Dates2Remove.Count > 0)
                     {
-                        book.removeDate(Dates2Remove, child.Forename);
+                        book.removeDate(Dates2Remove, child.Forename,child.Surname);
                     }
                     i++;
                 }

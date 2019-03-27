@@ -45,6 +45,7 @@
             this.titlelbl = new System.Windows.Forms.Label();
             this.minbtn = new System.Windows.Forms.PictureBox();
             this.btnexit = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.waitinglistbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pricesbtn)).BeginInit();
@@ -225,6 +226,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.titlelbl);
             this.panel1.Controls.Add(this.minbtn);
             this.panel1.Controls.Add(this.btnexit);
@@ -268,6 +270,18 @@
             this.btnexit.TabIndex = 4;
             this.btnexit.TabStop = false;
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(702, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 28);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Help";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Default
             // 
@@ -314,5 +328,6 @@
         private System.Windows.Forms.PictureBox pricesbtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }

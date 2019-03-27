@@ -17,6 +17,7 @@ namespace A2CourseWork.Gui.ViewBooking
         List<int> fridays = new List<int>();
         List<string> months = new List<string>() { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         DateTime current;
+        double revenue;
         private DataTable table;
         private Database db;
         public ByDate()
@@ -173,6 +174,7 @@ namespace A2CourseWork.Gui.ViewBooking
             }
             amountlbl.Text = "Booking amount: " + data.Count.ToString();
             PricesDB pdb = new PricesDB(db);
+            revenue = data.Count * pdb.getBase();
             revenuelbl.Text = "Estimated revenue: £" + (data.Count*pdb.getBase()).ToString();
             WeekView.DataSource = table;
             WeekView.AllowUserToAddRows = false;
@@ -211,7 +213,7 @@ namespace A2CourseWork.Gui.ViewBooking
 
         private void btnreport_Click(object sender, EventArgs e)
         {
-            GeneratedReport form = new GeneratedReport(current);
+            GeneratedReport form = new GeneratedReport(current,revenue);
             form.Show();
         }
     }

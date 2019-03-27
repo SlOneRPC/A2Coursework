@@ -16,9 +16,9 @@ namespace A2CourseWork.Classes
             this.db = db;
         }
 
-        public Booking getalldates(string childname)
+        public Booking getalldates(string childname,string childSurname)
         {
-            int id = getBookingID(childname);
+            int id = getBookingID(childname, childSurname);
             Booking bookings = new Booking();
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $"SELECT Monday FROM Dates WHERE BookingId={id} AND Active=1";
@@ -32,9 +32,9 @@ namespace A2CourseWork.Classes
             return bookings;
         }
 
-        public List<custBooking> getallbookingsforkid(string childname)
+        public List<custBooking> getallbookingsforkid(string childname,string childSurname)
         {
-            int id = getchildID(childname);
+            int id = getchildID(childname, childSurname);
             List<custBooking> bookings = new List<custBooking>();
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $"SELECT * FROM Booking WHERE ChildId = {id}";
@@ -69,9 +69,9 @@ namespace A2CourseWork.Classes
             doquery();
         }
 
-        public void Addkid(string Forename,string Surname,string DOB,string parentName)
+        public void Addkid(string Forename,string Surname,string DOB,string parentName,string parentSurname)
         {
-            int id = getcutID(parentName);
+            int id = getcutID(parentName, parentSurname);
             if(id == -1)
             {
                 MessageBox.Show("Error - Could not get CustID");
@@ -84,18 +84,18 @@ namespace A2CourseWork.Classes
             }
         }
 
-        public void AddBooking(string childname,string groupname,int Mon,int Tues,int Wed,int Thur,int Friday)
+        public void AddBooking(string childname,string groupname,int Mon,int Tues,int Wed,int Thur,int Friday,string childSurname)
         {
-            int childId = getchildID(childname);
+            int childId = getchildID(childname, childSurname);
             int groupId = getgroupID(groupname);
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = "INSERT INTO Booking(ChildId,GroupId,Monday,Tuesday,Wednesday,Thursday,Friday) VALUES( '" + childId + "','" + groupId + "','" + Mon + "','" + Tues + "','" + Wed + "','" + Thur + "','" + Friday + "')";
             doquery();
         }
 
-        public void AddDate(List<DateTime> mondays,string childForename)
+        public void AddDate(List<DateTime> mondays,string childForename,string childSurname)
         {
-            int bookingid = getBookingID(childForename);
+            int bookingid = getBookingID(childForename, childSurname);
             foreach(DateTime monday in mondays)
             {
                 db.Cmd = db.Conn.CreateCommand();
@@ -105,18 +105,18 @@ namespace A2CourseWork.Classes
             }
         }
 
-        public void UpdateDate(DateTime date,string childForename)
+        public void UpdateDate(DateTime date,string childForename,string childSurname)
         {
-            int bookingid = getBookingID(childForename);
+            int bookingid = getBookingID(childForename, childSurname);
             db.Cmd = db.Conn.CreateCommand();
             string shortmonday = date.ToShortDateString();
             db.Cmd.CommandText = $"UPDATE Dates set Active = 1 WHERE Monday ='{shortmonday}'";
             doquery();
         }
 
-        public void removeDate(List<DateTime> mondays, string childForename)
+        public void removeDate(List<DateTime> mondays, string childForename,string childsurname)
         {
-            int bookingid = getBookingID(childForename);
+            int bookingid = getBookingID(childForename, childsurname);
             foreach (DateTime monday in mondays)
             {
                 db.Cmd = db.Conn.CreateCommand();
@@ -154,10 +154,10 @@ namespace A2CourseWork.Classes
             return counter;
         }
 
-        public int getchildID(string childname)
+        public int getchildID(string childname,string childSurname)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "SELECT * FROM Kids WHERE ForeName = '" + childname + "'";
+            db.Cmd.CommandText = "SELECT * FROM Kids WHERE ForeName = '" + childname + "' AND Surname = '"+ childSurname + "'";
             db.Rdr = db.Cmd.ExecuteReader();
             if (db.Rdr.Read())
             {
@@ -184,10 +184,10 @@ namespace A2CourseWork.Classes
             return -1;
         }
 
-        private int getcutID(string parentName)
+        private int getcutID(string parentName,string parentSurname)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "SELECT * FROM Customer WHERE ForeName = '" + parentName +"'";
+            db.Cmd.CommandText = "SELECT * FROM Customer WHERE ForeName = '" + parentName +"' AND Surname = '"+ parentSurname + "'";
             db.Rdr = db.Cmd.ExecuteReader();
             if (db.Rdr.Read())
             {
@@ -199,9 +199,9 @@ namespace A2CourseWork.Classes
             return -1;
         }
 
-        private int getBookingID(string childname)
+        private int getBookingID(string childname,string childsurname)
         {
-            int childid = getchildID(childname);
+            int childid = getchildID(childname, childsurname);
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = "SELECT * FROM Booking WHERE ChildId = " + childid + "";
             db.Rdr = db.Cmd.ExecuteReader();

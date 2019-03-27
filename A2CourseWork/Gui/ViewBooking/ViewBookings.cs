@@ -95,7 +95,7 @@ namespace A2CourseWork.Gui
             //gather bookings
             List<custBooking> bookings = new List<custBooking>();
             BookingDB booking = new BookingDB(db);
-            bookings = booking.getallbookingsforkid(kids[kidslistbox.SelectedIndex].Forename);
+            bookings = booking.getallbookingsforkid(kids[kidslistbox.SelectedIndex].Forename, kids[kidslistbox.SelectedIndex].Surname);
             populateDates();
         }
         //populate the dates that the kid has booked
@@ -192,7 +192,7 @@ namespace A2CourseWork.Gui
             List<DateTime> dates = new List<DateTime>();
             dates.Add(date);
             BookingDB bdb = new BookingDB(db);
-            bdb.removeDate(dates, kids[kidslistbox.SelectedIndex].Forename);
+            bdb.removeDate(dates, kids[kidslistbox.SelectedIndex].Forename, kids[kidslistbox.SelectedIndex].Surname);
             MessageBox.Show("Success");
             populateDates();
         }

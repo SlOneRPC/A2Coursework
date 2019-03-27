@@ -173,7 +173,7 @@ namespace A2CourseWork.Gui
                {
                     if (index<=0) // check that the kid is passed the group limit
                     {
-                        gdb.updategroup(data[x][0]);
+                        gdb.updategroup(data[x][0], data[x][1]);
                         createTableForGroup(groupnumscbx.SelectedIndex + 1);
                         updated++;
                     }
