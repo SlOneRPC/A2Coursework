@@ -26,7 +26,8 @@ namespace A2CourseWork.Gui
         Customer cust = new Customer();
         List<Kid> kids = new List<Kid>();
         List<List<string>> dates = new List<List<string>>();
-        int currentprice = 0;
+        double currentprice = 0;
+        double finalprice = 0;
         double currentDiscount = 0;
 
         List<int> mondays = new List<int>();
@@ -712,21 +713,6 @@ namespace A2CourseWork.Gui
                     //if(bookeddays.Contains(mondays[i]))
                     monthscbx.Items.Add(months[i]);
                 }
-                //DateTime now = DateTime.Now;
-                //DateTime startdate = new DateTime(now.Year, now.Month, 1);
-                //DateTime enddate = new DateTime(now.Year, now.Month, DateTime.DaysInMonth(now.Year, now.Month));
-                //int counter = 0;
-                //for (DateTime date = startdate; date <= enddate; date = date.AddDays(1)) //grab mondays in the months through a loop
-                //{
-                //    if (date.DayOfWeek == DayOfWeek.Monday && date > now)
-                //    {
-                //        counter++;
-                //    }
-                //}
-                //if (counter == 0)
-                //{
-                //    monthscbx.Items.RemoveAt(0);
-                //}
                 monthscbx.SelectedIndex = 0;
             }
             else
@@ -829,7 +815,7 @@ namespace A2CourseWork.Gui
                     btnfinished.Enabled = false;
             }
 
-            totalpricelbl.Text = "Total Price: £" + (currentprice * (1 - currentDiscount/100)).ToString("00.00");
+            totalpricelbl.Text = "Total Price: £" + (finalprice).ToString("00.00");
         }
 
         private void week1btn_Click(object sender, EventArgs e)
@@ -911,72 +897,31 @@ namespace A2CourseWork.Gui
         {
             PricesDB pdb = new PricesDB(db);
             int baserate = pdb.getBase();
-            if (remove) // check if we should remove the applied discount and remove base price
+
+            if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6))
             {
-                if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
-                {
-                    bool keep = false;
-                    foreach(DateTime date in bookeddates) //check for other dates that are within the discount range
-                    {
-                        if(date > DateTime.Now.AddMonths(3) && date < DateTime.Now.AddMonths(6))
-                        {
-                            keep = true;
-                        }
-                    }
-                    if (!keep)
-                    {
-                        currentDiscount = pdb.getMinDiscount();
-                    }
-                }
-                else if (bookeddate >= DateTime.Now.AddMonths(6))
-                {
-                    bool keep = false;
-                    foreach (DateTime date in bookeddates) //check for other dates that are within the discount range
-                    {
-                        if (date >= DateTime.Now.AddMonths(6))
-                        {
-                            keep = true;
-                        }
-                    }
-                    if (!keep)
-                    {
-                        foreach (DateTime date in bookeddates)
-                        {
-                            if (date > DateTime.Now.AddMonths(3) && date < DateTime.Now.AddMonths(6))
-                            {
-                                keep = true;
-                            }
-                        }
-                        if (!keep)
-                        {
-                            currentDiscount = pdb.getMinDiscount();
-                        }
-                        else
-                        {
-                            pdb.getMedDiscount();
-                        }
-                    }
-                }
-                currentprice -= baserate;
+                currentDiscount = pdb.getMedDiscount(); //medium discount applied
+            }
+            else if (bookeddate >= DateTime.Now.AddMonths(6))
+            {
+                currentDiscount = pdb.getMaxDiscount(); //max discount applied
             }
             else
             {
-                if (bookeddate > DateTime.Now.AddMonths(3) && bookeddate < DateTime.Now.AddMonths(6) && currentDiscount != 5)
-                {
-                    currentDiscount = pdb.getMedDiscount(); //medium discount applied
-                }
-                else if (bookeddate >= DateTime.Now.AddMonths(6))
-                {
-                    currentDiscount = pdb.getMaxDiscount(); //max discount applied
-                }
-                else
-                {
-                    currentDiscount = pdb.getMinDiscount(); //min discount applied
-                }
-                currentprice += baserate;
+                currentDiscount = pdb.getMinDiscount(); //min discount applied
             }
+            currentprice = baserate * (1 - currentDiscount / 100);
+            if (remove)//check if we want to remove the cost
+            {
+                finalprice -= currentprice;
+            }
+            else
+            {
+                finalprice += currentprice;
+            }
+
             totalpricelbl.Visible = true;
-            totalpricelbl.Text = "Total Price: £" + (currentprice * (1 - currentDiscount / 100) ).ToString("00.00");//calculate cost and display on a label
+            totalpricelbl.Text = "Total Price: £" + (finalprice).ToString("00.00");//calculate cost and display on a label
         }
 
         #region otherrequirements
