@@ -75,9 +75,9 @@
             this.KidsBookedlbl = new System.Windows.Forms.Label();
             this.btncheckout = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.Kidslist = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.Kidslist = new System.Windows.Forms.ListBox();
             this.btnback = new System.Windows.Forms.PictureBox();
             this.book4pnl = new System.Windows.Forms.Panel();
             this.book4titlepnl = new System.Windows.Forms.Panel();
@@ -713,19 +713,6 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Kids:";
             // 
-            // Kidslist
-            // 
-            this.Kidslist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Kidslist.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Kidslist.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kidslist.ForeColor = System.Drawing.Color.Lime;
-            this.Kidslist.FormattingEnabled = true;
-            this.Kidslist.ItemHeight = 25;
-            this.Kidslist.Location = new System.Drawing.Point(13, 82);
-            this.Kidslist.Name = "Kidslist";
-            this.Kidslist.Size = new System.Drawing.Size(259, 225);
-            this.Kidslist.TabIndex = 3;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
@@ -745,6 +732,19 @@
             this.label9.Size = new System.Drawing.Size(98, 25);
             this.label9.TabIndex = 0;
             this.label9.Text = "Checkout";
+            // 
+            // Kidslist
+            // 
+            this.Kidslist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Kidslist.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Kidslist.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Kidslist.ForeColor = System.Drawing.Color.Lime;
+            this.Kidslist.FormattingEnabled = true;
+            this.Kidslist.ItemHeight = 25;
+            this.Kidslist.Location = new System.Drawing.Point(13, 82);
+            this.Kidslist.Name = "Kidslist";
+            this.Kidslist.Size = new System.Drawing.Size(259, 225);
+            this.Kidslist.TabIndex = 3;
             // 
             // btnback
             // 

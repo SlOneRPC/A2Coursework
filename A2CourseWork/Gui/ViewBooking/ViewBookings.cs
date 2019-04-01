@@ -139,7 +139,9 @@ namespace A2CourseWork.Gui
             double discount = 0;
             string discountApplied = "";
             PricesDB pdb = new PricesDB(db);
-            foreach(DateTime date in dates)
+            int baseprice = pdb.getBase(); //reduce load on db
+            double price = 0;
+            foreach (DateTime date in dates)
             {
                 if (date >= DateTime.Now.AddMonths(6))
                 {
@@ -156,6 +158,7 @@ namespace A2CourseWork.Gui
                     discount = pdb.getMinDiscount();
                     discountApplied = discount.ToString() + "%";
                 }
+                price += (baseprice) * (1 - (discount / 100)*5);
             }
             if(discount == 0)
             {
@@ -165,7 +168,6 @@ namespace A2CourseWork.Gui
             {
                 discountlbl.Text = "Discount Applied: " + discountApplied;
             }
-            double price = (pdb.getBase() * dates.Count) * (1-(discount/100));
             totalpricelbl.Text = "Total Price: £" + price.ToString("00.00");
         }
         //open add from and pass the child and parent object

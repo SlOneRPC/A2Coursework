@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.PictureBox();
+            this.Canceled = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WeekView)).BeginInit();
@@ -64,6 +65,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.Canceled);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
@@ -355,6 +357,19 @@
             this.btnback.TabStop = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
+            // Canceled
+            // 
+            this.Canceled.AutoSize = true;
+            this.Canceled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Canceled.ForeColor = System.Drawing.Color.White;
+            this.Canceled.Location = new System.Drawing.Point(7, 260);
+            this.Canceled.Name = "Canceled";
+            this.Canceled.Size = new System.Drawing.Size(183, 24);
+            this.Canceled.TabIndex = 31;
+            this.Canceled.Text = "Show ONLY canceled";
+            this.Canceled.UseVisualStyleBackColor = true;
+            this.Canceled.CheckedChanged += new System.EventHandler(this.Canceled_CheckedChanged);
+            // 
             // ByDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,5 +424,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox Canceled;
     }
 }

@@ -29,6 +29,7 @@ namespace A2CourseWork.Gui
         double currentprice = 0;
         double finalprice = 0;
         double currentDiscount = 0;
+        double childsprice = 0;
 
         List<int> mondays = new List<int>();
         List<int> fridays = new List<int>();
@@ -67,6 +68,7 @@ namespace A2CourseWork.Gui
                 foreach (DateTime booking in alreadybooked)
                 {
                     calculatePrice(booking, false);
+                    childsprice = finalprice;
                 }
                 //setup dates for DOB
                 DOBpicker.MinDate = DateTime.Now.AddMonths(-48);
@@ -135,9 +137,14 @@ namespace A2CourseWork.Gui
                     leave();
                     return;
                 }
+                //reset booking
                 kids.Remove(child);
                 Kidslist.Items.RemoveAt(Kidslist.Items.Count-1);
                 booked -= 1;
+                finalprice -= childsprice;
+                totalpricelbl.Visible = false;
+
+                //show kids panels
                 book6pnl.Visible = false;
                 book2pnl.Visible = true;
                 book3pnl.Visible = true;
@@ -516,6 +523,7 @@ namespace A2CourseWork.Gui
         //get check days for saving to the database
         private void btnsavedate_Click(object sender, EventArgs e)
         {
+            int counter = 0;
             for (int i = 0; i < dayslistbx.Items.Count; i++)
             {
                 if (dayslistbx.GetItemChecked(i))
@@ -524,6 +532,7 @@ namespace A2CourseWork.Gui
                 }
                 else
                 {
+                    counter++;
                     bookeddays.Add(0);
                 }
             }
@@ -546,7 +555,6 @@ namespace A2CourseWork.Gui
                 {
                     KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
                 }
-                FinalPrice.Text = "Total Price: £" + (currentprice * (1 - currentDiscount/100)).ToString("00.00");
                 book4pnl.Visible = false;
                 book3pnl.Location = new Point(408, 65);
                 book3pnl.Visible = true;
@@ -557,6 +565,10 @@ namespace A2CourseWork.Gui
                 book2pnl.Visible = true;
                 book3pnl.Visible = true;
             }
+            finalprice -= (childsprice / 5) * counter;
+            childsprice = 0;
+            FinalPrice.Text = "Total Price: £" + (finalprice).ToString("00.00");
+
         }
         #endregion
         //populate days of the week for booking
@@ -913,11 +925,13 @@ namespace A2CourseWork.Gui
             currentprice = baserate * (1 - currentDiscount / 100);
             if (remove)//check if we want to remove the cost
             {
-                finalprice -= currentprice;
+                finalprice -= currentprice * 5;
+                childsprice -= currentprice * 5;
             }
             else
             {
-                finalprice += currentprice;
+                finalprice += currentprice * 5;
+                childsprice += currentprice * 5;
             }
 
             totalpricelbl.Visible = true;

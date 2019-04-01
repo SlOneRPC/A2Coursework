@@ -100,8 +100,7 @@ namespace A2CourseWork.Gui.ViewBooking
             }
             weeklbl.Text = "Week: " + selected.ToString();
             current = new DateTime(now.Year, now.Month, mondays[selected-1]);
-            createTableforKids(current);
-            createTableforBooking(current);
+            cancel_checked();
         }
         //on index change update months/weeks accordingly
         private void yearcbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,7 +137,7 @@ namespace A2CourseWork.Gui.ViewBooking
             monthscbx.SelectedIndex = DateTime.Now.Month - 1;
         }
         //create a table for the details about kids/parents booked in that week
-        private void createTableforKids(DateTime now)
+        private void createTableforKids(DateTime now,bool cancel)
         {
             table = new DataTable();
             table.Columns.Add("Parent Name");
@@ -146,7 +145,7 @@ namespace A2CourseWork.Gui.ViewBooking
             table.Columns.Add("Kid DOB");
             table.Columns.Add("Kid Group");
             MiscDB miscdb = new MiscDB(db);
-            List<List<string>> data = miscdb.BookingDetails(now);
+            List<List<string>> data = miscdb.BookingDetails(now,cancel);
 
             foreach(List<string> current in data)
             {
@@ -155,7 +154,7 @@ namespace A2CourseWork.Gui.ViewBooking
             KidsView.DataSource = table;
         }
         //create table to show the bookings for that week
-        private void createTableforBooking(DateTime now)
+        private void createTableforBooking(DateTime now,bool cancel)
         {
             table = new DataTable();
             table.Columns.Add("Kid Name");
@@ -167,18 +166,16 @@ namespace A2CourseWork.Gui.ViewBooking
 
 
             MiscDB miscdb = new MiscDB(db);
-            List<List<string>> data = miscdb.BookingDays(now);
+            List<List<string>> data = miscdb.BookingDays(now,cancel);
             foreach (List<string> current in data)
             {
                 table.Rows.Add(current[0] + " " + current[1]);
             }
             amountlbl.Text = "Booking amount: " + data.Count.ToString();
-            PricesDB pdb = new PricesDB(db);
-            revenue = data.Count * pdb.getBase();
-            revenuelbl.Text = "Estimated revenue: £" + (data.Count*pdb.getBase()).ToString();
             WeekView.DataSource = table;
             WeekView.AllowUserToAddRows = false;
             int x = 0;
+            int daysbooked = 0;
             foreach(DataGridViewRow row in WeekView.Rows) //need to loop through the rows in order to color the cells accordingly
             {
                 List<string> current = data[x];
@@ -187,6 +184,7 @@ namespace A2CourseWork.Gui.ViewBooking
                     if (current[i + 2] == "1")
                     {
                         row.Cells[i+1].Style.BackColor = Color.LimeGreen;//green for booked
+                        daysbooked++;//count the number of days booked
                     }
                     else
                     {
@@ -195,6 +193,9 @@ namespace A2CourseWork.Gui.ViewBooking
                 }
                 x++;
             }
+            PricesDB pdb = new PricesDB(db);
+            revenue = data.Count * pdb.getBase();
+            revenuelbl.Text = "Estimated revenue: £" + ((data.Count * pdb.getBase())* daysbooked).ToString(); //not including discounts
             WeekView.Enabled = false;
         }
 
@@ -215,6 +216,25 @@ namespace A2CourseWork.Gui.ViewBooking
         {
             GeneratedReport form = new GeneratedReport(current,revenue);
             form.Show();
+        }
+
+        private void cancel_checked()
+        {
+            if (Canceled.Checked)
+            {
+                createTableforKids(current, true);
+                createTableforBooking(current, true);
+            }
+            else
+            {
+                createTableforKids(current, false);
+                createTableforBooking(current, false);
+            }
+        }
+
+        private void Canceled_CheckedChanged(object sender, EventArgs e)
+        {
+            cancel_checked();
         }
     }
 }

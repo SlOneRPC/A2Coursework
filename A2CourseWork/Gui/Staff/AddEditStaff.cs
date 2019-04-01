@@ -442,7 +442,7 @@ namespace A2CourseWork.Gui
             if (count <= 2) // if there will be less than two staff remove the bookings
             {
                 int deleted = staffdb.DeleteDates(staff[stafflist.SelectedIndex].Forename);
-                MessageBox.Show($"{deleted} Bookings temporarly removed due to the removal of the staff member, add another staff member to get these bookings back");
+                MessageBox.Show($"{deleted} Bookings temporarly removed due to the removal of the staff member, add another staff member to get these bookings back, check by-date to view bookings removed");
             }
 
         }

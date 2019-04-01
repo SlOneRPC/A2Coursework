@@ -14,12 +14,16 @@ namespace A2CourseWork.Classes
             this.db = db;
         }
 
-        public List<List<string>> BookingDetails(DateTime date)
+        public List<List<string>> BookingDetails(DateTime date,bool canceled)
         {
             List<List<string>> details = new List<List<string>>();
             List<string> current = new List<string>();
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}' AND Dates.Active = 1";
+            if(!canceled)
+                db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}' AND Dates.Active = 1";
+            else
+                db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}' AND Dates.Active = 0";
+
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
             {
@@ -35,12 +39,16 @@ namespace A2CourseWork.Classes
             return details;
         }
 
-        public List<List<string>> BookingDays(DateTime date)
+        public List<List<string>> BookingDays(DateTime date,bool canceled)
         {
             List<List<string>> details = new List<List<string>>();
             List<string> current = new List<string>();
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $"SELECT Kids.ForeName, Kids.Surname, Booking.Monday, Booking.Tuesday, Booking.Wednesday, Booking.Thursday, Booking.Friday FROM Kids INNER JOIN Booking ON Kids.ChildId = Booking.ChildId INNER JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday = '{date.ToShortDateString()}' AND Dates.Active = 1";
+            if(!canceled)
+                db.Cmd.CommandText = $"SELECT Kids.ForeName, Kids.Surname, Booking.Monday, Booking.Tuesday, Booking.Wednesday, Booking.Thursday, Booking.Friday FROM Kids INNER JOIN Booking ON Kids.ChildId = Booking.ChildId INNER JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday = '{date.ToShortDateString()}' AND Dates.Active = 1";
+            else
+                db.Cmd.CommandText = $"SELECT Kids.ForeName, Kids.Surname, Booking.Monday, Booking.Tuesday, Booking.Wednesday, Booking.Thursday, Booking.Friday FROM Kids INNER JOIN Booking ON Kids.ChildId = Booking.ChildId INNER JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday = '{date.ToShortDateString()}' AND Dates.Active = 0";
+
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
             {
