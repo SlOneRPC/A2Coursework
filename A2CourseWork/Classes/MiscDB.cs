@@ -20,9 +20,9 @@ namespace A2CourseWork.Classes
             List<string> current = new List<string>();
             db.Cmd = db.Conn.CreateCommand();
             if(!canceled)
-                db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}' AND Dates.Active = 1";
+                db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB,Customer.TeleNo FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}' AND Dates.Active = 1";
             else
-                db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}' AND Dates.Active = 0";
+                db.Cmd.CommandText = $"SELECT Customer.ForeName,Customer.Surname, Kids.ForeName,Kids.Surname ,Kids.DOB,Customer.TeleNo FROM Kids RIGHT JOIN Customer ON Kids.ParentId = Customer.CustId RIGHT JOIN Booking ON Kids.ChildId = Booking.ChildId RIGHT JOIN Dates ON Booking.BookingID = Dates.BookingId WHERE Dates.Monday =  '{date.ToShortDateString()}' AND Dates.Active = 0";
 
             db.Rdr = db.Cmd.ExecuteReader();
             while (db.Rdr.Read())
@@ -33,6 +33,7 @@ namespace A2CourseWork.Classes
                 current.Add(db.Rdr.GetString(2));
                 current.Add(db.Rdr.GetString(3));
                 current.Add(db.Rdr.GetString(4));
+                current.Add(db.Rdr.GetString(5));
                 details.Add(current);
             }
             db.Rdr.Close();

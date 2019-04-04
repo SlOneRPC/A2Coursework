@@ -116,7 +116,7 @@ namespace A2CourseWork.Gui
             }
             else if (book2pnl.Visible)
             {
-                if(existingcustomer != null)
+                if (existingcustomer != null)
                 {
                     leave();
                     return;
@@ -138,9 +138,12 @@ namespace A2CourseWork.Gui
                     return;
                 }
                 //reset booking
+                ChildFnametxt.Text = child.Forename;
+                childSnametxt.Text = child.Surname;
                 kids.Remove(child);
                 Kidslist.Items.RemoveAt(Kidslist.Items.Count-1);
                 booked -= 1;
+                KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
                 finalprice -= childsprice;
                 totalpricelbl.Visible = false;
 
@@ -220,7 +223,7 @@ namespace A2CourseWork.Gui
         {
             ChildFnametxt.Text = "";
             childSnametxt.Text = "";
-            DOBpicker.ResetText();
+            DOBpicker.Value = DateTime.Now.AddMonths(-6).AddDays(-1);
             KidsBookedlbl.Text = "Number of Kids Booked: " + booked.ToString();
         }
 

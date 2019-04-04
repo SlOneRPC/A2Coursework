@@ -51,6 +51,8 @@
             this.homepbx = new System.Windows.Forms.PictureBox();
             this.MainImage = new System.Windows.Forms.PictureBox();
             this.Mainpnl = new System.Windows.Forms.Panel();
+            this.btnhelp = new System.Windows.Forms.Button();
+            this.btncodecomplexities = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
@@ -68,6 +70,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.btncodecomplexities);
+            this.panel1.Controls.Add(this.btnhelp);
             this.panel1.Controls.Add(this.minbtn);
             this.panel1.Controls.Add(this.btnexit);
             this.panel1.Controls.Add(this.titlelbl);
@@ -345,6 +349,32 @@
             this.Mainpnl.TabIndex = 4;
             this.Mainpnl.MouseEnter += new System.EventHandler(this.Mainpnl_MouseEnter);
             // 
+            // btnhelp
+            // 
+            this.btnhelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnhelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnhelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhelp.Location = new System.Drawing.Point(715, 4);
+            this.btnhelp.Name = "btnhelp";
+            this.btnhelp.Size = new System.Drawing.Size(84, 28);
+            this.btnhelp.TabIndex = 8;
+            this.btnhelp.Text = "Help";
+            this.btnhelp.UseVisualStyleBackColor = false;
+            this.btnhelp.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btncodecomplexities
+            // 
+            this.btncodecomplexities.BackColor = System.Drawing.Color.Yellow;
+            this.btncodecomplexities.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncodecomplexities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncodecomplexities.Location = new System.Drawing.Point(603, 4);
+            this.btncodecomplexities.Name = "btncodecomplexities";
+            this.btncodecomplexities.Size = new System.Drawing.Size(109, 28);
+            this.btncodecomplexities.TabIndex = 9;
+            this.btncodecomplexities.Text = "Code Complexities";
+            this.btncodecomplexities.UseVisualStyleBackColor = false;
+            this.btncodecomplexities.Click += new System.EventHandler(this.btncodecomplexities_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,5 +433,7 @@
         private System.Windows.Forms.Button btntransport;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel Mainpnl;
+        private System.Windows.Forms.Button btncodecomplexities;
+        private System.Windows.Forms.Button btnhelp;
     }
 }

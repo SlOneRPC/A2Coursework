@@ -41,11 +41,11 @@
             this.viewsidebtn = new System.Windows.Forms.PictureBox();
             this.booksidebtn = new System.Windows.Forms.PictureBox();
             this.honebtn = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Maintitlepnl = new System.Windows.Forms.Panel();
+            this.btnhelp = new System.Windows.Forms.Button();
             this.titlelbl = new System.Windows.Forms.Label();
             this.minbtn = new System.Windows.Forms.PictureBox();
             this.btnexit = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.waitinglistbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pricesbtn)).BeginInit();
@@ -53,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewsidebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksidebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.honebtn)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.Maintitlepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).BeginInit();
             this.SuspendLayout();
@@ -223,20 +223,33 @@
             this.honebtn.MouseLeave += new System.EventHandler(this.honebtn_MouseLeave);
             this.honebtn.MouseHover += new System.EventHandler(this.honebtn_MouseHover);
             // 
-            // panel1
+            // Maintitlepnl
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.titlelbl);
-            this.panel1.Controls.Add(this.minbtn);
-            this.panel1.Controls.Add(this.btnexit);
-            this.panel1.Location = new System.Drawing.Point(89, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 41);
-            this.panel1.TabIndex = 2;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.Maintitlepnl.BackColor = System.Drawing.Color.Silver;
+            this.Maintitlepnl.Controls.Add(this.btnhelp);
+            this.Maintitlepnl.Controls.Add(this.titlelbl);
+            this.Maintitlepnl.Controls.Add(this.minbtn);
+            this.Maintitlepnl.Controls.Add(this.btnexit);
+            this.Maintitlepnl.Location = new System.Drawing.Point(89, 0);
+            this.Maintitlepnl.Name = "Maintitlepnl";
+            this.Maintitlepnl.Size = new System.Drawing.Size(896, 41);
+            this.Maintitlepnl.TabIndex = 2;
+            this.Maintitlepnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
+            this.Maintitlepnl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
+            this.Maintitlepnl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // btnhelp
+            // 
+            this.btnhelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnhelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnhelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhelp.Location = new System.Drawing.Point(706, 6);
+            this.btnhelp.Name = "btnhelp";
+            this.btnhelp.Size = new System.Drawing.Size(84, 28);
+            this.btnhelp.TabIndex = 6;
+            this.btnhelp.Text = "Help";
+            this.btnhelp.UseVisualStyleBackColor = false;
+            this.btnhelp.Click += new System.EventHandler(this.btnhelp_Click);
             // 
             // titlelbl
             // 
@@ -271,18 +284,6 @@
             this.btnexit.TabStop = false;
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click_1);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(702, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 28);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Help";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Default
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,7 +291,7 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(980, 568);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Maintitlepnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Default";
             this.Text = "Default";
@@ -302,8 +303,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewsidebtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksidebtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.honebtn)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Maintitlepnl.ResumeLayout(false);
+            this.Maintitlepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnexit)).EndInit();
             this.ResumeLayout(false);
@@ -313,7 +314,7 @@
         #endregion
 
         public System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Maintitlepnl;
         private System.Windows.Forms.PictureBox honebtn;
         private System.Windows.Forms.PictureBox minbtn;
         private System.Windows.Forms.PictureBox btnexit;
@@ -328,6 +329,6 @@
         private System.Windows.Forms.PictureBox pricesbtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnhelp;
     }
 }

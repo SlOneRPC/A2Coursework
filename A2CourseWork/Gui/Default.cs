@@ -182,10 +182,22 @@ namespace A2CourseWork.Gui
             this.Hide();
             p.Show();
         }
-
+        //tell the user this is not implemented
         private void waitinglistbtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This is not something i plan to add");
+            MessageBox.Show("This is not something i plan to add yet");
+        }
+        //help button
+        private void btnhelp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("Userguide.docx");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Document is missing from solution folder");
+            }
         }
     }
 }

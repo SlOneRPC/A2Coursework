@@ -162,5 +162,29 @@ namespace A2CourseWork.Gui
         {
             notcoded();
         }
+        //help button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("Userguide.docx");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Document is missing from solution folder");
+            }
+        }
+        //open code complexities
+        private void btncodecomplexities_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("complexcode.docx");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Document is missing from solution folder");
+            }
+        }
     }
 }

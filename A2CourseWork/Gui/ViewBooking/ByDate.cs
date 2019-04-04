@@ -144,12 +144,13 @@ namespace A2CourseWork.Gui.ViewBooking
             table.Columns.Add("Kid Name");
             table.Columns.Add("Kid DOB");
             table.Columns.Add("Kid Group");
+            table.Columns.Add("Tele No");
             MiscDB miscdb = new MiscDB(db);
             List<List<string>> data = miscdb.BookingDetails(now,cancel);
 
             foreach(List<string> current in data)
             {
-                table.Rows.Add(current[0] + " " + current[1],current[2] + " " + current[3],current[4],MiscFunctions.getgroupfromage(current[4]));
+                table.Rows.Add(current[0] + " " + current[1],current[2] + " " + current[3],current[4],MiscFunctions.getgroupfromage(current[4]),current[5]);
             }
             KidsView.DataSource = table;
         }

@@ -45,7 +45,9 @@ namespace A2CourseWork.Classes
 
             try
             {
-                conn.Open();
+                
+                conn.Open();//i am aware of an issue with pool size, this seems to be a problem with database connections and is not something i can fix
+                //try catch will not even solve this issue
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
                     return true;
